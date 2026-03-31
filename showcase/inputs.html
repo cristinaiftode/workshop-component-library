@@ -555,9 +555,10 @@ document.querySelectorAll('section').forEach(sec => {
 
 // ── DatePickers ──
 (function() {
-  const DAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+  const DAY_LABELS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   let activePopup = null;
+  let openDropdown = null;
 
   function parseDate(str) {
     const parts = str.split('-');
@@ -572,66 +573,166 @@ document.querySelectorAll('section').forEach(sec => {
     return y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
   }
 
-  function buildCalendar(container, year, month, selectedDay, onSelect, onNav) {
+  function closeDropdown() {
+    if (openDropdown) { openDropdown.remove(); openDropdown = null; }
+  }
+
+  function buildCalendar(container, year, month, selected, onSelect, onNav) {
     container.innerHTML = '';
-    // Header with nav
+
+    // ── Period Selection Header ──
     const header = document.createElement('div');
-    header.className = 'flex items-center justify-between px-2 py-2';
+    header.className = 'flex items-center justify-between w-[280px]';
+
+    // Left side: month + year triggers
+    const leftSide = document.createElement('div');
+    leftSide.className = 'flex items-center';
+
+    const chevronDownSVG = '<svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>';
+
+    // Month trigger
+    const monthTrigger = document.createElement('div');
+    monthTrigger.className = 'h-[32px] flex items-center cursor-pointer relative';
+    monthTrigger.innerHTML = '<span class="pl-[8px] font-bold text-[12px] leading-[16px] text-[#1C1C1C]">' + MONTHS[month] + '</span>' + chevronDownSVG;
+    monthTrigger.addEventListener('click', e => {
+      e.stopPropagation();
+      if (openDropdown && openDropdown.dataset.type === 'month') { closeDropdown(); return; }
+      closeDropdown();
+      const dd = document.createElement('div');
+      dd.dataset.type = 'month';
+      dd.className = 'absolute top-[36px] left-0 bg-white rounded-[4px] p-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] z-30 max-h-[200px] overflow-y-auto';
+      MONTHS.forEach((m, i) => {
+        const item = document.createElement('div');
+        item.className = 'px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)]' + (i === month ? ' bg-[rgba(0,99,255,0.1)] font-bold' : '');
+        item.textContent = m;
+        item.addEventListener('click', ev => { ev.stopPropagation(); closeDropdown(); onNav(year, i); });
+        dd.appendChild(item);
+      });
+      monthTrigger.appendChild(dd);
+      openDropdown = dd;
+    });
+
+    // Year trigger
+    const yearTrigger = document.createElement('div');
+    yearTrigger.className = 'h-[32px] flex items-center cursor-pointer relative';
+    yearTrigger.innerHTML = '<span class="pl-[8px] font-bold text-[12px] leading-[16px] text-[#1C1C1C]">' + year + '</span>' + chevronDownSVG;
+    yearTrigger.addEventListener('click', e => {
+      e.stopPropagation();
+      if (openDropdown && openDropdown.dataset.type === 'year') { closeDropdown(); return; }
+      closeDropdown();
+      const dd = document.createElement('div');
+      dd.dataset.type = 'year';
+      dd.className = 'absolute top-[36px] left-0 bg-white rounded-[4px] p-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] z-30 max-h-[200px] overflow-y-auto';
+      const currentYear = new Date().getFullYear();
+      for (let y = currentYear - 5; y <= currentYear + 5; y++) {
+        const item = document.createElement('div');
+        item.className = 'px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)]' + (y === year ? ' bg-[rgba(0,99,255,0.1)] font-bold' : '');
+        item.textContent = y;
+        item.addEventListener('click', ev => { ev.stopPropagation(); closeDropdown(); onNav(y, month); });
+        dd.appendChild(item);
+      }
+      yearTrigger.appendChild(dd);
+      openDropdown = dd;
+    });
+
+    leftSide.append(monthTrigger, yearTrigger);
+
+    // Right side: prev/next buttons
+    const rightSide = document.createElement('div');
+    rightSide.className = 'flex gap-[4px] items-start';
+
     const prevBtn = document.createElement('button');
-    prevBtn.className = 'w-6 h-6 flex items-center justify-center rounded hover:bg-[rgba(0,99,255,0.1)] text-[#1C1C1C] border-none bg-transparent cursor-pointer text-sm';
-    prevBtn.innerHTML = '&#8249;';
-    prevBtn.addEventListener('click', e => { e.stopPropagation(); onNav(year, month - 1); });
+    prevBtn.className = 'p-[6px] rounded-[4px] hover:bg-[#EBEBEB] cursor-pointer border-none bg-transparent';
+    prevBtn.innerHTML = '<svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5l-5 5 5 5"/></svg>';
+    prevBtn.addEventListener('click', e => { e.stopPropagation(); closeDropdown(); onNav(year, month - 1); });
+
     const nextBtn = document.createElement('button');
-    nextBtn.className = 'w-6 h-6 flex items-center justify-center rounded hover:bg-[rgba(0,99,255,0.1)] text-[#1C1C1C] border-none bg-transparent cursor-pointer text-sm';
-    nextBtn.innerHTML = '&#8250;';
-    nextBtn.addEventListener('click', e => { e.stopPropagation(); onNav(year, month + 1); });
-    const title = document.createElement('span');
-    title.className = 'text-xs font-bold text-[#1C1C1C]';
-    title.textContent = MONTHS[month] + ' ' + year;
-    header.append(prevBtn, title, nextBtn);
+    nextBtn.className = 'p-[6px] rounded-[4px] hover:bg-[#EBEBEB] cursor-pointer border-none bg-transparent';
+    nextBtn.innerHTML = '<svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5l5 5-5 5"/></svg>';
+    nextBtn.addEventListener('click', e => { e.stopPropagation(); closeDropdown(); onNav(year, month + 1); });
+
+    rightSide.append(prevBtn, nextBtn);
+    header.append(leftSide, rightSide);
     container.appendChild(header);
 
-    // Day headers
+    // ── Day Headers Row ──
     const dayRow = document.createElement('div');
-    dayRow.className = 'grid grid-cols-7 text-center text-[10px] text-[#595959] px-1';
-    DAYS.forEach(d => {
+    dayRow.className = 'flex items-start pt-[8px]';
+    DAY_LABELS.forEach(d => {
       const cell = document.createElement('span');
-      cell.className = 'py-0.5';
+      cell.className = 'w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase';
       cell.textContent = d;
       dayRow.appendChild(cell);
     });
     container.appendChild(dayRow);
 
-    // Days grid
-    const grid = document.createElement('div');
-    grid.className = 'grid grid-cols-7 text-center text-xs px-1 pb-2';
+    // ── Date Grid (always 5 rows = 35 cells) ──
     const firstDay = new Date(year, month, 1).getDay();
     const offset = (firstDay + 6) % 7; // Monday-based
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    for (let i = 0; i < offset; i++) {
-      const empty = document.createElement('span');
-      empty.className = 'py-1';
-      grid.appendChild(empty);
-    }
-    for (let d = 1; d <= daysInMonth; d++) {
-      const dayBtn = document.createElement('button');
-      dayBtn.className = 'py-1 rounded cursor-pointer border-none bg-transparent text-xs text-[#1C1C1C] hover:bg-[rgba(0,99,255,0.1)]';
-      if (d === selectedDay) {
-        dayBtn.className = 'py-1 rounded cursor-pointer border-none text-xs text-white bg-[#4573D2]';
+    const prevMonthDays = new Date(year, month, 0).getDate();
+    const totalCells = 35;
+    const trailingCells = totalCells - offset - daysInMonth;
+
+    const grid = document.createElement('div');
+    grid.className = 'flex flex-col';
+
+    let cellIndex = 0;
+    for (let row = 0; row < 5; row++) {
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'flex items-center justify-center';
+      for (let col = 0; col < 7; col++) {
+        const cell = document.createElement('button');
+        cell.className = 'size-[40px] flex flex-col items-center justify-center rounded-[20px] border-none bg-transparent text-[14px] leading-[20px] font-normal';
+
+        if (cellIndex < offset) {
+          // Previous month trailing days
+          const prevDay = prevMonthDays - offset + 1 + cellIndex;
+          cell.textContent = prevDay;
+          cell.className += ' text-[#1C1C1C] opacity-50 cursor-default';
+        } else if (cellIndex >= offset + daysInMonth) {
+          // Next month leading days
+          const nextDay = cellIndex - offset - daysInMonth + 1;
+          cell.textContent = nextDay;
+          cell.className += ' text-[#1C1C1C] opacity-50 cursor-default';
+        } else {
+          // Current month days
+          const d = cellIndex - offset + 1;
+          cell.textContent = d;
+          if (d === selected.day && month === selected.month && year === selected.year) {
+            cell.className += ' text-[#4573D2] cursor-pointer hover:bg-[#EBEBEB]';
+          } else {
+            cell.className += ' text-[#1C1C1C] cursor-pointer hover:bg-[#EBEBEB]';
+          }
+          const dayNum = d;
+          cell.addEventListener('click', e => { e.stopPropagation(); closeDropdown(); onSelect(year, month, dayNum); });
+        }
+        rowDiv.appendChild(cell);
+        cellIndex++;
       }
-      dayBtn.textContent = d;
-      const dayNum = d;
-      dayBtn.addEventListener('click', e => { e.stopPropagation(); onSelect(year, month, dayNum); });
-      grid.appendChild(dayBtn);
+      grid.appendChild(rowDiv);
     }
     container.appendChild(grid);
+
+    // ── Today Link ──
+    const todayLink = document.createElement('div');
+    todayLink.className = 'flex items-end justify-center pt-[8px] w-full';
+    const todayBtn = document.createElement('button');
+    todayBtn.className = 'text-[12px] leading-[16px] font-normal text-[#4573D2] border-none bg-transparent cursor-pointer';
+    todayBtn.textContent = 'Today';
+    todayBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      closeDropdown();
+      const now = new Date();
+      onSelect(now.getFullYear(), now.getMonth(), now.getDate());
+    });
+    todayLink.appendChild(todayBtn);
+    container.appendChild(todayLink);
   }
 
   function closeCalendar() {
-    if (activePopup) {
-      activePopup.remove();
-      activePopup = null;
-    }
+    closeDropdown();
+    if (activePopup) { activePopup.remove(); activePopup = null; }
   }
 
   document.querySelectorAll('[data-datepicker]').forEach(picker => {
@@ -641,26 +742,24 @@ document.querySelectorAll('section').forEach(sec => {
 
     btn.addEventListener('click', e => {
       e.stopPropagation();
-      // Toggle: if calendar already open for this picker, close it
-      if (activePopup && activePopup.parentElement === relativeWrap) {
-        closeCalendar();
-        return;
-      }
+      if (activePopup && activePopup.parentElement === relativeWrap) { closeCalendar(); return; }
       closeCalendar();
 
       const parsed = parseDate(input.value);
       const popup = document.createElement('div');
-      popup.className = 'absolute top-full left-0 mt-1 w-[220px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] z-20';
-      popup.addEventListener('click', e => e.stopPropagation());
+      popup.className = 'absolute top-full left-0 mt-1 bg-white p-[16px] rounded-[4px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_2px_rgba(0,0,0,0.15)] z-20 flex flex-col items-center justify-center';
+      popup.addEventListener('click', e => { e.stopPropagation(); closeDropdown(); });
 
       function render(y, m) {
-        const selDay = (y === parsed.year && m === parsed.month) ? parsed.day : -1;
-        buildCalendar(popup, y, m, selDay, (sy, sm, sd) => {
+        const d = new Date(y, m, 1);
+        y = d.getFullYear();
+        m = d.getMonth();
+        buildCalendar(popup, y, m, parsed, (sy, sm, sd) => {
           input.value = formatDate(sy, sm, sd);
+          parsed.year = sy; parsed.month = sm; parsed.day = sd;
           closeCalendar();
         }, (ny, nm) => {
-          const d = new Date(ny, nm, 1);
-          render(d.getFullYear(), d.getMonth());
+          render(ny, nm);
         });
       }
 

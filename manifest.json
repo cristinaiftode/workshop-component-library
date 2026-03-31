@@ -857,39 +857,112 @@
     },
 
     "SideNavigation": {
-      "description": "Left sidebar navigation with collapsible menu groups, colored dot indicators, badge counts, and a bottom panel. Always placed on the left side of the screen. Sub-components: MenuGroup (collapsible section with chevron-down-solid), MenuHeader (bold label + optional badge/chevron), MenuItem (regular item + optional dot/badge, hover shows ⋮ more button), SubHeader (uppercase 12px grey label), Header (Inbox header or Sub-page back link), Panel (bottom area with border-top, for buttons/links), NewCategory (+ New category input placeholder).",
+      "description": "Left sidebar navigation with 4 types: 'normal' (collapsible menu groups), 'inbox' (header + groups + panel), 'overview' (bold root items with chevron-right drill-in + bottom icon items), 'subpage' (back-chevron header + groups). Width is always 255px, bg #FAFAFA.",
       "figmaNodeId": "7038:32925",
       "import": "import { SideNavigation } from '@economic/taco';",
       "props": {
+        "type": {
+          "type": "enum",
+          "values": ["normal", "inbox", "overview", "subpage"],
+          "default": "normal",
+          "description": "Navigation layout type. 'normal'=collapsible groups only, 'inbox'=header+groups+panel, 'overview'=root bold items with drill-in, 'subpage'=back header+groups"
+        },
         "title": {
           "type": "string",
-          "description": "Header title (e.g., 'Inbox')"
+          "description": "Header title for inbox type (e.g., 'Inbox')"
         },
         "titleBadge": {
           "type": "string",
-          "description": "Badge count next to the title"
+          "description": "Badge count next to the inbox title"
         },
         "groups": {
           "type": "array",
-          "required": true,
-          "description": "Array of { id, label, badge?, items: [{ id, label, dotColor?, badge?, active? }], expanded? }"
+          "description": "For normal/inbox/subpage types. Array of { id, label, badge?, items: [{ id, label, dot?: 'dot'|'bin', dotColor?, badge?, active? }], expanded? }"
+        },
+        "items": {
+          "type": "array",
+          "description": "For overview type. Array of { id, label, icon?, chevron?, active? }. Bold text, optional left icon + right chevron for drill-in"
+        },
+        "bottomItems": {
+          "type": "array",
+          "description": "For overview type. Items shown in bottom panel section (Inbox, Settings, Log off, etc.) with icons"
         },
         "onItemClick": { "type": "function" },
         "onGroupToggle": { "type": "function" },
+        "onBack": { "type": "function", "description": "Callback for subpage type back button" },
         "showNewCategory": { "type": "boolean", "default": false },
-        "newCategoryLabel": { "type": "string", "default": "+ New category" },
-        "panelContent": { "type": "ReactNode" }
+        "panelContent": { "type": "ReactNode", "description": "Bottom panel content (for inbox type: 'Add documents' button + email links)" }
+      },
+      "subComponents": {
+        "MenuHeader": {
+          "figmaNodeId": "7038:32745",
+          "description": "Bold 14px group header. Two variants: with chevron (collapsible group toggle, rotates -90° when collapsed) or without chevron (standalone label like 'Inbox'). Optional badge (grey pill). 4 states: Normal, Hover (bg rgba(28,28,28,0.06)), Active (bg rgba(0,99,255,0.1)), Active+Hover.",
+          "dimensions": "h-[32px], w-[232px]",
+          "props": "label, badge?, chevron?, expanded?, active?"
+        },
+        "MenuGroup": {
+          "figmaNodeId": "7038:32703",
+          "description": "Collapsible section: MenuHeader + vertical list of MenuItems. When collapsed, items have h-0 + overflow-clip (hidden). When expanded, items visible with gap-px between them.",
+          "props": "label, badge?, items[], expanded?"
+        },
+        "MenuItem": {
+          "figmaNodeId": "7038:32794",
+          "description": "Regular menu item with optional dot indicator (colored circle or trash bin icon) and optional badge count. 4 states: Normal, Hover (bg rgba(28,28,28,0.06)), Active (bg rgba(0,99,255,0.1)), Active+Hover. On hover when badge exists, badge is replaced by ⋮ More icon.",
+          "dimensions": "h-[32px], w-[232px], pl-[20px], pr-[8px]",
+          "props": "label, dot?: 'dot'|'bin', dotColor?, badge?, active?",
+          "dotColors": {
+            "green": "#028465",
+            "yellow": "#E89C2E",
+            "red": "#CE3F42",
+            "blue": "#4573D2"
+          }
+        },
+        "MenuItemOverview": {
+          "figmaNodeId": "7038:32843",
+          "description": "Overview/root-level bold menu item for the 'overview' type. Optional 20px icon on left, optional chevron-right (24px) on right for drill-in to sub-pages. 4 states: Normal, Hover (bg rgba(28,28,28,0.06)), Active (bg rgba(0,99,255,0.1)), Active+Hover.",
+          "dimensions": "h-[32px], w-[232px], pl-[8px]",
+          "props": "label, icon?, chevron?, active?"
+        },
+        "Header": {
+          "figmaNodeId": "7038:32740",
+          "description": "Top header area with border-bottom. Two types: 'inbox' (bold title + badge, no chevron) or 'subpage' (chevron-left + 'Go to overview' back navigation).",
+          "dimensions": "h-[50px], w-[255px], border-b-2 rgba(28,28,28,0.08)",
+          "props": "type: 'inbox'|'subpage', label?, badge?, onBack?"
+        },
+        "Dot": {
+          "figmaNodeId": "7038:32901",
+          "description": "Left-side indicator in MenuItem. Two types: 'dot' (8px colored circle) or 'bin' (20px trash can icon). Dot colors: green=#028465, yellow=#E89C2E, red=#CE3F42, blue=#4573D2.",
+          "dimensions": "w-[16px], h-[24px]",
+          "props": "type: 'dot'|'bin', color?"
+        },
+        "NewCategory": {
+          "figmaNodeId": "7038:32918",
+          "description": "'+ New category' placeholder button. 3 states: Normal (text only, color #9DA3AE), Hover (bg #FAFAFA + border #DDD), Focus (bg #FAFAFA + border #4573D2 + shadow 0 0 0 2px rgba(0,99,255,0.25)).",
+          "dimensions": "h-[32px], w-[232px], pl-[20px]"
+        },
+        "Panel": {
+          "figmaNodeId": "7038:32908",
+          "description": "Bottom panel area with border-top. Contains action button(s) and text links. In Inbox type: 'Add documents' button (default appearance) + 'Send documents via mobile app' text + email link in blue #4573D2.",
+          "dimensions": "border-t-2 rgba(28,28,28,0.08), px-[12px], pt-[14px], pb-[12px]"
+        },
+        "Chevron": {
+          "figmaNodeId": "7038:32892",
+          "description": "Directional arrow icon with 4 variants: collapsed+solid (right-pointing filled triangle), expanded+solid (down-pointing filled triangle), collapsed+outline (right chevron stroke), expanded+outline (left chevron stroke). Solid used in MenuHeader, outline used in Header subpage back and MenuItemOverview drill-in."
+        }
       },
       "styling": {
-        "container": "w-[255px], bg #FAFAFA, border-r rgba(28,28,28,0.08)",
-        "header": "h-[50px], border-b-2 rgba(28,28,28,0.08)",
-        "menuHeader": "h-[32px], w-[232px], bold 14px, chevron-down-solid icon",
-        "menuItem": "h-[32px], w-[232px], pl-[20px], regular 14px, hover bg rgba(28,28,28,0.06), active bg rgba(0,99,255,0.1)",
-        "dotColors": { "green": "#028465", "yellow": "#E89C2E", "red": "#CE3F42", "blue": "#4573D2" },
-        "badge": "bg rgba(28,28,28,0.08), rounded-full, px-[6px]",
-        "panel": "border-t-2 rgba(28,28,28,0.08), px-[12px]"
+        "container": "w-[255px], bg-[#FAFAFA], border-r border-[rgba(28,28,28,0.08)]",
+        "header": "h-[50px], border-b-2 border-[rgba(28,28,28,0.08)]",
+        "menuHeader": "h-[32px], w-[232px], font-bold 14px/20px, chevron-down-solid 16px rotates",
+        "menuItem": "h-[32px], w-[232px], pl-[20px], font-normal 14px/20px, hover bg rgba(28,28,28,0.06), active bg rgba(0,99,255,0.1)",
+        "menuItemOverview": "h-[32px], w-[232px], pl-[8px], font-bold 14px/20px, optional 20px icon + 24px chevron-right",
+        "badge": "bg-[rgba(28,28,28,0.08)], rounded-full, px-[6px], 14px/20px",
+        "panel": "border-t-2 border-[rgba(28,28,28,0.08)], px-[12px], pt-[14px], pb-[12px]",
+        "newCategory": "text-[#9DA3AE], hover: bg #FAFAFA + border #DDD, focus: border #4573D2 + shadow"
       },
-      "usage": "<SideNavigation title=\"Inbox\" groups={menuGroups} />"
+      "usage_normal": "<SideNavigation type=\"normal\" groups={[{ id: 'g1', label: 'Sales', items: [{ id: 'i1', label: 'Invoices' }] }]} />",
+      "usage_inbox": "<SideNavigation type=\"inbox\" title=\"Inbox\" titleBadge=\"12\" groups={inboxGroups} panelContent={<>...</>} />",
+      "usage_overview": "<SideNavigation type=\"overview\" items={[{ id: 'sales', label: 'Sales', chevron: true }]} bottomItems={[{ id: 'inbox', label: 'Inbox', icon: <InboxIcon /> }]} />"
     },
 
     "TopNavigation": {

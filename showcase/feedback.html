@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback &amp; Overlays — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button, input { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Feedback &amp; Overlays</h1>
+
+    <!-- AlertDialog — Error -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">AlertDialog — Error</h2>
+      <div class="relative bg-[#F5F5F5] rounded-[4px] p-8 flex items-center justify-center min-h-[280px]">
+        <div class="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]">
+          <div class="mb-[16px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42]">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <h3 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]">Delete failed</h3>
+          <p class="text-[14px] leading-[20px] text-[#595959] mb-[24px]">The invoice could not be deleted because it has already been booked.</p>
+          <div class="flex justify-end gap-[8px]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Cancel</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">OK</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AlertDialog — Warning -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">AlertDialog — Warning</h2>
+      <div class="relative bg-[#F5F5F5] rounded-[4px] p-8 flex items-center justify-center min-h-[280px]">
+        <div class="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]">
+          <div class="mb-[16px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B]">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+            </span>
+          </div>
+          <h3 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]">Unsaved changes</h3>
+          <p class="text-[14px] leading-[20px] text-[#595959] mb-[24px]">You have unsaved changes. Are you sure you want to leave this page?</p>
+          <div class="flex justify-end gap-[8px]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Stay</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">Leave</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AlertDialog — Info -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">AlertDialog — Info</h2>
+      <div class="relative bg-[#F5F5F5] rounded-[4px] p-8 flex items-center justify-center min-h-[280px]">
+        <div class="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]">
+          <div class="mb-[16px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2]">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <h3 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]">New feature available</h3>
+          <p class="text-[14px] leading-[20px] text-[#595959] mb-[24px]">You can now export invoices directly to PDF. Check the export menu for the new option.</p>
+          <div class="flex justify-end gap-[8px]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Dismiss</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">Got it</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AlertDialog — Confirmation (no badge) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">AlertDialog — Confirmation</h2>
+      <div class="relative bg-[#F5F5F5] rounded-[4px] p-8 flex items-center justify-center min-h-[240px]">
+        <div class="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]">
+          <h3 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]">Send invoice?</h3>
+          <p class="text-[14px] leading-[20px] text-[#595959] mb-[24px]">This will send invoice #1234 to Acme Corporation via email.</p>
+          <div class="flex justify-end gap-[8px]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Cancel</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AlertDialog — Destructive with safety step -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">AlertDialog — Destructive (Safety Step)</h2>
+      <div class="relative bg-[#F5F5F5] rounded-[4px] p-8 flex items-center justify-center min-h-[340px]">
+        <div class="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]">
+          <h3 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]">Delete agreement?</h3>
+          <p class="text-[14px] leading-[20px] text-[#595959] mb-[24px]">This action cannot be undone. All data associated with this agreement will be permanently removed.</p>
+          <div class="mb-[24px]">
+            <p class="text-[14px] leading-[20px] text-[#1C1C1C] mb-[8px]">Type <span class="font-bold">DELETE</span> to confirm:</p>
+            <input type="text" placeholder="DELETE" class="w-full h-[36px] px-[12px] text-[14px] leading-[20px] bg-white border border-[#ACACAC] rounded-[4px] outline-none focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2]" />
+          </div>
+          <div class="flex justify-end gap-[8px]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Cancel</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#CE3F42] opacity-50 cursor-not-allowed border-none">Delete</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Accordion</h2>
+      <div class="bg-white">
+        <!-- Item 1 — expanded -->
+        <div class="border-b border-[#EBEBEB]">
+          <button class="w-full flex items-center justify-between p-[8px] py-[12px] text-left text-[20px] leading-[28px] font-bold text-[#1C1C1C] bg-transparent border-none cursor-pointer">
+            <span>Getting started</span>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+          </button>
+          <div class="px-[8px] pb-[16px]">
+            <div class="text-[14px] leading-[20px] text-[#595959]">Create your first invoice by navigating to Sales → Invoices and clicking the "New Invoice" button. Fill in the customer details, add line items, and click "Save" to create a draft.</div>
+          </div>
+        </div>
+        <!-- Item 2 — collapsed -->
+        <div class="border-b border-[#EBEBEB]">
+          <button class="w-full flex items-center justify-between p-[8px] py-[12px] text-left text-[20px] leading-[28px] font-bold text-[#1C1C1C] bg-transparent border-none cursor-pointer">
+            <span>Managing customers</span>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+          </button>
+        </div>
+        <!-- Item 3 — collapsed -->
+        <div class="border-b border-[#EBEBEB]">
+          <button class="w-full flex items-center justify-between p-[8px] py-[12px] text-left text-[20px] leading-[28px] font-bold text-[#1C1C1C] bg-transparent border-none cursor-pointer">
+            <span>Reports &amp; analytics</span>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ModalDialog — Small -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">ModalDialog — Small (768px)</h2>
+      <div class="relative bg-[rgba(61,65,83,0.15)] rounded-[4px] p-8 flex items-center justify-center min-h-[360px] overflow-hidden">
+        <div class="w-[768px] max-w-full bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] overflow-hidden">
+          <!-- Header -->
+          <div class="flex items-center justify-between px-[24px] py-[16px] border-b border-[#EBEBEB]">
+            <h3 class="text-[24px] leading-[32px] font-bold text-[#1C1C1C] m-0">Edit Invoice</h3>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)]">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+            </button>
+          </div>
+          <!-- Body -->
+          <div class="px-[24px] py-[16px]">
+            <p class="text-[14px] leading-[20px] text-[#595959]">Update the invoice details below. Changes will be saved as a draft until you book the invoice.</p>
+          </div>
+          <!-- Extra content -->
+          <div class="bg-[#F6F6F6] px-[24px] py-[16px] border-t border-[#EBEBEB]">
+            <p class="text-[12px] leading-[16px] text-[#595959]">Last edited: March 15, 2026 by John Doe</p>
+          </div>
+          <!-- Footer -->
+          <div class="flex justify-end gap-[8px] px-[24px] py-[16px] border-t border-[#EBEBEB]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Cancel</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">Save</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ModalDialog — Extra Small (no extra content) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">ModalDialog — XS (512px, no extra content)</h2>
+      <div class="relative bg-[rgba(61,65,83,0.15)] rounded-[4px] p-8 flex items-center justify-center min-h-[300px]">
+        <div class="w-[512px] max-w-full bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] overflow-hidden">
+          <div class="flex items-center justify-between px-[24px] py-[16px] border-b border-[#EBEBEB]">
+            <h3 class="text-[24px] leading-[32px] font-bold text-[#1C1C1C] m-0">Add Customer</h3>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)]">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+            </button>
+          </div>
+          <div class="px-[24px] py-[16px]">
+            <p class="text-[14px] leading-[20px] text-[#595959]">Enter the new customer's details to add them to your contact list.</p>
+          </div>
+          <div class="flex justify-end gap-[8px] px-[24px] py-[16px] border-t border-[#EBEBEB]">
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] border-none cursor-pointer">Cancel</button>
+            <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white bg-[#4573D2] hover:bg-[#3560B5] border-none cursor-pointer">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced TableRow — Selectable + Expandable -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">TableRow — Selectable &amp; Expandable</h2>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="text-xs leading-4 font-bold text-[#595959] border-b-2 border-[#DDDDDD] bg-white">
+            <th class="px-3 py-2 w-[40px]"><input type="checkbox" class="w-[16px] h-[16px] accent-[#4573D2] cursor-pointer" /></th>
+            <th class="px-3 py-2 w-[40px]"></th>
+            <th class="px-3 py-2 text-left">Invoice</th>
+            <th class="px-3 py-2 text-left">Customer</th>
+            <th class="px-3 py-2 text-right">Amount</th>
+            <th class="px-3 py-2 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Selected row -->
+          <tr class="text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-[#DEEBFF] cursor-pointer">
+            <td class="px-3 py-2 w-[40px]"><input type="checkbox" checked class="w-[16px] h-[16px] accent-[#4573D2] cursor-pointer" /></td>
+            <td class="px-3 py-2 w-[40px]">
+              <button class="inline-flex items-center justify-center w-[24px] h-[24px] bg-transparent border-none cursor-pointer text-[#595959] rounded-[4px] hover:bg-[rgba(0,0,0,0.08)]">
+                <svg class="w-[16px] h-[16px] rotate-180" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 6.5l3.5 3 3.5-3"/></svg>
+              </button>
+            </td>
+            <td class="px-3 py-2">#1234</td>
+            <td class="px-3 py-2">Acme Corp</td>
+            <td class="px-3 py-2 text-right">12,500.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#CDF0E7] text-[#14493A]">Paid</span></td>
+          </tr>
+          <!-- Expanded content row -->
+          <tr class="bg-[#F5F5F5] border-b border-[#EBEBEB]">
+            <td colspan="6" class="px-3 py-3 text-sm leading-5 text-[#595959]">
+              <div class="pl-[80px]">Invoice date: 2026-03-01 &middot; Due date: 2026-03-31 &middot; Payment terms: Net 30</div>
+            </td>
+          </tr>
+          <!-- Normal row -->
+          <tr class="text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">
+            <td class="px-3 py-2 w-[40px]"><input type="checkbox" class="w-[16px] h-[16px] accent-[#4573D2] cursor-pointer" /></td>
+            <td class="px-3 py-2 w-[40px]">
+              <button class="inline-flex items-center justify-center w-[24px] h-[24px] bg-transparent border-none cursor-pointer text-[#595959] rounded-[4px] hover:bg-[rgba(0,0,0,0.08)]">
+                <svg class="w-[16px] h-[16px]" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 6.5l3.5 3 3.5-3"/></svg>
+              </button>
+            </td>
+            <td class="px-3 py-2">#1235</td>
+            <td class="px-3 py-2">Nordic Solutions</td>
+            <td class="px-3 py-2 text-right">8,750.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#FFF1C3] text-[#733700]">Pending</span></td>
+          </tr>
+          <!-- Normal row -->
+          <tr class="text-sm leading-5 text-[#1C1C1C] bg-white hover:bg-[#F5F5F5] cursor-pointer">
+            <td class="px-3 py-2 w-[40px]"><input type="checkbox" class="w-[16px] h-[16px] accent-[#4573D2] cursor-pointer" /></td>
+            <td class="px-3 py-2 w-[40px]">
+              <button class="inline-flex items-center justify-center w-[24px] h-[24px] bg-transparent border-none cursor-pointer text-[#595959] rounded-[4px] hover:bg-[rgba(0,0,0,0.08)]">
+                <svg class="w-[16px] h-[16px]" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 6.5l3.5 3 3.5-3"/></svg>
+              </button>
+            </td>
+            <td class="px-3 py-2">#1236</td>
+            <td class="px-3 py-2">TechStart IVS</td>
+            <td class="px-3 py-2 text-right">3,200.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#EBEBEB] text-[#1C1C1C]">Draft</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+<script>
+// ── Accordion ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Accordion')) return;
+  sec.querySelectorAll('.border-b.border-\\[\\#EBEBEB\\]').forEach(item => {
+    const btn = item.querySelector('button');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const chevron = btn.querySelector('svg');
+      const body = item.querySelector('button + div');
+      if (body) {
+        // Currently expanded → collapse
+        body.remove();
+        chevron.classList.remove('rotate-180');
+      } else {
+        // Currently collapsed → expand
+        chevron.classList.add('rotate-180');
+        const content = document.createElement('div');
+        content.className = 'px-[8px] pb-[16px]';
+        content.innerHTML = '<div class="text-[14px] leading-[20px] text-[#595959]">Section content goes here. Click the header again to collapse.</div>';
+        item.appendChild(content);
+      }
+    });
+  });
+});
+
+// ── Destructive AlertDialog safety input ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Destructive')) return;
+  const input = sec.querySelector('input[type="text"]');
+  const deleteBtn = sec.querySelector('button.bg-\\[\\#CE3F42\\]');
+  if (!input || !deleteBtn) return;
+  input.addEventListener('input', () => {
+    const match = input.value === 'DELETE';
+    deleteBtn.classList.toggle('opacity-50', !match);
+    deleteBtn.classList.toggle('cursor-not-allowed', !match);
+    deleteBtn.classList.toggle('cursor-pointer', match);
+  });
+});
+
+// ── TableRow checkboxes ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Selectable')) return;
+  const tbody = sec.querySelector('tbody');
+  if (!tbody) return;
+  // Row checkboxes toggle selection
+  tbody.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const tr = cb.closest('tr');
+      if (cb.checked) {
+        tr.classList.add('bg-[#DEEBFF]');
+        tr.classList.remove('bg-white', 'hover:bg-[#F5F5F5]');
+      } else {
+        tr.classList.remove('bg-[#DEEBFF]');
+        tr.classList.add('bg-white', 'hover:bg-[#F5F5F5]');
+      }
+    });
+  });
+  // Expand buttons toggle detail rows
+  tbody.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const row = btn.closest('tr');
+      const chevron = btn.querySelector('svg');
+      const nextRow = row.nextElementSibling;
+      if (nextRow?.classList.contains('bg-[#F5F5F5]') && nextRow.querySelector('td[colspan]')) {
+        // Collapse
+        nextRow.style.display = nextRow.style.display === 'none' ? '' : 'none';
+        chevron.classList.toggle('rotate-180');
+      } else {
+        // No detail row exists yet — create one
+        chevron.classList.add('rotate-180');
+        const detail = document.createElement('tr');
+        detail.className = 'bg-[#F5F5F5] border-b border-[#EBEBEB]';
+        detail.innerHTML = '<td colspan="6" class="px-3 py-3 text-sm leading-5 text-[#595959]"><div class="pl-[80px]">Expanded row detail content</div></td>';
+        row.after(detail);
+      }
+    });
+  });
+  // Header checkbox selects all
+  const headerCb = sec.querySelector('thead input[type="checkbox"]');
+  if (headerCb) {
+    headerCb.addEventListener('change', () => {
+      tbody.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.checked = headerCb.checked;
+        cb.dispatchEvent(new Event('change'));
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>

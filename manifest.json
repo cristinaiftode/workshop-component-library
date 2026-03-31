@@ -1,0 +1,1106 @@
+{
+  "$schema": "https://ai-component-manifest.org/v1",
+  "$description": "Component manifest for e-conomic Web components design system",
+  "library": {
+    "name": "e-conomic Web Components (TACO)",
+    "package": "@economic/taco",
+    "figmaFileKey": "ZoGBnO9A5jUExnua0wgCIM",
+    "storybook": "https://design.e-conomic.net",
+    "storybookDev": "https://design.e-conomic.ws/storybook/",
+    "styling": "tailwind"
+  },
+
+  "components": {
+    "Button": {
+      "description": "Primary CTA component. Use for all clickable actions.",
+      "figmaComponentKey": "119355264881686a97fd24dd65d055ad1756a56e",
+      "figmaNodeId": "4:78",
+      "storybook": "https://design.e-conomic.ws/storybook/?path=/story/components-button--default",
+      "import": "import { Button } from '@economic/taco';",
+      "props": {
+        "appearance": {
+          "type": "enum",
+          "values": ["default", "primary", "ghost", "discrete", "danger", "transparent"],
+          "default": "default",
+          "description": "Visual style. default=grey bg, primary=blue bg, ghost=outlined, discrete=text-only, danger=red bg, transparent=no bg"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Renders at 50% opacity and non-interactive"
+        },
+        "fluid": {
+          "type": "boolean",
+          "default": false,
+          "description": "If fluid, button expands to the width of its container"
+        },
+        "href": {
+          "type": "string",
+          "description": "Provides url for buttons being used as a link"
+        },
+        "target": {
+          "type": "enum",
+          "values": ["_self", "_blank", "_parent", "_top"],
+          "description": "Provides target for buttons being used as a link"
+        },
+        "tooltip": {
+          "type": "string | Element",
+          "description": "A tooltip to show when hovering over the button"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Button label text and/or icon"
+        },
+        "onClick": {
+          "type": "function",
+          "description": "Click handler"
+        }
+      },
+      "colorMapping": {
+        "default": { "bg": "#EBEBEB", "text": "#1C1C1C", "hoverBg": "#DDDDDD" },
+        "primary": { "bg": "#4573D2", "text": "#FFFFFF", "hoverBg": "#2B57B4" },
+        "ghost": { "bg": "#FFFFFF", "text": "#4573D2", "border": "#4573D2", "hoverBg": "#DEEBFF", "hoverBorder": "#2B57B4" },
+        "discrete": { "bg": "transparent", "text": "#4573D2", "hoverText": "#2B57B4" },
+        "danger": { "bg": "#CE3F42", "text": "#FFFFFF", "hoverBg": "#950027" },
+        "transparent": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "#EBEBEB" }
+      },
+      "usage": "<Button appearance=\"primary\">Save</Button>"
+    },
+
+    "IconButton": {
+      "description": "Icon-only button for toolbar actions, close buttons, etc.",
+      "figmaComponentKey": "3890c7ec1ec511c348c56ff098525cdabeb56082",
+      "import": "import { IconButton } from '@economic/taco';",
+      "props": {
+        "icon": {
+          "type": "string",
+          "required": true,
+          "description": "Icon name from the TACO icon set (e.g., 'edit-simple', 'search', 'close', 'delete', 'settings', 'chevron-down', 'plus-minus', 'filter', 'export', 'print', 'refresh', 'ellipsis-horizontal', 'ellipsis-vertical', 'eye-on', 'eye-off', 'lock', 'lock-open', 'star', 'star-solid', 'attach', 'download', 'upload', 'copy', 'move', 'drag', 'undo', 'link-external', 'info', 'warning', 'calendar', 'person', 'envelope', 'phone', 'chat', 'bell-solid', 'house', 'list', 'document', 'tick', 'remove', 'arrow-up', 'arrow-down', 'arrow-left', 'arrow-right')"
+        },
+        "appearance": {
+          "type": "enum",
+          "values": ["default", "primary", "ghost", "discrete", "danger", "transparent"],
+          "default": "default"
+        },
+        "rounded": {
+          "type": "boolean",
+          "default": false,
+          "description": "Make the button circular"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "tooltip": {
+          "type": "string | ReactElement",
+          "description": "Tooltip text to show on hover"
+        },
+        "aria-label": {
+          "type": "string",
+          "required": true,
+          "description": "Accessible label since there is no visible text"
+        }
+      },
+      "colorMapping": {
+        "default": { "bg": "#EBEBEB", "text": "#1C1C1C", "hoverBg": "#DDDDDD" },
+        "primary": { "bg": "#4573D2", "text": "#FFFFFF", "hoverBg": "#2B57B4" },
+        "ghost": { "bg": "#FFFFFF", "text": "#4573D2", "border": "#4573D2", "hoverBg": "#DEEBFF", "hoverBorder": "#2B57B4" },
+        "discrete": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "rgba(0,0,0,0.08)" },
+        "danger": { "bg": "#CE3F42", "text": "#FFFFFF", "hoverBg": "#950027" },
+        "transparent": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "#EBEBEB" }
+      },
+      "usage": "<IconButton icon=\"edit-simple\" aria-label=\"Edit\" />"
+    },
+
+    "Field": {
+      "description": "Text input field with label and optional helper text. The primary input component.",
+      "figmaComponentKey": "e71387414405a7583f9cf245fcf59d1ef34d4f1a",
+      "props": {
+        "label": {
+          "type": "string",
+          "description": "Field label displayed above the input"
+        },
+        "value": {
+          "type": "string",
+          "description": "Current input value"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "Placeholder text when empty"
+        },
+        "helperText": {
+          "type": "string",
+          "description": "Helper or error text below the input"
+        },
+        "state": {
+          "type": "enum",
+          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "default": "default"
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "usage": "<Field label=\"Company name\" placeholder=\"Enter name\" />"
+    },
+
+    "Textarea": {
+      "description": "Multi-line text input for longer content.",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "number",
+          "default": 3
+        },
+        "state": {
+          "type": "enum",
+          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "default": "default"
+        }
+      },
+      "usage": "<Textarea label=\"Notes\" rows={4} />"
+    },
+
+    "Combobox": {
+      "description": "Searchable dropdown select. Combines text input with a filterable list. Typing filters the options. Click the list button to show all items.",
+      "figmaComponentKey": "3e51b41c9072aae87583d057beb14a6f9b273801",
+      "figmaNodeId": "518:32686",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "description": "Array of { value, label } objects"
+        },
+        "value": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Renders at 50% opacity and non-interactive"
+        },
+        "error": {
+          "type": "boolean",
+          "default": false,
+          "description": "Red border with error shadow"
+        },
+        "highlighted": {
+          "type": "boolean",
+          "default": false,
+          "description": "Blue border with highlight shadow"
+        },
+        "readOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "Grey background, prevents editing and opening"
+        },
+        "modalButton": {
+          "type": "boolean",
+          "default": true,
+          "description": "Controls visibility of the list-search icon button"
+        },
+        "helperText": {
+          "type": "string"
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "styling": {
+        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value input (flex-1, px-[8px] py-[6px])", "Field button (32×32, bg #EBEBEB, list-search icon, 1px left divider)", "Listbox dropdown (elevation shadow, rounded-[4px])"],
+        "listbox": {
+          "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
+          "itemHover": "bg-[rgba(0,99,255,0.1)]",
+          "itemPadding": "px-[8px] py-[6px]",
+          "itemRadius": "rounded-[4px]"
+        }
+      },
+      "usage": "<Combobox label=\"Country\" options={countries} value={val} onChange={setVal} />"
+    },
+
+    "Switch": {
+      "description": "Toggle switch for binary on/off settings.",
+      "props": {
+        "checked": {
+          "type": "boolean",
+          "default": false
+        },
+        "label": {
+          "type": "string",
+          "description": "Optional label displayed next to the switch"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "usage": "<Switch label=\"Enable notifications\" checked={true} />"
+    },
+
+    "RadioGroup": {
+      "description": "Group of radio buttons for single-selection from multiple options. Uses custom styled 16px circular radio buttons.",
+      "figmaComponentKey": "bdad4ea4dab0eb2ceb99b61712233f8967ebf0b5",
+      "figmaNodeId": "463:16471",
+      "props": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "options": {
+          "type": "array",
+          "description": "Array of { value, label } objects"
+        },
+        "value": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "orientation": {
+          "type": "enum",
+          "values": ["vertical", "horizontal"],
+          "default": "vertical",
+          "description": "Layout direction of radio buttons"
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "styling": {
+        "radioCircle": {
+          "size": "16×16px",
+          "unchecked": "border 2px #ACACAC",
+          "checked": "border 4px #4573D2 (thick border creates filled look)"
+        },
+        "radioItem": "py-[6px] gap-[8px] items-start"
+      },
+      "usage": "<RadioGroup name=\"plan\" options={[{value:'free',label:'Free'},{value:'pro',label:'Pro'}]} />"
+    },
+
+    "Tag": {
+      "description": "Small colored label for categorization and status indication. Uses pastel backgrounds with dark text for readability.",
+      "import": "import { Tag } from '@economic/taco';",
+      "props": {
+        "children": {
+          "type": "string",
+          "description": "Tag text"
+        },
+        "color": {
+          "type": "enum",
+          "values": ["blue", "green", "yellow", "red", "purple", "pink", "brown", "orange", "grey"],
+          "default": "blue"
+        },
+        "icon": {
+          "type": "ReactNode",
+          "description": "Optional icon to display before the label"
+        },
+        "onClose": {
+          "type": "function",
+          "description": "If provided, shows a close (×) button"
+        }
+      },
+      "colorMapping": {
+        "blue":   { "bg": "#DEEBFF", "text": "#29283E" },
+        "green":  { "bg": "#CDF0E7", "text": "#14493A" },
+        "yellow": { "bg": "#FFF1C3", "text": "#733700" },
+        "red":    { "bg": "#FFDAD2", "text": "#64001B" },
+        "purple": { "bg": "#EEE5FF", "text": "#412970" },
+        "pink":   { "bg": "#FFE3F7", "text": "#870062" },
+        "brown":  { "bg": "#EEE0DA", "text": "#45291F" },
+        "orange": { "bg": "#FFE3BB", "text": "#4A2811" },
+        "grey":   { "bg": "#EBEBEB", "text": "#1C1C1C" }
+      },
+      "usage": "<Tag color=\"green\">Active</Tag>"
+    },
+
+    "Tooltip": {
+      "description": "Contextual information popup that appears on hover. Dark background with arrow pointing to trigger. Two width modes: auto (shrink-wrap) or fixed 224px.",
+      "figmaNodeId": "112:2358",
+      "storybook": "https://design.e-conomic.ws/components/feedback/tooltip",
+      "props": {
+        "content": {
+          "type": "string",
+          "required": true,
+          "description": "Tooltip text content"
+        },
+        "placement": {
+          "type": "enum",
+          "values": ["top", "bottom", "left", "right"],
+          "default": "top"
+        },
+        "wide": {
+          "type": "boolean",
+          "default": false,
+          "description": "When false (default), tooltip auto-sizes to fit text (no wrapping). When true, tooltip is fixed at 224px wide with text wrapping and left alignment."
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "The element that triggers the tooltip on hover"
+        }
+      },
+      "styling": {
+        "bg": "#29283E",
+        "text": "#FFFFFF",
+        "font": "Helvetica Regular 12px/16px",
+        "padding": "4px 8px",
+        "borderRadius": "4px",
+        "widthModes": {
+          "auto": "shrink-wrap, whitespace-nowrap",
+          "wide": "fixed 224px (w-[224px]), text wraps, text-left"
+        },
+        "arrow": "16px wide × 6px tall CSS triangle, same color as bg",
+        "gap": "8px between arrow tip and trigger element"
+      },
+      "usage": "<Tooltip content=\"Delete this item\" placement=\"top\"><IconButton icon=\"delete\" /></Tooltip>"
+    },
+
+    "ListItem": {
+      "description": "Single item in a list. Can contain text, icons, and actions.",
+      "figmaComponentKey": "73701c0e5fd0bfa858846ca59344f7a23c1d1dcf",
+      "props": {
+        "children": {
+          "type": "ReactNode"
+        },
+        "selected": {
+          "type": "boolean",
+          "default": false
+        },
+        "onClick": {
+          "type": "function"
+        }
+      },
+      "usage": "<ListItem>Invoice #1234</ListItem>"
+    },
+
+    "ListGroup": {
+      "description": "Container for grouping ListItems with an optional header.",
+      "figmaComponentKey": "3ba028984b93491bb031595b9dce06e50569561b",
+      "props": {
+        "title": {
+          "type": "string",
+          "description": "Group header text"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "ListItem children"
+        }
+      },
+      "usage": "<ListGroup title=\"Recent\"><ListItem>Item 1</ListItem></ListGroup>"
+    },
+
+    "TableRow": {
+      "description": "A single row in a data table. Supports header, selectable (checkbox), and expandable variants.",
+      "figmaComponentKey": "a2266214f0fccaaf3b59f08fe4652505b6b8001d",
+      "figmaNodeId": "120:2577",
+      "props": {
+        "cells": {
+          "type": "array",
+          "description": "Array of cell content values"
+        },
+        "selected": { "type": "boolean", "default": false },
+        "selectable": { "type": "boolean", "default": false, "description": "Show selection checkbox" },
+        "header": { "type": "boolean", "default": false, "description": "Render as header row (th, bold, smaller text)" },
+        "expandable": { "type": "boolean", "default": false, "description": "Show expand/collapse chevron" },
+        "expanded": { "type": "boolean", "default": false },
+        "expandContent": { "type": "ReactNode", "description": "Content shown when row is expanded" },
+        "onClick": { "type": "function" },
+        "onSelect": { "type": "function", "description": "Callback when checkbox toggled" },
+        "onToggleExpand": { "type": "function" }
+      },
+      "styling": {
+        "headerRow": "border-b-2 border-[#DDDDDD], text-xs font-bold text-[#595959]",
+        "bodyRow": "border-b border-[#EBEBEB], text-sm text-[#1C1C1C]",
+        "selected": "bg-[#DEEBFF]",
+        "hover": "bg-[#F5F5F5]",
+        "expandedContent": "bg-[#F5F5F5] text-[#595959]"
+      },
+      "usage": "<TableRow cells={['#1234','Acme','12,500 DKK']} selectable selected={false} expandable expandContent={<div>Details</div>} />"
+    },
+
+    "Calendar": {
+      "description": "Single-month date picker calendar. White card with elevation shadow, 7×40px grid of circular date cells. Separate month/year dropdown selectors with chevron-down, and prev/next chevron buttons.",
+      "figmaNodeId": "463:16484",
+      "storybook": "https://design.e-conomic.ws/components/dataInput/calendar",
+      "props": {
+        "selectedDate": {
+          "type": "string",
+          "description": "ISO date string (YYYY-MM-DD)"
+        },
+        "showToday": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 'Today' link at the bottom of the calendar"
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "styling": {
+        "container": "white bg, rounded-[4px], shadow elevation (no border), p-[16px]",
+        "grid": "7 columns × 40px = 280px wide",
+        "dateCell": "40×40px circle (rounded-[20px]), 14px/20px Regular",
+        "dateStates": {
+          "normal": "no bg, text #1C1C1C",
+          "hover": "bg #EBEBEB circle, text #1C1C1C",
+          "active": "no bg, text #4573D2 (blue text only)",
+          "activeHover": "bg #EBEBEB circle, text #4573D2",
+          "disabled": "opacity 50% (outside-month days)"
+        },
+        "dayHeaders": "MON-SUN, uppercase, Regular 12px/20px, text #595959, centered in 40px",
+        "periodHeader": "Month + Year as separate Bold 12px/16px labels with chevron-down icons",
+        "todayLink": "Regular 12px/16px, text #4573D2, hover #75A0F5, centered"
+      }
+    },
+
+    "DatePicker": {
+      "description": "Date input field with a calendar icon button that opens a Calendar dropdown. Combines text input with calendar for date selection.",
+      "figmaNodeId": "463:16608",
+      "storybook": "https://design.e-conomic.ws/components/dataInput/datepicker",
+      "import": "import { DatePicker } from '@economic/taco';",
+      "props": {
+        "label": {
+          "type": "string",
+          "description": "Field label displayed above the input (Bold 12px/16px)"
+        },
+        "value": {
+          "type": "string",
+          "description": "Current date value (ISO date string YYYY-MM-DD)"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "Placeholder text when empty"
+        },
+        "helperText": {
+          "type": "string",
+          "description": "Helper or error text below the input"
+        },
+        "state": {
+          "type": "enum",
+          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "default": "default",
+          "description": "Normal=grey border, Highlighted=blue border, Error=red border, Disabled=50% opacity, ReadOnly=grey bg + disabled calendar button"
+        },
+        "onChange": {
+          "type": "function",
+          "description": "Called with date string when user selects a date"
+        }
+      },
+      "styling": {
+        "field": "160px wide, 32px tall, border #DDD, rounded-[4px], white bg",
+        "value": "px-[8px] py-[6px], Regular 14px/20px, #1C1C1C",
+        "calendarButton": "32×32px, bg #EBEBEB, 1px left divider #DDD, calendar icon, rounded right corners only",
+        "dropdown": "Calendar component positioned below the field"
+      },
+      "usage": "<DatePicker label=\"Invoice date\" placeholder=\"YYYY-MM-DD\" />"
+    },
+
+    "Pagination": {
+      "description": "Navigation between pages of content.",
+      "figmaComponentKey": "0629fc13d19854337b0d2a9c6ad2621f1d97fd68",
+      "props": {
+        "currentPage": {
+          "type": "number"
+        },
+        "totalPages": {
+          "type": "number"
+        },
+        "onPageChange": {
+          "type": "function"
+        }
+      },
+      "usage": "<Pagination currentPage={1} totalPages={10} />"
+    },
+
+    "Form": {
+      "description": "Form container that provides consistent layout and spacing for form fields.",
+      "figmaComponentKey": "69c888a78f5b3499252300a79b6e4db0240b99a7",
+      "props": {
+        "children": {
+          "type": "ReactNode"
+        },
+        "onSubmit": {
+          "type": "function"
+        }
+      },
+      "usage": "<Form><Field label=\"Name\" /><Button appearance=\"Primary\">Save</Button></Form>"
+    },
+
+    "FormGrid": {
+      "description": "Multi-column form layout with vertical dividers between column groups. Each column group stretches equally and contains stacked FormRows.",
+      "figmaNodeId": "518:44640",
+      "storybook": "https://design.e-conomic.ws/components/dataInput/form",
+      "props": {
+        "columns": {
+          "type": "number",
+          "default": 2,
+          "description": "Number of column groups"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Column group elements. Dividers are inserted automatically between them."
+        }
+      },
+      "styling": {
+        "layout": "flex row, column groups are flex-1",
+        "divider": "1px vertical line #DDD with 16px padding on each side between column groups",
+        "formRow": "flex row, gap 16px, fields are flex-1 within the row"
+      },
+      "usage": "<FormGrid><div><FormRow><Field label=\"First\" /><Field label=\"Last\" /></FormRow></div><div><FormRow><Field label=\"Email\" /><Field label=\"Phone\" /></FormRow></div></FormGrid>"
+    },
+
+    "FormRow": {
+      "description": "A row within a FormGrid column group, arranging fields side-by-side with 16px gap.",
+      "figmaNodeId": "504:19089",
+      "props": {
+        "children": {
+          "type": "ReactNode",
+          "description": "Field components arranged horizontally"
+        }
+      },
+      "usage": "<FormRow><Field label=\"First name\" /><Field label=\"Last name\" /></FormRow>"
+    },
+
+    "ModeSwitch": {
+      "description": "Toggle between two modes/views (e.g., list view vs grid view).",
+      "figmaNodeId": "4386:9699",
+      "props": {
+        "checked": {
+          "type": "boolean",
+          "default": false
+        },
+        "labelOff": {
+          "type": "string",
+          "description": "Label for the off/left state"
+        },
+        "labelOn": {
+          "type": "string",
+          "description": "Label for the on/right state"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "usage": "<ModeSwitch labelOff=\"List\" labelOn=\"Grid\" checked={isGrid} onChange={setIsGrid} />"
+    },
+
+    "Select": {
+      "description": "Dropdown select for choosing one option from a predefined list. Click to open, no typing/filtering. Uses chevron icon.",
+      "figmaNodeId": "518:32665",
+      "import": "import { Select } from '@economic/taco';",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "description": "Array of { value, label } objects"
+        },
+        "value": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string",
+          "default": "Select…"
+        },
+        "helperText": {
+          "type": "string"
+        },
+        "state": {
+          "type": "enum",
+          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "default": "default"
+        },
+        "onChange": {
+          "type": "function"
+        }
+      },
+      "styling": {
+        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value display (px-[8px] py-[6px])", "Chevron icon (32×32 area, rotates when open)", "Listbox dropdown (elevation shadow)"],
+        "listbox": {
+          "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
+          "itemHover": "bg-[rgba(0,99,255,0.1)]",
+          "selectedItem": "bg-[rgba(0,99,255,0.1)]"
+        }
+      },
+      "usage": "<Select label=\"Country\" options={countries} value={val} onChange={setVal} />"
+    },
+
+    "SearchInput": {
+      "description": "Text input with a search icon button. Fires onSearch when the icon is clicked or Enter is pressed.",
+      "figmaNodeId": "586:54954",
+      "import": "import { SearchInput } from '@economic/taco';",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "helperText": {
+          "type": "string"
+        },
+        "state": {
+          "type": "enum",
+          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "default": "default"
+        },
+        "onChange": {
+          "type": "function",
+          "description": "Called with the input value on each keystroke"
+        },
+        "onSearch": {
+          "type": "function",
+          "description": "Called with the current value when search icon is clicked or Enter is pressed"
+        }
+      },
+      "styling": {
+        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value input (flex-1, px-[8px] py-[6px])", "Search icon button (32×32, no background, magnifying glass SVG)"]
+      },
+      "usage": "<SearchInput placeholder=\"Search…\" value={query} onChange={setQuery} onSearch={handleSearch} />"
+    },
+
+    "Checkbox": {
+      "description": "Checkbox for selecting one or more options. Supports checked, unchecked, and indeterminate states.",
+      "figmaNodeId": "463:16458",
+      "import": "import { Checkbox } from '@economic/taco';",
+      "props": {
+        "checked": {
+          "type": "boolean",
+          "default": false
+        },
+        "indeterminate": {
+          "type": "boolean",
+          "default": false,
+          "description": "Shows a horizontal dash instead of checkmark. Used for 'select all' when some items are selected."
+        },
+        "label": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "error": {
+          "type": "boolean",
+          "default": false,
+          "description": "Red border when unchecked"
+        },
+        "onChange": {
+          "type": "function",
+          "description": "Called with the new checked boolean"
+        }
+      },
+      "styling": {
+        "box": {
+          "size": "20×20px",
+          "radius": "rounded-[4px]",
+          "unchecked": "bg white, border 1px #595959",
+          "checked": "bg #4573D2, white checkmark SVG",
+          "indeterminate": "bg #4573D2, white horizontal dash SVG"
+        },
+        "layout": "inline-flex items-start gap-[8px] py-[6px]"
+      },
+      "usage": "<Checkbox label=\"I agree\" checked={agreed} onChange={setAgreed} />"
+    },
+
+    "Tabs": {
+      "description": "Horizontal or vertical tab navigation. Organizes content into multiple sections with an active indicator bar.",
+      "figmaNodeId": "485:18001",
+      "storybook": "https://design.e-conomic.ws/components/layout/tabs",
+      "import": "import { Tabs } from '@economic/taco';",
+      "props": {
+        "tabs": {
+          "type": "array",
+          "required": true,
+          "description": "Array of { id, label, disabled? } objects"
+        },
+        "activeTab": {
+          "type": "string",
+          "description": "ID of the currently active tab"
+        },
+        "orientation": {
+          "type": "enum",
+          "values": ["horizontal", "vertical"],
+          "default": "horizontal"
+        },
+        "divider": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show bottom (horizontal) or right (vertical) divider line"
+        },
+        "onChange": {
+          "type": "function",
+          "description": "Called with the tab ID when a tab is clicked"
+        }
+      },
+      "styling": {
+        "tab": "px-[16px] py-[8px], text 14px/20px Regular #1C1C1C",
+        "activeIndicator": "2px bar, bg #4573D2, bottom (horizontal) or left (vertical)",
+        "divider": "shadow-[0px_1px_0px_0px_#ddd] (horizontal) or border-right (vertical)",
+        "hover": "bg rgba(0,0,0,0.08)",
+        "disabled": "opacity 50%, cursor-not-allowed",
+        "verticalTab": "h-[32px]"
+      },
+      "usage": "<Tabs tabs={[{id:'overview',label:'Overview'},{id:'details',label:'Details'}]} activeTab=\"overview\" />"
+    },
+
+    "Drawer": {
+      "description": "Side panel overlay for supplementary content. Contains Header (title, tabs, actions, close), scrollable Body, and Footer with button group.",
+      "figmaNodeId": "7038:36168",
+      "import": "import { Drawer } from '@economic/taco';",
+      "props": {
+        "title": {
+          "type": "string",
+          "description": "Drawer title displayed in the header (24px Regular)"
+        },
+        "showHeader": {
+          "type": "boolean",
+          "default": true
+        },
+        "showFooter": {
+          "type": "boolean",
+          "default": true
+        },
+        "showCloseButton": {
+          "type": "boolean",
+          "default": true
+        },
+        "showBackButton": {
+          "type": "boolean",
+          "default": false
+        },
+        "tabs": {
+          "type": "array",
+          "description": "Optional tabs in header: Array of { id, label }"
+        },
+        "activeTab": {
+          "type": "string"
+        },
+        "onClose": { "type": "function" },
+        "onBack": { "type": "function" },
+        "onTabChange": { "type": "function" },
+        "children": { "type": "ReactNode", "description": "Body content" },
+        "footer": { "type": "ReactNode", "description": "Footer content (typically buttons)" },
+        "actions": { "type": "ReactNode", "description": "Additional action icons in the header" }
+      },
+      "styling": {
+        "container": "w-[420px], border-l #DDD, bg-white, flex column, full height",
+        "header": "p-[16px], border-b #DDD, title 24px/32px",
+        "body": "flex-1, overflow-y-auto, p-[16px]",
+        "footer": "p-[16px], border-t #DDD, button group justify-end gap-[8px]",
+        "closeButton": "p-[6px], 20×20 × icon",
+        "actionDivider": "w-px h-[20px] bg-[#DDD]"
+      },
+      "usage": "<Drawer title=\"Invoice details\" onClose={close}><FormContent /></Drawer>"
+    },
+
+    "AgreementSelector": {
+      "description": "Dark-themed dropdown panel for switching between company agreements. Contains search, agreement list with avatars, and action buttons.",
+      "figmaNodeId": "7038:31849",
+      "import": "import { AgreementSelector } from '@economic/taco';",
+      "props": {
+        "groups": {
+          "type": "array",
+          "description": "Array of { agreements: [{ id, companyName, agreementNumber, isAdmin?, avatarUrl? }] }"
+        },
+        "searchPlaceholder": {
+          "type": "string",
+          "default": "Search for agreement"
+        },
+        "addLabel": {
+          "type": "string",
+          "default": "Tilføj aftale"
+        },
+        "logoutLabel": {
+          "type": "string",
+          "default": "Log af"
+        },
+        "onSearch": { "type": "function" },
+        "onSelect": { "type": "function" },
+        "onAdd": { "type": "function" },
+        "onLogout": { "type": "function" }
+      },
+      "styling": {
+        "container": "w-[256px], bg #29283E",
+        "search": "bg rgba(255,255,255,0.16), hover rgba(255,255,255,0.24), rounded-[4px]",
+        "agreementItem": "bg rgba(255,255,255,0.08), hover rgba(255,255,255,0.16), rounded-[4px]",
+        "avatar": "36×36 rounded-full",
+        "adminBadge": "bg #4573D2, rounded-[10px], px-[4px], bold 12px white",
+        "actionButton": "bg rgba(255,255,255,0.08), hover rgba(255,255,255,0.16)",
+        "divider": "bg #4B4F64, h-px"
+      },
+      "usage": "<AgreementSelector groups={[{agreements:[{id:'1',companyName:'Acme',agreementNumber:'123'}]}]} />"
+    },
+
+    "SideNavigation": {
+      "description": "Left sidebar navigation with collapsible menu groups, colored dot indicators, badge counts, and a bottom panel. Always placed on the left side of the screen. Sub-components: MenuGroup (collapsible section with chevron-down-solid), MenuHeader (bold label + optional badge/chevron), MenuItem (regular item + optional dot/badge, hover shows ⋮ more button), SubHeader (uppercase 12px grey label), Header (Inbox header or Sub-page back link), Panel (bottom area with border-top, for buttons/links), NewCategory (+ New category input placeholder).",
+      "figmaNodeId": "7038:32925",
+      "import": "import { SideNavigation } from '@economic/taco';",
+      "props": {
+        "title": {
+          "type": "string",
+          "description": "Header title (e.g., 'Inbox')"
+        },
+        "titleBadge": {
+          "type": "string",
+          "description": "Badge count next to the title"
+        },
+        "groups": {
+          "type": "array",
+          "required": true,
+          "description": "Array of { id, label, badge?, items: [{ id, label, dotColor?, badge?, active? }], expanded? }"
+        },
+        "onItemClick": { "type": "function" },
+        "onGroupToggle": { "type": "function" },
+        "showNewCategory": { "type": "boolean", "default": false },
+        "newCategoryLabel": { "type": "string", "default": "+ New category" },
+        "panelContent": { "type": "ReactNode" }
+      },
+      "styling": {
+        "container": "w-[255px], bg #FAFAFA, border-r rgba(28,28,28,0.08)",
+        "header": "h-[50px], border-b-2 rgba(28,28,28,0.08)",
+        "menuHeader": "h-[32px], w-[232px], bold 14px, chevron-down-solid icon",
+        "menuItem": "h-[32px], w-[232px], pl-[20px], regular 14px, hover bg rgba(28,28,28,0.06), active bg rgba(0,99,255,0.1)",
+        "dotColors": { "green": "#028465", "yellow": "#E89C2E", "red": "#CE3F42", "blue": "#4573D2" },
+        "badge": "bg rgba(28,28,28,0.08), rounded-full, px-[6px]",
+        "panel": "border-t-2 rgba(28,28,28,0.08), px-[12px]"
+      },
+      "usage": "<SideNavigation title=\"Inbox\" groups={menuGroups} />"
+    },
+
+    "TopNavigation": {
+      "description": "Dark top navigation bar with logo, primary text menu items, secondary round icon buttons (some colored), divider, and agreement selector with avatar. Sub-components: VismaLogo (5 detail levels: Icon+Visma+e-con, Icon+e-con, e-con, Menu hamburger, Splash symbol), PrimaryMenuItem (white text, optional chevron-down for submenus, hover bg rgba(255,255,255,0.08)), SecondaryMenuItem (round 32px icon button, colored backgrounds: None/Orange=#E89C2E/Green=#08AE87/Blue=#4573D2), CurrentAgreement (avatar 36px + company name + agreement number + optional admin Badge, compact mode = avatar only), Avatar (36px round, placeholder image or vector).",
+      "figmaNodeId": "7038:31186",
+      "import": "import { TopNavigation } from '@economic/taco';",
+      "props": {
+        "logoText": {
+          "type": "string",
+          "default": "e",
+          "description": "Logo text or symbol"
+        },
+        "primaryItems": {
+          "type": "array",
+          "description": "Array of { id, label, active?, hasSubmenu? }"
+        },
+        "secondaryItems": {
+          "type": "array",
+          "description": "Array of { id, icon, label, color? } — icon is name like 'search', 'inbox', 'bell', 'chat', 'settings'"
+        },
+        "companyName": { "type": "string" },
+        "agreementNumber": { "type": "string" },
+        "agreementAdmin": { "type": "boolean", "default": false },
+        "avatarUrl": { "type": "string" },
+        "onPrimaryClick": { "type": "function" },
+        "onSecondaryClick": { "type": "function" },
+        "onAgreementClick": { "type": "function" }
+      },
+      "styling": {
+        "container": "bg #29283E, h-[64px], full width",
+        "primaryItem": "px-[12px] py-[8px], white 14px, hover bg rgba(255,255,255,0.08), rounded-[4px]",
+        "secondaryItem": "p-[6px], rounded-full (32px), 24×24 icon, colored bg optional",
+        "iconColors": { "chat": "#08AE87", "e-copedia": "#08AE87", "settings": "#E89C2E" },
+        "divider": "w-px h-[36px] bg rgba(255,255,255,0.3)",
+        "agreement": "avatar 36×36, white text, chevron-down, hover bg rgba(255,255,255,0.1)",
+        "adminBadge": "bg #4573D2, rounded-[10px], px-[4px], bold 12px white"
+      },
+      "usage": "<TopNavigation primaryItems={[{id:'home',label:'Hjem'}]} companyName=\"Acme\" agreementNumber=\"1234567\" />"
+    },
+
+    "AlertDialog": {
+      "description": "Modal alert dialog with variant badges. Use for confirmations, errors, warnings, info, and destructive actions.",
+      "figmaNodeId": "4409:46514",
+      "import": "import { AlertDialog } from '@economic/taco';",
+      "props": {
+        "open": { "type": "boolean", "default": true },
+        "variant": {
+          "type": "enum",
+          "values": ["error", "warning", "info", "confirmation", "destructive"],
+          "default": "confirmation",
+          "description": "error=red badge, warning=yellow badge, info=blue badge, confirmation=no badge, destructive=red confirm + safety step"
+        },
+        "title": { "type": "string", "required": true },
+        "message": { "type": "string", "required": true },
+        "confirmLabel": { "type": "string", "default": "OK" },
+        "cancelLabel": { "type": "string", "default": "Cancel" },
+        "safetyText": { "type": "string", "description": "For destructive: user must type this text to enable confirm button" },
+        "onConfirm": { "type": "function" },
+        "onCancel": { "type": "function" }
+      },
+      "styling": {
+        "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
+        "card": "w-[512px] rounded-[8px] p-[24px] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)]",
+        "badge": "20×20 rounded-full — error=#CE3F42, warning=#FFBD3B, info=#4573D2",
+        "title": "16px/24px bold #1C1C1C",
+        "message": "14px/20px #595959",
+        "footer": "flex justify-end gap-[8px]"
+      },
+      "usage": "<AlertDialog variant=\"error\" title=\"Delete failed\" message=\"Could not delete the invoice.\" onConfirm={fn} onCancel={fn} />"
+    },
+
+    "Accordion": {
+      "description": "Collapsible content section with chevron toggle. Supports single or multiple open items.",
+      "figmaNodeId": "7967:52058",
+      "import": "import { Accordion } from '@economic/taco';",
+      "props": {
+        "items": {
+          "type": "array",
+          "description": "Array of { id, title, content } objects",
+          "required": true
+        },
+        "multiple": { "type": "boolean", "default": false, "description": "Allow multiple items open simultaneously" },
+        "defaultOpen": { "type": "array", "description": "Array of item ids to open by default" }
+      },
+      "styling": {
+        "item": "border-b border-[#EBEBEB]",
+        "title": "text-[20px] leading-[28px] font-bold p-[8px] py-[12px]",
+        "body": "text-[14px] leading-[20px] text-[#595959] px-[8px] pb-[16px]",
+        "chevron": "24×24, rotates 180° when open, transition 200ms",
+        "focusRing": "focus-visible:border-2 border-[#2B57B4] rounded-[4px]"
+      },
+      "usage": "<Accordion items={[{id:'1',title:'Section',content:'Body text'}]} />"
+    },
+
+    "ModalDialog": {
+      "description": "Large modal dialog with 4 size variants, close button, optional extra content area, and footer actions.",
+      "figmaNodeId": "289:4412",
+      "import": "import { ModalDialog } from '@economic/taco';",
+      "props": {
+        "open": { "type": "boolean", "default": true },
+        "size": {
+          "type": "enum",
+          "values": ["xs", "s", "m", "l"],
+          "default": "xs",
+          "description": "xs=512px, s=768px, m=1024px, l=1280px"
+        },
+        "title": { "type": "string", "required": true },
+        "children": { "type": "ReactNode", "description": "Main body content" },
+        "extraContent": { "type": "ReactNode", "description": "Optional grey area below body (bg-[#F6F6F6])" },
+        "confirmLabel": { "type": "string", "default": "Save" },
+        "cancelLabel": { "type": "string", "default": "Cancel" },
+        "onConfirm": { "type": "function" },
+        "onClose": { "type": "function" }
+      },
+      "styling": {
+        "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
+        "card": "rounded-[8px] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)]",
+        "header": "px-[24px] py-[16px] border-b border-[#EBEBEB], title 24px/32px bold, close button 32×32",
+        "body": "px-[24px] py-[16px], flex-1 overflow-y-auto",
+        "extraContent": "bg-[#F6F6F6] px-[24px] py-[16px] border-t border-[#EBEBEB]",
+        "footer": "px-[24px] py-[16px] border-t border-[#EBEBEB] flex justify-end gap-[8px]"
+      },
+      "usage": "<ModalDialog size=\"s\" title=\"Edit Invoice\" onConfirm={fn} onClose={fn}>Body content</ModalDialog>"
+    },
+
+    "CardList": {
+      "description": "Container for card-style list items. Supports separated (gap between cards) and grouped (joined borders, shared rounded corners) layouts.",
+      "figmaNodeId": "5317:33171",
+      "import": "import { CardList } from '@economic/taco';",
+      "props": {
+        "variant": {
+          "type": "enum",
+          "values": ["separated", "grouped"],
+          "default": "separated",
+          "description": "separated = gap-[8px] between items with individual rounded-[10px]; grouped = joined with shared borders, first/last rounded-[8px]"
+        },
+        "children": { "type": "ReactNode", "required": true, "description": "CardListItem children" }
+      },
+      "styling": {
+        "separated": "flex flex-col gap-[8px], each child rounded-[10px]",
+        "grouped": "flex flex-col, shared borders with -mt-px overlap, first-child rounded-t-[8px], last-child rounded-b-[8px]"
+      },
+      "usage": "<CardList variant=\"separated\">{items}</CardList>"
+    },
+
+    "CardListItem": {
+      "description": "Rich card-style list item with 6 interaction types: link-internal (chevron-right), link-external (open-in-new icon), button (no trailing icon), switch (toggle), checkbox (tick), collapsible (expandable content).",
+      "figmaNodeId": "7488:46805",
+      "import": "import { CardListItem } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": ["link-internal", "link-external", "button", "switch", "checkbox", "collapsible"],
+          "default": "link-internal",
+          "description": "Determines trailing element and interaction behavior"
+        },
+        "title": { "type": "string", "required": true },
+        "description": { "type": "string" },
+        "status": { "type": "ReactNode", "description": "Status text after title — use <Status> component" },
+        "icon": { "type": "ReactNode", "description": "Left icon — use <ListIcon> component" },
+        "checked": { "type": "boolean", "default": false, "description": "For switch and checkbox types" },
+        "expanded": { "type": "boolean", "default": false, "description": "For collapsible type" },
+        "expandContent": { "type": "ReactNode", "description": "Content shown when collapsible is expanded" },
+        "onClick": { "type": "function" },
+        "onCheckedChange": { "type": "function", "description": "Callback for switch/checkbox toggle" },
+        "onExpandedChange": { "type": "function", "description": "Callback for collapsible expand/collapse" }
+      },
+      "styling": {
+        "container": "bg-white border border-[#DDDDDD], min-h-[64px], p-[12px], gap-[12px]",
+        "hover": "bg-[rgba(0,0,0,0.08)]",
+        "title": "14px/20px bold #1C1C1C",
+        "description": "14px/20px #595959",
+        "switch": "36×20 pill — off=#ACACAC, on=#4573D2, white 16px circle thumb",
+        "checkbox": "20×20 rounded-[4px] — unchecked border-[#595959], checked bg-[#4573D2] with white tick"
+      },
+      "usage": "<CardListItem type=\"link-internal\" title=\"Account\" description=\"Manage account\" icon={<ListIcon color=\"blue\" />} />"
+    },
+
+    "ListIcon": {
+      "description": "Colored icon container for use inside CardListItem. 40×40px square with rounded corners and colored background from the tag palette.",
+      "figmaNodeId": "7488:46967",
+      "import": "import { ListIcon } from '@economic/taco';",
+      "props": {
+        "color": {
+          "type": "enum",
+          "values": ["grey", "blue", "green", "yellow", "red", "pink", "purple", "brown", "orange"],
+          "default": "grey",
+          "description": "Background color: grey=rgba(28,28,28,0.08), blue=#DEEBFF, green=#CDF0E7, yellow=#FFF1C3, red=#FFDAD2, pink=#FFE3F7, purple=#EEE5FF, brown=#EEE0DA, orange=#FFE3BB"
+        },
+        "icon": { "type": "ReactNode", "description": "24×24 icon element; defaults to book placeholder" }
+      },
+      "styling": {
+        "container": "40×40px, rounded-[4px], border border-[rgba(0,0,0,0.08)], overflow-hidden"
+      },
+      "usage": "<ListIcon color=\"blue\" icon={<MyIcon />} />"
+    },
+
+    "Status": {
+      "description": "Inline colored text label used inside CardListItem to show status after the title. Bold 14px text in 5 semantic colors.",
+      "figmaNodeId": "7488:46990",
+      "import": "import { Status } from '@economic/taco';",
+      "props": {
+        "color": {
+          "type": "enum",
+          "values": ["green", "yellow", "red", "blue", "grey"],
+          "default": "green",
+          "description": "green=#028465 (Success), yellow=#E89C2E (Warning), red=#CE3F42 (Error), blue=#4573D2 (Info), grey=#ACACAC (Neutral)"
+        },
+        "children": { "type": "ReactNode", "required": true }
+      },
+      "usage": "<Status color=\"green\">(Active)</Status>"
+    }
+  }
+}

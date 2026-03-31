@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Display Components</h1>
+
+    <!-- Tags — All 9 Colors -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tag — 9 Colors</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#DEEBFF] text-[#29283E]">Blue</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]">Green</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]">Yellow</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]">Red</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]">Purple</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3F7] text-[#870062]">Pink</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE0DA] text-[#45291F]">Brown</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3BB] text-[#4A2811]">Orange</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]">Grey</span>
+      </div>
+    </section>
+
+    <!-- Tags — With Close -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tag — With Close Button</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#DEEBFF] text-[#29283E]">
+          Active
+          <span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span>
+        </span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]">
+          Paid
+          <span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span>
+        </span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]">
+          Pending
+          <span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span>
+        </span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]">
+          Overdue
+          <span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span>
+        </span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]">
+          In Review
+          <span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Tags — In Context -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tag — Usage Examples</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]">Paid</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]">Pending</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]">Overdue</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]">Draft</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]">New</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]">Archived</span>
+      </div>
+    </section>
+
+    <!-- Tooltip — Auto-width (default) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tooltip — Auto-width (hover the buttons)</h2>
+      <p class="text-xs text-[#595959] mb-4">Default mode: tooltip shrink-wraps to fit text, no wrapping.</p>
+      <div class="flex flex-wrap items-center gap-10 py-10 justify-center">
+        <!-- Top -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Top</button>
+          <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            Tooltip on top
+            <span class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#29283E]"></span>
+          </span>
+        </span>
+        <!-- Bottom -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Bottom</button>
+          <span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            Tooltip on bottom
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[6px] border-b-[#29283E]"></span>
+          </span>
+        </span>
+        <!-- Left -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Left</button>
+          <span class="absolute right-full top-1/2 -translate-y-1/2 mr-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            Tooltip on left
+            <span class="absolute top-1/2 -translate-y-1/2 left-full w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[6px] border-l-[#29283E]"></span>
+          </span>
+        </span>
+        <!-- Right -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Right</button>
+          <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            Tooltip on right
+            <span class="absolute top-1/2 -translate-y-1/2 right-full w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[6px] border-r-[#29283E]"></span>
+          </span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Tooltip — 224px Wide -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tooltip — 224px Wide (hover the buttons)</h2>
+      <p class="text-xs text-[#595959] mb-4">Wide mode (<code class="bg-[#EBEBEB] px-1 rounded">wide=true</code>): fixed 224px width, text wraps and is left-aligned.</p>
+      <div class="flex flex-wrap items-center gap-10 py-10 justify-center">
+        <!-- Top wide -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Top wide</button>
+          <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal w-[224px] text-left opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            This tooltip is always 224px wide and text wraps to the next line when needed
+            <span class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#29283E]"></span>
+          </span>
+        </span>
+        <!-- Right wide -->
+        <span class="relative inline-flex group">
+          <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Right wide</button>
+          <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-[8px] py-[4px] rounded-[4px] bg-[#29283E] text-white text-[12px] leading-[16px] font-normal w-[224px] text-left opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+            This tooltip is always 224px wide and text wraps to the next line when needed
+            <span class="absolute top-1/2 -translate-y-1/2 right-full w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[6px] border-r-[#29283E]"></span>
+          </span>
+        </span>
+      </div>
+    </section>
+
+    <!-- ListGroup / ListItem -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">ListGroup &amp; ListItem</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- With header -->
+        <div class="border border-[#DDDDDD] rounded-[4px] overflow-hidden">
+          <div class="px-3 py-2 bg-[#F5F5F5] border-b border-[#DDDDDD] text-xs leading-4 font-bold text-[#1C1C1C]">Recent Invoices</div>
+          <ul class="list-none m-0 p-0">
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-[#DEEBFF] cursor-pointer">Invoice #1234</li>
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">Invoice #1235</li>
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] bg-white hover:bg-[#F5F5F5] cursor-pointer">Invoice #1236</li>
+          </ul>
+        </div>
+        <!-- Without header -->
+        <div class="border border-[#DDDDDD] rounded-[4px] overflow-hidden">
+          <ul class="list-none m-0 p-0">
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">Acme Corporation</li>
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">Nordic Solutions ApS</li>
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">Visma e-conomic</li>
+            <li class="px-3 py-2 text-sm leading-5 text-[#1C1C1C] bg-white hover:bg-[#F5F5F5] cursor-pointer">TechStart IVS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TableRow -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">TableRow</h2>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b-2 border-[#DDDDDD]">
+            <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#595959]">Invoice</th>
+            <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#595959]">Customer</th>
+            <th class="px-3 py-2 text-right text-xs leading-4 font-bold text-[#595959]">Amount</th>
+            <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#595959]">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-[#DEEBFF] cursor-pointer">
+            <td class="px-3 py-2">#1234</td>
+            <td class="px-3 py-2">Acme Corp</td>
+            <td class="px-3 py-2 text-right">12,500.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#CDF0E7] text-[#14493A]">Paid</span></td>
+          </tr>
+          <tr class="text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">
+            <td class="px-3 py-2">#1235</td>
+            <td class="px-3 py-2">Nordic Solutions</td>
+            <td class="px-3 py-2 text-right">8,750.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#FFF1C3] text-[#733700]">Pending</span></td>
+          </tr>
+          <tr class="text-sm leading-5 text-[#1C1C1C] border-b border-[#EBEBEB] bg-white hover:bg-[#F5F5F5] cursor-pointer">
+            <td class="px-3 py-2">#1236</td>
+            <td class="px-3 py-2">TechStart IVS</td>
+            <td class="px-3 py-2 text-right">3,200.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#EBEBEB] text-[#1C1C1C]">Draft</span></td>
+          </tr>
+          <tr class="text-sm leading-5 text-[#1C1C1C] bg-white hover:bg-[#F5F5F5] cursor-pointer">
+            <td class="px-3 py-2">#1237</td>
+            <td class="px-3 py-2">Visma e-conomic</td>
+            <td class="px-3 py-2 text-right">45,000.00 DKK</td>
+            <td class="px-3 py-2"><span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal bg-[#FFDAD2] text-[#64001B]">Overdue</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+<script>
+// ── Tag close buttons ──
+document.querySelectorAll('span[class*="cursor-pointer"][class*="hover\\:opacity-70"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tag = btn.closest('span[class*="inline-flex"]');
+    if (tag) tag.remove();
+  });
+});
+</script>
+</body>
+</html>

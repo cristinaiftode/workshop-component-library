@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigation &amp; Layout — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button, input { font-weight: 400; }
+    .switch-thumb { transition: transform 0.2s; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Navigation &amp; Layout</h1>
+
+    <!-- Calendar — With Today button -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Calendar — With Today Button</h2>
+      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+        <!-- Period selection header -->
+        <div class="flex items-center justify-between w-[280px]">
+          <div class="flex items-center">
+            <div class="flex items-center h-[32px] cursor-pointer">
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">November</span>
+              <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+            </div>
+            <div class="flex items-center h-[32px] cursor-pointer">
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">2022</span>
+              <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-[4px]">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5l-5 5 5 5"/></svg>
+            </button>
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5l5 5-5 5"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Day headers -->
+        <div class="grid grid-cols-7 pt-[8px]">
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">MON</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">TUE</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">WED</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">THU</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">FRI</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SAT</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SUN</div>
+        </div>
+        <!-- Date grid (November 2022 starts on Tuesday) -->
+        <div class="grid grid-cols-7">
+          <!-- Row 1: trailing Oct 31 + Nov 1-6 -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">31</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">1</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">2</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">3</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">4</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">5</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">6</button>
+          <!-- Row 2: 7-13 (8 is selected/active = blue text) -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">7</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#4573D2]">8</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">9</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">10</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">11</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">12</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">13</button>
+          <!-- Row 3: 14-20 -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">14</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">15</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">16</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">17</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">18</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">19</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">20</button>
+          <!-- Row 4: 21-27 (22 is hover demo = grey circle) -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">21</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C]">22</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">23</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">24</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">25</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">26</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">27</button>
+          <!-- Row 5: 28-30 + Dec 1-4 disabled -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">28</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">29</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">30</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">1</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">2</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">3</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">4</button>
+        </div>
+        <!-- Today link -->
+        <div class="flex items-end justify-center pt-[8px] w-full">
+          <button class="text-[12px] leading-[16px] font-normal text-[#4573D2] hover:text-[#75A0F5] cursor-pointer outline-none bg-transparent border-none">Today</button>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-3">8th is selected (blue text). 22nd shows hover state (grey circle). Oct 31 &amp; Dec 1-4 are disabled (50% opacity).</p>
+    </section>
+
+    <!-- Calendar — Without Today button -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Calendar — Without Today Button</h2>
+      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+        <div class="flex items-center justify-between w-[280px]">
+          <div class="flex items-center">
+            <div class="flex items-center h-[32px] cursor-pointer">
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">March</span>
+              <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+            </div>
+            <div class="flex items-center h-[32px] cursor-pointer">
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">2026</span>
+              <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-[4px]">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5l-5 5 5 5"/></svg>
+            </button>
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5l5 5-5 5"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-7 pt-[8px]">
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">MON</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">TUE</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">WED</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">THU</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">FRI</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SAT</div>
+          <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SUN</div>
+        </div>
+        <div class="grid grid-cols-7">
+          <!-- March 2026 starts on Sunday → 6 empty leading cells -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">23</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">24</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">25</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">26</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">27</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">28</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">1</button>
+          <!-- 2-8 -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">2</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">3</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">4</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">5</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">6</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">7</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">8</button>
+          <!-- 9-15 (15 selected) -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">9</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">10</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">11</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">12</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">13</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">14</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#4573D2]">15</button>
+          <!-- 16-22 -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">16</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">17</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">18</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">19</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">20</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">21</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">22</button>
+          <!-- 23-29 -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">23</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">24</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">25</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">26</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">27</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">28</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">29</button>
+          <!-- 30-31 + trailing -->
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">30</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">31</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">1</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">2</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">3</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">4</button>
+          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">5</button>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-3">Without today button variant. 15th is selected (blue text only, no background).</p>
+    </section>
+
+    <!-- Pagination -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Pagination</h2>
+      <div class="flex flex-col gap-4">
+        <!-- Short -->
+        <div>
+          <span class="text-xs text-[#595959] mb-2 block">Few pages</span>
+          <nav class="inline-flex items-center gap-1">
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none text-[#1C1C1C] opacity-50 cursor-not-allowed pointer-events-none">&#8249;</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer bg-[#4573D2] text-white font-bold">1</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">2</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">3</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">4</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">5</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8250;</button>
+          </nav>
+        </div>
+        <!-- Long with ellipsis -->
+        <div>
+          <span class="text-xs text-[#595959] mb-2 block">Many pages (page 5 of 20)</span>
+          <nav class="inline-flex items-center gap-1">
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8249;</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">1</button>
+            <span class="min-w-[32px] h-8 inline-flex items-center justify-center text-sm text-[#595959]">...</span>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">4</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer bg-[#4573D2] text-white font-bold">5</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">6</button>
+            <span class="min-w-[32px] h-8 inline-flex items-center justify-center text-sm text-[#595959]">...</span>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">20</button>
+            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8250;</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- FormGrid — 2 Column Groups with Divider -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">FormGrid — 2 Column Groups</h2>
+      <p class="text-xs text-[#595959] mb-4">Column groups separated by a vertical divider. Each group contains stacked FormRows with side-by-side fields.</p>
+
+      <!-- FormGrid: flex container with 2 column groups and divider -->
+      <div class="flex items-start font-['Helvetica',Arial,sans-serif] antialiased">
+        <!-- Column group 1 -->
+        <div class="flex-1 flex flex-col items-start min-w-0 gap-0">
+          <!-- FormRow 1 -->
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">First name</label>
+              <input type="text" placeholder="Enter first name" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Last name</label>
+              <input type="text" placeholder="Enter last name" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+          <!-- FormRow 2 -->
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Email address</label>
+              <input type="email" placeholder="name@company.dk" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Phone</label>
+              <input type="tel" placeholder="+45 00 00 00 00" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical divider -->
+        <div class="flex items-start self-stretch px-[16px] shrink-0">
+          <div class="w-px h-full bg-[#DDDDDD]"></div>
+        </div>
+
+        <!-- Column group 2 -->
+        <div class="flex-1 flex flex-col items-start min-w-0 gap-0">
+          <!-- FormRow 1 -->
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Company</label>
+              <input type="text" placeholder="Company name" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">CVR</label>
+              <input type="text" placeholder="00000000" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+          <!-- FormRow 2 -->
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">City</label>
+              <input type="text" placeholder="City" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Postal code</label>
+              <input type="text" placeholder="0000" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FormGrid — 3 Column Groups with Dividers -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">FormGrid — 3 Column Groups</h2>
+      <p class="text-xs text-[#595959] mb-4">Three column groups with vertical dividers between each. Demonstrates scalability.</p>
+
+      <div class="flex items-start font-['Helvetica',Arial,sans-serif] antialiased">
+        <!-- Column group 1 -->
+        <div class="flex-1 flex flex-col items-start min-w-0 gap-0">
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Account no.</label>
+              <input type="text" placeholder="1234" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Name</label>
+              <input type="text" value="Revenue" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider 1 -->
+        <div class="flex items-start self-stretch px-[16px] shrink-0">
+          <div class="w-px h-full bg-[#DDDDDD]"></div>
+        </div>
+
+        <!-- Column group 2 -->
+        <div class="flex-1 flex flex-col items-start min-w-0 gap-0">
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Debit</label>
+              <input type="text" placeholder="0.00" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Credit</label>
+              <input type="text" placeholder="0.00" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider 2 -->
+        <div class="flex items-start self-stretch px-[16px] shrink-0">
+          <div class="w-px h-full bg-[#DDDDDD]"></div>
+        </div>
+
+        <!-- Column group 3 -->
+        <div class="flex-1 flex flex-col items-start min-w-0 gap-0">
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">VAT code</label>
+              <input type="text" value="S1" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+          <div class="flex gap-[16px] items-start w-full">
+            <div class="flex-1 flex flex-col items-stretch">
+              <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Description</label>
+              <input type="text" placeholder="Add note" class="h-[32px] w-full px-[8px] py-[6px] box-border rounded-[4px] border outline-none text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs — Horizontal -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tabs — Horizontal (with divider)</h2>
+      <div class="bg-white inline-flex items-start shadow-[0px_1px_0px_0px_#ddd]">
+        <button class="flex flex-col items-center overflow-clip rounded-tl-[4px] rounded-tr-[4px] relative">
+          <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C] text-center whitespace-nowrap">Overview</span></div>
+          <span class="bg-[#4573D2] h-[2px] w-full rounded-tl-[2px] rounded-tr-[2px]"></span>
+        </button>
+        <button class="flex flex-col items-center overflow-clip rounded-tl-[4px] rounded-tr-[4px] relative hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C] text-center whitespace-nowrap">Details</span></div>
+          <span class="bg-[#4573D2] h-[2px] w-full opacity-0"></span>
+        </button>
+        <button class="flex flex-col items-center overflow-clip rounded-tl-[4px] rounded-tr-[4px] relative hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C] text-center whitespace-nowrap">History</span></div>
+          <span class="bg-[#4573D2] h-[2px] w-full opacity-0"></span>
+        </button>
+        <button class="flex flex-col items-center overflow-clip rounded-tl-[4px] rounded-tr-[4px] relative opacity-50 cursor-not-allowed">
+          <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C] text-center whitespace-nowrap">Settings</span></div>
+          <span class="bg-[#4573D2] h-[2px] w-full opacity-0"></span>
+        </button>
+      </div>
+      <p class="text-xs text-[#595959] mt-3">Active indicator: 2px blue bar. Bottom divider via shadow. Disabled tab at 50% opacity.</p>
+    </section>
+
+    <!-- Tabs — Vertical -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tabs — Vertical</h2>
+      <div class="bg-white inline-flex flex-col items-start border-r border-[#DDDDDD]">
+        <button class="flex items-center h-[32px] relative">
+          <span class="bg-[#4573D2] w-[2px] h-full rounded-tr-[2px] rounded-br-[2px]"></span>
+          <span class="px-[16px] text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Tab one</span>
+        </button>
+        <button class="flex items-center h-[32px] relative hover:bg-[rgba(0,0,0,0.08)]">
+          <span class="bg-[#4573D2] w-[2px] h-full opacity-0"></span>
+          <span class="px-[16px] text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Tab two</span>
+        </button>
+        <button class="flex items-center h-[32px] relative hover:bg-[rgba(0,0,0,0.08)]">
+          <span class="bg-[#4573D2] w-[2px] h-full opacity-0"></span>
+          <span class="px-[16px] text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Tab three</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Drawer -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Drawer Anatomy</h2>
+      <div class="inline-flex flex-col w-[420px] h-[500px] border-l border-[#DDDDDD] bg-white">
+        <!-- Header -->
+        <div class="bg-white border-b border-[#DDDDDD] flex flex-col">
+          <div class="flex items-start p-[16px] gap-[8px]">
+            <div class="flex-1 flex items-center gap-[12px]">
+              <span class="text-[24px] leading-[32px] text-[#1C1C1C]">Invoice details</span>
+            </div>
+            <div class="flex items-center">
+              <!-- Action icons -->
+              <button class="p-[6px] rounded-[4px] hover:bg-[#EBEBEB]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#595959" stroke-width="1.5"><path d="M4 14l3-3m0 0L4 8m3 3h9"/></svg>
+              </button>
+              <button class="p-[6px] rounded-[4px] hover:bg-[#EBEBEB]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#595959" stroke-width="1.5"><path d="M5 4h10M7 4V3h6v1M8 8v6M12 8v6M3 4h14l-1 13H4L3 4z"/></svg>
+              </button>
+              <div class="w-px h-[20px] bg-[#DDDDDD] mx-0"></div>
+              <!-- Close button -->
+              <button class="p-[6px] rounded-[4px] hover:bg-[#EBEBEB]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#595959" stroke-width="1.5" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- Tabs in header -->
+          <div class="px-[16px]">
+            <div class="bg-white flex items-start shadow-[0px_1px_0px_0px_#ddd]">
+              <button class="flex flex-col items-center">
+                <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C]">Details</span></div>
+                <span class="bg-[#4573D2] h-[2px] w-full rounded-tl-[2px] rounded-tr-[2px]"></span>
+              </button>
+              <button class="flex flex-col items-center">
+                <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C]">Lines</span></div>
+                <span class="bg-[#4573D2] h-[2px] w-full opacity-0"></span>
+              </button>
+              <button class="flex flex-col items-center">
+                <div class="px-[16px] py-[8px]"><span class="text-[14px] leading-[20px] text-[#1C1C1C]">Log</span></div>
+                <span class="bg-[#4573D2] h-[2px] w-full opacity-0"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Body -->
+        <div class="flex-1 overflow-y-auto p-[16px]">
+          <div class="border border-dashed border-[#DDDDDD] rounded-[4px] h-full flex items-center justify-center text-[14px] text-[#595959]">
+            Scrollable body content
+          </div>
+        </div>
+        <!-- Footer -->
+        <div class="bg-white border-t border-[#DDDDDD] p-[16px]">
+          <div class="flex gap-[8px] justify-end">
+            <button class="h-[32px] px-[12px] rounded-[4px] text-[14px] leading-[20px] bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Cancel</button>
+            <button class="h-[32px] px-[12px] rounded-[4px] text-[14px] leading-[20px] bg-[#4573D2] text-white hover:bg-[#2B57B4]">Save</button>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-3">Header with title, action icons, close button, tabs. Body scrollable. Footer with button group.</p>
+    </section>
+
+    <!-- Agreement Selector -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Agreement Selector</h2>
+      <div class="w-[256px] bg-[#29283E] flex flex-col">
+        <!-- Agreements and search -->
+        <div class="flex-1 flex flex-col gap-[4px] items-center overflow-clip p-[8px]">
+          <!-- Search -->
+          <div class="bg-[rgba(255,255,255,0.16)] flex items-center justify-between px-[8px] py-[4px] rounded-[4px] w-[240px]">
+            <span class="text-[14px] leading-[20px] text-[#DDDDDD]">Search for agreement</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="6" stroke="#DDDDDD" stroke-width="1.5"/><line x1="15" y1="15" x2="20" y2="20" stroke="#DDDDDD" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <!-- Admin group -->
+          <div class="flex flex-col gap-px w-[240px]">
+            <div class="bg-[rgba(255,255,255,0.08)] rounded-tl-[4px] rounded-tr-[4px] p-[8px] flex items-center gap-[8px]">
+              <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[14px] leading-[20px] text-white truncate">Acme Corporation</p>
+                <div class="flex items-center gap-[4px]">
+                  <span class="text-[12px] leading-[16px] text-white">1234567 Abc</span>
+                  <span class="bg-[#4573D2] rounded-[10px] px-[4px] text-[12px] leading-[16px] font-bold text-white">Admin</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[rgba(255,255,255,0.08)] p-[8px] flex items-center gap-[8px]">
+              <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[14px] leading-[20px] text-white truncate">Subsidiary Ltd</p>
+                <span class="text-[12px] leading-[16px] text-white">7654321 Xyz</span>
+              </div>
+            </div>
+            <div class="bg-[rgba(255,255,255,0.08)] rounded-bl-[4px] rounded-br-[4px] p-[8px] flex items-center gap-[8px]">
+              <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[14px] leading-[20px] text-white truncate">Partner Agency</p>
+                <span class="text-[12px] leading-[16px] text-white">9876543 Def</span>
+              </div>
+            </div>
+          </div>
+          <!-- Single agreement -->
+          <div class="bg-[rgba(255,255,255,0.08)] rounded-[4px] p-[8px] flex items-center gap-[8px] w-[240px]">
+            <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[14px] leading-[20px] text-white truncate">Solo Enterprise</p>
+              <span class="text-[12px] leading-[16px] text-white">5555555 Ghi</span>
+            </div>
+          </div>
+        </div>
+        <!-- Actions -->
+        <div class="w-[256px] px-[8px] pb-[8px]">
+          <div class="bg-[rgba(255,255,255,0.08)] rounded-[4px] px-[8px] py-[6px] text-center">
+            <span class="text-[14px] leading-[20px] text-white">Tilføj aftale</span>
+          </div>
+          <div class="bg-[#4B4F64] h-px my-[8px]"></div>
+          <div class="rounded-[4px] px-[8px] py-[6px] text-center">
+            <span class="text-[14px] leading-[20px] text-white">Log af</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Navigation -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Side Navigation</h2>
+      <div class="w-[255px] bg-[#FAFAFA] border-r border-[rgba(28,28,28,0.08)] flex flex-col h-[500px]">
+        <!-- Header -->
+        <div class="border-b-2 border-[rgba(28,28,28,0.08)] flex flex-col h-[50px] items-center py-[8px]">
+          <div class="flex h-[32px] items-center gap-[4px] pl-[20px] pr-[8px] py-[10px] rounded-[4px] w-[232px]">
+            <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Inbox</span>
+            <span class="bg-[rgba(28,28,28,0.08)] rounded-full px-[6px] text-[14px] leading-[20px] text-[#1C1C1C]">12</span>
+          </div>
+        </div>
+        <!-- Menu area -->
+        <div class="flex-1 overflow-y-auto p-[12px]">
+          <!-- Menu Group: Documents (expanded) -->
+          <div class="flex flex-col mb-[2px]">
+            <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+              <div class="p-[2px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C"><path d="M4 6l4 4 4-4z"/></svg>
+              </div>
+              <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Documents</span>
+            </button>
+            <div class="flex flex-col gap-px">
+              <div class="flex gap-[4px] h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px] bg-[rgba(0,99,255,0.1)]">
+                <div class="w-[16px] h-[24px] flex items-center"><div class="w-[8px] h-[8px] rounded-full bg-[#028465]"></div></div>
+                <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Ready for completion</span>
+                <span class="bg-[rgba(28,28,28,0.08)] rounded-full px-[6px] text-[14px] leading-[20px] text-[#1C1C1C]">5</span>
+              </div>
+              <div class="flex gap-[4px] h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+                <div class="w-[16px] h-[24px] flex items-center"><div class="w-[8px] h-[8px] rounded-full bg-[#E89C2E]"></div></div>
+                <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Pending approval</span>
+              </div>
+              <div class="flex gap-[4px] h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+                <div class="w-[16px] h-[24px] flex items-center"><div class="w-[8px] h-[8px] rounded-full bg-[#CE3F42]"></div></div>
+                <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Rejected documents</span>
+                <span class="bg-[rgba(28,28,28,0.08)] rounded-full px-[6px] text-[14px] leading-[20px] text-[#1C1C1C]">2</span>
+              </div>
+            </div>
+          </div>
+          <!-- Menu Group: Processing (collapsed) -->
+          <div class="flex flex-col mb-[2px]">
+            <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+              <div class="p-[2px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C" class="-rotate-90"><path d="M4 6l4 4 4-4z"/></svg>
+              </div>
+              <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Processing</span>
+              <span class="bg-[#4573D2] rounded-full px-[6px] font-bold text-[14px] leading-[20px] text-white">3</span>
+            </button>
+          </div>
+          <!-- Menu Group: Categories (expanded) -->
+          <div class="flex flex-col">
+            <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+              <div class="p-[2px]">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C"><path d="M4 6l4 4 4-4z"/></svg>
+              </div>
+              <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Categories</span>
+            </button>
+            <div class="flex flex-col gap-px">
+              <div class="flex h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+                <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Travel expenses</span>
+                <span class="bg-[rgba(28,28,28,0.08)] rounded-full px-[6px] text-[14px] leading-[20px] text-[#1C1C1C]">8</span>
+              </div>
+              <div class="flex h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px]">
+                <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Office supplies</span>
+                <span class="bg-[rgba(28,28,28,0.08)] rounded-full px-[6px] text-[14px] leading-[20px] text-[#1C1C1C]">3</span>
+              </div>
+              <div class="flex h-[32px] items-center pl-[20px] pr-[8px] rounded-[4px] w-[232px]">
+                <span class="text-[14px] leading-[20px] text-[#9DA3AE]">+ New category</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Panel -->
+        <div class="border-t-2 border-[rgba(28,28,28,0.08)] px-[12px] pt-[14px] pb-[12px]">
+          <button class="h-[32px] w-full px-[12px] rounded-[4px] text-[14px] leading-[20px] bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Upload documents</button>
+          <p class="text-[12px] leading-[16px] text-[#4573D2] text-center mt-[8px]">880bilag1365412@e-conomic.dk</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Navigation -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Top Navigation</h2>
+      <div class="bg-[#29283E] h-[64px] w-full flex items-center justify-between rounded-[4px]">
+        <!-- Primary menu -->
+        <div class="flex gap-[8px] items-center pl-[28px]">
+          <!-- Logo -->
+          <div class="flex items-center justify-center px-[8px] h-[36px] rounded-[4px]">
+            <span class="text-white text-[20px] font-bold">e</span>
+          </div>
+          <!-- Primary items -->
+          <div class="flex gap-[4px] items-start">
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Hjem</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap bg-[rgba(255,255,255,0.08)]">Salg</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Regnskab</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Rapporter</button>
+            <button class="flex items-center gap-[4px] pl-[12px] pr-[4px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white whitespace-nowrap">
+              Lager
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7.5 10l4.5 4 4.5-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Secondary menu -->
+        <div class="flex gap-[16px] items-center pr-[8px]">
+          <div class="flex gap-[8px] items-center">
+            <!-- Icon buttons -->
+            <button class="p-[6px] rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><line x1="15" y1="15" x2="20" y2="20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <button class="p-[6px] rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8h16v10H4z" stroke="white" stroke-width="1.5"/><path d="M4 12h16" stroke="white" stroke-width="1.5"/></svg></button>
+            <button class="p-[6px] rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a7 7 0 017 7v4l2 2H3l2-2v-4a7 7 0 017-7zM10 19h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <button class="p-[6px] rounded-full bg-[#08AE87]"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4a2 2 0 00-2 2v12a2 2 0 002 2h14l4 4V4a2 2 0 00-2-2z"/></svg></button>
+            <button class="p-[6px] rounded-full bg-[#E89C2E]"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
+          </div>
+          <!-- Divider -->
+          <div class="w-px h-[36px] bg-[rgba(255,255,255,0.3)]"></div>
+          <!-- Current agreement -->
+          <div class="flex items-center px-[8px] py-[4px] rounded-[4px] gap-[8px] hover:bg-[rgba(255,255,255,0.1)] cursor-pointer">
+            <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
+            <div class="flex flex-col min-w-0">
+              <span class="text-[14px] leading-[20px] text-white truncate">Company name</span>
+              <div class="flex items-center gap-[4px]">
+                <span class="text-[12px] leading-[16px] text-white">1234567 Abc</span>
+                <span class="bg-[#4573D2] rounded-[10px] px-[4px] text-[12px] leading-[16px] font-bold text-white">Admin</span>
+              </div>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7.5 10l4.5 4 4.5-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-3">Dark top bar (64px) with logo, primary text items, secondary round icon buttons (some colored), divider, and agreement selector with avatar.</p>
+    </section>
+
+    <!-- ModeSwitch -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">ModeSwitch</h2>
+      <div class="flex flex-col gap-4">
+        <!-- With labels -->
+        <div class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C]">
+          <span class="text-[#595959]">List</span>
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#4573D2] cursor-pointer">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[18px]"></span>
+          </span>
+          <span class="font-bold">Grid</span>
+        </div>
+        <!-- Off state -->
+        <div class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C]">
+          <span class="font-bold">Monthly</span>
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#ACACAC] cursor-pointer">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[3px]"></span>
+          </span>
+          <span class="text-[#595959]">Yearly</span>
+        </div>
+        <!-- Disabled -->
+        <div class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C] opacity-50">
+          <span class="text-[#595959]">Simple</span>
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#ACACAC] cursor-not-allowed">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[3px]"></span>
+          </span>
+          <span class="text-[#595959]">Advanced</span>
+        </div>
+      </div>
+    </section>
+  </div>
+<script>
+// ── Tabs (horizontal + vertical + drawer) ──
+function initTabs(container) {
+  const buttons = Array.from(container.children).filter(b => b.tagName === 'BUTTON');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('opacity-50') || btn.classList.contains('cursor-not-allowed')) return;
+      buttons.forEach(b => {
+        const indicator = b.querySelector('span[class*="bg-[#4573D2]"]');
+        if (indicator) indicator.classList.add('opacity-0');
+        b.classList.remove('bg-[rgba(0,0,0,0.08)]');
+      });
+      const indicator = btn.querySelector('span[class*="bg-[#4573D2]"]');
+      if (indicator) indicator.classList.remove('opacity-0');
+    });
+  });
+}
+// Horizontal tabs
+document.querySelectorAll('section').forEach(sec => {
+  const h2 = sec.querySelector('h2');
+  if (h2?.textContent.includes('Tabs — Horizontal')) {
+    initTabs(sec.querySelector('.inline-flex'));
+  }
+  if (h2?.textContent.includes('Tabs — Vertical')) {
+    initTabs(sec.querySelector('.inline-flex'));
+  }
+});
+// Drawer tabs
+document.querySelectorAll('.shadow-\\[0px_1px_0px_0px_\\#ddd\\]').forEach(tabGroup => {
+  if (tabGroup.closest('section')?.querySelector('h2')?.textContent.includes('Drawer')) {
+    initTabs(tabGroup);
+  }
+});
+
+// ── Side Navigation menu groups ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Side Navigation')) return;
+  sec.querySelectorAll('button').forEach(btn => {
+    const chevron = btn.querySelector('svg[viewBox="0 0 16 16"]');
+    if (!chevron) return;
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.flex.flex-col');
+      const items = group?.querySelector('.flex.flex-col.gap-px');
+      if (!items) {
+        // Collapsed — no items container, but chevron should show it is collapsed
+        return;
+      }
+      const isHidden = items.style.display === 'none';
+      items.style.display = isHidden ? '' : 'none';
+      chevron.classList.toggle('-rotate-90', !isHidden);
+      chevron.classList.remove(isHidden ? '-rotate-90' : '');
+    });
+  });
+});
+
+// ── ModeSwitch toggles ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('ModeSwitch')) return;
+  sec.querySelectorAll('.inline-flex:not(.opacity-50)').forEach(row => {
+    const track = row.querySelector('span.relative');
+    if (!track || track.classList.contains('cursor-not-allowed')) return;
+    const labels = row.querySelectorAll(':scope > span:not(.relative)');
+    track.addEventListener('click', () => {
+      const thumb = track.querySelector('.switch-thumb');
+      const isOn = track.classList.contains('bg-[#4573D2]');
+      track.classList.toggle('bg-[#4573D2]', !isOn);
+      track.classList.toggle('bg-[#ACACAC]', isOn);
+      thumb.classList.toggle('translate-x-[18px]', !isOn);
+      thumb.classList.toggle('translate-x-[3px]', isOn);
+      // Swap bold labels
+      if (labels.length >= 2) {
+        labels[0].classList.toggle('font-bold', isOn);
+        labels[0].classList.toggle('text-[#595959]', !isOn);
+        labels[1].classList.toggle('font-bold', !isOn);
+        labels[1].classList.toggle('text-[#595959]', isOn);
+      }
+    });
+  });
+});
+
+// ── Top Navigation primary items ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Top Navigation')) return;
+  const items = sec.querySelectorAll('.flex.gap-\\[4px\\] > button');
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      items.forEach(b => b.classList.remove('bg-[rgba(255,255,255,0.08)]'));
+      btn.classList.add('bg-[rgba(255,255,255,0.08)]');
+    });
+  });
+});
+</script>
+</body>
+</html>

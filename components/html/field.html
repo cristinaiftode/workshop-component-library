@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field - e-conomic Design System</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: var(--font-family);
+      padding: var(--spacing-xxxl);
+      background: #f8f8f8;
+      color: var(--color-grey-900);
+    }
+    h1 { font-size: var(--font-size-2xl); margin-bottom: var(--spacing-xxl); }
+    h2 { font-size: var(--font-size-lg); margin: var(--spacing-xxl) 0 var(--spacing-l); color: var(--color-grey-900); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-xxl);
+      margin-bottom: var(--spacing-l);
+    }
+    .variant-label { font-size: var(--font-size-xs); color: #888; margin-bottom: var(--spacing-xs); }
+  </style>
+</head>
+<body>
+
+<h1>Field Component</h1>
+
+<!-- ===== Default ===== -->
+<h2>Default</h2>
+<div class="grid">
+  <div>
+    <div class="variant-label">With label + helper</div>
+    <div class="eco-field">
+      <label class="eco-field__label">Company name</label>
+      <input class="eco-field__input" type="text" value="Visma e-conomic" />
+      <span class="eco-field__helper">Legal company name</span>
+    </div>
+  </div>
+  <div>
+    <div class="variant-label">Label only</div>
+    <div class="eco-field">
+      <label class="eco-field__label">Email</label>
+      <input class="eco-field__input" type="text" placeholder="Enter email" />
+    </div>
+  </div>
+  <div>
+    <div class="variant-label">Input only</div>
+    <div class="eco-field">
+      <input class="eco-field__input" type="text" value="Text" />
+    </div>
+  </div>
+</div>
+
+<!-- ===== Error ===== -->
+<h2>Error</h2>
+<div class="grid">
+  <div>
+    <div class="variant-label">With label + error message</div>
+    <div class="eco-field">
+      <label class="eco-field__label">VAT number</label>
+      <input class="eco-field__input eco-field__input--error" type="text" value="123" />
+      <span class="eco-field__helper eco-field__helper--error">Invalid VAT number</span>
+    </div>
+  </div>
+  <div>
+    <div class="variant-label">Input only</div>
+    <div class="eco-field">
+      <input class="eco-field__input eco-field__input--error" type="text" value="Text" />
+    </div>
+  </div>
+</div>
+
+<!-- ===== Highlighted ===== -->
+<h2>Highlighted</h2>
+<div class="grid">
+  <div>
+    <div class="variant-label">With label + helper</div>
+    <div class="eco-field">
+      <label class="eco-field__label">Account number</label>
+      <input class="eco-field__input eco-field__input--highlighted" type="text" value="1234-5678" />
+      <span class="eco-field__helper">Recently modified</span>
+    </div>
+  </div>
+  <div>
+    <div class="variant-label">Input only</div>
+    <div class="eco-field">
+      <input class="eco-field__input eco-field__input--highlighted" type="text" value="Text" />
+    </div>
+  </div>
+</div>
+
+<!-- ===== Disabled ===== -->
+<h2>Disabled</h2>
+<div class="grid">
+  <div>
+    <div class="variant-label">With label + helper</div>
+    <div class="eco-field eco-field--disabled">
+      <label class="eco-field__label">Company name</label>
+      <input class="eco-field__input" type="text" value="Visma e-conomic" disabled />
+      <span class="eco-field__helper">Cannot be changed</span>
+    </div>
+  </div>
+  <div>
+    <div class="variant-label">Input only</div>
+    <div class="eco-field eco-field--disabled">
+      <input class="eco-field__input" type="text" value="Text" disabled />
+    </div>
+  </div>
+</div>
+
+<!-- ===== Read-only ===== -->
+<h2>Read-only</h2>
+<div class="grid">
+  <div>
+    <div class="variant-label">With label</div>
+    <div class="eco-field">
+      <label class="eco-field__label">Invoice number</label>
+      <input class="eco-field__input eco-field__input--readonly" type="text" value="INV-2024-001" readonly />
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

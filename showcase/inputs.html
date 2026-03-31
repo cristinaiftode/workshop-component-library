@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inputs — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button, input, textarea, select { font-weight: 400; }
+    /* Switch transition */
+    .switch-thumb { transition: transform 0.2s; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Inputs</h1>
+
+    <!-- Field -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Field — States</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Default -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Company name</label>
+          <input type="text" placeholder="Enter name" class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+        </div>
+        <!-- With value -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">CVR number</label>
+          <input type="text" value="12345678" class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white" />
+        </div>
+        <!-- Error -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Email</label>
+          <input type="text" value="not-an-email" class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] border-[#CE3F42] focus:border-[#CE3F42] focus:shadow-[0_0_0_1px_#CE3F42] bg-white" />
+          <span class="text-xs leading-4 text-[#CE3F42]">Please enter a valid email</span>
+        </div>
+        <!-- Highlighted -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Account number</label>
+          <input type="text" value="1234" class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-[#FFF1C3]" />
+          <span class="text-xs leading-4 text-[#595959]">Modified — not yet saved</span>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 opacity-50 font-normal">Disabled field</label>
+          <input type="text" value="Cannot edit" disabled class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] border-[#DDDDDD] bg-white opacity-50 cursor-not-allowed" />
+        </div>
+        <!-- Read-only -->
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Read-only field</label>
+          <input type="text" value="Read only value" readonly class="h-8 w-full px-2 py-1.5 box-border rounded-[4px] border outline-none text-sm leading-5 font-normal text-[#1C1C1C] border-[#DDDDDD] bg-[#F5F5F5] cursor-default" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Textarea -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Textarea</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Notes</label>
+          <textarea rows="3" placeholder="Add notes..." class="w-full px-2 py-1.5 box-border rounded-[4px] border outline-none resize-y text-sm leading-5 font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] border-[#DDDDDD] hover:border-[#ACACAC] focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2] bg-white"></textarea>
+        </div>
+        <div class="flex flex-col items-stretch">
+          <label class="text-xs leading-4 text-[#1C1C1C] py-1 font-bold">Description</label>
+          <textarea rows="3" class="w-full px-2 py-1.5 box-border rounded-[4px] border outline-none resize-y text-sm leading-5 font-normal text-[#1C1C1C] border-[#CE3F42] focus:border-[#CE3F42] focus:shadow-[0_0_0_1px_#CE3F42] bg-white">Too short</textarea>
+          <span class="text-xs leading-4 text-[#CE3F42]">Minimum 20 characters required</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combobox -->
+    <!-- Combobox — with field button and elevation dropdown -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Combobox</h2>
+      <div class="flex flex-wrap items-start gap-6">
+        <!-- With modal button + open dropdown -->
+        <div class="flex flex-col items-stretch relative w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Country</label>
+          <div class="flex h-[32px] border rounded-[4px] overflow-hidden border-[#4573D2] shadow-[0_0_0_1px_#4573D2] bg-white">
+            <input type="text" placeholder="Search..." class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC]" />
+            <button class="flex items-center justify-center w-[32px] h-full shrink-0 bg-[#EBEBEB] border-l border-l-[#DDDDDD] cursor-pointer hover:bg-[#DDDDDD]">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="1" y1="3" x2="9" y2="3" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="7" x2="7" y2="7" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="11" x2="5" y2="11" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><circle cx="10.5" cy="10.5" r="3" stroke="#1C1C1C" stroke-width="1.5"/><line x1="12.5" y1="13" x2="14.5" y2="15" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <!-- Listbox dropdown (elevation shadow) -->
+          <ul class="mt-0.5 bg-white rounded-[4px] p-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] bg-[rgba(0,99,255,0.1)] font-bold cursor-pointer">Denmark</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Finland</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Norway</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Sweden</li>
+          </ul>
+        </div>
+        <!-- Without modal button -->
+        <div class="flex flex-col items-stretch w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Currency</label>
+          <div class="flex h-[32px] border rounded-[4px] overflow-hidden border-[#DDDDDD] hover:border-[#ACACAC] bg-white">
+            <input type="text" value="DKK - Danish Krone" class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C]" />
+          </div>
+          <span class="text-[12px] leading-[16px] text-[#595959]">No modal button</span>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-stretch w-[160px] opacity-50">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Disabled</label>
+          <div class="flex h-[32px] border rounded-[4px] overflow-hidden border-[#DDDDDD] bg-white cursor-not-allowed">
+            <input type="text" value="Denmark" disabled class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C] cursor-not-allowed" />
+            <button disabled class="flex items-center justify-center w-[32px] h-full shrink-0 bg-[#EBEBEB] border-l border-l-[#DDDDDD] cursor-not-allowed">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="opacity-50"><line x1="1" y1="3" x2="9" y2="3" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="7" x2="7" y2="7" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="11" x2="5" y2="11" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><circle cx="10.5" cy="10.5" r="3" stroke="#1C1C1C" stroke-width="1.5"/><line x1="12.5" y1="13" x2="14.5" y2="15" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- ReadOnly -->
+        <div class="flex flex-col items-stretch w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Read-only</label>
+          <div class="flex h-[32px] border rounded-[4px] overflow-hidden border-[#DDDDDD] bg-[#F5F5F5]">
+            <input type="text" value="Denmark" readonly class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-[#F5F5F5] text-[14px] leading-[20px] font-normal text-[#1C1C1C] cursor-default" />
+            <button disabled class="flex items-center justify-center w-[32px] h-full shrink-0 bg-[#EBEBEB] border-l border-l-[#DDDDDD] cursor-not-allowed opacity-50">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="1" y1="3" x2="9" y2="3" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="7" x2="7" y2="7" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="11" x2="5" y2="11" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/><circle cx="10.5" cy="10.5" r="3" stroke="#1C1C1C" stroke-width="1.5"/><line x1="12.5" y1="13" x2="14.5" y2="15" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Select -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Select</h2>
+      <div class="flex flex-wrap items-start gap-6">
+        <!-- Normal with dropdown -->
+        <div class="flex flex-col items-stretch relative w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Country</label>
+          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#4573D2] shadow-[0_0_0_1px_#4573D2] bg-white cursor-pointer">
+            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate">Denmark</span>
+            <span class="flex items-center justify-center w-[32px] h-[32px] shrink-0">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="rotate-180"><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <ul class="mt-0.5 bg-white rounded-[4px] px-[4px] py-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] bg-[rgba(0,99,255,0.1)] cursor-pointer">Denmark</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Finland</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Norway</li>
+          </ul>
+        </div>
+        <!-- Closed state -->
+        <div class="flex flex-col items-stretch w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Currency</label>
+          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#DDDDDD] hover:border-[#ACACAC] bg-white cursor-pointer">
+            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate">DKK</span>
+            <span class="flex items-center justify-center w-[32px] h-[32px] shrink-0">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <span class="text-[12px] leading-[16px] text-[#595959]">Billing currency</span>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-stretch w-[160px] opacity-50">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Disabled</label>
+          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#DDDDDD] bg-white cursor-not-allowed">
+            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#ACACAC] truncate">Select…</span>
+            <span class="flex items-center justify-center w-[32px] h-[32px] shrink-0">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SearchInput -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">SearchInput</h2>
+      <div class="flex flex-wrap items-start gap-6">
+        <!-- Normal -->
+        <div class="flex flex-col items-stretch w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Search</label>
+          <div class="flex items-stretch h-8 box-border rounded-[4px] border border-[#DDDDDD] hover:border-[#ACACAC] bg-white focus-within:border-[#4573D2] focus-within:shadow-[0_0_0_1px_#4573D2]">
+            <input type="text" placeholder="Search…" class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC]" />
+            <button class="flex items-center justify-center w-8 h-8 shrink-0 border-none bg-transparent p-0 cursor-pointer">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#595959" stroke-width="1.5"/><line x1="10.06" y1="10.06" x2="14" y2="14" stroke="#595959" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- With value -->
+        <div class="flex flex-col items-stretch w-[160px]">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Search</label>
+          <div class="flex items-stretch h-8 box-border rounded-[4px] border border-[#DDDDDD] bg-white">
+            <input type="text" value="Invoice #1234" class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C]" />
+            <button class="flex items-center justify-center w-8 h-8 shrink-0 border-none bg-transparent p-0 cursor-pointer">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#595959" stroke-width="1.5"/><line x1="10.06" y1="10.06" x2="14" y2="14" stroke="#595959" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-stretch w-[160px] opacity-50">
+          <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Disabled</label>
+          <div class="flex items-stretch h-8 box-border rounded-[4px] border border-[#DDDDDD] bg-white cursor-not-allowed">
+            <input type="text" disabled placeholder="Search…" class="flex-1 min-w-0 px-[8px] py-[6px] border-none outline-none bg-transparent text-[14px] leading-[20px] font-normal text-[#1C1C1C] placeholder:text-[#ACACAC] cursor-not-allowed" />
+            <button disabled class="flex items-center justify-center w-8 h-8 shrink-0 border-none bg-transparent p-0 cursor-not-allowed">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#595959" stroke-width="1.5"/><line x1="10.06" y1="10.06" x2="14" y2="14" stroke="#595959" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Switch -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Switch</h2>
+      <div class="flex flex-col gap-4">
+        <!-- On -->
+        <label class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C] cursor-pointer">
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#4573D2] cursor-pointer">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[18px]"></span>
+          </span>
+          <span>Enable notifications</span>
+        </label>
+        <!-- Off -->
+        <label class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C] cursor-pointer">
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#ACACAC] cursor-pointer">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[3px]"></span>
+          </span>
+          <span>Auto-save drafts</span>
+        </label>
+        <!-- Disabled -->
+        <label class="inline-flex items-center gap-2 text-sm leading-5 text-[#1C1C1C] opacity-50 cursor-not-allowed">
+          <span class="relative inline-flex items-center w-9 h-5 rounded-full bg-[#ACACAC] cursor-not-allowed">
+            <span class="switch-thumb absolute w-3.5 h-3.5 rounded-full bg-white translate-x-[3px]"></span>
+          </span>
+          <span>Disabled switch</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- DatePicker -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">DatePicker — States</h2>
+      <div class="flex flex-wrap items-end gap-6">
+        <!-- Normal -->
+        <div class="inline-flex flex-col items-start">
+          <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Invoice date</label></div>
+          <div class="relative w-[160px]">
+            <div class="flex items-center h-[32px] w-full bg-white border border-[#DDDDDD] rounded-[4px] overflow-clip hover:border-[#ACACAC]">
+              <input type="text" value="2022-11-08" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" />
+              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar">
+                <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
+                <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#595959]">Normal</span></div>
+        </div>
+        <!-- Highlighted -->
+        <div class="inline-flex flex-col items-start">
+          <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Due date</label></div>
+          <div class="relative w-[160px]">
+            <div class="flex items-center h-[32px] w-full bg-white border border-[#4573D2] rounded-[4px] overflow-clip shadow-[0_0_0_1px_#4573D2]">
+              <input type="text" value="2022-12-01" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" />
+              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar">
+                <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
+                <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#595959]">Highlighted</span></div>
+        </div>
+        <!-- Error -->
+        <div class="inline-flex flex-col items-start">
+          <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Start date</label></div>
+          <div class="relative w-[160px]">
+            <div class="flex items-center h-[32px] w-full bg-white border border-[#CE3F42] rounded-[4px] overflow-clip shadow-[0_0_0_1px_#CE3F42]">
+              <input type="text" value="invalid" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" />
+              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar">
+                <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
+                <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#CE3F42]">Invalid date</span></div>
+        </div>
+        <!-- Disabled -->
+        <div class="inline-flex flex-col items-start opacity-50">
+          <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">End date</label></div>
+          <div class="relative w-[160px]">
+            <div class="flex items-center h-[32px] w-full bg-white border border-[#DDDDDD] rounded-[4px] overflow-clip">
+              <input type="text" value="2022-11-30" disabled class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C] cursor-not-allowed" />
+              <button disabled class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-not-allowed" aria-label="Open calendar">
+                <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
+                <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#595959]">Disabled</span></div>
+        </div>
+        <!-- ReadOnly -->
+        <div class="inline-flex flex-col items-start">
+          <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Created</label></div>
+          <div class="relative w-[160px]">
+            <div class="flex items-center h-[32px] w-full bg-[#F5F5F5] border border-[#DDDDDD] rounded-[4px] overflow-clip">
+              <input type="text" value="2022-10-15" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C] cursor-default" />
+              <button disabled class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-not-allowed opacity-50" aria-label="Open calendar">
+                <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
+                <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#595959]">Read-only</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkbox -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Checkbox</h2>
+      <div class="flex flex-wrap items-start gap-8">
+        <!-- Unchecked -->
+        <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+          <span class="w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-white border border-[#595959] hover:border-[#404040]"></span>
+          <span>Unchecked</span>
+        </label>
+        <!-- Checked -->
+        <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+          <span class="w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-[#4573D2]">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Checked</span>
+        </label>
+        <!-- Indeterminate -->
+        <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+          <span class="w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-[#4573D2]">
+            <svg width="10" height="2" viewBox="0 0 10 2" fill="none"><path d="M1 1H9" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span>Indeterminate</span>
+        </label>
+        <!-- Disabled unchecked -->
+        <label class="inline-flex items-start gap-[8px] py-[6px] cursor-not-allowed opacity-50 text-[14px] leading-[20px] text-[#1C1C1C]">
+          <span class="w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-white border border-[#595959]"></span>
+          <span>Disabled</span>
+        </label>
+        <!-- Disabled checked -->
+        <label class="inline-flex items-start gap-[8px] py-[6px] cursor-not-allowed opacity-50 text-[14px] leading-[20px] text-[#1C1C1C]">
+          <span class="w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-[#4573D2]">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Disabled checked</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- RadioGroup — custom styled -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">RadioGroup</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Vertical -->
+        <div>
+          <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] block mb-2">Vertical (default)</span>
+          <div class="flex flex-col">
+            <!-- Checked -->
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[4px] border-[#4573D2] box-border"></span>
+              </span>
+              <span>Free</span>
+            </label>
+            <!-- Unchecked -->
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[2px] border-[#ACACAC] box-border hover:border-[#808080]"></span>
+              </span>
+              <span>Pro</span>
+            </label>
+            <!-- Unchecked -->
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[2px] border-[#ACACAC] box-border hover:border-[#808080]"></span>
+              </span>
+              <span>Enterprise</span>
+            </label>
+          </div>
+        </div>
+        <!-- Horizontal -->
+        <div>
+          <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] block mb-2">Horizontal</span>
+          <div class="flex flex-row gap-[16px]">
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[4px] border-[#4573D2] box-border"></span>
+              </span>
+              <span>Standard</span>
+            </label>
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-pointer text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[2px] border-[#ACACAC] box-border"></span>
+              </span>
+              <span>Credit note</span>
+            </label>
+          </div>
+        </div>
+        <!-- Disabled -->
+        <div>
+          <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] block mb-2">Disabled</span>
+          <div class="flex flex-col opacity-50">
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-not-allowed text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[4px] border-[#4573D2] box-border"></span>
+              </span>
+              <span>Selected</span>
+            </label>
+            <label class="inline-flex items-start gap-[8px] py-[6px] cursor-not-allowed text-[14px] leading-[20px] text-[#1C1C1C]">
+              <span class="flex items-center justify-center py-[2px]">
+                <span class="block w-[16px] h-[16px] rounded-[8px] bg-white border-[2px] border-[#ACACAC] box-border"></span>
+              </span>
+              <span>Unselected</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<script>
+// ── Switches ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Switch')) return;
+  sec.querySelectorAll('label:not(.opacity-50)').forEach(label => {
+    label.addEventListener('click', e => {
+      e.preventDefault();
+      const track = label.querySelector('span.relative');
+      const thumb = track.querySelector('.switch-thumb');
+      const isOn = track.classList.contains('bg-[#4573D2]');
+      track.classList.toggle('bg-[#4573D2]', !isOn);
+      track.classList.toggle('bg-[#ACACAC]', isOn);
+      thumb.classList.toggle('translate-x-[18px]', !isOn);
+      thumb.classList.toggle('translate-x-[3px]', isOn);
+    });
+  });
+});
+
+// ── Checkboxes ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('Checkbox')) return;
+  sec.querySelectorAll('label:not(.opacity-50)').forEach(label => {
+    label.addEventListener('click', e => {
+      e.preventDefault();
+      const box = label.querySelector('span.w-5');
+      const hasTick = box.querySelector('svg');
+      if (hasTick) {
+        box.innerHTML = '';
+        box.className = 'w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-white border border-[#595959] hover:border-[#404040]';
+      } else {
+        box.className = 'w-5 h-5 rounded-[4px] flex-shrink-0 flex items-center justify-center bg-[#4573D2]';
+        box.innerHTML = '<svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+    });
+  });
+});
+
+// ── RadioGroups ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('RadioGroup')) return;
+  sec.querySelectorAll('.flex-col:not(.opacity-50), .flex-row').forEach(group => {
+    const labels = group.querySelectorAll('label:not([class*="not-allowed"])');
+    if (labels.length < 2) return;
+    labels.forEach(label => {
+      label.addEventListener('click', e => {
+        e.preventDefault();
+        // Deselect all in group
+        labels.forEach(l => {
+          const dot = l.querySelector('span.block');
+          if (dot) {
+            dot.className = 'block w-[16px] h-[16px] rounded-[8px] bg-white border-[2px] border-[#ACACAC] box-border hover:border-[#808080]';
+          }
+        });
+        // Select clicked
+        const dot = label.querySelector('span.block');
+        if (dot) {
+          dot.className = 'block w-[16px] h-[16px] rounded-[8px] bg-white border-[4px] border-[#4573D2] box-border';
+        }
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

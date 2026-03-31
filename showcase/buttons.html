@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buttons — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button, a { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Buttons</h1>
+
+    <!-- Button appearances -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Button — Appearances</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <!-- Default -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">Default</button>
+        <!-- Primary -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#4573D2] text-white hover:bg-[#2B57B4]">Primary</button>
+        <!-- Ghost -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-white text-[#4573D2] border border-[#4573D2] hover:bg-[#DEEBFF] hover:border-[#2B57B4] hover:text-[#2B57B4]">Ghost</button>
+        <!-- Discrete -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-transparent text-[#4573D2] hover:text-[#2B57B4]">Discrete</button>
+        <!-- Danger -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#CE3F42] text-white hover:bg-[#950027]">Danger</button>
+        <!-- Transparent -->
+        <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-transparent text-[#1C1C1C] hover:bg-[#EBEBEB]">Transparent</button>
+      </div>
+    </section>
+
+    <!-- Button states -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Button — Disabled</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button disabled class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none bg-[#EBEBEB] text-[#1C1C1C] opacity-50 cursor-not-allowed pointer-events-none">Default</button>
+        <button disabled class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none bg-[#4573D2] text-white opacity-50 cursor-not-allowed pointer-events-none">Primary</button>
+        <button disabled class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none bg-white text-[#4573D2] border border-[#4573D2] opacity-50 cursor-not-allowed pointer-events-none">Ghost</button>
+        <button disabled class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none bg-[#CE3F42] text-white opacity-50 cursor-not-allowed pointer-events-none">Danger</button>
+      </div>
+    </section>
+
+    <!-- Fluid button -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Button — Fluid</h2>
+      <button class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#4573D2] text-white hover:bg-[#2B57B4] w-full">Full-width Primary Button</button>
+    </section>
+
+    <!-- IconButton -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">IconButton — Appearances</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <!-- Default -->
+        <button aria-label="Edit" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 3.5l2 2-9 9H5.5v-2l9-9z"/></svg>
+        </button>
+        <!-- Primary -->
+        <button aria-label="Search" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-[#4573D2] text-white hover:bg-[#2B57B4]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="5"/><path d="M13 13l4 4"/></svg>
+        </button>
+        <!-- Ghost -->
+        <button aria-label="Close" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-white text-[#4573D2] border border-[#4573D2] hover:bg-[#DEEBFF] hover:border-[#2B57B4] hover:text-[#2B57B4]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+        </button>
+        <!-- Discrete -->
+        <button aria-label="Settings" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-transparent text-[#1C1C1C] hover:bg-[rgba(0,0,0,0.08)]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="2.5"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3M4.22 4.22l2.12 2.12M13.66 13.66l2.12 2.12M4.22 15.78l2.12-2.12M13.66 6.34l2.12-2.12"/></svg>
+        </button>
+        <!-- Danger -->
+        <button aria-label="Delete" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-[#CE3F42] text-white hover:bg-[#950027]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h12l-1.5 11h-9L4 6zM7 6V4h6v2M3 6h14"/></svg>
+        </button>
+        <!-- Transparent -->
+        <button aria-label="More" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none cursor-pointer overflow-clip bg-transparent text-[#1C1C1C] hover:bg-[#EBEBEB]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="currentColor"><circle cx="5" cy="10" r="1.5"/><circle cx="10" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- IconButton Rounded -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">IconButton — Rounded</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button aria-label="Edit" class="inline-flex items-center justify-center p-[6px] rounded-full outline-none cursor-pointer overflow-clip bg-[#EBEBEB] text-[#1C1C1C] hover:bg-[#DDDDDD]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 3.5l2 2-9 9H5.5v-2l9-9z"/></svg>
+        </button>
+        <button aria-label="Search" class="inline-flex items-center justify-center p-[6px] rounded-full outline-none cursor-pointer overflow-clip bg-[#4573D2] text-white hover:bg-[#2B57B4]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="5"/><path d="M13 13l4 4"/></svg>
+        </button>
+        <button aria-label="Close" class="inline-flex items-center justify-center p-[6px] rounded-full outline-none cursor-pointer overflow-clip bg-white text-[#4573D2] border border-[#4573D2] hover:bg-[#DEEBFF] hover:border-[#2B57B4] hover:text-[#2B57B4]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+        </button>
+        <button aria-label="Delete" class="inline-flex items-center justify-center p-[6px] rounded-full outline-none cursor-pointer overflow-clip bg-[#CE3F42] text-white hover:bg-[#950027]">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h12l-1.5 11h-9L4 6zM7 6V4h6v2M3 6h14"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- IconButton Disabled -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">IconButton — Disabled</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button disabled aria-label="Edit" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none overflow-clip bg-[#EBEBEB] text-[#1C1C1C] opacity-50 cursor-not-allowed pointer-events-none">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 3.5l2 2-9 9H5.5v-2l9-9z"/></svg>
+        </button>
+        <button disabled aria-label="Search" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none overflow-clip bg-[#4573D2] text-white opacity-50 cursor-not-allowed pointer-events-none">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="9" r="5"/><path d="M13 13l4 4"/></svg>
+        </button>
+        <button disabled aria-label="Close" class="inline-flex items-center justify-center p-[6px] rounded-[4px] outline-none overflow-clip bg-white text-[#4573D2] border border-[#4573D2] opacity-50 cursor-not-allowed pointer-events-none">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Link button -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Button — As Link</h2>
+      <a href="#" class="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap outline-none cursor-pointer bg-[#4573D2] text-white hover:bg-[#2B57B4] no-underline">Open Link</a>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Lists — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button, input { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Card Lists</h1>
+
+    <!-- Status — All 5 Colors -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Status — 5 Colors</h2>
+      <div class="flex flex-wrap items-center gap-6">
+        <span class="text-[14px] leading-[20px] font-bold text-[#028465]">(Active)</span>
+        <span class="text-[14px] leading-[20px] font-bold text-[#E89C2E]">(Warning)</span>
+        <span class="text-[14px] leading-[20px] font-bold text-[#CE3F42]">(Error)</span>
+        <span class="text-[14px] leading-[20px] font-bold text-[#4573D2]">(Info)</span>
+        <span class="text-[14px] leading-[20px] font-bold text-[#ACACAC]">(Neutral)</span>
+      </div>
+    </section>
+
+    <!-- ListIcon — 9 Colors -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">ListIcon — 9 Color Backgrounds</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <!-- Grey -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Blue -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#DEEBFF]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Green -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#CDF0E7]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Yellow -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#FFF1C3]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Red -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#FFDAD2]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Pink -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#FFE3F7]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Purple -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#EEE5FF]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Brown -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#EEE0DA]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+        <!-- Orange -->
+        <span class="inline-flex items-center justify-center w-[40px] h-[40px] rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#FFE3BB]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- CardList — Separated (default) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">CardList — Separated</h2>
+      <div class="flex flex-col gap-[8px] w-[388px]">
+        <!-- Link internal -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Cash accounts</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">View and manage cash accounts</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <!-- Link internal with status -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#DEEBFF]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-[4px]">
+                <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Invoices</span>
+                <span class="text-[14px] leading-[20px] font-bold text-[#028465]">(Active)</span>
+              </div>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">View and send invoices</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <!-- Link external -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[#CDF0E7]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Documentation</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Opens in a new tab</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CardList — Grouped -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">CardList — Grouped</h2>
+      <div class="flex flex-col w-[388px]">
+        <!-- First item (rounded top) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-t-[8px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">General settings</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Company info and defaults</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <!-- Middle items -->
+        <div class="bg-white border border-[#DDDDDD] -mt-px overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Users &amp; roles</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Manage team access</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <div class="bg-white border border-[#DDDDDD] -mt-px overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Integrations</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Connect third-party services</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <!-- Last item (rounded bottom) -->
+        <div class="bg-white border border-[#DDDDDD] -mt-px rounded-b-[8px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Billing</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Subscription and payment</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CardListItem — All 6 Types -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">CardListItem — All 6 Types</h2>
+      <div class="flex flex-col gap-[8px] w-[388px]">
+        <!-- Link internal -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Link (internal)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Navigates within the app</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+        <!-- Link external -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Link (external)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Opens in a new tab</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </div>
+        <!-- Button -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Button</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Triggers an action, no trailing icon</p>
+            </div>
+          </div>
+        </div>
+        <!-- Switch (off) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Switch (off)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Toggle a setting</p>
+            </div>
+            <span class="relative inline-flex items-center w-[36px] h-[20px] rounded-full shrink-0 bg-[#ACACAC]">
+              <span class="absolute w-[16px] h-[16px] bg-white rounded-full shadow-sm translate-x-[2px]"></span>
+            </span>
+          </div>
+        </div>
+        <!-- Switch (on) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Switch (on)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Toggle is active</p>
+            </div>
+            <span class="relative inline-flex items-center w-[36px] h-[20px] rounded-full shrink-0 bg-[#4573D2]">
+              <span class="absolute w-[16px] h-[16px] bg-white rounded-full shadow-sm translate-x-[18px]"></span>
+            </span>
+          </div>
+        </div>
+        <!-- Checkbox (unchecked) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Checkbox (unchecked)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Select an option</p>
+            </div>
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-[4px] shrink-0 border border-[#595959] bg-white"></span>
+          </div>
+        </div>
+        <!-- Checkbox (checked) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Checkbox (checked)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Option selected</p>
+            </div>
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-[4px] shrink-0 bg-[#4573D2]">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg>
+            </span>
+          </div>
+        </div>
+        <!-- Collapsible (expanded) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px]">
+          <div class="flex items-center gap-[12px] p-[12px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Collapsible (expanded)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Shows content below</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 14l4.5-4 4.5 4"/></svg>
+          </div>
+          <div class="px-[12px] pb-[12px]">
+            <div class="bg-[rgba(123,97,255,0.1)] border border-dashed border-[#7B61FF] rounded-[4px] p-[16px] text-center text-[14px] text-[#7B61FF]">
+              Custom expanded content area
+            </div>
+          </div>
+        </div>
+        <!-- Collapsible (collapsed) -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[10px] overflow-hidden min-h-[64px] cursor-pointer hover:bg-[rgba(0,0,0,0.08)]">
+          <div class="flex items-center gap-[12px] p-[12px]">
+            <span class="inline-flex items-center justify-center w-[40px] h-[40px] shrink-0 rounded-[4px] border border-[rgba(0,0,0,0.08)] bg-[rgba(28,28,28,0.08)]">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <span class="text-[14px] leading-[20px] font-bold text-[#1C1C1C]">Collapsible (collapsed)</span>
+              <p class="text-[14px] leading-[20px] text-[#595959] m-0">Click to expand</p>
+            </div>
+            <svg class="w-[24px] h-[24px] text-[#1C1C1C] shrink-0 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 14l4.5-4 4.5 4"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+<script>
+// ── Switches in card list items ──
+document.querySelectorAll('span[class*="rounded-full"][class*="w-[36px]"]').forEach(track => {
+  const card = track.closest('[class*="rounded-[10px]"]');
+  if (!card) return;
+  card.addEventListener('click', () => {
+    const thumb = track.querySelector('span');
+    const isOn = track.classList.contains('bg-[#4573D2]');
+    track.classList.toggle('bg-[#4573D2]', !isOn);
+    track.classList.toggle('bg-[#ACACAC]', isOn);
+    thumb.classList.toggle('translate-x-[18px]', !isOn);
+    thumb.classList.toggle('translate-x-[2px]', isOn);
+    thumb.classList.remove(isOn ? 'translate-x-[18px]' : 'translate-x-[2px]');
+  });
+});
+
+// ── Checkboxes in card list items ──
+document.querySelectorAll('span[class*="w-[20px]"][class*="h-[20px]"][class*="rounded-[4px]"]').forEach(box => {
+  const card = box.closest('[class*="rounded-[10px]"]');
+  if (!card) return;
+  card.addEventListener('click', () => {
+    const hasTick = box.querySelector('svg');
+    if (hasTick) {
+      box.innerHTML = '';
+      box.className = 'inline-flex items-center justify-center w-[20px] h-[20px] rounded-[4px] shrink-0 border border-[#595959] bg-white';
+    } else {
+      box.className = 'inline-flex items-center justify-center w-[20px] h-[20px] rounded-[4px] shrink-0 bg-[#4573D2]';
+      box.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg>';
+    }
+  });
+});
+
+// ── Collapsible items ──
+document.querySelectorAll('section').forEach(sec => {
+  if (!sec.querySelector('h2')?.textContent.includes('All 6 Types')) return;
+  sec.querySelectorAll('[class*="rounded-[10px]"]').forEach(card => {
+    // Check if it's a collapsible card (has chevron-up SVG with path "M7.5 14...")
+    const chevron = card.querySelector('svg path[d*="7.5 14"]');
+    if (!chevron) return;
+    const headerRow = chevron.closest('[class*="flex items-center"]');
+    if (!headerRow) return;
+    headerRow.addEventListener('click', () => {
+      const svg = chevron.closest('svg');
+      const expanded = card.querySelector('.px-\\[12px\\].pb-\\[12px\\]');
+      if (expanded) {
+        expanded.remove();
+        svg.classList.add('rotate-180');
+      } else {
+        svg.classList.remove('rotate-180');
+        const content = document.createElement('div');
+        content.className = 'px-[12px] pb-[12px]';
+        content.innerHTML = '<div class="bg-[rgba(123,97,255,0.1)] border border-dashed border-[#7B61FF] rounded-[4px] p-[16px] text-center text-[14px] text-[#7B61FF]">Custom expanded content area</div>';
+        card.appendChild(content);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

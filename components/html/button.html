@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button - e-conomic Design System</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: var(--font-family);
+      padding: var(--spacing-xxxl);
+      background: #f8f8f8;
+      color: var(--color-grey-900);
+    }
+    h1 { font-size: var(--font-size-2xl); margin-bottom: var(--spacing-xxl); }
+    h2 { font-size: var(--font-size-lg); margin: var(--spacing-xxl) 0 var(--spacing-l); color: var(--color-grey-900); }
+    .row { display: flex; gap: var(--spacing-l); align-items: center; flex-wrap: wrap; margin-bottom: var(--spacing-l); }
+    .label { font-size: var(--font-size-sm); color: #888; min-width: 100px; }
+  </style>
+</head>
+<body>
+
+<h1>Button Component</h1>
+
+<!-- ===== Default ===== -->
+<h2>Default</h2>
+<div class="row">
+  <span class="label">Normal</span>
+  <button class="eco-btn eco-btn--default">Button</button>
+  <button class="eco-btn eco-btn--default">
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4L10 16M4 10L16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </span>
+    <span class="eco-btn__label">Add item</span>
+  </button>
+  <button class="eco-btn eco-btn--default">
+    <span class="eco-btn__label">Options</span>
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </button>
+</div>
+<div class="row">
+  <span class="label">Disabled</span>
+  <button class="eco-btn eco-btn--default eco-btn--disabled" disabled>Button</button>
+</div>
+
+<!-- ===== Primary ===== -->
+<h2>Primary</h2>
+<div class="row">
+  <span class="label">Normal</span>
+  <button class="eco-btn eco-btn--primary">Save</button>
+  <button class="eco-btn eco-btn--primary">
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4L10 16M4 10L16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </span>
+    <span class="eco-btn__label">Create invoice</span>
+  </button>
+</div>
+<div class="row">
+  <span class="label">Disabled</span>
+  <button class="eco-btn eco-btn--primary eco-btn--disabled" disabled>Save</button>
+</div>
+
+<!-- ===== Ghost ===== -->
+<h2>Ghost</h2>
+<div class="row">
+  <span class="label">Normal</span>
+  <button class="eco-btn eco-btn--ghost">Cancel</button>
+  <button class="eco-btn eco-btn--ghost">
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4L10 16M4 10L16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </span>
+    <span class="eco-btn__label">Add</span>
+  </button>
+</div>
+<div class="row">
+  <span class="label">Disabled</span>
+  <button class="eco-btn eco-btn--ghost eco-btn--disabled" disabled>Cancel</button>
+</div>
+
+<!-- ===== Discrete ===== -->
+<h2>Discrete</h2>
+<div class="row">
+  <span class="label">Normal</span>
+  <button class="eco-btn eco-btn--discrete">Learn more</button>
+  <button class="eco-btn eco-btn--discrete">
+    <span class="eco-btn__label">Filter</span>
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </button>
+</div>
+<div class="row">
+  <span class="label">Disabled</span>
+  <button class="eco-btn eco-btn--discrete eco-btn--disabled" disabled>Learn more</button>
+</div>
+
+<!-- ===== Danger ===== -->
+<h2>Danger</h2>
+<div class="row">
+  <span class="label">Normal</span>
+  <button class="eco-btn eco-btn--danger">Delete</button>
+  <button class="eco-btn eco-btn--danger">
+    <span class="eco-btn__icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 6L14 14M14 6L6 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </span>
+    <span class="eco-btn__label">Remove</span>
+  </button>
+</div>
+<div class="row">
+  <span class="label">Disabled</span>
+  <button class="eco-btn eco-btn--danger eco-btn--disabled" disabled>Delete</button>
+</div>
+
+</body>
+</html>

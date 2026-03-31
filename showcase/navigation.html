@@ -19,24 +19,24 @@
     <!-- Calendar — With Today button -->
     <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Calendar — With Today Button</h2>
-      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]" data-calendar="with-today" data-month="10" data-year="2022" data-selected="8">
         <!-- Period selection header -->
         <div class="flex items-center justify-between w-[280px]">
-          <div class="flex items-center">
-            <div class="flex items-center h-[32px] cursor-pointer">
-              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">November</span>
+          <div class="flex items-center relative">
+            <div class="flex items-center h-[32px] cursor-pointer" data-cal-month-trigger>
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]" data-cal-month-label>November</span>
               <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
             </div>
-            <div class="flex items-center h-[32px] cursor-pointer">
-              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">2022</span>
+            <div class="flex items-center h-[32px] cursor-pointer" data-cal-year-trigger>
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]" data-cal-year-label>2022</span>
               <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
             </div>
           </div>
           <div class="flex items-center gap-[4px]">
-            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month" data-cal-prev>
               <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5l-5 5 5 5"/></svg>
             </button>
-            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month" data-cal-next>
               <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5l5 5-5 5"/></svg>
             </button>
           </div>
@@ -51,52 +51,11 @@
           <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SAT</div>
           <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SUN</div>
         </div>
-        <!-- Date grid (November 2022 starts on Tuesday) -->
-        <div class="grid grid-cols-7">
-          <!-- Row 1: trailing Oct 31 + Nov 1-6 -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">31</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">1</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">2</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">3</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">4</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">5</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">6</button>
-          <!-- Row 2: 7-13 (8 is selected/active = blue text) -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">7</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#4573D2]">8</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">9</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">10</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">11</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">12</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">13</button>
-          <!-- Row 3: 14-20 -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">14</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">15</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">16</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">17</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">18</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">19</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">20</button>
-          <!-- Row 4: 21-27 (22 is hover demo = grey circle) -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">21</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer bg-[#EBEBEB] text-[#1C1C1C]">22</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">23</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">24</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">25</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">26</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">27</button>
-          <!-- Row 5: 28-30 + Dec 1-4 disabled -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">28</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">29</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">30</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">1</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">2</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">3</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">4</button>
-        </div>
+        <!-- Date grid -->
+        <div class="grid grid-cols-7" data-cal-grid></div>
         <!-- Today link -->
         <div class="flex items-end justify-center pt-[8px] w-full">
-          <button class="text-[12px] leading-[16px] font-normal text-[#4573D2] hover:text-[#75A0F5] cursor-pointer outline-none bg-transparent border-none">Today</button>
+          <button class="text-[12px] leading-[16px] font-normal text-[#4573D2] hover:text-[#75A0F5] cursor-pointer outline-none bg-transparent border-none" data-cal-today>Today</button>
         </div>
       </div>
       <p class="text-xs text-[#595959] mt-3">8th is selected (blue text). 22nd shows hover state (grey circle). Oct 31 &amp; Dec 1-4 are disabled (50% opacity).</p>
@@ -105,23 +64,23 @@
     <!-- Calendar — Without Today button -->
     <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Calendar — Without Today Button</h2>
-      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
+      <div class="inline-flex flex-col items-center justify-center p-[16px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]" data-calendar="without-today" data-month="2" data-year="2026" data-selected="15">
         <div class="flex items-center justify-between w-[280px]">
-          <div class="flex items-center">
-            <div class="flex items-center h-[32px] cursor-pointer">
-              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">March</span>
+          <div class="flex items-center relative">
+            <div class="flex items-center h-[32px] cursor-pointer" data-cal-month-trigger>
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]" data-cal-month-label>March</span>
               <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
             </div>
-            <div class="flex items-center h-[32px] cursor-pointer">
-              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]">2026</span>
+            <div class="flex items-center h-[32px] cursor-pointer" data-cal-year-trigger>
+              <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] pl-[8px]" data-cal-year-label>2026</span>
               <svg class="w-[24px] h-[24px] text-[#1C1C1C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 10l4.5 4 4.5-4"/></svg>
             </div>
           </div>
           <div class="flex items-center gap-[4px]">
-            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Previous month" data-cal-prev>
               <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5l-5 5 5 5"/></svg>
             </button>
-            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month">
+            <button class="inline-flex items-center justify-center p-[6px] rounded-[4px] cursor-pointer outline-none overflow-clip hover:bg-[#EBEBEB]" aria-label="Next month" data-cal-next>
               <svg class="w-5 h-5 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5l5 5-5 5"/></svg>
             </button>
           </div>
@@ -135,56 +94,7 @@
           <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SAT</div>
           <div class="w-[40px] flex items-center justify-center px-[8px] py-[6px] text-[12px] leading-[20px] font-normal text-[#595959] uppercase">SUN</div>
         </div>
-        <div class="grid grid-cols-7">
-          <!-- March 2026 starts on Sunday → 6 empty leading cells -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">23</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">24</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">25</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">26</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">27</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">28</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">1</button>
-          <!-- 2-8 -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">2</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">3</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">4</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">5</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">6</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">7</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">8</button>
-          <!-- 9-15 (15 selected) -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">9</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">10</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">11</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">12</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">13</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">14</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#4573D2]">15</button>
-          <!-- 16-22 -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">16</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">17</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">18</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">19</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">20</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">21</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">22</button>
-          <!-- 23-29 -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">23</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">24</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">25</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">26</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">27</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">28</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">29</button>
-          <!-- 30-31 + trailing -->
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">30</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] text-[#1C1C1C]">31</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">1</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">2</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">3</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">4</button>
-          <button class="w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]">5</button>
-        </div>
+        <div class="grid grid-cols-7" data-cal-grid></div>
       </div>
       <p class="text-xs text-[#595959] mt-3">Without today button variant. 15th is selected (blue text only, no background).</p>
     </section>
@@ -737,16 +647,16 @@
         <!-- Primary menu -->
         <div class="flex gap-[8px] items-center pl-[28px]">
           <!-- Logo -->
-          <div class="flex items-center justify-center px-[8px] h-[36px] rounded-[4px]">
-            <span class="text-white text-[20px] font-bold">e</span>
+          <div class="flex items-center justify-center px-[8px] shrink-0 w-[72px] h-[36px] rounded-[4px]">
+            <img src="https://www.figma.com/api/mcp/asset/6be8cc82-24a6-4f91-854e-b4a7ed1c62aa" alt="e-conomic" class="shrink-0" style="height:28px;width:56px;object-fit:contain;" />
           </div>
           <!-- Primary items -->
-          <div class="flex gap-[4px] items-start">
-            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Hjem</button>
-            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap bg-[rgba(255,255,255,0.08)]">Salg</button>
-            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Regnskab</button>
-            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap">Rapporter</button>
-            <button class="flex items-center gap-[4px] pl-[12px] pr-[4px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white whitespace-nowrap">
+          <div class="flex gap-[4px] items-start" data-topnav-menu>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap" data-topnav-item="Hjem">Hjem</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap bg-[rgba(255,255,255,0.08)] relative" data-topnav-item="Salg">Salg</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap relative" data-topnav-item="Regnskab">Regnskab</button>
+            <button class="px-[12px] py-[8px] rounded-[4px] text-[14px] leading-[20px] text-white text-center whitespace-nowrap relative" data-topnav-item="Rapporter">Rapporter</button>
+            <button class="flex items-center gap-[4px] pl-[12px] pr-[4px] py-[6px] rounded-[4px] text-[14px] leading-[20px] text-white whitespace-nowrap relative" data-topnav-item="Lager">
               Lager
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7.5 10l4.5 4 4.5-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
@@ -765,7 +675,7 @@
           <!-- Divider -->
           <div class="w-px h-[36px] bg-[rgba(255,255,255,0.3)]"></div>
           <!-- Current agreement -->
-          <div class="flex items-center px-[8px] py-[4px] rounded-[4px] gap-[8px] hover:bg-[rgba(255,255,255,0.1)] cursor-pointer">
+          <div class="flex items-center px-[8px] py-[4px] rounded-[4px] gap-[8px] hover:bg-[rgba(255,255,255,0.1)] cursor-pointer relative" data-agreement-trigger>
             <div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>
             <div class="flex flex-col min-w-0">
               <span class="text-[14px] leading-[20px] text-white truncate">Company name</span>
@@ -918,10 +828,10 @@ document.querySelectorAll('section').forEach(sec => {
   });
 });
 
-// ── Top Navigation primary items ──
+// ── Top Navigation primary items (active state) ──
 document.querySelectorAll('section').forEach(sec => {
   if (!sec.querySelector('h2')?.textContent.includes('Top Navigation')) return;
-  const items = sec.querySelectorAll('.flex.gap-\\[4px\\] > button');
+  const items = sec.querySelectorAll('[data-topnav-menu] > button');
   items.forEach(btn => {
     btn.addEventListener('click', () => {
       items.forEach(b => b.classList.remove('bg-[rgba(255,255,255,0.08)]'));
@@ -929,6 +839,375 @@ document.querySelectorAll('section').forEach(sec => {
     });
   });
 });
+
+// ═══════════════════════════════════════════════════
+// CALENDAR INTERACTIVITY
+// ═══════════════════════════════════════════════════
+(function() {
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function daysInMonth(month, year) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  // Day of week for first of month: 0=Mon ... 6=Sun
+  function firstDayOfWeekMon(month, year) {
+    const d = new Date(year, month, 1).getDay(); // 0=Sun
+    return d === 0 ? 6 : d - 1;
+  }
+
+  function renderGrid(cal) {
+    const month = parseInt(cal.dataset.month);
+    const year = parseInt(cal.dataset.year);
+    const selected = parseInt(cal.dataset.selected) || -1;
+    const grid = cal.querySelector('[data-cal-grid]');
+    grid.innerHTML = '';
+
+    const totalDays = daysInMonth(month, year);
+    const startDay = firstDayOfWeekMon(month, year);
+
+    // Previous month trailing days
+    const prevMonth = month === 0 ? 11 : month - 1;
+    const prevYear = month === 0 ? year - 1 : year;
+    const prevDays = daysInMonth(prevMonth, prevYear);
+    for (let i = startDay - 1; i >= 0; i--) {
+      const btn = document.createElement('button');
+      btn.className = 'w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]';
+      btn.textContent = prevDays - i;
+      grid.appendChild(btn);
+    }
+
+    // Current month days
+    for (let d = 1; d <= totalDays; d++) {
+      const btn = document.createElement('button');
+      const isSelected = d === selected;
+      btn.className = 'w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none cursor-pointer hover:bg-[#EBEBEB] ' + (isSelected ? 'text-[#4573D2]' : 'text-[#1C1C1C]');
+      btn.textContent = d;
+      btn.dataset.day = d;
+      btn.addEventListener('click', function() {
+        cal.dataset.selected = d;
+        grid.querySelectorAll('button[data-day]').forEach(b => {
+          b.classList.remove('text-[#4573D2]');
+          b.classList.add('text-[#1C1C1C]');
+        });
+        this.classList.remove('text-[#1C1C1C]');
+        this.classList.add('text-[#4573D2]');
+      });
+      grid.appendChild(btn);
+    }
+
+    // Next month trailing days
+    const totalCells = startDay + totalDays;
+    const remaining = (42 - totalCells);
+    for (let d = 1; d <= remaining; d++) {
+      const btn = document.createElement('button');
+      btn.className = 'w-[40px] h-[40px] flex items-center justify-center text-[14px] leading-[20px] font-normal rounded-[20px] outline-none opacity-50 cursor-default text-[#1C1C1C]';
+      btn.textContent = d;
+      grid.appendChild(btn);
+    }
+
+    // Update labels
+    cal.querySelector('[data-cal-month-label]').textContent = MONTH_NAMES[month];
+    cal.querySelector('[data-cal-year-label]').textContent = year;
+  }
+
+  function closeAllCalDropdowns() {
+    document.querySelectorAll('[data-cal-dropdown]').forEach(d => d.remove());
+  }
+
+  function showDropdown(cal, trigger, items, onSelect) {
+    closeAllCalDropdowns();
+    closeAllTopNavDropdowns();
+    const dd = document.createElement('div');
+    dd.dataset.calDropdown = '';
+    dd.className = 'absolute top-[34px] left-0 z-50 bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] p-[4px] max-h-[200px] overflow-y-auto';
+    items.forEach(item => {
+      const opt = document.createElement('div');
+      opt.className = 'px-[8px] py-[4px] text-[12px] leading-[20px] text-[#1C1C1C] cursor-pointer hover:bg-[#EBEBEB] rounded-[4px] whitespace-nowrap';
+      opt.textContent = item.label;
+      opt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        onSelect(item.value);
+        dd.remove();
+      });
+      dd.appendChild(opt);
+    });
+    trigger.style.position = 'relative';
+    trigger.appendChild(dd);
+  }
+
+  document.querySelectorAll('[data-calendar]').forEach(cal => {
+    // Initial render
+    renderGrid(cal);
+
+    // Previous month
+    cal.querySelector('[data-cal-prev]').addEventListener('click', function() {
+      let m = parseInt(cal.dataset.month);
+      let y = parseInt(cal.dataset.year);
+      m--;
+      if (m < 0) { m = 11; y--; }
+      cal.dataset.month = m;
+      cal.dataset.year = y;
+      cal.dataset.selected = '';
+      renderGrid(cal);
+    });
+
+    // Next month
+    cal.querySelector('[data-cal-next]').addEventListener('click', function() {
+      let m = parseInt(cal.dataset.month);
+      let y = parseInt(cal.dataset.year);
+      m++;
+      if (m > 11) { m = 0; y++; }
+      cal.dataset.month = m;
+      cal.dataset.year = y;
+      cal.dataset.selected = '';
+      renderGrid(cal);
+    });
+
+    // Month dropdown
+    cal.querySelector('[data-cal-month-trigger]').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const items = MONTH_NAMES.map((name, i) => ({ label: name, value: i }));
+      showDropdown(cal, this, items, function(val) {
+        cal.dataset.month = val;
+        cal.dataset.selected = '';
+        renderGrid(cal);
+      });
+    });
+
+    // Year dropdown
+    cal.querySelector('[data-cal-year-trigger]').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const currentYear = parseInt(cal.dataset.year);
+      const items = [];
+      for (let y = 2020; y <= 2030; y++) {
+        items.push({ label: String(y), value: y });
+      }
+      showDropdown(cal, this, items, function(val) {
+        cal.dataset.year = val;
+        cal.dataset.selected = '';
+        renderGrid(cal);
+      });
+    });
+
+    // Today button (only for with-today calendar)
+    const todayBtn = cal.querySelector('[data-cal-today]');
+    if (todayBtn) {
+      todayBtn.addEventListener('click', function() {
+        const now = new Date();
+        cal.dataset.month = now.getMonth();
+        cal.dataset.year = now.getFullYear();
+        cal.dataset.selected = now.getDate();
+        renderGrid(cal);
+      });
+    }
+  });
+
+  // Close calendar dropdowns on outside click
+  document.addEventListener('click', function() {
+    closeAllCalDropdowns();
+  });
+})();
+
+// ═══════════════════════════════════════════════════
+// SIDE NAVIGATION — OVERVIEW TYPE — COLLAPSIBLE
+// ═══════════════════════════════════════════════════
+(function() {
+  const subItemsMap = {
+    'Sales': ['Invoices', 'Quotes', 'Customers', 'Products'],
+    'Accounting': ['Chart of accounts', 'Journal entries', 'VAT'],
+    'Reports': ['Balance', 'Profit & loss', 'Budget'],
+    'Inventory': ['Products', 'Stock', 'Warehouses'],
+    'Projects': ['Active projects', 'Time tracking'],
+    'All settings': ['Company', 'Users', 'Integrations'],
+    'My settings': ['Profile', 'Notifications']
+  };
+
+  document.querySelectorAll('[data-sidenav="overview"]').forEach(nav => {
+    const allItems = nav.querySelectorAll('[data-overview-item]');
+    let expandedItem = null;
+
+    allItems.forEach(item => {
+      const chevronSvg = item.querySelector('svg[viewBox="0 0 24 24"]');
+      const hasChevron = chevronSvg && item.querySelector('path[d="M9 6L15 12L9 18"]');
+      // Determine item name
+      const spanEl = item.querySelector('span.flex-1');
+      const itemName = spanEl ? spanEl.textContent.trim() : item.textContent.trim();
+
+      if (hasChevron && subItemsMap[itemName]) {
+        // Add transition to chevron
+        chevronSvg.style.transition = 'transform 0.15s ease';
+
+        // Create sub-items container (hidden by default)
+        const subContainer = document.createElement('div');
+        subContainer.className = 'flex flex-col gap-[2px]';
+        subContainer.style.display = 'none';
+        subContainer.dataset.overviewSub = itemName;
+
+        subItemsMap[itemName].forEach(subName => {
+          const subBtn = document.createElement('button');
+          subBtn.className = 'flex h-[32px] items-center pl-[32px] pr-[8px] py-[6px] rounded-[4px] w-[232px] text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none';
+          subBtn.textContent = subName;
+          subBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Remove active from all items and sub-items in this nav
+            nav.querySelectorAll('[data-overview-item]').forEach(i => i.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+            nav.querySelectorAll('[data-overview-sub] button').forEach(b => b.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+            this.classList.add('bg-[rgba(0,99,255,0.1)]');
+          });
+          subContainer.appendChild(subBtn);
+        });
+
+        // Insert sub-container after the item
+        item.parentNode.insertBefore(subContainer, item.nextSibling);
+
+        // Override click to toggle
+        item.addEventListener('click', function(e) {
+          e.stopPropagation();
+          // Active state
+          nav.querySelectorAll('[data-overview-item]').forEach(i => i.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+          nav.querySelectorAll('[data-overview-sub] button').forEach(b => b.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+          item.classList.add('bg-[rgba(0,99,255,0.1)]');
+
+          if (expandedItem === item) {
+            // Collapse
+            subContainer.style.display = 'none';
+            chevronSvg.style.transform = '';
+            expandedItem = null;
+          } else {
+            // Collapse previously expanded
+            if (expandedItem) {
+              const prevSub = nav.querySelector('[data-overview-sub="' + expandedItem.querySelector('span.flex-1').textContent.trim() + '"]');
+              if (prevSub) prevSub.style.display = 'none';
+              const prevChevron = expandedItem.querySelector('svg[viewBox="0 0 24 24"]');
+              if (prevChevron) prevChevron.style.transform = '';
+            }
+            // Expand this
+            subContainer.style.display = '';
+            chevronSvg.style.transform = 'rotate(90deg)';
+            expandedItem = item;
+          }
+        });
+      } else {
+        // Non-expandable item: just active state (existing handler is fine but we re-ensure)
+        item.addEventListener('click', function() {
+          nav.querySelectorAll('[data-overview-item]').forEach(i => i.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+          nav.querySelectorAll('[data-overview-sub] button').forEach(b => b.classList.remove('bg-[rgba(0,99,255,0.1)]'));
+          item.classList.add('bg-[rgba(0,99,255,0.1)]');
+          // Collapse any expanded
+          if (expandedItem) {
+            const prevSub = nav.querySelector('[data-overview-sub="' + expandedItem.querySelector('span.flex-1').textContent.trim() + '"]');
+            if (prevSub) prevSub.style.display = 'none';
+            const prevChevron = expandedItem.querySelector('svg[viewBox="0 0 24 24"]');
+            if (prevChevron) prevChevron.style.transform = '';
+            expandedItem = null;
+          }
+        });
+      }
+    });
+  });
+})();
+
+// ═══════════════════════════════════════════════════
+// TOP NAVIGATION — CLICKABLE DROPDOWNS
+// ═══════════════════════════════════════════════════
+(function() {
+  const topNavDropdowns = {
+    'Salg': ['Fakturaer', 'Tilbud', 'Kunder', 'Produkter'],
+    'Regnskab': ['Kontoplan', 'Kassekladde', 'Momsregnskab'],
+    'Rapporter': ['Balance', 'Resultatopg\u00f8relse', 'Budget'],
+    'Lager': ['Lagerstyring', 'Indk\u00f8b', 'Vareliste']
+  };
+
+  let openDropdown = null;
+
+  window.closeAllTopNavDropdowns = function() {
+    document.querySelectorAll('[data-topnav-dropdown]').forEach(d => d.remove());
+    openDropdown = null;
+  };
+
+  document.querySelectorAll('[data-topnav-item]').forEach(btn => {
+    const name = btn.dataset.topnavItem;
+    if (!topNavDropdowns[name]) return;
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('[data-cal-dropdown]').forEach(d => d.remove());
+
+      if (openDropdown === name) {
+        closeAllTopNavDropdowns();
+        return;
+      }
+      closeAllTopNavDropdowns();
+
+      const dd = document.createElement('div');
+      dd.dataset.topnavDropdown = name;
+      dd.className = 'absolute top-full left-0 mt-[4px] z-50 bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] p-[4px] min-w-[140px]';
+
+      topNavDropdowns[name].forEach(item => {
+        const opt = document.createElement('div');
+        opt.className = 'px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] whitespace-nowrap';
+        opt.textContent = item;
+        opt.addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          closeAllTopNavDropdowns();
+        });
+        dd.appendChild(opt);
+      });
+
+      btn.appendChild(dd);
+      openDropdown = name;
+    });
+  });
+
+  // Agreement selector dropdown
+  const agreementTrigger = document.querySelector('[data-agreement-trigger]');
+  if (agreementTrigger) {
+    agreementTrigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('[data-cal-dropdown]').forEach(d => d.remove());
+
+      if (openDropdown === 'agreement') {
+        closeAllTopNavDropdowns();
+        return;
+      }
+      closeAllTopNavDropdowns();
+
+      const dd = document.createElement('div');
+      dd.dataset.topnavDropdown = 'agreement';
+      dd.className = 'absolute top-full right-0 mt-[4px] z-50 bg-[#29283E] rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] p-[8px] min-w-[240px]';
+
+      const agreements = [
+        { name: 'Acme Corporation', id: '1234567 Abc' },
+        { name: 'Subsidiary Ltd', id: '7654321 Xyz' },
+        { name: 'Partner Agency', id: '9876543 Def' }
+      ];
+
+      agreements.forEach(ag => {
+        const row = document.createElement('div');
+        row.className = 'flex items-center gap-[8px] p-[8px] rounded-[4px] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer';
+        row.innerHTML = '<div class="w-[36px] h-[36px] rounded-full bg-[#585C74] shrink-0"></div>' +
+          '<div class="flex-1 min-w-0">' +
+          '<p class="text-[14px] leading-[20px] text-white truncate">' + ag.name + '</p>' +
+          '<span class="text-[12px] leading-[16px] text-white">' + ag.id + '</span>' +
+          '</div>';
+        row.addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          closeAllTopNavDropdowns();
+        });
+        dd.appendChild(row);
+      });
+
+      agreementTrigger.appendChild(dd);
+      openDropdown = 'agreement';
+    });
+  }
+
+  // Close all dropdowns on outside click
+  document.addEventListener('click', function() {
+    closeAllTopNavDropdowns();
+  });
+})();
 </script>
 </body>
 </html>

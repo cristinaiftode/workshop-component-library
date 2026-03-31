@@ -130,29 +130,35 @@
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Select</h2>
       <div class="flex flex-wrap items-start gap-6">
         <!-- Normal with dropdown -->
-        <div class="flex flex-col items-stretch relative w-[160px]">
+        <div class="flex flex-col items-stretch relative w-[160px]" data-select>
           <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Country</label>
-          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#4573D2] shadow-[0_0_0_1px_#4573D2] bg-white cursor-pointer">
-            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate">Denmark</span>
+          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#DDDDDD] hover:border-[#ACACAC] bg-white cursor-pointer" data-select-trigger>
+            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate" data-select-value>Denmark</span>
             <span class="flex items-center justify-center w-[32px] h-[32px] shrink-0">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="rotate-180"><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="transition-transform duration-200" data-select-chevron><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
           </div>
-          <ul class="mt-0.5 bg-white rounded-[4px] px-[4px] py-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)]">
-            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] bg-[rgba(0,99,255,0.1)] cursor-pointer">Denmark</li>
-            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Finland</li>
-            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]">Norway</li>
+          <ul class="mt-0.5 bg-white rounded-[4px] px-[4px] py-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] hidden absolute top-full left-0 right-0 z-10" data-select-dropdown>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] bg-[rgba(0,99,255,0.1)] cursor-pointer" data-select-option data-selected>Denmark</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]" data-select-option>Finland</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]" data-select-option>Norway</li>
           </ul>
         </div>
         <!-- Closed state -->
-        <div class="flex flex-col items-stretch w-[160px]">
+        <div class="flex flex-col items-stretch relative w-[160px]" data-select>
           <label class="text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold">Currency</label>
-          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#DDDDDD] hover:border-[#ACACAC] bg-white cursor-pointer">
-            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate">DKK</span>
+          <div class="flex items-center h-[32px] w-full rounded-[4px] border border-[#DDDDDD] hover:border-[#ACACAC] bg-white cursor-pointer" data-select-trigger>
+            <span class="flex-1 px-[8px] py-[6px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] truncate" data-select-value>DKK</span>
             <span class="flex items-center justify-center w-[32px] h-[32px] shrink-0">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="transition-transform duration-200" data-select-chevron><path d="M4 6L8 10L12 6" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
           </div>
+          <ul class="mt-0.5 bg-white rounded-[4px] px-[4px] py-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] hidden absolute top-full left-0 right-0 z-10" data-select-dropdown>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] bg-[rgba(0,99,255,0.1)] cursor-pointer" data-select-option data-selected>DKK</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]" data-select-option>EUR</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]" data-select-option>USD</li>
+            <li class="px-[8px] py-[6px] text-[14px] leading-[20px] text-[#1C1C1C] rounded-[4px] hover:bg-[rgba(0,99,255,0.1)] cursor-pointer mt-[2px]" data-select-option>SEK</li>
+          </ul>
           <span class="text-[12px] leading-[16px] text-[#595959]">Billing currency</span>
         </div>
         <!-- Disabled -->
@@ -238,12 +244,12 @@
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">DatePicker — States</h2>
       <div class="flex flex-wrap items-end gap-6">
         <!-- Normal -->
-        <div class="inline-flex flex-col items-start">
+        <div class="inline-flex flex-col items-start" data-datepicker>
           <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Invoice date</label></div>
           <div class="relative w-[160px]">
             <div class="flex items-center h-[32px] w-full bg-white border border-[#DDDDDD] rounded-[4px] overflow-clip hover:border-[#ACACAC]">
-              <input type="text" value="2022-11-08" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" />
-              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar">
+              <input type="text" value="2022-11-08" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" data-datepicker-input />
+              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar" data-datepicker-btn>
                 <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
                 <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
               </button>
@@ -252,12 +258,12 @@
           <div class="flex items-start overflow-clip"><span class="text-[12px] leading-[16px] font-normal text-[#595959]">Normal</span></div>
         </div>
         <!-- Highlighted -->
-        <div class="inline-flex flex-col items-start">
+        <div class="inline-flex flex-col items-start" data-datepicker>
           <div class="flex items-start overflow-clip py-[4px]"><label class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Due date</label></div>
           <div class="relative w-[160px]">
             <div class="flex items-center h-[32px] w-full bg-white border border-[#4573D2] rounded-[4px] overflow-clip shadow-[0_0_0_1px_#4573D2]">
-              <input type="text" value="2022-12-01" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" />
-              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar">
+              <input type="text" value="2022-12-01" readonly class="flex-1 min-w-0 h-full px-[8px] py-[6px] text-[14px] leading-[20px] font-normal border-none outline-none bg-transparent text-[#1C1C1C]" data-datepicker-input />
+              <button class="relative flex items-center justify-center shrink-0 w-[32px] h-[30px] bg-[#EBEBEB] rounded-br-[3px] rounded-tr-[3px] outline-none border-none cursor-pointer hover:bg-[#DDDDDD]" aria-label="Open calendar" data-datepicker-btn>
                 <span class="absolute left-0 top-0 bottom-0 w-px bg-[#DDDDDD]"></span>
                 <svg class="w-5 h-5 shrink-0 text-[#1C1C1C]" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="1.5"/><path d="M3 8h14"/><path d="M7 2.5v3M13 2.5v3"/></svg>
               </button>
@@ -480,6 +486,192 @@ document.querySelectorAll('section').forEach(sec => {
     });
   });
 });
+
+// ── Selects ──
+(function() {
+  const selects = document.querySelectorAll('[data-select]');
+
+  function closeSelect(sel) {
+    const trigger = sel.querySelector('[data-select-trigger]');
+    const dropdown = sel.querySelector('[data-select-dropdown]');
+    const chevron = sel.querySelector('[data-select-chevron]');
+    dropdown.classList.add('hidden');
+    chevron.classList.remove('rotate-180');
+    trigger.classList.remove('border-[#4573D2]', 'shadow-[0_0_0_1px_#4573D2]');
+    trigger.classList.add('border-[#DDDDDD]');
+  }
+
+  function openSelect(sel) {
+    const trigger = sel.querySelector('[data-select-trigger]');
+    const dropdown = sel.querySelector('[data-select-dropdown]');
+    const chevron = sel.querySelector('[data-select-chevron]');
+    dropdown.classList.remove('hidden');
+    chevron.classList.add('rotate-180');
+    trigger.classList.remove('border-[#DDDDDD]');
+    trigger.classList.add('border-[#4573D2]', 'shadow-[0_0_0_1px_#4573D2]');
+  }
+
+  function isOpen(sel) {
+    return !sel.querySelector('[data-select-dropdown]').classList.contains('hidden');
+  }
+
+  selects.forEach(sel => {
+    const trigger = sel.querySelector('[data-select-trigger]');
+    const dropdown = sel.querySelector('[data-select-dropdown]');
+    const valueSpan = sel.querySelector('[data-select-value]');
+    const options = sel.querySelectorAll('[data-select-option]');
+
+    trigger.addEventListener('click', e => {
+      e.stopPropagation();
+      // Close all other selects first
+      selects.forEach(other => { if (other !== sel) closeSelect(other); });
+      if (isOpen(sel)) {
+        closeSelect(sel);
+      } else {
+        openSelect(sel);
+      }
+    });
+
+    options.forEach(opt => {
+      opt.addEventListener('click', e => {
+        e.stopPropagation();
+        valueSpan.textContent = opt.textContent;
+        // Update highlight
+        options.forEach(o => {
+          o.classList.remove('bg-[rgba(0,99,255,0.1)]');
+          o.removeAttribute('data-selected');
+        });
+        opt.classList.add('bg-[rgba(0,99,255,0.1)]');
+        opt.setAttribute('data-selected', '');
+        closeSelect(sel);
+      });
+    });
+  });
+
+  document.addEventListener('click', () => {
+    selects.forEach(sel => closeSelect(sel));
+  });
+})();
+
+// ── DatePickers ──
+(function() {
+  const DAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  let activePopup = null;
+
+  function parseDate(str) {
+    const parts = str.split('-');
+    if (parts.length === 3) {
+      return { year: parseInt(parts[0]), month: parseInt(parts[1]) - 1, day: parseInt(parts[2]) };
+    }
+    const now = new Date();
+    return { year: now.getFullYear(), month: now.getMonth(), day: now.getDate() };
+  }
+
+  function formatDate(y, m, d) {
+    return y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+  }
+
+  function buildCalendar(container, year, month, selectedDay, onSelect, onNav) {
+    container.innerHTML = '';
+    // Header with nav
+    const header = document.createElement('div');
+    header.className = 'flex items-center justify-between px-2 py-2';
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'w-6 h-6 flex items-center justify-center rounded hover:bg-[rgba(0,99,255,0.1)] text-[#1C1C1C] border-none bg-transparent cursor-pointer text-sm';
+    prevBtn.innerHTML = '&#8249;';
+    prevBtn.addEventListener('click', e => { e.stopPropagation(); onNav(year, month - 1); });
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'w-6 h-6 flex items-center justify-center rounded hover:bg-[rgba(0,99,255,0.1)] text-[#1C1C1C] border-none bg-transparent cursor-pointer text-sm';
+    nextBtn.innerHTML = '&#8250;';
+    nextBtn.addEventListener('click', e => { e.stopPropagation(); onNav(year, month + 1); });
+    const title = document.createElement('span');
+    title.className = 'text-xs font-bold text-[#1C1C1C]';
+    title.textContent = MONTHS[month] + ' ' + year;
+    header.append(prevBtn, title, nextBtn);
+    container.appendChild(header);
+
+    // Day headers
+    const dayRow = document.createElement('div');
+    dayRow.className = 'grid grid-cols-7 text-center text-[10px] text-[#595959] px-1';
+    DAYS.forEach(d => {
+      const cell = document.createElement('span');
+      cell.className = 'py-0.5';
+      cell.textContent = d;
+      dayRow.appendChild(cell);
+    });
+    container.appendChild(dayRow);
+
+    // Days grid
+    const grid = document.createElement('div');
+    grid.className = 'grid grid-cols-7 text-center text-xs px-1 pb-2';
+    const firstDay = new Date(year, month, 1).getDay();
+    const offset = (firstDay + 6) % 7; // Monday-based
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    for (let i = 0; i < offset; i++) {
+      const empty = document.createElement('span');
+      empty.className = 'py-1';
+      grid.appendChild(empty);
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dayBtn = document.createElement('button');
+      dayBtn.className = 'py-1 rounded cursor-pointer border-none bg-transparent text-xs text-[#1C1C1C] hover:bg-[rgba(0,99,255,0.1)]';
+      if (d === selectedDay) {
+        dayBtn.className = 'py-1 rounded cursor-pointer border-none text-xs text-white bg-[#4573D2]';
+      }
+      dayBtn.textContent = d;
+      const dayNum = d;
+      dayBtn.addEventListener('click', e => { e.stopPropagation(); onSelect(year, month, dayNum); });
+      grid.appendChild(dayBtn);
+    }
+    container.appendChild(grid);
+  }
+
+  function closeCalendar() {
+    if (activePopup) {
+      activePopup.remove();
+      activePopup = null;
+    }
+  }
+
+  document.querySelectorAll('[data-datepicker]').forEach(picker => {
+    const btn = picker.querySelector('[data-datepicker-btn]');
+    const input = picker.querySelector('[data-datepicker-input]');
+    const relativeWrap = picker.querySelector('.relative');
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      // Toggle: if calendar already open for this picker, close it
+      if (activePopup && activePopup.parentElement === relativeWrap) {
+        closeCalendar();
+        return;
+      }
+      closeCalendar();
+
+      const parsed = parseDate(input.value);
+      const popup = document.createElement('div');
+      popup.className = 'absolute top-full left-0 mt-1 w-[220px] bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] z-20';
+      popup.addEventListener('click', e => e.stopPropagation());
+
+      function render(y, m) {
+        const selDay = (y === parsed.year && m === parsed.month) ? parsed.day : -1;
+        buildCalendar(popup, y, m, selDay, (sy, sm, sd) => {
+          input.value = formatDate(sy, sm, sd);
+          closeCalendar();
+        }, (ny, nm) => {
+          const d = new Date(ny, nm, 1);
+          render(d.getFullYear(), d.getMonth());
+        });
+      }
+
+      render(parsed.year, parsed.month);
+      relativeWrap.appendChild(popup);
+      activePopup = popup;
+    });
+  });
+
+  document.addEventListener('click', () => { closeCalendar(); });
+})();
 </script>
 </body>
 </html>

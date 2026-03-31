@@ -205,7 +205,7 @@
 // ── Tag close buttons ──
 document.querySelectorAll('span[class*="cursor-pointer"][class*="hover\\:opacity-70"]').forEach(btn => {
   btn.addEventListener('click', () => {
-    const tag = btn.closest('span[class*="inline-flex"]');
+    const tag = btn.parentElement;
     if (tag) tag.remove();
   });
 });

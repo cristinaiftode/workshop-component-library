@@ -12,7 +12,7 @@ Read **[TEAM-GUIDE.md](TEAM-GUIDE.md)** for step-by-step setup instructions.
 ## Repository structure
 
 ```
-manifest.json          → Component definitions (34 components, all props & variants)
+manifest.json          → Component definitions (66 components, all props & variants)
 prompt-rules.md        → Design system rules for AI tools
 tokens.json            → Design tokens (colors, typography, spacing)
 claude-project-prompt.md → Ready-to-paste Claude Project instructions
@@ -25,6 +25,7 @@ showcase/              → Interactive HTML showcase (open in browser)
   navigation.html      → Tabs, drawers, side nav, top nav
   feedback.html        → Accordions, dialogs, modals
   lists.html           → Card lists, status, list icons
+  dashboard.html       → Dashboard cards, charts (bar/line/area/donut), table, empty state
 
 components/react/      → React + Tailwind implementations
 components/html/       → Plain HTML/CSS implementations

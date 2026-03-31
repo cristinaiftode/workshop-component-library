@@ -8,6 +8,24 @@
   <style>
     * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     button { font-weight: 400; }
+
+    /* Spinner rotation */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin { animation: spin 0.8s linear infinite; }
+
+    /* Skeleton shimmer */
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    .skeleton-shimmer {
+      background: linear-gradient(90deg, #EBEBEB 25%, #F5F5F5 50%, #EBEBEB 75%);
+      background-size: 800px 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-[#F5F5F5] text-[#1C1C1C]">
@@ -161,7 +179,7 @@
     </section>
 
     <!-- TableRow -->
-    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6">
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">TableRow</h2>
       <table class="w-full border-collapse">
         <thead>
@@ -199,6 +217,405 @@
           </tr>
         </tbody>
       </table>
+    </section>
+
+    <!-- Link Text — 3 Sizes × 2 Weights -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Link Text — 3 Sizes &times; 2 Weights</h2>
+      <div class="flex flex-col gap-6">
+        <!-- Regular weight -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Regular (400)</p>
+          <div class="flex items-baseline gap-6">
+            <a href="#" class="text-[12px] leading-[16px] font-normal text-[#4573D2] underline hover:text-[#2B57B4]">Small link</a>
+            <a href="#" class="text-[14px] leading-[20px] font-normal text-[#4573D2] underline hover:text-[#2B57B4]">Medium link</a>
+            <a href="#" class="text-[16px] leading-[24px] font-normal text-[#4573D2] underline hover:text-[#2B57B4]">Large link</a>
+          </div>
+        </div>
+        <!-- Bold weight -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Bold (700)</p>
+          <div class="flex items-baseline gap-6">
+            <a href="#" class="text-[12px] leading-[16px] font-bold text-[#4573D2] underline hover:text-[#2B57B4]">Small link</a>
+            <a href="#" class="text-[14px] leading-[20px] font-bold text-[#4573D2] underline hover:text-[#2B57B4]">Medium link</a>
+            <a href="#" class="text-[16px] leading-[24px] font-bold text-[#4573D2] underline hover:text-[#2B57B4]">Large link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spinner -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Spinner</h2>
+      <div class="flex flex-col gap-6">
+        <!-- Without text labels — 4 sizes -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Sizes without label</p>
+          <div class="flex items-end gap-8">
+            <!-- 12px -->
+            <div class="flex flex-col items-center gap-2">
+              <svg class="animate-spin" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M10 6a4 4 0 01-4 4A4 4 0 012 6a4 4 0 014-4" stroke="#4573D2" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[11px] text-[#595959]">12px</span>
+            </div>
+            <!-- 20px -->
+            <div class="flex flex-col items-center gap-2">
+              <svg class="animate-spin" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M17 10a7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7" stroke="#4573D2" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[11px] text-[#595959]">20px</span>
+            </div>
+            <!-- 24px -->
+            <div class="flex flex-col items-center gap-2">
+              <svg class="animate-spin" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 12a8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8" stroke="#4573D2" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[11px] text-[#595959]">24px</span>
+            </div>
+            <!-- 40px -->
+            <div class="flex flex-col items-center gap-2">
+              <svg class="animate-spin" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M34 20a14 14 0 01-14 14A14 14 0 016 20 14 14 0 0120 6" stroke="#4573D2" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[11px] text-[#595959]">40px</span>
+            </div>
+          </div>
+        </div>
+        <!-- With text label below (40px only) -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">With text label (40px)</p>
+          <div class="flex items-start gap-8">
+            <div class="flex flex-col items-center gap-[16px]">
+              <svg class="animate-spin" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M34 20a14 14 0 01-14 14A14 14 0 016 20 14 14 0 0120 6" stroke="#4573D2" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[14px] leading-[20px] text-black text-center">Text</span>
+            </div>
+            <div class="flex flex-col items-center gap-[16px]">
+              <svg class="animate-spin" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M34 20a14 14 0 01-14 14A14 14 0 016 20 14 14 0 0120 6" stroke="#4573D2" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[14px] leading-[20px] text-black text-center">Text</span>
+            </div>
+            <div class="flex flex-col items-center gap-[16px]">
+              <svg class="animate-spin" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M34 20a14 14 0 01-14 14A14 14 0 016 20 14 14 0 0120 6" stroke="#4573D2" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[14px] leading-[20px] text-black text-center">Text</span>
+            </div>
+            <div class="flex flex-col items-center gap-[16px]">
+              <svg class="animate-spin" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M34 20a14 14 0 01-14 14A14 14 0 016 20 14 14 0 0120 6" stroke="#4573D2" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+              <span class="text-[14px] leading-[20px] text-black text-center">Text</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skeleton Loader -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Skeleton Loader</h2>
+      <div class="flex flex-col gap-6">
+        <!-- Text block skeleton -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Text block placeholder</p>
+          <div class="flex flex-col gap-[10px] max-w-[480px]">
+            <div class="skeleton-shimmer h-[12px] rounded-[4px] w-full"></div>
+            <div class="skeleton-shimmer h-[12px] rounded-[4px] w-full"></div>
+            <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[75%]"></div>
+          </div>
+        </div>
+        <!-- Card skeleton -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Card placeholder</p>
+          <div class="border border-[#DDDDDD] rounded-[4px] p-4 max-w-[480px]">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="skeleton-shimmer w-[40px] h-[40px] rounded-full shrink-0"></div>
+              <div class="flex flex-col gap-[8px] flex-1">
+                <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[140px]"></div>
+                <div class="skeleton-shimmer h-[10px] rounded-[4px] w-[100px]"></div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-[10px]">
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-full"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-full"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[60%]"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Table skeleton -->
+        <div>
+          <p class="text-xs text-[#595959] mb-3 font-bold">Table row placeholder</p>
+          <div class="flex flex-col gap-[12px] max-w-[480px]">
+            <div class="flex items-center gap-4">
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[80px]"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] flex-1"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[60px]"></div>
+            </div>
+            <div class="border-b border-[#EBEBEB]"></div>
+            <div class="flex items-center gap-4">
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[80px]"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] flex-1"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[60px]"></div>
+            </div>
+            <div class="border-b border-[#EBEBEB]"></div>
+            <div class="flex items-center gap-4">
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[80px]"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] flex-1"></div>
+              <div class="skeleton-shimmer h-[12px] rounded-[4px] w-[60px]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- BadgeDot — Small Colored Dot Indicators -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">BadgeDot — Colored Dot Indicators</h2>
+      <div class="flex flex-wrap items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#4573D2]"></span>
+          <span class="text-sm text-[#1C1C1C]">Blue</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#1A8B5E]"></span>
+          <span class="text-sm text-[#1C1C1C]">Green</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#FFBD3B]"></span>
+          <span class="text-sm text-[#1C1C1C]">Yellow</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#CE3F42]"></span>
+          <span class="text-sm text-[#1C1C1C]">Red</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#7B61AD]"></span>
+          <span class="text-sm text-[#1C1C1C]">Purple</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#D64DA0]"></span>
+          <span class="text-sm text-[#1C1C1C]">Pink</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#8B6B5A]"></span>
+          <span class="text-sm text-[#1C1C1C]">Brown</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#E88D30]"></span>
+          <span class="text-sm text-[#1C1C1C]">Orange</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#9DA3AE]"></span>
+          <span class="text-sm text-[#1C1C1C]">Grey</span>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-4 mb-2">Standalone dots (no label):</p>
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#4573D2]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#1A8B5E]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#FFBD3B]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#CE3F42]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#7B61AD]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#D64DA0]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#8B6B5A]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#E88D30]"></span>
+        <span class="inline-block w-[8px] h-[8px] rounded-full bg-[#9DA3AE]"></span>
+      </div>
+    </section>
+
+    <!-- Badge/Tag Variants — Filled, Outlined, with Dot, with Close -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge/Tag — Filled</h2>
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#DEEBFF] text-[#29283E]">Blue</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]">Green</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]">Yellow</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]">Red</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]">Purple</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3F7] text-[#870062]">Pink</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE0DA] text-[#45291F]">Brown</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3BB] text-[#4A2811]">Orange</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]">Grey</span>
+      </div>
+
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge/Tag — Outlined</h2>
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#4573D2] text-[#29283E]">Blue</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#1A8B5E] text-[#14493A]">Green</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#FFBD3B] text-[#733700]">Yellow</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#CE3F42] text-[#64001B]">Red</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#7B61AD] text-[#412970]">Purple</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#D64DA0] text-[#870062]">Pink</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#8B6B5A] text-[#45291F]">Brown</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#E88D30] text-[#4A2811]">Orange</span>
+        <span class="inline-flex items-center py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-white border border-[#9DA3AE] text-[#1C1C1C]">Grey</span>
+      </div>
+
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge/Tag — Filled with Dot</h2>
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#DEEBFF] text-[#29283E]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#4573D2]"></span>Blue</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#1A8B5E]"></span>Green</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#FFBD3B]"></span>Yellow</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#CE3F42]"></span>Red</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#7B61AD]"></span>Purple</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3F7] text-[#870062]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#D64DA0]"></span>Pink</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE0DA] text-[#45291F]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#8B6B5A]"></span>Brown</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3BB] text-[#4A2811]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#E88D30]"></span>Orange</span>
+        <span class="inline-flex items-center gap-[6px] py-[2px] px-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]"><span class="inline-block w-[6px] h-[6px] rounded-full bg-[#9DA3AE]"></span>Grey</span>
+      </div>
+
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge/Tag — Filled with Close</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#DEEBFF] text-[#29283E]">Blue<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#CDF0E7] text-[#14493A]">Green<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFF1C3] text-[#733700]">Yellow<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFDAD2] text-[#64001B]">Red<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE5FF] text-[#412970]">Purple<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3F7] text-[#870062]">Pink<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EEE0DA] text-[#45291F]">Brown<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#FFE3BB] text-[#4A2811]">Orange<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+        <span class="inline-flex items-center gap-1 py-[2px] pl-[8px] rounded-[4px] text-sm leading-5 font-normal whitespace-nowrap bg-[#EBEBEB] text-[#1C1C1C]">Grey<span class="inline-flex items-center justify-center h-5 p-[2px] rounded-r-[4px] cursor-pointer hover:opacity-70"><svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg></span></span>
+      </div>
+    </section>
+
+    <!-- Badge Icons — Status Icons (Filled & Outlined) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge Icons — Filled</h2>
+      <div class="flex flex-wrap items-center gap-4 mb-5">
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Info</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#1A8B5E]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6.5l2 2 4-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Success</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Warning</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Error</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#7B61AD]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 4.5a1.5 1.5 0 0 1 2.83.7c0 1-1.33 1.3-1.33 1.3" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.6" fill="white"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Help</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#E88D30]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Alert</span>
+        </div>
+      </div>
+
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Badge Icons — Outlined</h2>
+      <div class="flex flex-wrap items-center gap-4">
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#4573D2]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="#4573D2"/><path d="M6 5.5v3" stroke="#4573D2" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Info</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#1A8B5E]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6.5l2 2 4-4.5" stroke="#1A8B5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Success</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#FFBD3B]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="#FFBD3B" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="#FFBD3B"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Warning</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#CE3F42]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="#CE3F42" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Error</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#7B61AD]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 4.5a1.5 1.5 0 0 1 2.83.7c0 1-1.33 1.3-1.33 1.3" stroke="#7B61AD" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.6" fill="#7B61AD"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Help</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full border-[1.5px] border-[#E88D30]">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="#E88D30" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="#E88D30"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Alert</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon Set — Checkmark, X, Exclamation, Info, Question, Alert -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Icon Set</h2>
+      <div class="flex flex-wrap items-start gap-8">
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Checkmark</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Close / X</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 6v7"/><circle cx="12" cy="16.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Exclamation</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="7.5" r="0.5" fill="currentColor" stroke="none"/><path d="M12 11v7"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Info</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 9a3 3 0 0 1 5.12 2.13c0 1.58-2.12 2.37-2.12 2.37"/><circle cx="12" cy="16.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Question</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <span class="inline-flex items-center justify-center w-[32px] h-[32px] text-[#1C1C1C]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 21h20L12 3z"/><path d="M12 9v5"/><circle cx="12" cy="17" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="text-xs text-[#595959]">Alert</span>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-5 mb-3">16px size (inline use):</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"><path d="M12 6v7"/><circle cx="12" cy="16.5" r="0.5" fill="#1C1C1C" stroke="none"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="7.5" r="0.5" fill="#1C1C1C" stroke="none"/><path d="M12 11v7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"><path d="M9 9a3 3 0 0 1 5.12 2.13c0 1.58-2.12 2.37-2.12 2.37"/><circle cx="12" cy="16.5" r="0.5" fill="#1C1C1C" stroke="none"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 21h20L12 3z"/><path d="M12 9v5"/><circle cx="12" cy="17" r="0.5" fill="#1C1C1C" stroke="none"/></svg>
+      </div>
     </section>
   </div>
 <script>

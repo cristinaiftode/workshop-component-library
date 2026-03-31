@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-5xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Dashboard Components</h1>
+
+    <!-- Label — 3 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Label — 3 Variants</h2>
+      <div class="flex items-start gap-8">
+        <!-- Center -->
+        <div class="flex flex-col items-center">
+          <span class="text-[10px] text-[#595959] mb-1">Center</span>
+          <div class="w-[50px] pt-[6px] px-[4px] text-center">
+            <span class="text-[12px] text-[#595959]">Label</span>
+          </div>
+        </div>
+        <!-- Right aligned -->
+        <div class="flex flex-col items-center">
+          <span class="text-[10px] text-[#595959] mb-1">Right aligned</span>
+          <div class="w-[50px] pr-[8px] text-right">
+            <span class="text-[12px] text-[#595959]">Label</span>
+          </div>
+        </div>
+        <!-- Zero width -->
+        <div class="flex flex-col items-center">
+          <span class="text-[10px] text-[#595959] mb-1">Zero width</span>
+          <div class="w-[0.001px] pt-[6px] text-center">
+            <span class="text-[12px] text-[#595959]">Label</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Segment — 16 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Segment — 16 Variants</h2>
+      <!-- Row 1: 16px width -->
+      <div class="flex items-end gap-4 mb-6">
+        <!-- Single solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] bg-[#75A0F5] rounded-[3px]"></div>
+          <span class="text-[10px] text-[#595959]">Single</span>
+        </div>
+        <!-- End solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] bg-[#75A0F5] rounded-t-[3px]"></div>
+          <span class="text-[10px] text-[#595959]">End</span>
+        </div>
+        <!-- Middle solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] bg-[#75A0F5]"></div>
+          <span class="text-[10px] text-[#595959]">Middle</span>
+        </div>
+        <!-- Beginning solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] bg-[#75A0F5] rounded-b-[3px]"></div>
+          <span class="text-[10px] text-[#595959]">Beginning</span>
+        </div>
+        <!-- Single hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] rounded-[3px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Single H</span>
+        </div>
+        <!-- End hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] rounded-t-[3px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">End H</span>
+        </div>
+        <!-- Middle hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Middle H</span>
+        </div>
+        <!-- Beginning hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[16px] h-[40px] rounded-b-[3px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Begin H</span>
+        </div>
+      </div>
+      <!-- Row 2: 8px width -->
+      <div class="flex items-end gap-4">
+        <!-- Single solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] bg-[#75A0F5] rounded-[2px]"></div>
+          <span class="text-[10px] text-[#595959]">Single</span>
+        </div>
+        <!-- End solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] bg-[#75A0F5] rounded-t-[2px]"></div>
+          <span class="text-[10px] text-[#595959]">End</span>
+        </div>
+        <!-- Middle solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] bg-[#75A0F5]"></div>
+          <span class="text-[10px] text-[#595959]">Middle</span>
+        </div>
+        <!-- Beginning solid -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] bg-[#75A0F5] rounded-b-[2px]"></div>
+          <span class="text-[10px] text-[#595959]">Beginning</span>
+        </div>
+        <!-- Single hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] rounded-[2px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Single H</span>
+        </div>
+        <!-- End hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] rounded-t-[2px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">End H</span>
+        </div>
+        <!-- Middle hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Middle H</span>
+        </div>
+        <!-- Beginning hatching -->
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-[8px] h-[40px] rounded-b-[2px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          <span class="text-[10px] text-[#595959]">Begin H</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar — 14 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar — 14 Variants</h2>
+      <!-- Row 1: Normal state -->
+      <p class="text-[10px] text-[#595959] mb-2">Normal state</p>
+      <div class="flex items-end gap-6 mb-6">
+        <!-- Single 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end"><div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div></div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Single 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end"><div class="w-[8px] h-[160px] bg-[#75A0F5] rounded-[2px]"></div></div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Group 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div>
+            <div class="w-[16px] h-[120px] bg-[#52C7AB] rounded-[3px]"></div>
+            <div class="w-[16px] h-[80px] bg-[#FFD665] rounded-[3px]"></div>
+            <div class="w-[16px] h-[50px] bg-[#E66568] rounded-[3px]"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Group 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[8px] h-[160px] bg-[#75A0F5] rounded-[2px]"></div>
+            <div class="w-[8px] h-[120px] bg-[#52C7AB] rounded-[2px]"></div>
+            <div class="w-[8px] h-[80px] bg-[#FFD665] rounded-[2px]"></div>
+            <div class="w-[8px] h-[50px] bg-[#E66568] rounded-[2px]"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Stacked 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end">
+            <div class="flex flex-col">
+              <div class="w-[16px] h-[60px] bg-[#75A0F5] rounded-t-[3px]"></div>
+              <div class="w-[16px] h-[50px] bg-[#52C7AB]"></div>
+              <div class="w-[16px] h-[40px] bg-[#FFD665]"></div>
+              <div class="w-[16px] h-[30px] bg-[#E66568] rounded-b-[3px]"></div>
+            </div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Stacked 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end">
+            <div class="flex flex-col">
+              <div class="w-[8px] h-[60px] bg-[#75A0F5] rounded-t-[2px]"></div>
+              <div class="w-[8px] h-[50px] bg-[#52C7AB]"></div>
+              <div class="w-[8px] h-[40px] bg-[#FFD665]"></div>
+              <div class="w-[8px] h-[30px] bg-[#E66568] rounded-b-[2px]"></div>
+            </div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Double w. hatching -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div>
+            <div class="w-[16px] h-[120px] rounded-[3px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+      </div>
+      <!-- Row 2: Not hovered / faded -->
+      <p class="text-[10px] text-[#595959] mb-2">Not hovered / faded (opacity 0.3)</p>
+      <div class="flex items-end gap-6 mb-6" style="opacity: 0.3;">
+        <!-- Single 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end"><div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div></div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Single 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end"><div class="w-[8px] h-[160px] bg-[#75A0F5] rounded-[2px]"></div></div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Group 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div>
+            <div class="w-[16px] h-[120px] bg-[#52C7AB] rounded-[3px]"></div>
+            <div class="w-[16px] h-[80px] bg-[#FFD665] rounded-[3px]"></div>
+            <div class="w-[16px] h-[50px] bg-[#E66568] rounded-[3px]"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Group 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[8px] h-[160px] bg-[#75A0F5] rounded-[2px]"></div>
+            <div class="w-[8px] h-[120px] bg-[#52C7AB] rounded-[2px]"></div>
+            <div class="w-[8px] h-[80px] bg-[#FFD665] rounded-[2px]"></div>
+            <div class="w-[8px] h-[50px] bg-[#E66568] rounded-[2px]"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Stacked 16px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end">
+            <div class="flex flex-col">
+              <div class="w-[16px] h-[60px] bg-[#75A0F5] rounded-t-[3px]"></div>
+              <div class="w-[16px] h-[50px] bg-[#52C7AB]"></div>
+              <div class="w-[16px] h-[40px] bg-[#FFD665]"></div>
+              <div class="w-[16px] h-[30px] bg-[#E66568] rounded-b-[3px]"></div>
+            </div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Stacked 8px -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end">
+            <div class="flex flex-col">
+              <div class="w-[8px] h-[60px] bg-[#75A0F5] rounded-t-[2px]"></div>
+              <div class="w-[8px] h-[50px] bg-[#52C7AB]"></div>
+              <div class="w-[8px] h-[40px] bg-[#FFD665]"></div>
+              <div class="w-[8px] h-[30px] bg-[#E66568] rounded-b-[2px]"></div>
+            </div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+        <!-- Double w. hatching -->
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end gap-[2px]">
+            <div class="w-[16px] h-[160px] bg-[#75A0F5] rounded-[3px]"></div>
+            <div class="w-[16px] h-[120px] rounded-[3px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #75A0F5;"></div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+      </div>
+      <!-- Space type -->
+      <p class="text-[10px] text-[#595959] mb-2">Space</p>
+      <div class="flex items-end gap-6 mb-6">
+        <div class="flex flex-col items-center">
+          <div class="h-[226px] flex items-end">
+            <div class="flex gap-[40px]">
+              <div class="w-[1px] h-[226px] border-l border-dashed border-[#ACACAC]"></div>
+              <div class="w-[1px] h-[226px] border-l border-dashed border-[#ACACAC]"></div>
+            </div>
+          </div>
+          <span class="text-[12px] text-[#595959] mt-1">Label</span>
+        </div>
+      </div>
+      <!-- Horizontal bars -->
+      <p class="text-[10px] text-[#595959] mb-2">Horizontal</p>
+      <div class="flex flex-col gap-4">
+        <!-- Horizontal single -->
+        <div class="flex items-center gap-3">
+          <span class="text-[12px] text-[#595959] w-[40px] text-right">Label</span>
+          <div class="h-[16px] w-[200px] bg-[#75A0F5] rounded-[3px]"></div>
+          <span class="text-[12px] text-[#595959]">Amount</span>
+        </div>
+        <!-- Horizontal stacked -->
+        <div class="flex items-center gap-3">
+          <span class="text-[12px] text-[#595959] w-[40px] text-right">Label</span>
+          <div class="flex h-[16px]">
+            <div class="h-[16px] w-[100px] bg-[#75A0F5] rounded-l-[3px]"></div>
+            <div class="h-[16px] w-[60px] bg-[#52C7AB]"></div>
+            <div class="h-[16px] w-[40px] bg-[#FFD665]"></div>
+            <div class="h-[16px] w-[30px] bg-[#E66568] rounded-r-[3px]"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legend — 10 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Legend — 10 Variants</h2>
+      <!-- Row 1: Normal state -->
+      <p class="text-[10px] text-[#595959] mb-2">Normal</p>
+      <div class="flex items-center gap-4 mb-4">
+        <!-- Checked -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px]">
+          <div class="w-[12px] h-[12px] bg-[#7B61FF] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Unchecked -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px]">
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- 2 more -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px]">
+          <span class="text-[14px] text-[#595959]">2 more</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#595959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <!-- Row 2: Hover state -->
+      <p class="text-[10px] text-[#595959] mb-2">Hover</p>
+      <div class="flex items-center gap-4 mb-4">
+        <!-- Checked hover with checkmark -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px] bg-[#EFEFEF]">
+          <div class="w-[12px] h-[12px] bg-[#7B61FF] rounded-[2px] flex items-center justify-center">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Unchecked hover -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px] bg-[#EFEFEF]">
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- 2 more hover -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px] bg-[#EFEFEF]">
+          <span class="text-[14px] text-[#595959]">2 more</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#595959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <!-- Row 3: Hatching -->
+      <p class="text-[10px] text-[#595959] mb-2">Hatching</p>
+      <div class="flex items-center gap-4 mb-4">
+        <!-- Checked hatching -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px]">
+          <div class="w-[12px] h-[12px] rounded-[2px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #7B61FF;"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Unchecked hatching -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px]">
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+      </div>
+      <!-- Row 4: Hatching Hover -->
+      <p class="text-[10px] text-[#595959] mb-2">Hatching Hover</p>
+      <div class="flex items-center gap-4">
+        <!-- Checked hatching hover -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px] bg-[#EFEFEF]">
+          <div class="w-[12px] h-[12px] rounded-[2px]" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px), #7B61FF;"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Unchecked hatching hover -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px] rounded-[4px] bg-[#EFEFEF]">
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Header — 2 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Header — 2 Variants</h2>
+      <div class="flex flex-col gap-4">
+        <!-- Title only -->
+        <div class="w-[370px] h-[56px] flex items-center justify-between px-[16px]">
+          <span class="text-[16px] font-bold text-[#1C1C1C]">Title</span>
+          <div class="w-[32px] h-[32px] flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="4" r="1.5" fill="#595959"/><circle cx="10" cy="10" r="1.5" fill="#595959"/><circle cx="10" cy="16" r="1.5" fill="#595959"/></svg>
+          </div>
+        </div>
+        <!-- Title + Subtitle -->
+        <div class="w-[370px] h-[56px] flex items-center justify-between px-[16px]">
+          <div class="flex flex-col">
+            <span class="text-[16px] font-bold text-[#1C1C1C]">Title</span>
+            <span class="text-[12px] text-[#595959]">Subtitle</span>
+          </div>
+          <div class="w-[32px] h-[32px] flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="4" r="1.5" fill="#595959"/><circle cx="10" cy="10" r="1.5" fill="#595959"/><circle cx="10" cy="16" r="1.5" fill="#595959"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Header Backup — 2 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Header Backup — 2 Variants</h2>
+      <div class="flex flex-col gap-4">
+        <!-- Title only -->
+        <div class="w-[370px] h-[56px] flex items-center justify-between px-[16px]">
+          <span class="text-[16px] font-bold text-[#1C1C1C]">Title</span>
+          <div class="w-[32px] h-[32px] flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="4" r="1.5" fill="#595959"/><circle cx="10" cy="10" r="1.5" fill="#595959"/><circle cx="10" cy="16" r="1.5" fill="#595959"/></svg>
+          </div>
+        </div>
+        <!-- Title + Subtitle -->
+        <div class="w-[370px] h-[56px] flex items-center justify-between px-[16px]">
+          <div class="flex flex-col">
+            <span class="text-[16px] font-bold text-[#1C1C1C]">Title</span>
+            <span class="text-[12px] text-[#595959]">Subtitle</span>
+          </div>
+          <div class="w-[32px] h-[32px] flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="4" r="1.5" fill="#595959"/><circle cx="10" cy="10" r="1.5" fill="#595959"/><circle cx="10" cy="16" r="1.5" fill="#595959"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Axis Labels — 3 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Axis Labels — 3 Variants</h2>
+      <div class="flex flex-col gap-6">
+        <!-- 4 labels -->
+        <div>
+          <p class="text-[10px] text-[#595959] mb-1">4 labels</p>
+          <div class="w-[576px] flex">
+            <div class="flex-1 pt-[6px] text-center text-[12px] text-[#595959]">Jan</div>
+            <div class="flex-1 pt-[6px] text-center text-[12px] text-[#595959]">Feb</div>
+            <div class="flex-1 pt-[6px] text-center text-[12px] text-[#595959]">Mar</div>
+            <div class="flex-1 pt-[6px] text-center text-[12px] text-[#595959]">Apr</div>
+          </div>
+        </div>
+        <!-- 5 labels -->
+        <div>
+          <p class="text-[10px] text-[#595959] mb-1">5 labels</p>
+          <div class="w-[576px] flex justify-between">
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Jan</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Feb</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Mar</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Apr</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">May</div>
+          </div>
+        </div>
+        <!-- 9 labels -->
+        <div>
+          <p class="text-[10px] text-[#595959] mb-1">9 labels</p>
+          <div class="w-[576px] flex justify-between">
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Jan</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Feb</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Mar</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Apr</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">May</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Jun</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Jul</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Aug</div>
+            <div class="w-[0.001px] pt-[6px] text-center text-[12px] text-[#595959]">Sep</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legend Bar -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Legend Bar</h2>
+      <div class="flex justify-center pb-[12px] pt-[8px] px-[16px] gap-[4px] flex-wrap">
+        <!-- Blue -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Green -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Yellow -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Red -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <div class="w-[12px] h-[12px] bg-[#E66568] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- Purple -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <div class="w-[12px] h-[12px] bg-[#CBBCFE] rounded-[2px]"></div>
+          <span class="text-[14px] text-[#595959]">Label</span>
+        </div>
+        <!-- 2 more -->
+        <div class="flex items-center gap-[4px] px-[8px] py-[2px]">
+          <span class="text-[14px] text-[#595959]">2 more</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#595959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donut Chart -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Donut Chart</h2>
+      <div class="flex justify-center">
+        <div class="relative w-[184px] h-[184px]">
+          <svg width="184" height="184" viewBox="0 0 184 184">
+            <circle cx="92" cy="92" r="72" fill="white"/>
+            <!-- Green #52C7AB - largest segment -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#52C7AB" stroke-width="20" stroke-dasharray="155 360" stroke-dashoffset="0" transform="rotate(-90 92 92)"/>
+            <!-- Blue #75A0F5 -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#75A0F5" stroke-width="20" stroke-dasharray="80 435" stroke-dashoffset="-155" transform="rotate(-90 92 92)"/>
+            <!-- Grey #DDDDDD -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-dasharray="60 455" stroke-dashoffset="-235" transform="rotate(-90 92 92)"/>
+            <!-- Purple #CBBCFE -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#CBBCFE" stroke-width="20" stroke-dasharray="50 465" stroke-dashoffset="-295" transform="rotate(-90 92 92)"/>
+            <!-- Red #E66568 -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#E66568" stroke-width="20" stroke-dasharray="25 490" stroke-dashoffset="-345" transform="rotate(-90 92 92)"/>
+            <!-- Yellow #FFD665 -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#FFD665" stroke-width="20" stroke-dasharray="30 485" stroke-dashoffset="-370" transform="rotate(-90 92 92)"/>
+            <!-- Orange #FAB64D -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#FAB64D" stroke-width="20" stroke-dasharray="40 475" stroke-dashoffset="-400" transform="rotate(-90 92 92)"/>
+            <!-- Pink #F98EDB -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#F98EDB" stroke-width="20" stroke-dasharray="15 500" stroke-dashoffset="-440" transform="rotate(-90 92 92)"/>
+            <!-- Brown #C4AB9E -->
+            <circle cx="92" cy="92" r="82" fill="none" stroke="#C4AB9E" stroke-width="20" stroke-dasharray="10 505" stroke-dashoffset="-455" transform="rotate(-90 92 92)"/>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-[20px] font-bold text-[#1C1C1C]">234.351</span>
+            <span class="text-[14px] text-[#1C1C1C]">Total</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donut Chart Legend — 2 States -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Donut Chart Legend — 2 States</h2>
+      <div class="flex items-start gap-6">
+        <!-- Normal -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[10px] text-[#595959] mb-1">Normal</span>
+          <div class="w-[120px] flex gap-[8px] p-[4px] rounded-[4px]">
+            <div class="w-[8px] self-stretch bg-[#75A0F5] rounded-[2px]"></div>
+            <div class="flex flex-col">
+              <span class="text-[12px] text-black">Title</span>
+              <span class="text-[12px] font-bold text-black">Amount</span>
+            </div>
+          </div>
+        </div>
+        <!-- Hover/Active -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[10px] text-[#595959] mb-1">Hover / Active</span>
+          <div class="w-[120px] flex gap-[8px] p-[4px] rounded-[4px] bg-[#EBEBEB]">
+            <div class="w-[8px] self-stretch bg-[#75A0F5] rounded-[2px]"></div>
+            <div class="flex flex-col">
+              <span class="text-[12px] text-black">Title</span>
+              <span class="text-[12px] font-bold text-black">Amount</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkbox — Color Grid -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Checkbox — Color Grid</h2>
+      <div class="flex flex-col gap-3">
+        <!-- Blue row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#4573D2] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#4573D2] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Green row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#08AE87] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#08AE87] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Yellow row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#FFBD3B] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#FFBD3B] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Red row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#E66568] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#E66568] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#CE3F42] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#CE3F42] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Purple row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#CBBCFE] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#CBBCFE] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#9270FA] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#9270FA] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Pink row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#F98EDB] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#F98EDB] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#E165BF] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#E165BF] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Brown row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#C4AB9E] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#C4AB9E] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#93715D] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#93715D] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Orange row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#FAB64D] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#FAB64D] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#F99702] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#F99702] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+        <!-- Grey row -->
+        <div class="flex items-center gap-3">
+          <div class="w-[12px] h-[12px] bg-[#DDDDDD] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#DDDDDD] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] bg-[#ACACAC] rounded-[2px]"></div>
+          <div class="w-[12px] h-[12px] bg-[#ACACAC] rounded-[2px] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="w-[12px] h-[12px] border border-[#ACACAC] rounded-[2px]"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkbox with White Tick — 9 Colors -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Checkbox with White Tick — 9 Colors</h2>
+      <div class="flex flex-col gap-2">
+        <div class="w-[12px] h-[12px] bg-[#4573D2] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#08AE87] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#FFBD3B] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#CE3F42] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#9270FA] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#E165BF] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#93715D] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#F99702] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="w-[12px] h-[12px] bg-[#ACACAC] rounded-[2px] flex items-center justify-center overflow-hidden"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </section>
+
+    <!-- Card Info Box -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Card Info Box</h2>
+      <div class="w-[152px] h-[254px] bg-[#F6F6F6] rounded-[4px] relative">
+        <!-- Top section: Sales Invoices -->
+        <div class="absolute left-[16px] top-[12px]">
+          <span class="text-[12px] text-[#595959] block">Sales Invoices</span>
+          <span class="text-[16px] font-bold text-[#1C1C1C] block">234.458</span>
+          <span class="text-[12px] text-[#595959] block">2 overdue</span>
+          <span class="text-[16px] font-bold text-[#1C1C1C] block">125.632</span>
+          <span class="text-[12px] text-[#595959] block">1 not due yet</span>
+        </div>
+        <!-- Bottom section: Supplier Invoices -->
+        <div class="absolute left-[16px] top-[132px]">
+          <span class="text-[12px] text-[#595959] block">Supplier Invoices</span>
+          <span class="text-[16px] font-bold text-[#1C1C1C] block">10.231</span>
+          <span class="text-[12px] text-[#595959] block">2 overdue</span>
+          <span class="text-[16px] font-bold text-[#1C1C1C] block">1.532</span>
+          <span class="text-[12px] text-[#595959] block">1 not due yet</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Hover Card — 5 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard Hover Card — 5 Variants</h2>
+      <div class="flex flex-wrap items-start gap-4">
+
+        <!-- 1 Label -->
+        <div class="bg-white flex gap-[16px] items-center p-[16px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex flex-col items-start">
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end">
+            <span class="text-[12px] leading-[16px] font-bold text-[#1C1C1C] text-right whitespace-nowrap">5.000</span>
+          </div>
+        </div>
+
+        <!-- 2 Labels -->
+        <div class="bg-white flex gap-[16px] items-center p-[16px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex flex-col items-start gap-[6px]">
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-[6px] text-[12px] leading-[16px] font-bold text-[#1C1C1C] text-right whitespace-nowrap">
+            <span>5.000</span>
+            <span>4.000</span>
+          </div>
+        </div>
+
+        <!-- 3 Labels -->
+        <div class="bg-white flex gap-[16px] items-center p-[16px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex flex-col items-start gap-[6px]">
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-[6px] text-[12px] leading-[16px] font-bold text-[#1C1C1C] text-right whitespace-nowrap">
+            <span>5.000</span>
+            <span>4.000</span>
+            <span>3.000</span>
+          </div>
+        </div>
+
+        <!-- 4 Labels -->
+        <div class="bg-white flex gap-[16px] items-center p-[16px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex flex-col items-start gap-[6px]">
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#E66568] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-end gap-[6px] text-[12px] leading-[16px] font-bold text-[#1C1C1C] text-right whitespace-nowrap">
+            <span>5.000</span>
+            <span>4.000</span>
+            <span>3.000</span>
+            <span>2.000</span>
+          </div>
+        </div>
+
+        <!-- 5 Labels (with "3 More") -->
+        <div class="bg-white flex gap-[16px] items-center p-[16px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex flex-col items-start gap-[6px]">
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#52C7AB] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#FFD665] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <div class="flex gap-[4px] items-center rounded-[4px]">
+              <div class="w-[12px] h-[12px] bg-[#E66568] rounded-[2px]"></div>
+              <span class="text-[12px] leading-[16px] text-[#595959]">Label</span>
+            </div>
+            <span class="text-[12px] leading-[16px] text-[#595959]">3 More</span>
+          </div>
+          <div class="flex flex-col items-end gap-[6px] text-[12px] leading-[16px] font-bold text-[#1C1C1C] text-right whitespace-nowrap">
+            <span>5.000</span>
+            <span>4.000</span>
+            <span>3.000</span>
+            <span>2.000</span>
+            <span>1.000</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dashboard More Menu — Legends -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard More Menu — Legends</h2>
+      <div class="inline-flex">
+        <div class="bg-white flex flex-col items-start p-[8px] rounded-[4px] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.1),0px_6px_18px_0px_rgba(47,51,68,0.2)]">
+          <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+            <div class="w-[12px] h-[12px] bg-[#7B61FF] rounded-[2px]"></div>
+            <span class="text-[14px] leading-[20px] text-[#595959] whitespace-nowrap">Label</span>
+          </div>
+          <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+            <div class="w-[12px] h-[12px] bg-[#7B61FF] rounded-[2px]"></div>
+            <span class="text-[14px] leading-[20px] text-[#595959] whitespace-nowrap">Label</span>
+          </div>
+          <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+            <div class="w-[12px] h-[12px] bg-[#7B61FF] rounded-[2px]"></div>
+            <span class="text-[14px] leading-[20px] text-[#595959] whitespace-nowrap">Label</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Card — 4 Variants -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard Card — Normal</h2>
+      <div class="inline-block">
+        <!-- Normal state, no info box -->
+        <div class="bg-white border border-[#DDDDDD] rounded-[8px] overflow-hidden w-[552px] h-[326px] relative">
+          <!-- Header -->
+          <div class="flex gap-[4px] h-[56px] items-center pl-[16px] pr-[12px]">
+            <span class="flex-1 font-bold text-[16px] leading-[24px] text-[#1C1C1C] truncate">Title</span>
+          </div>
+          <!-- Chart area -->
+          <div class="absolute inset-x-0 top-[56px] bottom-0">
+            <!-- Grid lines -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex flex-col justify-between pb-[14px] px-[16px]">
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">500K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">400K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">300K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">200K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">100K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">0</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+            </div>
+            <!-- Bars -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex items-end px-[56px]">
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 15%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 80%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 97%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 46%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 70%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 33%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="absolute bottom-0 inset-x-0 flex items-center justify-center pb-[12px] pt-[8px] px-[16px]">
+              <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+                <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+                <span class="text-[14px] leading-[20px] text-[#595959]">Label</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Card — Normal + Info Box -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard Card — Normal + Info Box</h2>
+      <div class="inline-block">
+        <div class="bg-white border border-[#DDDDDD] rounded-[8px] overflow-hidden w-[552px] h-[326px] relative">
+          <!-- Header -->
+          <div class="flex gap-[4px] h-[56px] items-center pl-[16px] pr-[12px]">
+            <span class="flex-1 font-bold text-[16px] leading-[24px] text-[#1C1C1C] truncate">Title</span>
+          </div>
+          <!-- Chart area (narrower to make room for info box) -->
+          <div class="absolute left-0 top-[56px] bottom-0 right-[168px]">
+            <!-- Grid lines -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex flex-col justify-between pb-[14px] px-[16px]">
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">500K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">400K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">300K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">200K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">100K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">0</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+            </div>
+            <!-- Bars -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex items-end px-[56px]">
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 15%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 80%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 97%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 46%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 70%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 33%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="absolute bottom-0 inset-x-0 flex items-center justify-center pb-[12px] pt-[8px] px-[16px]">
+              <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+                <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+                <span class="text-[14px] leading-[20px] text-[#595959]">Label</span>
+              </div>
+            </div>
+          </div>
+          <!-- Info Box -->
+          <div class="absolute top-[56px] right-[16px] bottom-[16px] w-[152px] bg-[#F6F6F6] rounded-[4px]">
+            <div class="absolute left-[16px] top-[12px] flex flex-col gap-[4px] items-start">
+              <span class="text-[12px] leading-[16px] text-[#595959]">Sales Invoices</span>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">234.458</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">2 overdue</span>
+              </div>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">125.632</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">1 not due yet</span>
+              </div>
+            </div>
+            <div class="absolute left-[16px] top-[132px] flex flex-col gap-[4px] items-start">
+              <span class="text-[12px] leading-[16px] text-[#595959]">Supplier Invoices</span>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">10.231</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">2 overdue</span>
+              </div>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">1.532</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">1 not due yet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Card — Hover -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard Card — Hover</h2>
+      <div class="inline-block">
+        <div class="bg-white border border-[#ACACAC] rounded-[8px] overflow-hidden w-[552px] h-[326px] relative">
+          <!-- Header with more button -->
+          <div class="flex gap-[4px] h-[56px] items-center pl-[16px] pr-[12px]">
+            <span class="flex-1 font-bold text-[16px] leading-[24px] text-[#1C1C1C] truncate">Title</span>
+            <div class="flex items-center justify-center w-[32px] h-[32px]">
+              <div class="flex items-center justify-center overflow-hidden p-[6px] rounded-[4px]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="4" r="1.5" fill="#595959"/>
+                  <circle cx="10" cy="10" r="1.5" fill="#595959"/>
+                  <circle cx="10" cy="16" r="1.5" fill="#595959"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Chart area -->
+          <div class="absolute inset-x-0 top-[56px] bottom-0">
+            <!-- Grid lines -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex flex-col justify-between pb-[14px] px-[16px]">
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">500K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">400K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">300K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">200K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">100K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">0</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+            </div>
+            <!-- Bars -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex items-end px-[56px]">
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 15%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 80%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 97%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 46%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 70%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 33%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="absolute bottom-0 inset-x-0 flex items-center justify-center pb-[12px] pt-[8px] px-[16px]">
+              <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+                <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+                <span class="text-[14px] leading-[20px] text-[#595959]">Label</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Card — Hover + Info Box -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Dashboard Card — Hover + Info Box</h2>
+      <div class="inline-block">
+        <div class="bg-white border border-[#ACACAC] rounded-[8px] overflow-hidden w-[552px] h-[326px] relative">
+          <!-- Header with more button -->
+          <div class="flex gap-[4px] h-[56px] items-center pl-[16px] pr-[12px]">
+            <span class="flex-1 font-bold text-[16px] leading-[24px] text-[#1C1C1C] truncate">Title</span>
+            <div class="flex items-center justify-center w-[32px] h-[32px]">
+              <div class="flex items-center justify-center overflow-hidden p-[6px] rounded-[4px]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="4" r="1.5" fill="#595959"/>
+                  <circle cx="10" cy="10" r="1.5" fill="#595959"/>
+                  <circle cx="10" cy="16" r="1.5" fill="#595959"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Chart area (narrower) -->
+          <div class="absolute left-0 top-[56px] bottom-0 right-[168px]">
+            <!-- Grid lines -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex flex-col justify-between pb-[14px] px-[16px]">
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">500K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">400K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">300K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">200K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">100K</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="flex items-center w-full">
+                <span class="w-[40px] pr-[8px] text-[12px] leading-[16px] text-[#595959] text-right truncate">0</span>
+                <div class="flex-1 h-px bg-[#EBEBEB]"></div>
+              </div>
+            </div>
+            <!-- Bars -->
+            <div class="absolute inset-x-0 top-0 bottom-[44px] flex items-end px-[56px]">
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 15%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 80%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 97%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 46%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 70%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center justify-end h-full">
+                <div class="w-[16px] bg-[#75A0F5] rounded-[3px]" style="height: 33%"></div>
+                <span class="text-[12px] leading-[16px] text-[#595959] text-center pt-[6px]">Label</span>
+              </div>
+            </div>
+            <!-- Legend -->
+            <div class="absolute bottom-0 inset-x-0 flex items-center justify-center pb-[12px] pt-[8px] px-[16px]">
+              <div class="flex gap-[4px] items-center px-[8px] py-[2px] rounded-[4px]">
+                <div class="w-[12px] h-[12px] bg-[#75A0F5] rounded-[2px]"></div>
+                <span class="text-[14px] leading-[20px] text-[#595959]">Label</span>
+              </div>
+            </div>
+          </div>
+          <!-- Info Box -->
+          <div class="absolute top-[56px] right-[16px] bottom-[16px] w-[152px] bg-[#F6F6F6] rounded-[4px]">
+            <div class="absolute left-[16px] top-[12px] flex flex-col gap-[4px] items-start">
+              <span class="text-[12px] leading-[16px] text-[#595959]">Sales Invoices</span>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">234.458</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">2 overdue</span>
+              </div>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">125.632</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">1 not due yet</span>
+              </div>
+            </div>
+            <div class="absolute left-[16px] top-[132px] flex flex-col gap-[4px] items-start">
+              <span class="text-[12px] leading-[16px] text-[#595959]">Supplier Invoices</span>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">10.231</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">2 overdue</span>
+              </div>
+              <div class="flex flex-col items-start">
+                <span class="text-[16px] leading-[24px] font-bold text-[#1C1C1C]">1.532</span>
+                <span class="text-[12px] leading-[16px] text-[#595959]">1 not due yet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Vertical — Single (Standalone) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Vertical — Single</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <!-- Chart area -->
+          <div class="flex-1 flex">
+            <!-- Y-axis labels -->
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <!-- Grid + bars -->
+            <div class="flex-1 relative">
+              <!-- Grid lines -->
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div>
+                <div class="h-px bg-[#EBEBEB]"></div>
+                <div class="h-px bg-[#EBEBEB]"></div>
+                <div class="h-px bg-[#EBEBEB]"></div>
+                <div class="h-px bg-[#EBEBEB]"></div>
+                <div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <!-- Bars -->
+              <div class="absolute inset-0 flex items-end justify-around px-4">
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:60%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:80%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:45%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:90%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:35%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:70%"></div>
+              </div>
+            </div>
+          </div>
+          <!-- X-axis labels -->
+          <div class="flex justify-around pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span>
+          </div>
+          <!-- Legend -->
+          <div class="flex items-center gap-1 pl-[40px] mt-2">
+            <div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div>
+            <span class="text-[10px] text-[#595959]">Label</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Vertical — Stacked -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Vertical — Stacked</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-end justify-around px-4">
+                <!-- Stacked bar 1 -->
+                <div class="w-[16px] flex flex-col-reverse" style="height:75%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:3"></div>
+                  <div class="bg-[#52C7AB]" style="flex:2"></div>
+                  <div class="bg-[#FFD665]" style="flex:2"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:1"></div>
+                </div>
+                <div class="w-[16px] flex flex-col-reverse" style="height:90%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:4"></div>
+                  <div class="bg-[#52C7AB]" style="flex:2"></div>
+                  <div class="bg-[#FFD665]" style="flex:1"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:2"></div>
+                </div>
+                <div class="w-[16px] flex flex-col-reverse" style="height:55%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:2"></div>
+                  <div class="bg-[#52C7AB]" style="flex:1"></div>
+                  <div class="bg-[#FFD665]" style="flex:3"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:1"></div>
+                </div>
+                <div class="w-[16px] flex flex-col-reverse" style="height:85%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:3"></div>
+                  <div class="bg-[#52C7AB]" style="flex:3"></div>
+                  <div class="bg-[#FFD665]" style="flex:1"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:2"></div>
+                </div>
+                <div class="w-[16px] flex flex-col-reverse" style="height:65%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:2"></div>
+                  <div class="bg-[#52C7AB]" style="flex:2"></div>
+                  <div class="bg-[#FFD665]" style="flex:2"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:1"></div>
+                </div>
+                <div class="w-[16px] flex flex-col-reverse" style="height:70%">
+                  <div class="bg-[#75A0F5] rounded-b-[3px]" style="flex:3"></div>
+                  <div class="bg-[#52C7AB]" style="flex:1"></div>
+                  <div class="bg-[#FFD665]" style="flex:2"></div>
+                  <div class="bg-[#E66568] rounded-t-[3px]" style="flex:2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#FFD665]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Vertical — Group (3 colors) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Vertical — Group (3 Colors)</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-end justify-around px-2">
+                <!-- Group 1 -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:120px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:90px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:60px"></div>
+                </div>
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:140px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:70px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:100px"></div>
+                </div>
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:80px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:110px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:50px"></div>
+                </div>
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:150px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:60px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:130px"></div>
+                </div>
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:60px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:130px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:80px"></div>
+                </div>
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:100px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:80px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:110px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#FFD665]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Vertical — Single Multi-Color -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Vertical — Single Multi-Color</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-end justify-around px-4">
+                <div class="w-[16px] rounded-[3px] bg-[#75A0F5]" style="height:70%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:85%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#FFD665]" style="height:50%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#E66568]" style="height:92%"></div>
+                <div class="w-[16px] rounded-[3px] bg-[#CBBCFE]" style="height:40%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2 flex-wrap">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#FFD665]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#CBBCFE]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#C4AB9E]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bar Vertical — Double with Hatching -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Bar Vertical — Double with Hatching</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-end justify-around px-2">
+                <!-- Group 1: solid green + solid red -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:100px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#E66568]" style="height:80px"></div>
+                </div>
+                <!-- Group 2: hatched green + solid red -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px]" style="height:120px;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#52C7AB"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#E66568]" style="height:60px"></div>
+                </div>
+                <!-- Group 3: solid green + hatched red -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:70px"></div>
+                  <div class="w-[16px] rounded-[3px]" style="height:130px;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#E66568"></div>
+                </div>
+                <!-- Group 4: hatched green + hatched red -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px]" style="height:90px;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#52C7AB"></div>
+                  <div class="w-[16px] rounded-[3px]" style="height:110px;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#E66568"></div>
+                </div>
+                <!-- Group 5: solid green + solid red -->
+                <div class="flex items-end gap-[2px]">
+                  <div class="w-[16px] rounded-[3px] bg-[#52C7AB]" style="height:140px"></div>
+                  <div class="w-[16px] rounded-[3px] bg-[#E66568]" style="height:50px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Label</span><span>Label</span><span>Label</span><span>Label</span><span>Label</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2 flex-wrap">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px]" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#52C7AB"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px]" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,0.5) 2px,rgba(255,255,255,0.5) 4px),#E66568"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Line Chart — Single -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Line Chart — Single</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <polyline points="0,119 35,97 71,126 106,14 142,22 177,68 213,64 248,54 284,72 319,4 355,144 390,162 426,60" fill="none" stroke="#75A0F5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-1 pl-[40px] mt-2">
+            <div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div>
+            <span class="text-[10px] text-[#595959]">Label</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Line Chart — Multiple (4 lines) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Line Chart — Multiple (4 Lines)</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <polyline points="0,119 115,72 230,36 345,18 460,54" fill="none" stroke="#75A0F5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <polyline points="0,144 115,108 230,90 345,72 460,36" fill="none" stroke="#52C7AB" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <polyline points="0,90 115,126 230,54 345,108 460,72" fill="none" stroke="#FFD665" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <polyline points="0,162 115,144 230,126 345,144 460,162" fill="none" stroke="#E66568" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#FFD665]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Chart — Single -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Area Chart — Single</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <path d="M0,119 L35,97 L71,126 L106,14 L142,22 L177,68 L213,64 L248,54 L284,72 L319,4 L355,144 L390,162 L426,60 L460,60 L460,180 L0,180 Z" fill="#75A0F5" fill-opacity="0.15"/>
+                <polyline points="0,119 35,97 71,126 106,14 142,22 177,68 213,64 248,54 284,72 319,4 355,144 390,162 426,60 460,60" fill="none" stroke="#75A0F5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-1 pl-[40px] mt-2">
+            <div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div>
+            <span class="text-[10px] text-[#595959]">Label</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Chart — Two Series -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Area Chart — Two Series</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <!-- Blue area (higher) -->
+                <path d="M0,90 L115,54 L230,36 L345,18 L460,54 L460,180 L0,180 Z" fill="#75A0F5" fill-opacity="0.15"/>
+                <polyline points="0,90 115,54 230,36 345,18 460,54" fill="none" stroke="#75A0F5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- Green area (lower) -->
+                <path d="M0,144 L115,108 L230,90 L345,72 L460,108 L460,180 L0,180 Z" fill="#52C7AB" fill-opacity="0.2"/>
+                <polyline points="0,144 115,108 230,90 345,72 460,108" fill="none" stroke="#52C7AB" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Chart — Two Series (Overlapping) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Area Chart — Two Series (Overlapping)</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>0</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <!-- Blue area -->
+                <path d="M0,72 L115,36 L230,90 L345,54 L460,108 L460,180 L0,180 Z" fill="#75A0F5" fill-opacity="0.15"/>
+                <polyline points="0,72 115,36 230,90 345,54 460,108" fill="none" stroke="#75A0F5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- Green area (crosses over blue) -->
+                <path d="M0,108 L115,72 L230,36 L345,90 L460,54 L460,180 L0,180 Z" fill="#52C7AB" fill-opacity="0.2"/>
+                <polyline points="0,108 115,72 230,36 345,90 460,54" fill="none" stroke="#52C7AB" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Chart — Positive/Negative -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Area Chart — Positive/Negative</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col p-4">
+          <div class="flex-1 flex">
+            <div class="flex flex-col justify-between w-[40px] text-right pr-2 text-[10px] text-[#595959]">
+              <span>500K</span><span>40K</span><span>20K</span><span>0</span><span>-20K</span><span>-40K</span>
+            </div>
+            <div class="flex-1 relative">
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#1C1C1C]"></div><div class="h-px bg-[#EBEBEB]"></div><div class="h-px bg-[#EBEBEB]"></div>
+              </div>
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 460 180" preserveAspectRatio="none">
+                <!-- Zero line at y=90 -->
+                <!-- Positive area (green, above zero) -->
+                <path d="M0,54 L77,36 L153,18 L230,54 L307,90 L307,90 L230,90 L153,90 L77,90 L0,90 Z" fill="#52C7AB" fill-opacity="0.2"/>
+                <polyline points="0,54 77,36 153,18 230,54" fill="none" stroke="#52C7AB" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- Negative area (red, below zero) -->
+                <path d="M230,90 L307,126 L384,144 L460,108 L460,90 L384,90 L307,90 L230,90 Z" fill="#E66568" fill-opacity="0.2"/>
+                <polyline points="230,90 307,126 384,144 460,108" fill="none" stroke="#E66568" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- Connecting line through zero -->
+                <polyline points="0,54 77,36 153,18 230,54 307,126 384,144 460,108" fill="none" stroke="#52C7AB" stroke-width="0" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between pl-[40px] mt-1 text-[10px] text-[#595959]">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+          </div>
+          <div class="flex items-center gap-3 pl-[40px] mt-2">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donut Chart with Bottom Legend -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Donut Chart with Bottom Legend</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col items-center justify-center p-4">
+          <!-- Donut -->
+          <div class="relative" style="width:184px;height:184px">
+            <svg width="184" height="184" viewBox="0 0 184 184">
+              <!-- Segments using stroke-dasharray on circles, radius=70, circumference=439.82 -->
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#52C7AB" stroke-width="20" stroke-dasharray="132 307.82" stroke-dashoffset="0" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#75A0F5" stroke-width="20" stroke-dasharray="88 351.82" stroke-dashoffset="-132" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#DDDDDD" stroke-width="20" stroke-dasharray="66 373.82" stroke-dashoffset="-220" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#CBBCFE" stroke-width="20" stroke-dasharray="53 386.82" stroke-dashoffset="-286" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#E66568" stroke-width="20" stroke-dasharray="26 413.82" stroke-dashoffset="-339" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#FFD665" stroke-width="20" stroke-dasharray="22 417.82" stroke-dashoffset="-365" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#FAB64D" stroke-width="20" stroke-dasharray="18 421.82" stroke-dashoffset="-387" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#F98EDB" stroke-width="20" stroke-dasharray="13 426.82" stroke-dashoffset="-405" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#C4AB9E" stroke-width="20" stroke-dasharray="10 429.82" stroke-dashoffset="-418" transform="rotate(-90 92 92)"/>
+            </svg>
+            <!-- Center text -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-[20px] font-bold text-[#1C1C1C]">234.351</span>
+              <span class="text-[14px] text-[#595959]">Total</span>
+            </div>
+          </div>
+          <!-- Bottom legend -->
+          <div class="flex items-center gap-3 mt-3 flex-wrap justify-center">
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#52C7AB]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#75A0F5]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#DDDDDD]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#CBBCFE]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1"><div class="w-[8px] h-[8px] rounded-[1px] bg-[#E66568]"></div><span class="text-[10px] text-[#595959]">Label</span></div>
+            <div class="flex items-center gap-1 cursor-pointer">
+              <span class="text-[10px] text-[#595959]">2 more</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 8l4 4 4-4" stroke="#595959" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donut Chart with Right Legends -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Donut Chart with Right Legends</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex items-center p-4 gap-6">
+          <!-- Donut (left) -->
+          <div class="relative flex-shrink-0" style="width:184px;height:184px">
+            <svg width="184" height="184" viewBox="0 0 184 184">
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#75A0F5" stroke-width="20" stroke-dasharray="154 285.82" stroke-dashoffset="0" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#52C7AB" stroke-width="20" stroke-dasharray="110 329.82" stroke-dashoffset="-154" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#FFD665" stroke-width="20" stroke-dasharray="88 351.82" stroke-dashoffset="-264" transform="rotate(-90 92 92)"/>
+              <circle cx="92" cy="92" r="70" fill="none" stroke="#E66568" stroke-width="20" stroke-dasharray="88 351.82" stroke-dashoffset="-352" transform="rotate(-90 92 92)"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-[20px] font-bold text-[#1C1C1C]">234.351</span>
+              <span class="text-[14px] text-[#595959]">Total</span>
+            </div>
+          </div>
+          <!-- Right legends -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 bg-[#EBEBEB] rounded-[4px] px-3 py-2">
+              <div class="w-[8px] h-full min-h-[28px] rounded-[2px] bg-[#75A0F5]"></div>
+              <div class="flex flex-col">
+                <span class="text-[12px] text-[#595959]">Title</span>
+                <span class="text-[12px] font-bold text-[#1C1C1C]">Amount</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 rounded-[4px] px-3 py-2">
+              <div class="w-[8px] h-full min-h-[28px] rounded-[2px] bg-[#52C7AB]"></div>
+              <div class="flex flex-col">
+                <span class="text-[12px] text-[#595959]">Title</span>
+                <span class="text-[12px] font-bold text-[#1C1C1C]">Amount</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 rounded-[4px] px-3 py-2">
+              <div class="w-[8px] h-full min-h-[28px] rounded-[2px] bg-[#FFD665]"></div>
+              <div class="flex flex-col">
+                <span class="text-[12px] text-[#595959]">Title</span>
+                <span class="text-[12px] font-bold text-[#1C1C1C]">Amount</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 rounded-[4px] px-3 py-2">
+              <div class="w-[8px] h-full min-h-[28px] rounded-[2px] bg-[#E66568]"></div>
+              <div class="flex flex-col">
+                <span class="text-[12px] text-[#595959]">Title</span>
+                <span class="text-[12px] font-bold text-[#1C1C1C]">Amount</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <table class="w-full text-[14px] text-[#1C1C1C]">
+          <thead>
+            <tr class="border-b border-[#DDDDDD]">
+              <th class="text-left font-bold py-2 px-3">Type</th>
+              <th class="text-left font-bold py-2 px-3">Date</th>
+              <th class="text-right font-bold py-2 px-3">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">12.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#E89C2E"/></svg>
+                <span>Supplier invoice</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">4.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">1.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">1.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">1.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">1.400</td>
+            </tr>
+            <tr class="border-b border-[#DDDDDD]">
+              <td class="py-2 px-3 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" rx="2" fill="#4573D2"/></svg>
+                <span>Journal entry</span>
+              </td>
+              <td class="py-2 px-3">21.04.22</td>
+              <td class="py-2 px-3 text-right">1.400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Empty State</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col items-center justify-center p-4">
+          <div class="w-[254px] h-[200px] bg-[#F6F6F6] rounded-[8px] flex items-center justify-center">
+            <span class="text-[14px] text-[#595959]">illustration</span>
+          </div>
+          <p class="text-[14px] text-black text-center mt-3">You don't have any registrations yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Homepage Card (Chat) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Homepage Card (Chat)</h2>
+      <div class="w-[552px] h-[270px] overflow-hidden rounded-[12px] border border-[#EBEBEB]">
+        <div class="w-full h-full flex flex-col items-center justify-center p-4 gap-3">
+          <p class="text-[14px] text-[#1C1C1C] text-center w-[282px]">Chat with us all weekdays (outside opening hours we'll get back to uou asap)</p>
+          <div class="w-[92px] h-[92px] rounded-full bg-[#EBEBEB]"></div>
+          <button class="border border-[#1C1C1C] rounded-[4px] px-[16px] py-[8px] text-[14px] text-[#1C1C1C] bg-white">Start chat</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

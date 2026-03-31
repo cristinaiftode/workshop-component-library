@@ -108,6 +108,547 @@
       </div>
     </section>
 
+    <!-- Tour -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Tour</h2>
+      <div class="flex flex-wrap gap-10 py-6 justify-center items-start bg-[#F5F5F5] rounded-[4px] p-8">
+
+        <!-- Tour — Arrow Bottom, first step (Next only) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-block" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <div class="w-[352px] bg-white rounded-[4px] overflow-clip p-[16px]">
+              <div class="relative">
+                <button class="absolute top-0 right-0 inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px]">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+                </button>
+              </div>
+              <h4 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] m-0 pb-[4px] pr-[28px]">Title</h4>
+              <p class="text-[14px] leading-[20px] text-[#1C1C1C] m-0">Body text</p>
+              <div class="flex items-center justify-end pt-[16px]">
+                <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-white bg-[#4573D2] border-none cursor-pointer">Next (1/4)</button>
+              </div>
+            </div>
+            <span class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[10px] border-t-white"></span>
+          </div>
+        </div>
+
+        <!-- Tour — Arrow Top, first step (Next only) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-block" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <span class="absolute left-1/2 -translate-x-1/2 -top-[10px] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[10px] border-b-white"></span>
+            <div class="w-[352px] bg-white rounded-[4px] overflow-clip p-[16px]">
+              <div class="relative">
+                <button class="absolute top-0 right-0 inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px]">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+                </button>
+              </div>
+              <h4 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] m-0 pb-[4px] pr-[28px]">Title</h4>
+              <p class="text-[14px] leading-[20px] text-[#1C1C1C] m-0">Body text</p>
+              <div class="flex items-center justify-end pt-[16px]">
+                <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-white bg-[#4573D2] border-none cursor-pointer">Next (1/4)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour — Arrow Bottom, continuous (Back + Next) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-block" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <div class="w-[352px] bg-white rounded-[4px] overflow-clip p-[16px]">
+              <div class="relative">
+                <button class="absolute top-0 right-0 inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px]">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+                </button>
+              </div>
+              <h4 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] m-0 pb-[4px] pr-[28px]">Title</h4>
+              <p class="text-[14px] leading-[20px] text-[#1C1C1C] m-0">Body text</p>
+              <div class="flex items-center justify-end gap-[8px] pt-[16px]">
+                <span class="text-[14px] leading-[20px] text-[#4573D2] cursor-pointer">Back</span>
+                <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-white bg-[#4573D2] border-none cursor-pointer">Next (2/4)</button>
+              </div>
+            </div>
+            <span class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[10px] border-t-white"></span>
+          </div>
+        </div>
+
+        <!-- Tour — Arrow Right, continuous (Back + Next) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-flex items-center" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <div class="w-[352px] bg-white rounded-[4px] overflow-clip p-[16px]">
+              <div class="relative">
+                <button class="absolute top-0 right-0 inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px]">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+                </button>
+              </div>
+              <h4 class="text-[16px] leading-[24px] font-bold text-[#1C1C1C] m-0 pb-[4px] pr-[28px]">Title</h4>
+              <p class="text-[14px] leading-[20px] text-[#1C1C1C] m-0">Body text</p>
+              <div class="flex items-center justify-end gap-[8px] pt-[16px]">
+                <span class="text-[14px] leading-[20px] text-[#4573D2] cursor-pointer">Back</span>
+                <button class="px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-white bg-[#4573D2] border-none cursor-pointer">Next (2/4)</button>
+              </div>
+            </div>
+            <span class="absolute top-1/2 -translate-y-1/2 -right-[10px] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[10px] border-l-white"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Callout</h2>
+      <p class="text-xs text-[#595959] mb-4">Blue informational callout tooltips in 8 directions. Available in compact (title only) and description (title + body) variants.</p>
+
+      <!-- Compact variants -->
+      <h3 class="text-[11px] font-bold text-[#595959] uppercase tracking-wide mb-3">Compact</h3>
+      <div class="flex flex-wrap gap-10 py-6 justify-center items-center bg-[#F5F5F5] rounded-[4px] mb-6">
+
+        <!-- Top -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Top</span>
+          <div class="relative inline-block mt-2">
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+            <span class="absolute left-1/2 -translate-x-1/2 -bottom-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Bottom</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute left-1/2 -translate-x-1/2 -top-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[6px] border-b-[#4573D2]"></span>
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Left</span>
+          <div class="relative inline-block mt-2">
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+            <span class="absolute top-1/2 -translate-y-1/2 -right-[6px] w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[6px] border-l-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Right</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute top-1/2 -translate-y-1/2 -left-[6px] w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[6px] border-r-[#4573D2]"></span>
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top-Left -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Top-Left</span>
+          <div class="relative inline-block mt-2">
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+            <span class="absolute left-[12px] -bottom-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Top-Right -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Top-Right</span>
+          <div class="relative inline-block mt-2">
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+            <span class="absolute right-[12px] -bottom-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Bottom-Left -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Bottom-Left</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute left-[12px] -top-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[6px] border-b-[#4573D2]"></span>
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom-Right -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Bottom-Right</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute right-[12px] -top-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[6px] border-b-[#4573D2]"></span>
+            <div class="bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]">
+              <span class="text-white text-[12px] leading-[16px] font-normal whitespace-nowrap">New feature</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Description variants -->
+      <h3 class="text-[11px] font-bold text-[#595959] uppercase tracking-wide mb-3">With Description</h3>
+      <div class="flex flex-wrap gap-10 py-6 justify-center items-start bg-[#F5F5F5] rounded-[4px]">
+
+        <!-- Top -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Top</span>
+          <div class="relative inline-block mt-2">
+            <div class="w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]">
+              <span class="text-white text-[12px] leading-[16px] font-bold block">New feature</span>
+              <span class="text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90">Export invoices directly to PDF from the actions menu.</span>
+            </div>
+            <span class="absolute left-1/2 -translate-x-1/2 -bottom-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[6px] border-t-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Bottom</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute left-1/2 -translate-x-1/2 -top-[6px] w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[6px] border-b-[#4573D2]"></span>
+            <div class="w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]">
+              <span class="text-white text-[12px] leading-[16px] font-bold block">New feature</span>
+              <span class="text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90">Export invoices directly to PDF from the actions menu.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Left</span>
+          <div class="relative inline-block mt-2">
+            <div class="w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]">
+              <span class="text-white text-[12px] leading-[16px] font-bold block">New feature</span>
+              <span class="text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90">Export invoices directly to PDF from the actions menu.</span>
+            </div>
+            <span class="absolute top-1/2 -translate-y-1/2 -right-[6px] w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[6px] border-l-[#4573D2]"></span>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-[11px] text-[#ACACAC]">Right</span>
+          <div class="relative inline-block mt-2">
+            <span class="absolute top-1/2 -translate-y-1/2 -left-[6px] w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-r-[6px] border-r-[#4573D2]"></span>
+            <div class="w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]">
+              <span class="text-white text-[12px] leading-[16px] font-bold block">New feature</span>
+              <span class="text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90">Export invoices directly to PDF from the actions menu.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Banner (Toast) -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Banner</h2>
+      <div class="flex flex-col items-center gap-3 bg-[#F5F5F5] rounded-[4px] p-8">
+        <!-- Information -->
+        <div class="flex items-center w-[600px] bg-white pl-[16px] pr-[8px] py-[8px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div class="flex flex-1 items-start gap-[8px] py-[6px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2] shrink-0">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          </div>
+          <button class="inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px] shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Success -->
+        <div class="flex items-center w-[600px] bg-white pl-[16px] pr-[8px] py-[8px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div class="flex flex-1 items-start gap-[8px] py-[6px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#028465] shrink-0">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.5 6l2 2 3-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          </div>
+          <button class="inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px] shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Default / Help -->
+        <div class="flex items-center w-[600px] bg-white pl-[16px] pr-[8px] py-[8px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div class="flex flex-1 items-start gap-[8px] py-[6px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#595959] shrink-0">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 4.5a1.5 1.5 0 0 1 2.83.5c0 1-1.33 1-1.33 2" stroke="white" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="9" r="0.6" fill="white"/></svg>
+            </span>
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          </div>
+          <button class="inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px] shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Error -->
+        <div class="flex items-center w-[600px] bg-white pl-[16px] pr-[8px] py-[8px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div class="flex flex-1 items-start gap-[8px] py-[6px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42] shrink-0">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          </div>
+          <button class="inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px] shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Warning -->
+        <div class="flex items-center w-[600px] bg-white pl-[16px] pr-[8px] py-[8px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div class="flex flex-1 items-start gap-[8px] py-[6px]">
+            <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B] shrink-0">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+            </span>
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          </div>
+          <button class="inline-flex items-center justify-center p-[6px] bg-transparent border-none cursor-pointer text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px] shrink-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast — Compact -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Toast — Compact</h2>
+      <div class="flex flex-wrap gap-3 items-start bg-[#F5F5F5] rounded-[4px] p-8">
+        <!-- Success -->
+        <div class="flex items-start gap-[8px] bg-white border border-[#ACACAC] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#028465] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.5 6l2 2 3-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Information -->
+        <div class="flex items-start gap-[8px] bg-white border border-[#4573D2] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Error -->
+        <div class="flex items-start gap-[8px] bg-white border border-[#CE3F42] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Warning -->
+        <div class="flex items-start gap-[8px] bg-white border border-[#E89C2E] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Loading -->
+        <div class="flex items-start gap-[8px] bg-white border border-[#ACACAC] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <svg class="animate-spin shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10a7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7" stroke="#4573D2" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast — 384px Wide -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Toast — 384px Wide</h2>
+      <div class="flex flex-col gap-3 items-center bg-[#F5F5F5] rounded-[4px] p-8">
+        <!-- Success -->
+        <div class="flex items-start gap-[8px] w-[384px] bg-white border border-[#ACACAC] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#028465] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.5 6l2 2 3-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Information -->
+        <div class="flex items-start gap-[8px] w-[384px] bg-white border border-[#4573D2] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Error -->
+        <div class="flex items-start gap-[8px] w-[384px] bg-white border border-[#CE3F42] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Warning -->
+        <div class="flex items-start gap-[8px] w-[384px] bg-white border border-[#E89C2E] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Loading -->
+        <div class="flex items-start gap-[8px] w-[384px] bg-white border border-[#ACACAC] rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px]">
+          <svg class="animate-spin shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 10a7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7" stroke="#4573D2" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C]">Text</span>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#595959] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alert -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Alert</h2>
+      <div class="flex flex-col gap-3">
+        <!-- Info -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#DEEBFF] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#4573D2] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="3.5" r="0.75" fill="white"/><path d="M6 5.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#29283E]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#29283E] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Success -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#CDF0E7] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#028465] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.5 6l2 2 3-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#14493A]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#14493A] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Warning -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#FFF1C3] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#FFBD3B] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#733700]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#733700] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Error -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#FFDAD2] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#CE3F42] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 4l4 4M8 4l-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#64001B]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#64001B] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Default -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#EBEBEB] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#595959] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 3.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="8.5" r="0.75" fill="white"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#1C1C1C]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#1C1C1C] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+        <!-- Experiment -->
+        <div class="flex gap-[8px] items-start p-[12px] rounded-[8px] bg-[#EEE5FF] w-full">
+          <span class="inline-flex items-center justify-center w-[20px] h-[20px] rounded-full bg-[#6542D1] shrink-0">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 3l4 3-4 3" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="flex-1 flex flex-col items-start text-[14px] leading-[20px] text-[#412970]">
+            <p class="font-bold m-0 w-full">Title</p>
+            <p class="m-0 w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut varius urna. Donec eget</p>
+          </div>
+          <button class="inline-flex items-center justify-center shrink-0 bg-transparent border-none cursor-pointer text-[#412970] p-0">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l10 10M15 5l-10 10"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popover -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Popover</h2>
+      <div class="flex flex-wrap gap-10 py-6 justify-center items-start bg-[#F5F5F5] rounded-[4px] p-8">
+        <!-- Top (arrow bottom) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-block" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <div class="w-[164px] h-[164px] bg-white rounded-[4px]"></div>
+            <span class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[10px] border-t-white"></span>
+          </div>
+        </div>
+        <!-- Bottom (arrow top) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-block" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <span class="absolute left-1/2 -translate-x-1/2 -top-[10px] w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[10px] border-b-white"></span>
+            <div class="w-[164px] h-[164px] bg-white rounded-[4px]"></div>
+          </div>
+        </div>
+        <!-- Left (arrow right) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-flex items-center" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <div class="w-[164px] h-[164px] bg-white rounded-[4px]"></div>
+            <span class="absolute top-1/2 -translate-y-1/2 -right-[10px] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[10px] border-l-white"></span>
+          </div>
+        </div>
+        <!-- Right (arrow left) -->
+        <div class="flex flex-col items-center">
+          <div class="relative inline-flex items-center" style="filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15));">
+            <span class="absolute top-1/2 -translate-y-1/2 -left-[10px] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[10px] border-r-white"></span>
+            <div class="w-[164px] h-[164px] bg-white rounded-[4px]"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Accordion -->
     <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Accordion</h2>
@@ -253,6 +794,56 @@
 
   </div>
 <script>
+// ── Banner dismiss on close click ──
+document.querySelectorAll('section').forEach(sec => {
+  const h2 = sec.querySelector('h2');
+  if (!h2 || !h2.textContent.includes('Banner')) return;
+  sec.querySelectorAll('button').forEach(btn => {
+    if (!btn.querySelector('svg')) return;
+    btn.addEventListener('click', () => {
+      const banner = btn.closest('.flex.items-center.w-\\[600px\\]');
+      if (banner) {
+        banner.style.transition = 'opacity 0.2s, transform 0.2s';
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateX(20px)';
+        setTimeout(() => banner.remove(), 200);
+      }
+    });
+  });
+});
+
+// ── Toast dismiss on close click ──
+document.querySelectorAll('section').forEach(sec => {
+  const h2 = sec.querySelector('h2');
+  if (!h2 || !h2.textContent.includes('Toast')) return;
+  sec.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const toast = btn.closest('.flex.items-start.gap-\\[8px\\]');
+      if (toast) {
+        toast.style.transition = 'opacity 0.2s';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 200);
+      }
+    });
+  });
+});
+
+// ── Alert dismiss on close click ──
+document.querySelectorAll('section').forEach(sec => {
+  const h2 = sec.querySelector('h2');
+  if (!h2 || h2.textContent.trim() !== 'Alert') return;
+  sec.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const alert = btn.closest('.flex.gap-\\[8px\\]');
+      if (alert) {
+        alert.style.transition = 'opacity 0.2s';
+        alert.style.opacity = '0';
+        setTimeout(() => alert.remove(), 200);
+      }
+    });
+  });
+});
+
 // ── Accordion ──
 document.querySelectorAll('section').forEach(sec => {
   if (!sec.querySelector('h2')?.textContent.includes('Accordion')) return;

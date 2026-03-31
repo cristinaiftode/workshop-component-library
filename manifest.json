@@ -1194,6 +1194,524 @@
         "children": { "type": "ReactNode", "required": true }
       },
       "usage": "<Status color=\"green\">(Active)</Status>"
+    },
+
+    "DashboardCard": {
+      "description": "Dashboard card containing a bar chart visualization with title, value, trend indicator, and optional info box. Used on the main dashboard to display KPIs with chart context.",
+      "category": "dashboard",
+      "props": {
+        "title": {
+          "type": "string",
+          "description": "Card header title (e.g., 'Revenue', 'Expenses')"
+        },
+        "value": {
+          "type": "string",
+          "description": "Primary displayed value (e.g., '234.351')"
+        },
+        "trend": {
+          "type": "enum",
+          "values": ["up", "down", "neutral"],
+          "description": "Arrow direction for trend indicator"
+        },
+        "trendValue": {
+          "type": "string",
+          "description": "Percentage or amount change (e.g., '12%')"
+        },
+        "showInfoBox": {
+          "type": "boolean",
+          "default": false,
+          "description": "When true, shows a tooltip-like info box overlay on the chart"
+        },
+        "state": {
+          "type": "enum",
+          "values": ["normal", "hover"],
+          "default": "normal"
+        }
+      },
+      "styling": {
+        "container": "w-[268px] h-[168px] rounded-[12px] border border-[#DDDDDD] bg-white p-4",
+        "title": "text-[12px] text-[#595959] font-bold uppercase",
+        "value": "text-[24px] font-bold text-[#1C1C1C]"
+      },
+      "usage": "<DashboardCard title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
+    },
+
+    "DashboardHoverCard": {
+      "description": "Expanded dashboard card shown on hover with detailed chart, more menu, and additional info. 5 states: normal, more-menu, legends, hover, hover+infobox.",
+      "category": "dashboard",
+      "props": {
+        "title": { "type": "string" },
+        "value": { "type": "string" },
+        "variant": {
+          "type": "enum",
+          "values": ["normal", "more-menu", "legends", "hover", "hover-infobox"],
+          "default": "normal"
+        }
+      },
+      "styling": {
+        "container": "w-[552px] h-[270px] rounded-[12px] bg-white shadow-lg"
+      },
+      "usage": "<DashboardHoverCard title=\"Revenue\" value=\"234.351\" variant=\"normal\" />"
+    },
+
+    "DashboardMoreMenuLegends": {
+      "description": "Dropdown menu with color-coded legend items and checkboxes for toggling chart series visibility.",
+      "category": "dashboard",
+      "props": {
+        "items": {
+          "type": "array",
+          "description": "Array of { label, color, checked } legend items"
+        }
+      },
+      "usage": "<DashboardMoreMenuLegends items={[{label: 'Revenue', color: '#75A0F5', checked: true}]} />"
+    },
+
+    "CardInfoBox": {
+      "description": "Small tooltip-like overlay box that appears on dashboard charts showing a specific data point value.",
+      "category": "dashboard",
+      "props": {
+        "label": { "type": "string", "description": "Data point label" },
+        "value": { "type": "string", "description": "Data point value" }
+      },
+      "styling": {
+        "container": "bg-white border border-[#DDDDDD] rounded-[4px] p-2 shadow-sm text-[11px]"
+      },
+      "usage": "<CardInfoBox label=\"Mar\" value=\"45.200\" />"
+    },
+
+    "BarSegment": {
+      "description": "Individual bar chart segment. 16 variants covering single/end/middle/beginning positions in both solid and hatched styles, each in two widths (16px and 24px).",
+      "category": "dashboard",
+      "props": {
+        "position": {
+          "type": "enum",
+          "values": ["single", "end", "middle", "beginning"],
+          "description": "Position in a stacked bar — affects border-radius"
+        },
+        "hatched": {
+          "type": "boolean",
+          "default": false,
+          "description": "When true, shows diagonal stripe hatching pattern overlay"
+        },
+        "width": {
+          "type": "enum",
+          "values": ["16", "24"],
+          "default": "16"
+        },
+        "color": {
+          "type": "string",
+          "description": "Bar fill color hex value from chart palette"
+        },
+        "height": {
+          "type": "number",
+          "description": "Bar height in pixels"
+        }
+      },
+      "styling": {
+        "hatching": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)"
+      },
+      "usage": "<BarSegment position=\"single\" color=\"#75A0F5\" height={80} />"
+    },
+
+    "Bar": {
+      "description": "Complete vertical bar composed of stacked BarSegments. Supports single-color and multi-color stacked configurations. 14 variants shown in Figma.",
+      "category": "dashboard",
+      "props": {
+        "segments": {
+          "type": "array",
+          "description": "Array of { color, height, hatched? } for each segment in the stack"
+        },
+        "label": {
+          "type": "string",
+          "description": "X-axis label below the bar"
+        }
+      },
+      "usage": "<Bar segments={[{color: '#75A0F5', height: 60}, {color: '#52C7AB', height: 40}]} label=\"Jan\" />"
+    },
+
+    "ChartLegend": {
+      "description": "Color-coded legend item for charts. Square color swatch + text label. 10 variants covering all chart colors including hatched variants.",
+      "category": "dashboard",
+      "props": {
+        "color": {
+          "type": "string",
+          "description": "Color hex value for the legend swatch"
+        },
+        "label": {
+          "type": "string",
+          "description": "Legend text label"
+        },
+        "hatched": {
+          "type": "boolean",
+          "default": false,
+          "description": "Shows hatching pattern on the color swatch"
+        }
+      },
+      "styling": {
+        "swatch": "w-[8px] h-[8px] rounded-[1px]",
+        "label": "text-[11px] text-[#595959]"
+      },
+      "usage": "<ChartLegend color=\"#75A0F5\" label=\"Revenue\" />"
+    },
+
+    "ChartHeader": {
+      "description": "Header row for dashboard chart cards with title, value, trend arrow, and optional kebab menu button.",
+      "category": "dashboard",
+      "props": {
+        "title": { "type": "string" },
+        "value": { "type": "string" },
+        "trend": { "type": "enum", "values": ["up", "down", "neutral"] },
+        "trendValue": { "type": "string" },
+        "showMenu": { "type": "boolean", "default": false }
+      },
+      "usage": "<ChartHeader title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
+    },
+
+    "AxisLabels": {
+      "description": "Chart axis labels component. 3 variants: Y-axis (vertical values like 100K, 200K), X-axis (horizontal month/category labels), and combined.",
+      "category": "dashboard",
+      "props": {
+        "axis": {
+          "type": "enum",
+          "values": ["x", "y", "both"],
+          "description": "Which axis labels to show"
+        },
+        "labels": {
+          "type": "array",
+          "description": "Array of label strings"
+        }
+      },
+      "styling": {
+        "text": "text-[11px] text-[#595959]"
+      },
+      "usage": "<AxisLabels axis=\"y\" labels={['0', '100K', '200K', '300K', '400K', '500K']} />"
+    },
+
+    "LegendBar": {
+      "description": "Horizontal row of ChartLegend items displayed below a chart. Used as the standard legend placement for bar and line charts.",
+      "category": "dashboard",
+      "usage": "<LegendBar items={[{color: '#75A0F5', label: 'Revenue'}, {color: '#52C7AB', label: 'Costs'}]} />"
+    },
+
+    "DonutChart": {
+      "description": "SVG donut/ring chart with center label showing total value. Uses stroke-dasharray for segment rendering. Supports multiple color segments.",
+      "category": "dashboard",
+      "props": {
+        "segments": {
+          "type": "array",
+          "description": "Array of { value, color } for each donut segment"
+        },
+        "total": {
+          "type": "string",
+          "description": "Center label showing total value"
+        },
+        "size": {
+          "type": "number",
+          "default": 160,
+          "description": "Donut diameter in pixels"
+        }
+      },
+      "styling": {
+        "strokeWidth": "32px",
+        "centerText": "text-[20px] font-bold"
+      },
+      "usage": "<DonutChart segments={[{value: 40, color: '#75A0F5'}, {value: 30, color: '#52C7AB'}]} total=\"234.351\" />"
+    },
+
+    "DonutChartLegend": {
+      "description": "Legend list for donut charts with color swatch, label, value, and optional percentage. 2 states: collapsed and expanded.",
+      "category": "dashboard",
+      "props": {
+        "items": {
+          "type": "array",
+          "description": "Array of { color, label, value, percentage } items"
+        },
+        "expanded": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "usage": "<DonutChartLegend items={[{color: '#75A0F5', label: 'Category A', value: '120.000', percentage: '51%'}]} />"
+    },
+
+    "CheckboxColorGrid": {
+      "description": "Grid of color-coded checkboxes used in the more menu for toggling chart series. 9 colors x 5 columns layout.",
+      "category": "dashboard",
+      "props": {
+        "items": {
+          "type": "array",
+          "description": "Array of { color, label, checked } items"
+        }
+      },
+      "styling": {
+        "checkbox": "w-4 h-4 rounded-[2px] border border-[#DDDDDD]",
+        "checkedColors": "blue=#75A0F5, green=#52C7AB, yellow=#FFD665, red=#E66568, purple=#CBBCFE, pink=#F98EDB, brown=#C4AB9E, orange=#FAB64D, grey=#DDDDDD"
+      },
+      "usage": "<CheckboxColorGrid items={[{color: '#75A0F5', label: 'Series 1', checked: true}]} />"
+    },
+
+    "CheckboxWithWhiteTick": {
+      "description": "Colored checkbox with white checkmark tick when checked. 9 color variants matching the chart color palette.",
+      "category": "dashboard",
+      "props": {
+        "color": {
+          "type": "string",
+          "description": "Background color when checked"
+        },
+        "checked": {
+          "type": "boolean",
+          "default": false
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "usage": "<CheckboxWithWhiteTick color=\"#75A0F5\" checked label=\"Revenue\" />"
+    },
+
+    "BarChartVerticalSingle": {
+      "description": "Vertical bar chart with single-color bars. Y-axis with value labels, X-axis with category labels, and bottom legend.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, value } data points"
+        },
+        "color": {
+          "type": "string",
+          "default": "#75A0F5",
+          "description": "Bar color"
+        }
+      },
+      "styling": {
+        "container": "w-[552px] h-[270px] rounded-[12px]",
+        "barWidth": "24px"
+      },
+      "usage": "<BarChartVerticalSingle data={[{label: 'Jan', value: 350}, {label: 'Feb', value: 420}]} />"
+    },
+
+    "BarChartVerticalStacked": {
+      "description": "Vertical bar chart with stacked multi-color segments per bar. Each bar shows multiple data series stacked on top of each other.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, segments: [{value, color}] } data points"
+        },
+        "legend": {
+          "type": "array",
+          "description": "Array of { color, label } for the legend"
+        }
+      },
+      "usage": "<BarChartVerticalStacked data={[{label: 'Jan', segments: [{value: 200, color: '#75A0F5'}, {value: 150, color: '#52C7AB'}]}]} />"
+    },
+
+    "BarChartVerticalGroup": {
+      "description": "Vertical bar chart with grouped (side-by-side) bars per category. Each category shows multiple bars next to each other.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, values: [{value, color}] } data points"
+        },
+        "legend": {
+          "type": "array",
+          "description": "Array of { color, label } for the legend"
+        }
+      },
+      "usage": "<BarChartVerticalGroup data={[{label: 'Jan', values: [{value: 300, color: '#75A0F5'}, {value: 200, color: '#52C7AB'}]}]} />"
+    },
+
+    "BarChartVerticalMultiColor": {
+      "description": "Vertical bar chart where each bar has a different color. Used to compare distinct categories rather than series.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, value, color } data points, each bar a different color"
+        }
+      },
+      "usage": "<BarChartVerticalMultiColor data={[{label: 'Q1', value: 350, color: '#75A0F5'}, {label: 'Q2', value: 420, color: '#52C7AB'}]} />"
+    },
+
+    "BarChartVerticalDoubleHatching": {
+      "description": "Vertical bar chart with paired bars per category — solid + hatched variants. Used to show actual vs. projected or budget vs. actual comparisons.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, solid: {value, color}, hatched: {value, color} } paired data"
+        },
+        "legend": {
+          "type": "array",
+          "description": "4-item legend: solid color A, solid color B, hatched color A, hatched color B"
+        }
+      },
+      "styling": {
+        "hatching": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)"
+      },
+      "usage": "<BarChartVerticalDoubleHatching data={[{label: 'Jan', solid: {value: 250, color: '#52C7AB'}, hatched: {value: 200, color: '#52C7AB'}}]} />"
+    },
+
+    "LineChartSingle": {
+      "description": "Line chart with a single data series. SVG polyline rendering with optional area fill below the line.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, value } data points"
+        },
+        "color": {
+          "type": "string",
+          "default": "#75A0F5"
+        }
+      },
+      "styling": {
+        "line": "stroke-width: 2px, fill: none",
+        "container": "w-[552px] h-[270px]"
+      },
+      "usage": "<LineChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
+    },
+
+    "LineChartMultiple": {
+      "description": "Line chart with multiple data series. Each series is a different color polyline. Supports up to 4+ series with legend.",
+      "category": "dashboard",
+      "props": {
+        "series": {
+          "type": "array",
+          "description": "Array of { color, label, data: [{label, value}] } series"
+        }
+      },
+      "usage": "<LineChartMultiple series={[{color: '#75A0F5', label: 'Revenue', data: [{label: 'Jan', value: 200}]}]} />"
+    },
+
+    "AreaChartSingle": {
+      "description": "Area chart with a single series. SVG path with semi-transparent fill below the line.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, value } data points"
+        },
+        "color": {
+          "type": "string",
+          "default": "#75A0F5"
+        }
+      },
+      "styling": {
+        "fill": "opacity 0.2 of the line color",
+        "line": "stroke-width: 2px"
+      },
+      "usage": "<AreaChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
+    },
+
+    "AreaChartTwoSeries": {
+      "description": "Area chart with two data series, each with its own fill color. Series may overlap.",
+      "category": "dashboard",
+      "props": {
+        "series": {
+          "type": "array",
+          "description": "Array of 2 series: { color, label, data: [{label, value}] }"
+        }
+      },
+      "usage": "<AreaChartTwoSeries series={[{color: '#75A0F5', label: 'Income', data: [...]}, {color: '#52C7AB', label: 'Costs', data: [...]}]} />"
+    },
+
+    "AreaChartPositiveNegative": {
+      "description": "Area chart showing values above and below zero. Positive area filled in green, negative area filled in red. Zero line drawn as reference.",
+      "category": "dashboard",
+      "props": {
+        "data": {
+          "type": "array",
+          "description": "Array of { label, value } — positive values show green fill, negative show red fill"
+        }
+      },
+      "styling": {
+        "positiveColor": "#52C7AB",
+        "negativeColor": "#E66568",
+        "zeroLine": "stroke: #1C1C1C, stroke-width: 1px"
+      },
+      "usage": "<AreaChartPositiveNegative data={[{label: 'Jan', value: 30}, {label: 'Mar', value: -20}]} />"
+    },
+
+    "DonutChartWithBottomLegend": {
+      "description": "Composed donut chart visualization with the legend placed below the chart. Includes center total label.",
+      "category": "dashboard",
+      "props": {
+        "segments": { "type": "array", "description": "Donut segments with { value, color, label }" },
+        "total": { "type": "string" }
+      },
+      "usage": "<DonutChartWithBottomLegend segments={[{value: 40, color: '#75A0F5', label: 'Category A'}]} total=\"234.351\" />"
+    },
+
+    "DonutChartWithRightLegends": {
+      "description": "Composed donut chart visualization with detailed legends placed to the right of the chart. Legends show label, value, and percentage.",
+      "category": "dashboard",
+      "props": {
+        "segments": { "type": "array", "description": "Donut segments with { value, color, label, percentage }" },
+        "total": { "type": "string" }
+      },
+      "usage": "<DonutChartWithRightLegends segments={[{value: 40, color: '#75A0F5', label: 'Category A', percentage: '40%'}]} total=\"234.351\" />"
+    },
+
+    "DashboardTable": {
+      "description": "Simple data table used in dashboard cards. Columns: Type (with color indicator), Date, Amount. Shows transaction/entry rows.",
+      "category": "dashboard",
+      "props": {
+        "columns": {
+          "type": "array",
+          "description": "Array of column headers (e.g., ['Type', 'Date', 'Amount'])"
+        },
+        "rows": {
+          "type": "array",
+          "description": "Array of { type, typeColor, date, amount } row data"
+        }
+      },
+      "styling": {
+        "header": "text-[12px] font-bold text-[#1C1C1C] border-b border-[#DDDDDD]",
+        "cell": "text-[12px] text-[#595959] py-2",
+        "typeIndicator": "w-[12px] h-[12px] rounded-[2px]"
+      },
+      "usage": "<DashboardTable columns={['Type', 'Date', 'Amount']} rows={[{type: 'Journal entry', typeColor: '#75A0F5', date: '21.04.22', amount: '12.400'}]} />"
+    },
+
+    "EmptyState": {
+      "description": "Empty state placeholder shown when a dashboard card has no data. Contains an illustration placeholder area and descriptive message.",
+      "category": "dashboard",
+      "props": {
+        "message": {
+          "type": "string",
+          "default": "You don't have any registrations yet.",
+          "description": "Message displayed below the illustration"
+        }
+      },
+      "styling": {
+        "illustration": "w-[200px] h-[160px] bg-[#F5F5F5] rounded-[4px] mx-auto",
+        "message": "text-[14px] text-[#595959] text-center mt-4"
+      },
+      "usage": "<EmptyState message=\"You don't have any registrations yet.\" />"
+    },
+
+    "HomepageCard": {
+      "description": "Chat/support card for the homepage. Contains message text, avatar placeholder, and action button.",
+      "category": "dashboard",
+      "props": {
+        "message": {
+          "type": "string",
+          "description": "Card message text"
+        },
+        "buttonLabel": {
+          "type": "string",
+          "default": "Start chat",
+          "description": "Action button text"
+        }
+      },
+      "styling": {
+        "container": "rounded-[12px] border border-[#DDDDDD] bg-white p-6 text-center",
+        "avatar": "w-[60px] h-[60px] rounded-full bg-[#EBEBEB] mx-auto",
+        "button": "border border-[#DDDDDD] rounded-[4px] px-4 py-1.5 text-[14px]"
+      },
+      "usage": "<HomepageCard message=\"Chat with us all weekdays\" buttonLabel=\"Start chat\" />"
     }
   }
 }

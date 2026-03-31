@@ -95,7 +95,7 @@ The library files work with any AI coding tool:
 
 ## What's in the library?
 
-### 34 Components
+### 66 Components
 
 | Category | Components |
 |----------|-----------|
@@ -106,10 +106,13 @@ The library files work with any AI coding tool:
 | **Feedback** | Accordion, AlertDialog, ModalDialog |
 | **Lists** | CardList, CardListItem (6 types), ListIcon (9 colors), Status (5 colors) |
 | **Layout** | Form, FormGrid |
+| **Dashboard** | DashboardCard, DashboardHoverCard, MoreMenuLegends, CardInfoBox, BarSegment, Bar, ChartLegend, ChartHeader, AxisLabels, LegendBar, DonutChart, DonutChartLegend, CheckboxColorGrid, CheckboxWithWhiteTick |
+| **Charts** | BarChartVerticalSingle/Stacked/Group/MultiColor/DoubleHatching, LineChartSingle/Multiple, AreaChartSingle/TwoSeries/PositiveNegative, DonutChartWithBottomLegend/RightLegends |
+| **Data & States** | DashboardTable, EmptyState, HomepageCard |
 
 ### Design tokens
 
-- **12 colors** matching e-conomic's palette (blues, greys, red, yellow)
+- **22 colors** matching e-conomic's palette (blues, greys, red, yellow)
 - **8 spacing values** (2px to 32px)
 - **Typography** — Helvetica, specific sizes for body/labels/headings
 - **Border radius** — 4px standard, 8px/10px for cards

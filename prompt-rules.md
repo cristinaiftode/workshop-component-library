@@ -25,6 +25,12 @@ Never create custom components for functionality that already exists in the desi
 - **Pagination** - Page navigation
 - **Form** / **FormGrid** - Form containers and layout
 - **ModeSwitch** - View toggle
+- **Dashboard** - DashboardCard, DashboardHoverCard, DashboardMoreMenuLegends, CardInfoBox
+- **Charts** - BarChartVerticalSingle, BarChartVerticalStacked, BarChartVerticalGroup, BarChartVerticalMultiColor, BarChartVerticalDoubleHatching, LineChartSingle, LineChartMultiple, AreaChartSingle, AreaChartTwoSeries, AreaChartPositiveNegative
+- **Chart Parts** - BarSegment, Bar, ChartLegend, ChartHeader, AxisLabels, LegendBar
+- **Donut** - DonutChart, DonutChartLegend, DonutChartWithBottomLegend, DonutChartWithRightLegends
+- **Data Display** - DashboardTable, CheckboxColorGrid, CheckboxWithWhiteTick
+- **States** - EmptyState, HomepageCard
 
 ## 2. Color palette - use Tailwind arbitrary values
 
@@ -43,6 +49,24 @@ Never create custom components for functionality that already exists in the desi
 | Grey 100 | `#F5F5F5` | `bg-[#F5F5F5]` | Subtle/read-only backgrounds |
 | White | `#FFFFFF` | `bg-white` | White backgrounds |
 | Yellow 100 | `#FFF1C3` | `bg-[#FFF1C3]` | Highlighted field background |
+
+## 2b. Chart color palette
+
+| Color | Hex | Tailwind class | Usage |
+|-------|-----|---------------|-------|
+| Chart Blue | `#75A0F5` | `bg-[#75A0F5]` | Primary chart series |
+| Chart Green | `#52C7AB` | `bg-[#52C7AB]` | Secondary series, positive values |
+| Chart Yellow | `#FFD665` | `bg-[#FFD665]` | Tertiary series |
+| Chart Red | `#E66568` | `bg-[#E66568]` | Danger series, negative values |
+| Chart Purple | `#CBBCFE` | `bg-[#CBBCFE]` | Additional series |
+| Chart Pink | `#F98EDB` | `bg-[#F98EDB]` | Additional series |
+| Chart Brown | `#C4AB9E` | `bg-[#C4AB9E]` | Additional series |
+| Chart Orange | `#FAB64D` | `bg-[#FAB64D]` | Additional series |
+
+### Hatching pattern (for budget/projected overlays)
+```css
+background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px);
+```
 
 ## 3. Typography
 

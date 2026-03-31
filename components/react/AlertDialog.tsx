@@ -6,14 +6,15 @@ interface AlertDialogProps {
   open?: boolean;
   variant?: AlertVariant;
   title: string;
-  message: string;
+  description: string;
+  /** Optional content slot between description and footer */
+  content?: React.ReactNode;
   confirmLabel?: string;
   cancelLabel?: string;
-  /** For destructive variant: require user to type this text to confirm */
+  /** For destructive variant: prompt text shown above the safety input */
   safetyText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
-  className?: string;
 }
 
 const badgeConfig: Record<string, { bg: string; icon: React.ReactNode }> = {
@@ -45,113 +46,133 @@ const badgeConfig: Record<string, { bg: string; icon: React.ReactNode }> = {
   },
 };
 
+/* Default button labels per variant */
+function defaultConfirmLabel(variant: AlertVariant): string {
+  if (variant === "error") return "OK";
+  if (variant === "destructive") return "Delete";
+  return "Continue";
+}
+
 export function AlertDialog({
   open = true,
   variant = "confirmation",
   title,
-  message,
-  confirmLabel = "OK",
+  description,
+  content,
+  confirmLabel,
   cancelLabel = "Cancel",
   safetyText,
   onConfirm,
   onCancel,
-  className = "",
 }: AlertDialogProps) {
   const [typedText, setTypedText] = useState("");
 
   if (!open) return null;
 
-  const badge = badgeConfig[variant];
+  const badge = badgeConfig[variant]; // undefined for confirmation & destructive
   const isDestructive = variant === "destructive";
+  const isError = variant === "error";
   const hasSafetyStep = isDestructive && safetyText;
   const canConfirm = hasSafetyStep ? typedText === safetyText : true;
+  const resolvedConfirmLabel = confirmLabel ?? defaultConfirmLabel(variant);
+
+  /* Confirm button colour: destructive = red, error = grey (default), others = blue (primary) */
+  const confirmBtnClass = isDestructive
+    ? "bg-[#CE3F42] text-white"
+    : isError
+      ? "bg-[#EBEBEB] text-[#1C1C1C]"
+      : "bg-[#4573D2] text-white";
 
   return (
     <div
-      className={[
-        "fixed inset-0 z-50 flex items-center justify-center",
-        "bg-[rgba(61,65,83,0.5)]",
-        "font-['Helvetica',Arial,sans-serif]",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(61,65,83,0.5)] font-['Helvetica',Arial,sans-serif]"
       onClick={(e) => e.target === e.currentTarget && onCancel?.()}
     >
       <div
         role="alertdialog"
         aria-modal="true"
         aria-labelledby="alert-title"
-        aria-describedby="alert-message"
+        aria-describedby="alert-desc"
         className="w-[512px] bg-white rounded-[8px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)] p-[24px]"
       >
-        {/* Badge */}
-        {badge && (
-          <div className="mb-[16px]">
+        {/* Title row — badge inline with title when present */}
+        <div className={badge ? "flex items-center gap-[8px]" : undefined}>
+          {badge && (
             <span
               className={[
-                "inline-flex items-center justify-center w-[20px] h-[20px] rounded-full",
+                "inline-flex items-center justify-center w-[20px] h-[20px] rounded-full shrink-0",
                 badge.bg,
               ].join(" ")}
             >
               {badge.icon}
             </span>
-          </div>
-        )}
+          )}
+          <h2
+            id="alert-title"
+            className="text-[24px] leading-[32px] font-normal text-[#1C1C1C] m-0"
+          >
+            {title}
+          </h2>
+        </div>
 
-        {/* Title */}
-        <h2
-          id="alert-title"
-          className="text-[16px] leading-[24px] font-bold text-[#1C1C1C] mb-[8px]"
-        >
-          {title}
-        </h2>
-
-        {/* Message */}
+        {/* Description */}
         <p
-          id="alert-message"
-          className="text-[14px] leading-[20px] text-[#595959] mb-[24px]"
+          id="alert-desc"
+          className="text-[14px] leading-[20px] text-[#1C1C1C] mt-[8px] mb-0"
         >
-          {message}
+          {description}
         </p>
+
+        {/* Optional content slot */}
+        {content && <div className="mt-[16px]">{content}</div>}
 
         {/* Safety step for destructive */}
         {hasSafetyStep && (
-          <div className="mb-[24px]">
+          <div className="mt-[16px]">
             <p className="text-[14px] leading-[20px] text-[#1C1C1C] mb-[8px]">
-              Type <span className="font-bold">{safetyText}</span> to confirm:
+              To confirm, please enter the name of the category:
             </p>
             <input
               type="text"
               value={typedText}
               onChange={(e) => setTypedText(e.target.value)}
-              className="w-full h-[36px] px-[12px] text-[14px] leading-[20px] bg-white border border-[#ACACAC] rounded-[4px] outline-none focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2]"
+              className="w-full h-[32px] px-[8px] py-[6px] text-[14px] leading-[20px] bg-white border border-[#DDD] rounded-[4px] outline-none placeholder:text-[#9DA3AE]"
               placeholder={safetyText}
             />
           </div>
         )}
 
         {/* Footer buttons */}
-        <div className="flex justify-end gap-[8px]">
-          <button
-            onClick={onCancel}
-            className="inline-flex items-center justify-center px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] bg-[#EBEBEB] hover:bg-[#DDDDDD] outline-none cursor-pointer border-none"
-          >
-            {cancelLabel}
-          </button>
-          <button
-            onClick={() => canConfirm && onConfirm?.()}
-            disabled={!canConfirm}
-            className={[
-              "inline-flex items-center justify-center px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-white outline-none border-none",
-              isDestructive
-                ? "bg-[#CE3F42] hover:bg-[#B5292C]"
-                : "bg-[#4573D2] hover:bg-[#3560B5]",
-              !canConfirm ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
-            ].join(" ")}
-          >
-            {confirmLabel}
-          </button>
+        <div className="flex justify-end gap-[8px] pt-[16px]">
+          {/* Error variant only has a single OK button */}
+          {isError ? (
+            <button
+              onClick={onConfirm}
+              className="inline-flex items-center justify-center px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] bg-[#EBEBEB] outline-none cursor-pointer border-none"
+            >
+              {resolvedConfirmLabel}
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={onCancel}
+                className="inline-flex items-center justify-center px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal text-[#1C1C1C] bg-[#EBEBEB] outline-none cursor-pointer border-none"
+              >
+                {cancelLabel}
+              </button>
+              <button
+                onClick={() => canConfirm && onConfirm?.()}
+                disabled={!canConfirm}
+                className={[
+                  "inline-flex items-center justify-center px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal outline-none border-none",
+                  confirmBtnClass,
+                  !canConfirm ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
+                ].join(" ")}
+              >
+                {resolvedConfirmLabel}
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

@@ -1004,7 +1004,7 @@
     },
 
     "AlertDialog": {
-      "description": "Modal alert dialog with variant badges. Use for confirmations, errors, warnings, info, and destructive actions.",
+      "description": "Modal alert dialog with 5 variants. Badge icon is INLINE with title on same row (flex gap-[8px]). Only error/warning/info have badges; confirmation and destructive have NO badge.",
       "figmaNodeId": "4409:46514",
       "import": "import { AlertDialog } from '@economic/taco';",
       "props": {
@@ -1013,25 +1013,40 @@
           "type": "enum",
           "values": ["error", "warning", "info", "confirmation", "destructive"],
           "default": "confirmation",
-          "description": "error=red badge, warning=yellow badge, info=blue badge, confirmation=no badge, destructive=red confirm + safety step"
+          "description": "error=red badge + single OK button (default grey), warning=yellow badge + Cancel/Continue, info=blue badge + Cancel/Continue, confirmation=no badge + Cancel/Continue, destructive=no badge + Cancel/Delete (red) + safety step"
         },
         "title": { "type": "string", "required": true },
-        "message": { "type": "string", "required": true },
-        "confirmLabel": { "type": "string", "default": "OK" },
+        "description": { "type": "string", "required": true, "description": "Body text below the title" },
+        "content": { "type": "ReactNode", "description": "Optional content slot between description and footer" },
+        "confirmLabel": { "type": "string", "description": "Defaults per variant: error='OK', destructive='Delete', others='Continue'" },
         "cancelLabel": { "type": "string", "default": "Cancel" },
-        "safetyText": { "type": "string", "description": "For destructive: user must type this text to enable confirm button" },
+        "safetyText": { "type": "string", "description": "For destructive: user must type this text to enable Delete button. Shows prompt 'To confirm, please enter the name of the category:' + input field" },
         "onConfirm": { "type": "function" },
         "onCancel": { "type": "function" }
       },
       "styling": {
         "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
         "card": "w-[512px] rounded-[8px] p-[24px] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)]",
-        "badge": "20×20 rounded-full — error=#CE3F42, warning=#FFBD3B, info=#4573D2",
-        "title": "16px/24px bold #1C1C1C",
-        "message": "14px/20px #595959",
-        "footer": "flex justify-end gap-[8px]"
+        "badgeRow": "flex items-center gap-[8px] — badge INLINE with title, NOT above",
+        "badge": "w-[20px] h-[20px] rounded-full with white icon inside — error=#CE3F42 (X cross), warning=#FFBD3B (exclamation), info=#4573D2 (letter i). Confirmation and destructive have NO badge.",
+        "title": "text-[24px] leading-[32px] font-normal text-[#1C1C1C] (NOT bold)",
+        "description": "text-[14px] leading-[20px] text-[#1C1C1C] (NOT grey)",
+        "footer": "flex justify-end gap-[8px] pt-[16px]",
+        "buttons": {
+          "default": "bg-[#EBEBEB] text-[#1C1C1C] px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal",
+          "primary": "bg-[#4573D2] text-white px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal",
+          "danger": "bg-[#CE3F42] text-white px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal"
+        },
+        "safetyInput": "h-[32px] border-[#DDD] rounded-[4px] px-[8px] py-[6px] placeholder:text-[#9DA3AE]"
       },
-      "usage": "<AlertDialog variant=\"error\" title=\"Delete failed\" message=\"Could not delete the invoice.\" onConfirm={fn} onCancel={fn} />"
+      "variantFooters": {
+        "error": "Single 'OK' button (default grey appearance)",
+        "warning": "'Cancel' (default) + 'Continue' (primary blue)",
+        "info": "'Cancel' (default) + 'Continue' (primary blue)",
+        "confirmation": "'Cancel' (default) + 'Continue' (primary blue)",
+        "destructive": "'Cancel' (default) + 'Delete' (danger red #CE3F42)"
+      },
+      "usage": "<AlertDialog variant=\"error\" title=\"Delete failed\" description=\"Could not delete the invoice.\" onConfirm={fn} onCancel={fn} />"
     },
 
     "Accordion": {
@@ -1058,7 +1073,7 @@
     },
 
     "ModalDialog": {
-      "description": "Large modal dialog with 4 size variants, close button, optional extra content area, and footer actions.",
+      "description": "Large modal dialog with 4 size variants. Single p-[24px] container (NO inner borders between header/body/footer). Close icon floats top-right. Optional grey bottom section.",
       "figmaNodeId": "289:4412",
       "import": "import { ModalDialog } from '@economic/taco';",
       "props": {
@@ -1071,7 +1086,7 @@
         },
         "title": { "type": "string", "required": true },
         "children": { "type": "ReactNode", "description": "Main body content" },
-        "extraContent": { "type": "ReactNode", "description": "Optional grey area below body (bg-[#F6F6F6])" },
+        "extraContent": { "type": "ReactNode", "description": "Optional grey bottom section bg-[#F6F6F6] p-[24px] with rounded-bl-[4px] rounded-br-[4px]" },
         "confirmLabel": { "type": "string", "default": "Save" },
         "cancelLabel": { "type": "string", "default": "Cancel" },
         "onConfirm": { "type": "function" },
@@ -1079,11 +1094,16 @@
       },
       "styling": {
         "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
-        "card": "rounded-[8px] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_0px_rgba(0,0,0,0.15)]",
-        "header": "px-[24px] py-[16px] border-b border-[#EBEBEB], title 24px/32px bold, close button 32×32",
-        "body": "px-[24px] py-[16px], flex-1 overflow-y-auto",
-        "extraContent": "bg-[#F6F6F6] px-[24px] py-[16px] border-t border-[#EBEBEB]",
-        "footer": "px-[24px] py-[16px] border-t border-[#EBEBEB] flex justify-end gap-[8px]"
+        "card": "rounded-[4px] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3),0px_2px_6px_2px_rgba(0,0,0,0.15)] (NOT rounded-[8px])",
+        "layout": "Single p-[24px] container, NO inner borders between header/body/footer",
+        "closeIcon": "Floating top-right, p-[6px], 20px x icon, absolute positioned",
+        "title": "text-[24px] leading-[32px] font-normal text-[#1C1C1C] pb-[24px] (NOT bold)",
+        "footer": "flex justify-end gap-[8px] pt-[24px], default + primary buttons",
+        "extraContent": "bg-[#F6F6F6] p-[24px] rounded-bl-[4px] rounded-br-[4px], outside the main padded container",
+        "buttons": {
+          "cancel": "bg-[#EBEBEB] text-[#1C1C1C] px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal",
+          "confirm": "bg-[#4573D2] text-white px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal"
+        }
       },
       "usage": "<ModalDialog size=\"s\" title=\"Edit Invoice\" onConfirm={fn} onClose={fn}>Body content</ModalDialog>"
     },

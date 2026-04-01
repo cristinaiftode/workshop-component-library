@@ -170,7 +170,7 @@
     },
 
     "Combobox": {
-      "description": "Searchable dropdown select. Combines text input with a filterable list. Typing filters the options. Click the list button to show all items.",
+      "description": "Searchable dropdown select. Combines text input with a filterable list. MUST be interactive: focus/click opens dropdown, typing filters options in real-time, clicking an option fills the input and closes dropdown, clicking outside closes. Click the list button to show all items.",
       "figmaComponentKey": "3e51b41c9072aae87583d057beb14a6f9b273801",
       "figmaNodeId": "518:32686",
       "props": {
@@ -605,7 +605,7 @@
     },
 
     "Select": {
-      "description": "Dropdown select for choosing one option from a predefined list. Click to open, no typing/filtering. Uses chevron icon.",
+      "description": "Dropdown select for choosing one option from a predefined list. Click to open, no typing/filtering. Uses chevron icon. MUST be interactive: click trigger toggles dropdown, click option updates value and closes, click outside closes. Chevron rotates 180° when open.",
       "figmaNodeId": "518:32665",
       "import": "import { Select } from '@economic/taco';",
       "props": {
@@ -973,7 +973,7 @@
         "logoText": {
           "type": "string",
           "default": "e",
-          "description": "Logo text or symbol"
+          "description": "Logo text or symbol. Prefer using the logo image: <img src=\"https://webapp.e-conomic.com/img/e-conomic-logo-white.svg\" alt=\"e-conomic\" style=\"height:28px;width:28px;object-fit:contain;\" /> — always 28×28px on the dark #29283E bar."
         },
         "primaryItems": {
           "type": "array",

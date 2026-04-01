@@ -126,6 +126,21 @@ Use the exact prop values from TACO - all lowercase:
 - Discrete button: `hover:text-[#2B57B4]`
 - Danger button: `hover:bg-[#950027]`
 
+### Dropdown interactivity — MANDATORY
+Every Select, Combobox, and dropdown-like component MUST be interactive:
+- **Select**: Click trigger → toggle dropdown visibility, click option → update displayed value + close, click outside → close. Chevron rotates 180° when open.
+- **Combobox**: Focus/click input → open dropdown, typing filters options in real-time, click option → fill input + close, click outside → close.
+- **TopNavigation dropdowns**: Agreement selector and submenu items must open/close on click. All close on outside click.
+- **Dropdown panel styling**: `absolute top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)] py-1 z-50`
+- **Option hover**: `hover:bg-[rgba(0,99,255,0.1)]`
+- Never render a Select or Combobox without JavaScript interactivity
+
+### e-conomic logo in TopNavigation
+```html
+<img src="https://webapp.e-conomic.com/img/e-conomic-logo-white.svg" alt="e-conomic" style="height:28px;width:28px;object-fit:contain;" />
+```
+Always 28×28px. White logo on dark `#29283E` background. Fallback: white bold "e" text.
+
 ### Common component patterns
 - Border radius: `rounded-[4px]` for buttons, inputs, cards
 - Input height: `h-8` (32px)

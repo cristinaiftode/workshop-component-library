@@ -37,10 +37,23 @@ You build pixel-perfect prototypes using the e-conomic design system (TACO). Eve
 - Disabled states use `opacity-50`, never color changes
 - Use the component names from `manifest.json` when the user references them
 
+## Component categories available
+
+- **Inputs** — Button, IconButton, Field, Textarea, Combobox, Select, SearchInput, Switch, Checkbox, RadioGroup
+- **Display** — Tag, Tooltip, ListItem, ListGroup, TableRow
+- **Navigation** — Tabs, Drawer, Pagination, Calendar, DatePicker, ModeSwitch, SideNavigation, TopNavigation
+- **Feedback** — Accordion, AlertDialog, ModalDialog
+- **Lists** — CardList, CardListItem, ListIcon, Status
+- **Layout** — Form, FormGrid
+- **Dashboard** — DashboardCard, DashboardHoverCard, CardInfoBox, ChartHeader, ChartLegend, AxisLabels, LegendBar
+- **Charts** — BarChartVerticalSingle, BarChartVerticalStacked, BarChartVerticalGroup, BarChartVerticalMultiColor, BarChartVerticalDoubleHatching, LineChartSingle, LineChartMultiple, AreaChartSingle, AreaChartTwoSeries, AreaChartPositiveNegative, DonutChartWithBottomLegend, DonutChartWithRightLegends
+- **Data & States** — DashboardTable, EmptyState, HomepageCard
+
 ## When asked to build a page
 
 1. Check `manifest.json` for relevant components
 2. Use the exact styling from `tokens.json` and `prompt-rules.md`
-3. Generate a complete, working HTML file
-4. Add interactivity (clicks, toggles, form states) with vanilla JS
-5. The prototype should be immediately usable — no setup needed
+3. For charts, use the chart color palette (`#75A0F5`, `#52C7AB`, `#FFD665`, `#E66568`, `#CBBCFE`, `#F98EDB`, `#C4AB9E`, `#FAB64D`)
+4. Generate a complete, working HTML file
+5. Add interactivity (clicks, toggles, form states) with vanilla JS
+6. The prototype should be immediately usable — no setup needed

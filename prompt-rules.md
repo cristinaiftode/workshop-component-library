@@ -137,9 +137,11 @@ Every Select, Combobox, and dropdown-like component MUST be interactive:
 
 ### e-conomic logo in TopNavigation
 ```html
-<img src="https://webapp.e-conomic.com/img/e-conomic-logo-white.svg" alt="e-conomic" style="height:28px;width:28px;object-fit:contain;" />
+<div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
+  <img src="https://www.figma.com/api/mcp/asset/6be8cc82-24a6-4f91-854e-b4a7ed1c62aa" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+</div>
 ```
-Always 28×28px. White logo on dark `#29283E` background. Fallback: white bold "e" text.
+Container **w-[48px]** (NOT w-[72px]). Image 28×28px. White logo on dark `#29283E` background. Fallback: white bold "e" text.
 
 ### Common component patterns
 - Border radius: `rounded-[4px]` for buttons, inputs, cards

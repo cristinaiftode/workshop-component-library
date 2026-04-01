@@ -37,15 +37,18 @@ You build pixel-perfect prototypes using the e-conomic design system (TACO). Eve
 - Disabled states use `opacity-50`, never color changes
 - Use the component names from `manifest.json` when the user references them
 
-## e-conomic logo
+## e-conomic logo in TopNavigation
 
-When rendering the TopNavigation, always use this exact logo image:
+Always use this exact HTML for the logo area:
 ```html
-<img src="https://webapp.e-conomic.com/img/e-conomic-logo-white.svg" alt="e-conomic" style="height:28px;width:28px;object-fit:contain;" />
+<div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
+  <img src="https://www.figma.com/api/mcp/asset/6be8cc82-24a6-4f91-854e-b4a7ed1c62aa" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+</div>
 ```
-- Size: **28×28px** — do NOT stretch it wider
-- The logo is white and sits on the dark `#29283E` top bar background
-- If the SVG URL fails to load, fall back to a white bold "e" text
+- Container: **w-[48px]** h-[36px] — do NOT use w-[72px] or wider
+- Image: **28×28px** — do NOT stretch wider
+- The logo is white on the dark `#29283E` top bar background
+- If the URL fails to load, fall back to a white bold "e" text
 
 ## Interactive dropdowns — CRITICAL
 

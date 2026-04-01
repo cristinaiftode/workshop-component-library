@@ -1,10 +1,10 @@
 # How to Prototype with the e-conomic Component Library
 
-Hey team! I've built an AI-consumable component library based on our TACO design system. It has **66 components** — everything from buttons and forms to dashboard charts and navigation — with all the correct colors, spacing, fonts, and tokens from our Figma library.
+Hey team! I've built an AI-readable component library based on TACO design system. It has **66 components** — everything from buttons and forms to dashboard charts and navigation — with all the correct colors, spacing, fonts, and tokens from our Figma library.
 
-You can use it to generate pixel-perfect e-conomic screens just by describing what you want in plain language. No coding required.
+You can use it to generate prototypes just by describing what you want in plain language. No coding required.
 
-Below are **2 options** — pick whichever feels best for you.
+Below are **2 options** — pick whichever feels best for you: one in Claude Code Desktop App and one on claude.ai.
 
 ---
 

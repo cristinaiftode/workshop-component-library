@@ -170,8 +170,3 @@ Yes — Claude generates standard HTML files. Open them in any browser, share th
 **Q: The prototype is too big and Claude stops generating?**
 Break it up! Ask for the layout shell first, then add pages one at a time in follow-up messages.
 
----
-
-Questions? Ping me and I'll help you get started!
-
-— Cristina

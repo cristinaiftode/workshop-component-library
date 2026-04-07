@@ -34,21 +34,60 @@ Never create custom components for functionality that already exists in the desi
 
 ## 2. Color palette - use Tailwind arbitrary values
 
+### Core UI colors (most commonly used)
+
 | Color | Hex | Tailwind class | Usage |
 |-------|-----|---------------|-------|
 | Blue 500 | `#4573D2` | `bg-[#4573D2]` `text-[#4573D2]` | Primary brand, buttons, links, focus |
-| Blue 700 | `#2B57B4` | `bg-[#2B57B4]` | Hover states for blue elements |
-| Blue 100 | `#DEEBFF` | `bg-[#DEEBFF]` | Light blue backgrounds (ghost hover) |
-| Red 500 | `#CE3F42` | `bg-[#CE3F42]` `text-[#CE3F42]` | Danger/error states |
-| Red 700 | `#950027` | `bg-[#950027]` | Danger hover |
-| Grey 900 | `#1C1C1C` | `text-[#1C1C1C]` | Primary text |
-| Grey 700 | `#595959` | `text-[#595959]` | Helper text, secondary text |
-| Grey 500 | `#ACACAC` | `text-[#ACACAC]` | Placeholder text |
-| Grey 300 | `#DDDDDD` | `border-[#DDDDDD]` | Borders, input borders |
-| Grey 200 | `#EBEBEB` | `bg-[#EBEBEB]` | Default button background |
-| Grey 100 | `#F5F5F5` | `bg-[#F5F5F5]` | Subtle/read-only backgrounds |
-| White | `#FFFFFF` | `bg-white` | White backgrounds |
+| Blue 700 | `#2B57B4` | `bg-[#2B57B4]` | Active/focus states on blue elements |
+| Blue 300 | `#75A0F5` | `bg-[#75A0F5]` | Hover state on blue backgrounds |
+| Blue 100 | `#DEEBFF` | `bg-[#DEEBFF]` | Ghost button hover, listbox hover |
+| Red 500 | `#CE3F42` | `bg-[#CE3F42]` `text-[#CE3F42]` | Danger/error states, danger button |
+| Red 700 | `#950027` | `bg-[#950027]` | Danger active/focus |
+| Red 300 | `#E66568` | `bg-[#E66568]` | Danger hover |
+| Green 500 | `#08AE87` | `bg-[#08AE87]` `text-[#08AE87]` | Success badges |
+| Yellow 500 | `#FFBD3B` | `bg-[#FFBD3B]` `text-[#FFBD3B]` | Warning badges |
 | Yellow 100 | `#FFF1C3` | `bg-[#FFF1C3]` | Highlighted field background |
+| Black | `#1C1C1C` | `text-[#1C1C1C]` | Primary text |
+| Grey 700 | `#595959` | `text-[#595959]` | Helper text, secondary text |
+| Grey 500 | `#ACACAC` | `text-[#ACACAC]` | Placeholder text, field borders |
+| Grey 300 | `#DDDDDD` | `border-[#DDDDDD]` | Borders, input borders, dividers |
+| Grey 200 | `#EBEBEB` | `bg-[#EBEBEB]` | Default button hover/active, default badge, input borders |
+| Grey 100 | `#F6F6F6` | `bg-[#F6F6F6]` | Navigation bg, default button bg |
+| Grey 50 | `#FAFAFA` | `bg-[#FAFAFA]` | Table row hover |
+| White | `#FFFFFF` | `bg-white` | White backgrounds |
+
+### Full color scales (all 8 hues: 100–900)
+
+| Hue | 900 | 700 | 500 (base) | 300 | 200 | 100 |
+|-----|-----|-----|------------|-----|-----|-----|
+| Blue | #29283E | #2B57B4 | **#4573D2** | #75A0F5 | #AACCFF | #DEEBFF |
+| Green | #14493A | #028465 | **#08AE87** | #52C7AB | #9BE1CE | #CDF0E7 |
+| Yellow | #733700 | #E89C2E | **#FFBD3B** | #FFD665 | #FFE494 | #FFF1C3 |
+| Orange | #4A2811 | #EF7D00 | **#F99702** | #FAB64D | #FCCB80 | #FFE3BB |
+| Red | #64001B | #950027 | **#CE3F42** | #E66568 | #F3A09D | #FFDAD2 |
+| Pink | #870062 | #CF49AA | **#E165BF** | #F98EDB | #FCB9E9 | #FFE3F7 |
+| Purple | #412970 | #6542D1 | **#9270FA** | #CBBCFE | #DDD1FF | #EEE5FF |
+| Brown | #45291F | #73503B | **#93715D** | #C4AB9E | #DFCCC2 | #EEE0DA |
+
+### Navigation purples (top nav bar)
+
+| Name | Hex | Usage |
+|------|-----|-------|
+| purple-dark | `#353A48` | Secondary top nav color |
+| purple (base) | `#3D4153` | Primary top nav background |
+| purple-light | `#4B4F64` | Search bar, menu icon bg |
+| purple-lightest | `#585C74` | Menu icon hover |
+
+### Brand colors
+
+| Name | Hex |
+|------|-----|
+| brand-coolBlue | `#F5F7F9` |
+| brand-midnightBlue | `#29283E` |
+| brand-sunsetOrange | `#E89C2E` |
+| brand-paleOrange | `#FFF5E5` |
+| brand-vismaRed | `#E70641` |
 
 ## 2b. Chart color palette
 
@@ -80,6 +119,8 @@ background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(
 
 ## 4. Spacing (Tailwind)
 
+### Common named spacing
+
 | Token | Value | Tailwind |
 |-------|-------|----------|
 | xxs | 2px | `gap-0.5` `p-0.5` |
@@ -90,6 +131,85 @@ background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(
 | xl | 20px | `gap-5` `p-5` |
 | xxl | 24px | `gap-6` `p-6` |
 | xxxl | 32px | `gap-8` `p-8` |
+
+### Full spacing scale (from Figma stylesheet)
+
+The design system supports the full Tailwind spacing scale. All values below are valid:
+
+| Tailwind | Value | | Tailwind | Value |
+|----------|-------|-|----------|-------|
+| `0` | 0px | | `12` | 48px |
+| `px` | 1px | | `14` | 56px |
+| `0.5` | 2px | | `16` | 64px |
+| `1` | 4px | | `20` | 80px |
+| `1.5` | 6px | | `24` | 96px |
+| `2` | 8px | | `28` | 112px |
+| `2.5` | 10px | | `32` | 128px |
+| `3` | 12px | | `36` | 144px |
+| `3.5` | 14px | | `40` | 160px |
+| `4` | 16px | | `44` | 176px |
+| `5` | 20px | | `48` | 192px |
+| `6` | 24px | | `52` | 208px |
+| `7` | 28px | | `56` | 224px |
+| `8` | 32px | | `60` | 240px |
+| `9` | 36px | | `64` | 256px |
+| `10` | 40px | | `72` | 288px |
+| `11` | 44px | | `80` | 320px |
+| | | | `96` | 384px |
+
+## 4b. Borders & Dividers
+
+Use `box-shadow` for 1px divider lines — this avoids affecting layout:
+
+| Name | CSS (box-shadow) | Tailwind class | Usage |
+|------|-------------------|---------------|-------|
+| Bottom divider | `0 1px 0 0 #DDDDDD` | `shadow-[0_1px_0_0_#DDDDDD]` | Horizontal divider below element |
+| Right divider | `1px 0 0 0 #DDDDDD` | `shadow-[1px_0_0_0_#DDDDDD]` | Vertical divider to the right |
+| Left divider | `-1px 0 0 0 #DDDDDD` | `shadow-[-1px_0_0_0_#DDDDDD]` | Vertical divider to the left |
+| Inside bottom | `inset 0 -1px 0 0 #DDDDDD` | `shadow-[inset_0_-1px_0_0_#DDDDDD]` | Inset divider (table rows, list items) |
+| Inside bottom 2px | `inset 0 -2px 0 0 #DDDDDD` | `shadow-[inset_0_-2px_0_0_#DDDDDD]` | Thicker inset divider (active tab) |
+
+When to use: prefer `box-shadow` dividers over `border-b` when you need a separator that doesn't add to the element's box model.
+
+## 4c. Elevation (Shadows)
+
+Uses `rgba(47,51,68,...)` as the base shadow color (not pure black).
+
+### Light elevations — for standard surfaces
+
+| Level | Tailwind class | Usage |
+|-------|---------------|-------|
+| E1 | `shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]` | Cards at rest |
+| E2 | `shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_1px_6px_rgba(47,51,68,0.1)]` | Hover cards |
+| E3 | `shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_4px_12px_rgba(47,51,68,0.1)]` | Floating panels |
+| E4 | `shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_8px_24px_rgba(47,51,68,0.1)]` | Modals (light) |
+
+### Dark elevations — for overlays and dropdowns
+
+| Level | Tailwind class | Usage |
+|-------|---------------|-------|
+| E1 | `shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)]` | Dropdowns, tooltips |
+| E2 | `shadow-[0px_2px_4px_rgba(47,51,68,0.3),0px_4px_12px_rgba(47,51,68,0.15)]` | Elevated panels |
+| E3 | `shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)]` | Modal dialogs, drawers |
+| E4 | `shadow-[0px_8px_16px_rgba(47,51,68,0.3),0px_16px_48px_rgba(47,51,68,0.15)]` | Full-screen overlays |
+
+### Banner shadow
+
+| Level | Tailwind class | Usage |
+|-------|---------------|-------|
+| Banner | `shadow-[0px_4px_6px_rgba(0,0,0,0.1),0px_10px_15px_rgba(0,0,0,0.1)]` | Sticky headers, banners |
+
+## 4d. Breakpoints
+
+| Name | Min-width | Tailwind prefix | Usage |
+|------|-----------|----------------|-------|
+| xs | 376px | `min-[376px]:` | Mobile portrait |
+| sm | 640px | `sm:` | Large mobile / small tablet |
+| md | 768px | `md:` | Tablet portrait |
+| lg | 1024px | `lg:` | Tablet landscape / small desktop |
+| xl | 1280px | `xl:` | Standard desktop |
+| 2xl | 1536px | `2xl:` | Wide desktop |
+| 3xl | 1920px | `min-[1920px]:` | Full HD and above |
 
 ## 5. Match prop names exactly
 

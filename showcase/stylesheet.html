@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stylesheet — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-3xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Stylesheet Tokens</h1>
+
+    <!-- Borders & Dividers -->
+    <section class="bg-white rounded-[12px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-6">Borders &amp; Dividers</h2>
+      <p class="text-xs text-[#595959] mb-4">Use <code class="bg-[#F5F5F5] px-1 rounded text-[11px]">box-shadow</code> for divider lines — avoids affecting layout.</p>
+
+      <div class="space-y-6">
+        <!-- Bottom divider -->
+        <div class="flex items-start gap-4">
+          <div class="w-[160px] shrink-0">
+            <p class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Bottom divider</p>
+            <p class="text-[12px] leading-[16px] text-[#ACACAC] mt-0.5">outside bottom</p>
+          </div>
+          <div class="flex-1">
+            <div class="h-10 bg-[#F5F5F5] rounded-[4px] shadow-[0_1px_0_0_#DDDDDD]"></div>
+            <p class="text-[11px] text-[#ACACAC] mt-2 font-mono">shadow-[0_1px_0_0_#DDDDDD]</p>
+          </div>
+        </div>
+
+        <!-- Right divider -->
+        <div class="flex items-start gap-4">
+          <div class="w-[160px] shrink-0">
+            <p class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Right divider</p>
+            <p class="text-[12px] leading-[16px] text-[#ACACAC] mt-0.5">outside right</p>
+          </div>
+          <div class="flex-1">
+            <div class="w-[120px] h-16 bg-[#F5F5F5] rounded-[4px] shadow-[1px_0_0_0_#DDDDDD]"></div>
+            <p class="text-[11px] text-[#ACACAC] mt-2 font-mono">shadow-[1px_0_0_0_#DDDDDD]</p>
+          </div>
+        </div>
+
+        <!-- Left divider -->
+        <div class="flex items-start gap-4">
+          <div class="w-[160px] shrink-0">
+            <p class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Left divider</p>
+            <p class="text-[12px] leading-[16px] text-[#ACACAC] mt-0.5">outside left</p>
+          </div>
+          <div class="flex-1">
+            <div class="w-[120px] h-16 bg-[#F5F5F5] rounded-[4px] shadow-[-1px_0_0_0_#DDDDDD] ml-1"></div>
+            <p class="text-[11px] text-[#ACACAC] mt-2 font-mono">shadow-[-1px_0_0_0_#DDDDDD]</p>
+          </div>
+        </div>
+
+        <!-- Inside bottom -->
+        <div class="flex items-start gap-4">
+          <div class="w-[160px] shrink-0">
+            <p class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Inside bottom</p>
+            <p class="text-[12px] leading-[16px] text-[#ACACAC] mt-0.5">inset 1px</p>
+          </div>
+          <div class="flex-1">
+            <div class="h-10 bg-[#F5F5F5] rounded-[4px] shadow-[inset_0_-1px_0_0_#DDDDDD]"></div>
+            <p class="text-[11px] text-[#ACACAC] mt-2 font-mono">shadow-[inset_0_-1px_0_0_#DDDDDD]</p>
+          </div>
+        </div>
+
+        <!-- Inside bottom 2px -->
+        <div class="flex items-start gap-4">
+          <div class="w-[160px] shrink-0">
+            <p class="text-[12px] leading-[16px] font-bold text-[#1C1C1C]">Inside bottom 2px</p>
+            <p class="text-[12px] leading-[16px] text-[#ACACAC] mt-0.5">inset 2px</p>
+          </div>
+          <div class="flex-1">
+            <div class="h-10 bg-[#F5F5F5] rounded-[4px] shadow-[inset_0_-2px_0_0_#DDDDDD]"></div>
+            <p class="text-[11px] text-[#ACACAC] mt-2 font-mono">shadow-[inset_0_-2px_0_0_#DDDDDD]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Elevation Light -->
+    <section class="bg-white rounded-[12px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-6">Elevation — Light</h2>
+      <p class="text-xs text-[#595959] mb-4">Uses <code class="bg-[#F5F5F5] px-1 rounded text-[11px]">rgba(47,51,68,...)</code> — not pure black. For standard surfaces.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]"></div>
+          <p class="text-[12px] font-bold mt-3">Light E1</p>
+          <p class="text-[11px] text-[#ACACAC]">Cards at rest</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_1px_6px_rgba(47,51,68,0.1)]"></div>
+          <p class="text-[12px] font-bold mt-3">Light E2</p>
+          <p class="text-[11px] text-[#ACACAC]">Hover cards</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_4px_12px_rgba(47,51,68,0.1)]"></div>
+          <p class="text-[12px] font-bold mt-3">Light E3</p>
+          <p class="text-[11px] text-[#ACACAC]">Floating panels</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_8px_24px_rgba(47,51,68,0.1)]"></div>
+          <p class="text-[12px] font-bold mt-3">Light E4</p>
+          <p class="text-[11px] text-[#ACACAC]">Modals (light context)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Elevation Dark -->
+    <section class="bg-white rounded-[12px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-6">Elevation — Dark</h2>
+      <p class="text-xs text-[#595959] mb-4">Stronger shadows for overlays, dropdowns, and dialogs.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)]"></div>
+          <p class="text-[12px] font-bold mt-3">Dark E1</p>
+          <p class="text-[11px] text-[#ACACAC]">Dropdowns, tooltips</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_2px_4px_rgba(47,51,68,0.3),0px_4px_12px_rgba(47,51,68,0.15)]"></div>
+          <p class="text-[12px] font-bold mt-3">Dark E2</p>
+          <p class="text-[11px] text-[#ACACAC]">Elevated panels</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)]"></div>
+          <p class="text-[12px] font-bold mt-3">Dark E3</p>
+          <p class="text-[11px] text-[#ACACAC]">Modal dialogs, drawers</p>
+        </div>
+        <div>
+          <div class="h-20 bg-white rounded-[4px] shadow-[0px_8px_16px_rgba(47,51,68,0.3),0px_16px_48px_rgba(47,51,68,0.15)]"></div>
+          <p class="text-[12px] font-bold mt-3">Dark E4</p>
+          <p class="text-[11px] text-[#ACACAC]">Full-screen overlays</p>
+        </div>
+      </div>
+
+      <!-- Banner -->
+      <div class="mt-6 pt-6 border-t border-[#EBEBEB]">
+        <div class="h-14 bg-white rounded-[4px] shadow-[0px_4px_6px_rgba(0,0,0,0.1),0px_10px_15px_rgba(0,0,0,0.1)]"></div>
+        <p class="text-[12px] font-bold mt-3">Banner Shadow</p>
+        <p class="text-[11px] text-[#ACACAC]">Sticky headers, notification banners</p>
+      </div>
+    </section>
+
+    <!-- Breakpoints -->
+    <section class="bg-white rounded-[12px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-6">Breakpoints</h2>
+
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">xs</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(376 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">376px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">sm</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(640 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">640px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">md</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(768 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">768px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">lg</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(1024 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">1024px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">xl</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(1280 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">1280px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">2xl</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: calc(1536 / 1920 * 100%)">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">1536px</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-[60px] text-[12px] font-bold">3xl</div>
+          <div class="flex-1 h-6 bg-[#DEEBFF] rounded-[4px] relative" style="width: 100%">
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#4573D2] font-bold">1920px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing -->
+    <section class="bg-white rounded-[12px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-6">Spacing Scale</h2>
+      <p class="text-xs text-[#595959] mb-4">Full Tailwind spacing scale. Most common values highlighted.</p>
+
+      <div class="space-y-1.5">
+        <!-- 0 -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">0</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">0px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 1px"></div>
+        </div>
+        <!-- px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">px</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">1px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 1px"></div>
+        </div>
+        <!-- 0.5 = 2px (xxs) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">0.5</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">2px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 2px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">xxs</span>
+        </div>
+        <!-- 1 = 4px (xs) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">1</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">4px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 4px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">xs</span>
+        </div>
+        <!-- 1.5 = 6px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">1.5</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">6px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 6px"></div>
+        </div>
+        <!-- 2 = 8px (s) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">2</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">8px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 8px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">s</span>
+        </div>
+        <!-- 2.5 = 10px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">2.5</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">10px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 10px"></div>
+        </div>
+        <!-- 3 = 12px (m) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">3</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">12px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 12px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">m</span>
+        </div>
+        <!-- 3.5 = 14px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">3.5</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">14px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 14px"></div>
+        </div>
+        <!-- 4 = 16px (l) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">4</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">16px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 16px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">l</span>
+        </div>
+        <!-- 5 = 20px (xl) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">5</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">20px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 20px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">xl</span>
+        </div>
+        <!-- 6 = 24px (xxl) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">6</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">24px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 24px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">xxl</span>
+        </div>
+        <!-- 7 = 28px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">7</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">28px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 28px"></div>
+        </div>
+        <!-- 8 = 32px (xxxl) -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] text-right font-mono font-bold">8</div>
+          <div class="w-[40px] text-[11px] text-[#1C1C1C] font-bold">32px</div>
+          <div class="h-3 bg-[#75A0F5] rounded-sm" style="width: 32px"></div>
+          <span class="text-[10px] text-[#4573D2] font-bold">xxxl</span>
+        </div>
+        <!-- 9 = 36px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">9</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">36px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 36px"></div>
+        </div>
+        <!-- 10 = 40px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">10</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">40px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 40px"></div>
+        </div>
+        <!-- 12 = 48px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">12</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">48px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 48px"></div>
+        </div>
+        <!-- 16 = 64px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">16</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">64px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 64px"></div>
+        </div>
+        <!-- 20 = 80px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">20</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">80px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 80px"></div>
+        </div>
+        <!-- 24 = 96px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">24</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">96px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 96px"></div>
+        </div>
+        <!-- 32 = 128px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">32</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">128px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 128px"></div>
+        </div>
+        <!-- 48 = 192px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">48</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">192px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 192px"></div>
+        </div>
+        <!-- 64 = 256px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">64</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">256px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 256px"></div>
+        </div>
+        <!-- 96 = 384px -->
+        <div class="flex items-center gap-3">
+          <div class="w-[40px] text-[11px] text-[#ACACAC] text-right font-mono">96</div>
+          <div class="w-[40px] text-[11px] text-[#ACACAC]">384px</div>
+          <div class="h-3 bg-[#EBEBEB] rounded-sm" style="width: 384px"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

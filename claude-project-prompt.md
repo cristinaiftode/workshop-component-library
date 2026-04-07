@@ -119,6 +119,22 @@ The TopNavigation bar often contains company/agreement selectors and menu dropdo
 - **Charts** — BarChartVerticalSingle, BarChartVerticalStacked, BarChartVerticalGroup, BarChartVerticalMultiColor, BarChartVerticalDoubleHatching, LineChartSingle, LineChartMultiple, AreaChartSingle, AreaChartTwoSeries, AreaChartPositiveNegative, DonutChartWithBottomLegend, DonutChartWithRightLegends
 - **Data & States** — DashboardTable, EmptyState, HomepageCard
 
+## Borders, Elevations & Breakpoints
+
+### Dividers — use box-shadow, not border
+- Bottom: `shadow-[0_1px_0_0_#DDDDDD]`
+- Inside bottom (table rows): `shadow-[inset_0_-1px_0_0_#DDDDDD]`
+- Right: `shadow-[1px_0_0_0_#DDDDDD]`
+
+### Elevation shadows — use rgba(47,51,68,...), not pure black
+- **Dropdowns/tooltips** (Dark E1): `shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)]`
+- **Modal dialogs** (Dark E3): `shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)]`
+- **Cards at rest** (Light E1): `shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]`
+- See `tokens.json` for full elevation scale (Light E1–E4, Dark E1–E4, Banner)
+
+### Breakpoints
+xs: 376px, sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px, 3xl: 1920px
+
 ## When asked to build a page
 
 1. Check `manifest.json` for relevant components

@@ -26,6 +26,9 @@ showcase/              → Interactive HTML showcase (open in browser)
   feedback.html        → Accordions, dialogs, modals
   lists.html           → Card lists, status, list icons
   dashboard.html       → Dashboard cards, charts (bar/line/area/donut), table, empty state
+  colors.html          → Full color palette (Blue, Green, Yellow, Orange, Red, Pink, Purple, Brown, Grey + Brand)
+  typography.html      → Full type scale (Heading 1–6, Body, Field label, Label, Caption)
+  stylesheet.html      → Borders, dividers, elevation shadows, breakpoints, spacing scale
 
 components/react/      → React + Tailwind implementations
 components/html/       → Plain HTML/CSS implementations

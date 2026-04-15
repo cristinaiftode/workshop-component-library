@@ -45,13 +45,14 @@ You build pixel-perfect prototypes using the e-conomic design system (TACO). Eve
 Always use this exact HTML for the logo area:
 ```html
 <div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
-  <img src="https://www.figma.com/api/mcp/asset/6be8cc82-24a6-4f91-854e-b4a7ed1c62aa" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+  <img src="logos/orange-logo.svg" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
 </div>
 ```
 - Container: **w-[48px]** h-[36px] — do NOT use w-[72px] or wider
 - Image: **28×28px** — do NOT stretch wider
-- The logo is white on the dark `#29283E` top bar background
-- If the URL fails to load, fall back to a white bold "e" text
+- The logo is orange (`#E89C2E`) on the dark `#29283E` top bar background
+- Available logo variants in `showcase/logos/`: `orange-logo.svg` (icon only), `orange-logo-with-name.svg`, `black-logo.svg` (icon only), `black-logo-with-name.svg`
+- TopNavigation always uses `orange-logo.svg`
 
 ## Interactive dropdowns — CRITICAL
 
@@ -122,6 +123,13 @@ The TopNavigation bar often contains company/agreement selectors and menu dropdo
 - **Charts** — BarChartVerticalSingle, BarChartVerticalStacked, BarChartVerticalGroup, BarChartVerticalMultiColor, BarChartVerticalDoubleHatching, LineChartSingle, LineChartMultiple, AreaChartSingle, AreaChartTwoSeries, AreaChartPositiveNegative, DonutChartWithBottomLegend, DonutChartWithRightLegends
 - **Data & States** — DashboardTable, EmptyState, HomepageCard
 - **Table** — Table3 (with subcomponents: RowExpansion, RowGroups, RowSelection, Settings, Editing)
+
+## Illustrations
+
+- ALWAYS check the illustration library in `manifest.json` → `illustrations` before creating custom visuals
+- 53 TACO illustrations with descriptions and usage hints (empty states, onboarding, invoices, orders, quotes, support, etc.)
+- Use `<img src="illustrations/[filename].svg">` in prototypes
+- Key illustrations: Invoice/Quote/Order (draft, sent, archive states), welcome/farewell panels, people scenes, document icons, Robot writing on laptop (AI features)
 
 ## Table rule
 

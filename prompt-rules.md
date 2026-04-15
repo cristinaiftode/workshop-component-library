@@ -2,6 +2,13 @@
 
 You are building UI for the e-conomic accounting platform using React, Tailwind CSS, and the `@economic/taco` component library. Follow these rules strictly.
 
+## 0a. Illustrations — use the TACO illustration library
+
+- ALWAYS check `manifest.json` → `illustrations` before creating custom visuals
+- 53 illustrations available with descriptions and usage context
+- Use for: empty states, onboarding, error pages, feature pages, success screens
+- Key sets: Invoice/Quote/Order (draft, sent, archive), welcome/farewell panels, people scenes, document icons, support, AI/robot
+
 ## 0. Icons — use ONLY the icon library
 
 - ALWAYS use icons from the icon library listed in this file (see Icons section below) — never invent or create new icon SVGs
@@ -267,7 +274,7 @@ Every Select, Combobox, and dropdown-like component MUST be interactive:
 ### e-conomic logo in TopNavigation
 ```html
 <div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
-  <img src="https://www.figma.com/api/mcp/asset/6be8cc82-24a6-4f91-854e-b4a7ed1c62aa" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+  <img src="logos/orange-logo.svg" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
 </div>
 ```
 Container **w-[48px]** (NOT w-[72px]). Image 28×28px. White logo on dark `#29283E` background. Fallback: white bold "e" text.

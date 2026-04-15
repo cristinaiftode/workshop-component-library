@@ -5,6 +5,7 @@
 - For boilerplate, interactive patterns, and page-building steps: see `claude-project-prompt.md`
 - For design token values: see `tokens.json`
 - For component definitions and props: see `manifest.json`
+- For logos: see `showcase/logos/` — use `orange-logo.svg` in TopNavigation
 
 ## Component Generation Rules
 
@@ -54,6 +55,12 @@ When generating components from Figma MCP:
 - Font: Helvetica, Arial, sans-serif
 - Always verify output in the preview server before considering a task done
 - Tailwind CDN has specificity issues with arbitrary value classes on `<button>` elements — use inline styles or `<div role="button">` as workaround when bg colors don't apply
+
+### Illustrations
+- ALWAYS check the illustration library in `showcase/illustrations/` before creating custom illustrations
+- 53 TACO illustrations available — see `manifest.json` → `illustrations` for the full list with descriptions and usage hints
+- Use illustrations for: empty states, onboarding screens, error pages, feature introductions, success states
+- Reference via `<img src="illustrations/[filename].svg">` in showcase pages
 
 ### Table Rule
 - When a prototype requires a data table, **always use Table3** — it is the standard data table in the design system

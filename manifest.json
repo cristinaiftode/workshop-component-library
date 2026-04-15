@@ -1964,5 +1964,276 @@
       },
       "usage": "<Icon name=\"home\" />"
     }
+  },
+  "illustrations": {
+    "$description": "TACO illustration library. Use these in prototypes for empty states, onboarding, feature pages, and contextual visuals. Reference by filename from showcase/illustrations/. ALWAYS check this library before creating custom illustrations.",
+    "basePath": "showcase/illustrations/",
+    "items": {
+      "book": {
+        "file": "book.svg",
+        "description": "A book",
+        "usage": "Knowledge base, documentation, learning, e-copedia, help sections"
+      },
+      "charts and documents in a box": {
+        "file": "charts and documents in a box.svg",
+        "description": "Charts and documents in a box",
+        "usage": "Reports, data collection, bundled documents, archive"
+      },
+      "christmas wreath": {
+        "file": "christmas wreath.svg",
+        "description": "Christmas wreath",
+        "usage": "Seasonal holiday greetings, December promotions"
+      },
+      "clock, list": {
+        "file": "clock, list.svg",
+        "description": "Clock with a list",
+        "usage": "Time tracking, scheduling, task lists, deadlines, reminders"
+      },
+      "clock-list": {
+        "file": "clock-list.svg",
+        "description": "Clock with list (alternative)",
+        "usage": "Time tracking, scheduling, task management"
+      },
+      "corona covid 19 multiple": {
+        "file": "corona covid 19 multiple.svg",
+        "description": "Corona/COVID-19 multiple icons",
+        "usage": "Pandemic-related messaging, health notices"
+      },
+      "document with coffee": {
+        "file": "document with coffee.svg",
+        "description": "Document with a coffee cup",
+        "usage": "Casual document review, relaxed onboarding, getting started"
+      },
+      "document with notification": {
+        "file": "document with notification.svg",
+        "description": "Document with a notification badge",
+        "usage": "New documents, unread notifications, action required on documents"
+      },
+      "documents with chain link": {
+        "file": "documents with chain link.svg",
+        "description": "Documents connected with a chain link",
+        "usage": "Linked documents, integrations, connected records, attachments"
+      },
+      "farvel fairwell user panel": {
+        "file": "farvel fairwell user panel.svg",
+        "description": "Farewell/goodbye user panel",
+        "usage": "Account deletion, offboarding, goodbye screens, subscription cancellation"
+      },
+      "Firmakort_Man-in-bakery-pays-scans-receipt": {
+        "file": "Firmakort_Man-in-bakery-pays-scans-receipt.svg",
+        "description": "Man in bakery pays and scans receipt with company card",
+        "usage": "Expense management, company card, receipt scanning, Firmakort feature"
+      },
+      "Firmakort_Man-pays-scans-receipt": {
+        "file": "Firmakort_Man-pays-scans-receipt.svg",
+        "description": "Man pays and scans receipt with company card",
+        "usage": "Expense management, company card payments, receipt scanning, Firmakort"
+      },
+      "Hand signing document": {
+        "file": "Hand signing document.svg",
+        "description": "Hand signing a document",
+        "usage": "Contracts, agreements, e-signature, approval, signing flows"
+      },
+      "happy support people": {
+        "file": "happy support people.svg",
+        "description": "Happy support team",
+        "usage": "Customer support, help center, contact us, support team"
+      },
+      "Invoice draft": {
+        "file": "Invoice draft.svg",
+        "description": "Invoice in draft state",
+        "usage": "Draft invoices, empty invoice list, creating new invoices"
+      },
+      "invoice invoiced": {
+        "file": "invoice invoiced.svg",
+        "description": "Invoice that has been invoiced/finalized",
+        "usage": "Completed invoices, invoiced state, invoice confirmation"
+      },
+      "invoice sent": {
+        "file": "invoice sent.svg",
+        "description": "Invoice that has been sent",
+        "usage": "Sent invoices, invoice delivery confirmation"
+      },
+      "laptop with corona-1": {
+        "file": "laptop with corona-1.svg",
+        "description": "Laptop with corona/COVID icon",
+        "usage": "Remote work, pandemic-related features"
+      },
+      "live course presentation": {
+        "file": "live course presentation.svg",
+        "description": "Live course/presentation scene",
+        "usage": "Webinars, courses, training, live events, presentations"
+      },
+      "Man carrying box of documents in the rain": {
+        "file": "Man carrying box of documents in the rain.svg",
+        "description": "Man carrying box of documents in the rain",
+        "usage": "Document migration, difficult transitions, moving data, pain points"
+      },
+      "Man carrying box with documents 1": {
+        "file": "Man carrying box with documents 1.svg",
+        "description": "Man carrying a box with documents",
+        "usage": "Document management, moving files, migration, archiving"
+      },
+      "Man delivering destroyed box of documents to bookkeeper": {
+        "file": "Man delivering destroyed box of documents to bookkeeper.svg",
+        "description": "Man delivering destroyed box of documents to bookkeeper",
+        "usage": "Messy bookkeeping, disorganized documents, need for better tools"
+      },
+      "Man fighting with dog over box of documents": {
+        "file": "Man fighting with dog over box of documnets.svg",
+        "description": "Man fighting with dog over box of documents",
+        "usage": "Humorous error states, document chaos, lighthearted empty states"
+      },
+      "Man loosing flying documents from driving car": {
+        "file": "Man loosing flying documents from driving car.svg",
+        "description": "Man losing flying documents from a driving car",
+        "usage": "Lost documents, data loss warning, backup reminders"
+      },
+      "Man pointing at statistics": {
+        "file": "Man pointing at statistics.svg",
+        "description": "Man pointing at statistics/charts",
+        "usage": "Reports, analytics, dashboards, data insights, KPIs"
+      },
+      "man pointing at laptop with corona-1": {
+        "file": "man pointing at laptop with corona-1.svg",
+        "description": "Man pointing at laptop with corona icon",
+        "usage": "Remote work guidance, pandemic-era features"
+      },
+      "man pointing to a laptop": {
+        "file": "man pointing to a laptop.svg",
+        "description": "Man pointing to a laptop",
+        "usage": "Feature introduction, product demos, getting started, onboarding"
+      },
+      "man shows paper-3": {
+        "file": "man shows paper-3.svg",
+        "description": "Man showing/presenting a paper document",
+        "usage": "Document preview, presenting results, showing reports"
+      },
+      "man with a box in a warehouse": {
+        "file": "man with a box in a warehause.svg",
+        "description": "Man with a box in a warehouse",
+        "usage": "Inventory management, warehouse, stock, products"
+      },
+      "man with envelopes": {
+        "file": "man with envelopes.svg",
+        "description": "Man holding envelopes",
+        "usage": "Email, inbox, messages, notifications, correspondence"
+      },
+      "money-paperplane": {
+        "file": "money-paperplane.svg",
+        "description": "Money on a paper plane",
+        "usage": "Payments, sending money, transfers, fast payments"
+      },
+      "Movers moving boxes": {
+        "file": "Movers moving boxes.svg",
+        "description": "Movers moving boxes",
+        "usage": "Migration, moving data, switching systems, onboarding from another tool"
+      },
+      "Movers, moving boxes into car": {
+        "file": "Movers, moving boxes into car.svg",
+        "description": "Movers loading boxes into a car",
+        "usage": "Data export, migration, moving to a new system"
+      },
+      "Movers, moving boxes into car-inbox": {
+        "file": "Movers, moving boxes into car-inbox.svg",
+        "description": "Movers loading boxes into car (inbox variant)",
+        "usage": "Inbox migration, importing documents, bulk import"
+      },
+      "order archive": {
+        "file": "order archive.svg",
+        "description": "Order in archive state",
+        "usage": "Archived orders, order history, completed orders"
+      },
+      "order draft": {
+        "file": "order draft.svg",
+        "description": "Order in draft state",
+        "usage": "Draft orders, empty order list, creating new orders"
+      },
+      "order sent": {
+        "file": "order sent.svg",
+        "description": "Order that has been sent",
+        "usage": "Sent orders, order confirmation, delivery"
+      },
+      "paper plane with dollar sign": {
+        "file": "paper plane with dollar sign.svg",
+        "description": "Paper plane with a dollar sign",
+        "usage": "Sending payments, money transfers, invoicing, billing"
+      },
+      "paper plane with toggle": {
+        "file": "paper plane with toggle.svg",
+        "description": "Paper plane with a toggle switch",
+        "usage": "Automated sending, auto-pay settings, scheduled deliveries"
+      },
+      "People raising their hands": {
+        "file": "People raising their hands.svg",
+        "description": "People raising their hands in celebration",
+        "usage": "Success states, celebrations, team achievements, onboarding complete"
+      },
+      "People scanning a barcode on a box": {
+        "file": "People scanning a barcode on a box.svg",
+        "description": "People scanning a barcode on a box",
+        "usage": "Inventory scanning, product tracking, warehouse management"
+      },
+      "People talking by coffeemachine in office": {
+        "file": "People talking by coffeemachine in office.svg",
+        "description": "People talking by coffee machine in office",
+        "usage": "Team collaboration, office culture, casual meetings, community"
+      },
+      "people, togetherness": {
+        "file": "people, togetherness.svg",
+        "description": "People together in a group",
+        "usage": "Team pages, collaboration, community, partnerships"
+      },
+      "Quote draft": {
+        "file": "Quote draft.svg",
+        "description": "Quote in draft state",
+        "usage": "Draft quotes, empty quote list, creating new quotes"
+      },
+      "Quote sent": {
+        "file": "Quote sent.svg",
+        "description": "Quote that has been sent",
+        "usage": "Sent quotes, quote delivery confirmation"
+      },
+      "quote archive": {
+        "file": "quote archive.svg",
+        "description": "Quote in archive state",
+        "usage": "Archived quotes, quote history"
+      },
+      "Robot writing on laptop": {
+        "file": "Robot writing on laptop.svg",
+        "description": "Robot writing on a laptop",
+        "usage": "AI features, automation, smart tools, auto-generated content"
+      },
+      "sprint of wow, man, woman, laptop, lightbulb, working": {
+        "file": "sprint of wow, man, woman, laptop, lightbulb, working.svg",
+        "description": "Man and woman working on laptop with lightbulb moment",
+        "usage": "Innovation, brainstorming, new ideas, feature discovery, aha moments"
+      },
+      "support man light monitor": {
+        "file": "support man light monitor.svg",
+        "description": "Support person at a monitor with light",
+        "usage": "Customer support, help desk, technical assistance, guided help"
+      },
+      "Trustpilot ratings": {
+        "file": "Trustpilot ratings.svg",
+        "description": "Trustpilot star ratings",
+        "usage": "Reviews, ratings, social proof, testimonials"
+      },
+      "velkommen welcome user panel": {
+        "file": "velkommen welcome user panel.svg",
+        "description": "Welcome/velkommen user panel",
+        "usage": "Welcome screens, onboarding, first-time user experience, new account"
+      },
+      "woman apps market addons extensions": {
+        "file": "woman apps market addons extensions.svg",
+        "description": "Woman browsing apps/market/addons/extensions",
+        "usage": "App marketplace, extensions, integrations, add-ons, plugin store"
+      },
+      "woman working on a laptop": {
+        "file": "woman working on a laptop.svg",
+        "description": "Woman working on a laptop",
+        "usage": "General productivity, working, getting things done, feature pages"
+      }
+    }
   }
 }

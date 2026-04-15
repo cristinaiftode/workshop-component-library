@@ -4,7 +4,7 @@
     {
       "name": "showcase",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8765", "-d", "/Users/cristinaiftode/e-conomic/workshop-component-library"],
+      "runtimeArgs": ["-m", "http.server", "8765", "-d", "."],
       "port": 8765
     }
   ]

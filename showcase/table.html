@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    button { font-weight: 400; }
+    /* Frozen columns get a right shadow when scrolled */
+    .frozen-shadow { box-shadow: 2px 0 4px rgba(0,0,0,0.06); }
+    /* Icon toolbar buttons: override inline bg on hover */
+    .icon-toolbar-btn:hover { background-color: #DDDDDD !important; }
+  </style>
+</head>
+<body class="bg-white text-[#1C1C1C]">
+  <div class="max-w-5xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-8">Table Components</h1>
+
+    <!-- ==================== TABLE3 — Chart of Accounts ==================== -->
+    <section class="mb-6 overflow-visible" id="table-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Chart of Accounts</h2>
+
+      <!-- ── Toolbar ── -->
+      <div class="flex items-center justify-between pb-3 gap-3 flex-wrap">
+        <div class="flex items-center gap-2">
+          <!-- New invoice button -->
+          <button class="inline-flex items-center px-4 py-[6px] rounded-[4px] bg-[#4573D2] text-white text-sm leading-5 hover:bg-[#2B57B4] transition-colors">New invoice</button>
+          <!-- More dropdown -->
+          <div class="relative" id="more-dropdown-wrapper">
+            <button id="more-btn" class="inline-flex items-center gap-1 px-3 py-[6px] rounded-[4px] bg-[#EBEBEB] text-sm leading-5 text-[#1C1C1C] hover:bg-[#DDDDDD] transition-colors">
+              More
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+            </button>
+            <div id="more-menu" class="hidden absolute left-0 top-full mt-1 bg-white rounded-[8px] shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)] py-1 z-50 min-w-[140px]">
+              <div class="flex items-center px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">Export</div>
+              <div class="flex items-center px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">Print</div>
+              <div class="flex items-center px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">Import</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- Filters -->
+          <button id="filters-btn" class="inline-flex items-center gap-1.5 px-3 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm leading-5 text-[#1C1C1C] hover:bg-[#F6F6F6] transition-colors">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M20.25 2a.75.75 0 01.75.75v2a.75.75 0 01-.15.45l-5.7 7.6a.75.75 0 00-.15.45v6.725a.75.75 0 01-.494.705l-4 1.454A.75.75 0 019.5 21.43v-8.163a.75.75 0 00-.168-.473L3.168 5.207A.75.75 0 013 4.734V2.75A.75.75 0 013.75 2h16.5zm-.75 1.5h-15v.967l5.996 7.38c.285.351.457.779.496 1.226l.008.193v7.092l2.5-.91V13.25c0-.426.12-.842.347-1.2l.103-.15 5.55-7.401V3.5z" fill-rule="evenodd"/></svg>
+            Filters
+          </button>
+          <!-- Icon buttons (24x24 from icon library) -->
+          <button class="icon-toolbar-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] transition-colors" style="background-color: #EBEBEB" aria-label="Column settings">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M14 4.5h-4v15h4v-15zm1.5 0v15h3.75a.25.25 0 00.25-.25V4.75a.25.25 0 00-.25-.25H15.5zm-10.75 0H8.5v15H4.75a.25.25 0 01-.25-.25V4.75a.25.25 0 01.25-.25zm0-1.5A1.75 1.75 0 003 4.75v14.5c0 .966.784 1.75 1.75 1.75h14.5A1.75 1.75 0 0021 19.25V4.75A1.75 1.75 0 0019.25 3H4.75z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+          </button>
+          <button class="icon-toolbar-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] transition-colors" style="background-color: #EBEBEB" aria-label="Print">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M16.75 2c.966 0 1.75.784 1.75 1.75v1.758A3.75 3.75 0 0122 9.25v7.5a1.75 1.75 0 01-1.75 1.75H18.5v1.75A1.75 1.75 0 0116.75 22h-9.5a1.75 1.75 0 01-1.75-1.75V18.5H3.75A1.75 1.75 0 012 16.75v-7.5a3.75 3.75 0 013.5-3.742V3.75C5.5 2.784 6.284 2 7.25 2h9.5zM17 14.5H7v5.75a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193L17 20.25V14.5zM18.25 7H5.75a2.25 2.25 0 00-2.245 2.096L3.5 9.25v7.5a.25.25 0 00.193.243L3.75 17H5.5v-3.25a.75.75 0 01.75-.75h11.5a.75.75 0 01.75.75V17h1.75a.25.25 0 00.243-.193l.007-.057v-7.5a2.25 2.25 0 00-2.096-2.245L18.25 7zm-.5 3a.75.75 0 110 1.5h-2.5a.75.75 0 110-1.5h2.5zm-1-6.5h-9.5a.25.25 0 00-.243.193L7 3.75V5.5h10V3.75a.25.25 0 00-.193-.243L16.75 3.5z" fill-rule="evenodd"/></svg>
+          </button>
+          <button class="icon-toolbar-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] transition-colors" style="background-color: #EBEBEB" aria-label="Settings">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M2.5 12.75H7a.75.75 0 110 1.5H5.5v7a.75.75 0 11-1.5 0v-7H2.5a.75.75 0 110-1.5zm9.5-2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V11.5a.75.75 0 01.75-.75zm9.5 4a.75.75 0 110 1.5H20v5a.75.75 0 11-1.5 0v-5H17a.75.75 0 110-1.5h4.5zM19.25 2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V2.75a.75.75 0 01.75-.75zM4.75 2a.75.75 0 01.75.75v7.75a.75.75 0 11-1.5 0V2.75A.75.75 0 014.75 2zM12 2a.75.75 0 01.75.75v5h1.5a.75.75 0 110 1.5h-4.5a.75.75 0 010-1.5h1.5v-5A.75.75 0 0112 2z" fill-rule="evenodd"/></svg>
+          </button>
+          <!-- Search -->
+          <div class="relative">
+            <svg class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4" viewBox="0 0 24 24" fill="#ACACAC"><path d="M10 2.25a7.75 7.75 0 015.985 12.674l5.545 5.546a.75.75 0 01-.976 1.133l-.084-.073-5.546-5.545A7.75 7.75 0 1110 2.25zm0 1.5a6.25 6.25 0 100 12.5 6.25 6.25 0 000-12.5z" fill-rule="evenodd"/></svg>
+            <input type="text" id="search-input" placeholder="Search..." class="pl-8 pr-12 py-[6px] w-[180px] text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2] placeholder:text-[#ACACAC]" />
+            <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#ACACAC] border border-[#DDDDDD] rounded px-1">⌘ F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Filter Panel (hidden by default) ── -->
+      <div id="filter-panel" class="hidden mb-3 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_1px_6px_rgba(47,51,68,0.1)] p-4 relative z-40">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-sm font-bold">Filters</span>
+          <span class="text-xs text-[#595959]" id="filter-count">Viewing <span id="visible-count">10</span> of 10</span>
+        </div>
+        <div id="filter-rows" class="flex flex-col gap-2 mt-3">
+          <div class="flex items-center gap-2 filter-row">
+            <span class="text-sm text-[#595959] w-[50px]">Where</span>
+            <select class="filter-col border border-[#DDDDDD] rounded-[4px] px-2 py-[6px] text-sm focus:outline-none focus:border-[#4573D2] min-w-[120px]">
+              <option value="">Column...</option>
+              <option value="0">No.</option>
+              <option value="1">Name</option>
+              <option value="2">Type</option>
+              <option value="3">VAT</option>
+              <option value="4">Totalfrom</option>
+              <option value="5">Balance</option>
+            </select>
+            <select class="filter-op border border-[#DDDDDD] rounded-[4px] px-2 py-[6px] text-sm text-[#595959] focus:outline-none focus:border-[#4573D2]">
+              <option>Contains</option>
+              <option>Equals</option>
+              <option>Starts with</option>
+            </select>
+            <input type="text" class="filter-val border border-[#DDDDDD] rounded-[4px] px-2 py-[6px] text-sm flex-1 focus:outline-none focus:border-[#4573D2]" placeholder="" />
+            <button class="filter-remove inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB] text-[#595959]" aria-label="Remove filter">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5538 6.39705C16.8474 6.1792 17.2641 6.2034 17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L13.061 12L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2641 17.7966 16.8474 17.8208 16.5538 17.6029L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L10.939 12L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967L16.5538 6.39705Z" /></svg>
+            </button>
+          </div>
+        </div>
+        <button id="add-filter-btn" class="text-sm text-[#4573D2] hover:text-[#2B57B4] mt-2">+ Add new filter</button>
+        <div class="flex items-center justify-end gap-2 mt-4 border-t border-[#EBEBEB] pt-3">
+          <button id="filter-cancel" class="px-3 py-[6px] rounded-[4px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Cancel</button>
+          <button id="filter-clear" class="px-3 py-[6px] rounded-[4px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Clear</button>
+          <button id="filter-apply" class="px-3 py-[6px] rounded-[4px] bg-[#4573D2] text-white text-sm hover:bg-[#2B57B4] transition-colors">Apply</button>
+        </div>
+      </div>
+
+      <!-- ── Table ── -->
+      <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+        <table class="w-full border-collapse min-w-[800px]" id="data-table">
+          <thead>
+            <tr class="border-b-2 border-[#DDDDDD]" id="header-row">
+              <!-- Checkbox column -->
+              <th class="w-10 px-2 py-2 text-center">
+                <input type="checkbox" id="select-all" class="w-4 h-4 rounded border-[#ACACAC] cursor-pointer accent-[#4573D2]" />
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="0" data-type="number">
+                <div class="flex items-center gap-1">
+                  <span>No.</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="1" data-type="text">
+                <div class="flex items-center gap-1">
+                  <span>Name</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="2" data-type="text">
+                <div class="flex items-center gap-1">
+                  <span>Type</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="3" data-type="text">
+                <div class="flex items-center gap-1">
+                  <span>VAT</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="4" data-type="text">
+                <div class="flex items-center gap-1">
+                  <span>Totalfrom</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <th class="px-3 py-2 text-right text-xs leading-4 font-bold text-[#1C1C1C] cursor-pointer select-none group relative" data-col="5" data-type="number">
+                <div class="flex items-center justify-end gap-1">
+                  <span>Balance</span>
+                  <span class="sort-icon text-[10px]"></span>
+                  <button class="col-menu-btn opacity-0 group-hover:opacity-100 ml-auto inline-flex items-center justify-center w-5 h-5 rounded hover:bg-[#EBEBEB]" aria-label="Column menu">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+                  </button>
+                </div>
+              </th>
+              <!-- Actions column -->
+              <th class="w-[120px] px-2 py-2"></th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── Column Context Menu (shared, positioned absolutely) ── -->
+    <div id="col-menu" class="hidden fixed bg-white rounded-[8px] shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)] py-1 z-[100] min-w-[200px]">
+      <div id="cm-hide" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3.53 2.47a.75.75 0 00-1.06 1.06l3.605 3.605a10.258 10.258 0 00-4.097 6.208.75.75 0 101.466.314 8.757 8.757 0 013.71-5.443l1.987 1.988a4 4 0 005.656 5.656l5.673 5.672a.75.75 0 101.06-1.06l-18-18zm10.207 12.328l-3.535-3.535a2.5 2.5 0 003.535 3.535zM12.061 9L16 12.94A4 4 0 0012.06 9zM8.815 5.754l1.218 1.218a8.753 8.753 0 0110.523 6.685.75.75 0 101.467-.314C21.032 8.718 16.922 5.25 12 5.25c-1.112 0-2.182.177-3.185.504z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+        Hide column
+      </div>
+      <!-- Sorting submenu trigger -->
+      <div id="cm-sorting" class="flex items-center justify-between px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer relative">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.53 2.97a.75.75 0 00-1.06 0l-3 3a.75.75 0 001.06 1.06l1.72-1.72v13.38l-1.72-1.72a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V5.31l1.72 1.72a.75.75 0 101.06-1.06l-3-3zM2.25 6A.75.75 0 013 5.25h8.5a.75.75 0 010 1.5H3A.75.75 0 012.25 6zM3 11.25a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5H3zm0 6a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5H3z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+          Sorting
+        </span>
+        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
+      </div>
+      <!-- Sorting submenu -->
+      <div id="sort-submenu" class="hidden absolute bg-white rounded-[8px] shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)] py-1 z-[110] min-w-[170px]">
+        <div id="sort-asc" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+          <span class="w-4 text-center sort-bullet"></span>Ascending order
+        </div>
+        <div id="sort-desc" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+          <span class="w-4 text-center sort-bullet"></span>Descending order
+        </div>
+        <div id="sort-none" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+          <span class="w-4 text-center sort-bullet"></span>No sorting
+        </div>
+      </div>
+      <div id="cm-freeze" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 4.5h-4v15h4v-15zm1.5 0v15h3.75a.25.25 0 00.25-.25V4.75a.25.25 0 00-.25-.25H15.5zm-10.75 0H8.5v15H4.75a.25.25 0 01-.25-.25V4.75a.25.25 0 01.25-.25zm0-1.5A1.75 1.75 0 003 4.75v14.5c0 .966.784 1.75 1.75 1.75h14.5A1.75 1.75 0 0021 19.25V4.75A1.75 1.75 0 0019.25 3H4.75z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+        <span id="freeze-label">Freeze first 2 columns</span>
+      </div>
+      <div id="cm-unfreeze" class="hidden items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.25 6a1.75 1.75 0 011.744 1.606L21 7.75V11h-1.5V7.75l-.007-.057a.25.25 0 00-.175-.184L19.25 7.5H7.75l-.057.007a.25.25 0 00-.184.175L7.5 7.75v11.5l.007.057a.25.25 0 00.175.184l.068.009H11V21H7.75a1.75 1.75 0 01-1.744-1.606L6 19.25V7.75a1.75 1.75 0 011.606-1.744L7.75 6h11.5zm-2-3l.102.007a.75.75 0 010 1.486l-.102.007H4.75l-.057.007a.25.25 0 00-.184.175L4.5 4.75v12.5l-.007.102a.75.75 0 01-1.486 0L3 17.25V4.75l.006-.144a1.75 1.75 0 011.593-1.6L4.75 3h12.5zm-2.5 8.75a3 3 0 100 6 3 3 0 000-6zm0 7.5a4.5 4.5 0 113.632-1.842l.036-.05 2.362 2.362a.75.75 0 01-.976 1.133l-.084-.073-2.363-2.362-.112.077a4.479 4.479 0 01-2.495.755z" fill-rule="evenodd"/></svg>
+        Unfreeze all columns
+      </div>
+      <div id="cm-filter" class="flex items-center gap-2 px-[8px] py-[6px] text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] rounded-[4px] mx-1 cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.25 2a.75.75 0 01.75.75v2a.75.75 0 01-.15.45l-5.7 7.6a.75.75 0 00-.15.45v6.725a.75.75 0 01-.494.705l-4 1.454A.75.75 0 019.5 21.43v-8.163a.75.75 0 00-.168-.473L3.168 5.207A.75.75 0 013 4.734V2.75A.75.75 0 013.75 2h16.5zm-.75 1.5h-15v.967l5.996 7.38c.285.351.457.779.496 1.226l.008.193v7.092l2.5-.91V13.25c0-.426.12-.842.347-1.2l.103-.15 5.55-7.401V3.5z" fill-rule="evenodd"/></svg>
+        Filter
+      </div>
+    </div>
+
+    <!-- ==================== TABLE3 — Row Expansion ==================== -->
+    <section class="mb-6 overflow-visible mt-6" id="expansion-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Row Expansion</h2>
+      <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+        <table class="w-full border-collapse min-w-[700px]" id="expand-table">
+          <thead>
+            <tr class="border-b-2 border-[#DDDDDD]">
+              <th class="w-10 px-2 py-2 text-center">
+                <input type="checkbox" id="exp-select-all" class="w-4 h-4 rounded border-[#ACACAC] cursor-pointer accent-[#4573D2]" />
+              </th>
+              <th class="w-10 px-1 py-2 text-center">
+                <button id="expand-all-btn" class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB] text-[#1C1C1C]" title="Expand all rows">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967C16.7359 6.2034 17.1526 6.1792 17.4462 6.39705L17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L12.5303 12.5303C12.2641 12.7966 11.8474 12.8208 11.5538 12.6029L11.4697 12.5303L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967ZM6.46967 11.4697C6.73594 11.2034 7.1526 11.1792 7.44621 11.3971L7.53033 11.4697L12 15.939L16.4697 11.4697C16.7359 11.2034 17.1526 11.1792 17.4462 11.3971L17.5303 11.4697C17.7966 11.7359 17.8208 12.1526 17.6029 12.4462L17.5303 12.5303L12.5303 17.5303C12.2641 17.7966 11.8474 17.8208 11.5538 17.6029L11.4697 17.5303L6.46967 12.5303C6.17678 12.2374 6.17678 11.7626 6.46967 11.4697Z" /></svg>
+                </button>
+              </th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C]">Date</th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C]">Entry no.</th>
+              <th class="px-3 py-2 text-left text-xs leading-4 font-bold text-[#1C1C1C]">Text</th>
+              <th class="px-3 py-2 text-right text-xs leading-4 font-bold text-[#1C1C1C]">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="expand-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== TABLE3 — Row Groups ==================== -->
+    <section class="mb-6 overflow-visible mt-6" id="groups-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Row Groups</h2>
+      <div class="border border-[#DDDDDD] rounded-[4px] overflow-auto relative" style="max-height: 420px;" id="groups-scroll">
+        <table class="w-full text-sm border-collapse" id="groups-table">
+          <thead class="sticky top-0 z-20 bg-white">
+            <tr class="border-b border-[#DDDDDD]">
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Date</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[90px]">Entry no.</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2">Text</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Amount</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[80px]">Account</th>
+            </tr>
+          </thead>
+          <tbody id="groups-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== TABLE3 — Row Selection ==================== -->
+    <section class="mb-6 overflow-visible mt-6" id="selection-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Row Selection</h2>
+      <div class="pb-2 text-sm text-[#1C1C1C]" id="selection-info">Selected accounts: <span id="selection-accounts">—</span></div>
+      <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+        <table class="w-full text-sm border-collapse" id="selection-table">
+          <thead>
+            <tr class="border-b border-[#DDDDDD]">
+              <th class="px-4 py-2 w-[40px]"><input type="checkbox" id="sel-all" class="w-4 h-4 accent-[#4573D2] cursor-pointer"></th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Date</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[90px]">Entry no.</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2">Text</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Amount</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[80px]">Account</th>
+            </tr>
+          </thead>
+          <tbody id="selection-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== TABLE3 — Settings ==================== -->
+    <section class="mb-6 overflow-visible mt-6" id="settings-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Settings</h2>
+      <div class="relative">
+        <!-- Settings icon button -->
+        <div class="flex justify-end py-2">
+          <button id="settings-btn" class="p-1 hover:bg-[#EBEBEB] rounded" title="Settings">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M2.5 12.75H7a.75.75 0 110 1.5H5.5v7a.75.75 0 11-1.5 0v-7H2.5a.75.75 0 110-1.5zm9.5-2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V11.5a.75.75 0 01.75-.75zm9.5 4a.75.75 0 110 1.5H20v5a.75.75 0 11-1.5 0v-5H17a.75.75 0 110-1.5h4.5zM19.25 2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V2.75a.75.75 0 01.75-.75zM4.75 2a.75.75 0 01.75.75v7.75a.75.75 0 11-1.5 0V2.75A.75.75 0 014.75 2zM12 2a.75.75 0 01.75.75v5h1.5a.75.75 0 110 1.5h-4.5a.75.75 0 010-1.5h1.5v-5A.75.75 0 0112 2z" fill-rule="evenodd"/></svg>
+          </button>
+        </div>
+
+        <!-- Settings dropdown -->
+        <div id="settings-dropdown" class="hidden absolute right-4 top-12 bg-white border border-[#DDDDDD] rounded-[4px] shadow-lg z-30 w-[200px] py-1">
+          <button id="btn-col-settings" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[#1C1C1C] hover:bg-[#FAFAFA] text-left">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M14 4.5h-4v15h4v-15zm1.5 0v15h3.75a.25.25 0 00.25-.25V4.75a.25.25 0 00-.25-.25H15.5zm-10.75 0H8.5v15H4.75a.25.25 0 01-.25-.25V4.75a.25.25 0 01.25-.25zm0-1.5A1.75 1.75 0 003 4.75v14.5c0 .966.784 1.75 1.75 1.75h14.5A1.75 1.75 0 0021 19.25V4.75A1.75 1.75 0 0019.25 3H4.75z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+            Column settings
+          </button>
+          <div class="relative">
+            <button id="btn-row-height" class="w-full flex items-center justify-between px-3 py-2 text-sm text-[#1C1C1C] hover:bg-[#FAFAFA] text-left">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M18.53 2.97a.75.75 0 00-1.06 0l-3 3a.75.75 0 001.06 1.06l1.72-1.72v13.38l-1.72-1.72a.75.75 0 10-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V5.31l1.72 1.72a.75.75 0 101.06-1.06l-3-3zM2.25 6A.75.75 0 013 5.25h8.5a.75.75 0 010 1.5H3A.75.75 0 012.25 6zM3 11.25a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5H3zm0 6a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5H3z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                Row height
+              </span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
+            </button>
+            <div id="row-height-sub" class="hidden absolute left-full top-0 bg-white border border-[#DDDDDD] rounded-[4px] shadow-lg z-40 w-[120px] py-1">
+              <button class="rh-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA]" data-size="short">Short</button>
+              <button class="rh-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA] font-bold" data-size="medium">
+                <span class="inline-block w-2 h-2 bg-[#1C1C1C] rounded-full mr-1 align-middle"></span> Medium
+              </button>
+              <button class="rh-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA]" data-size="tall">Tall</button>
+              <button class="rh-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA]" data-size="extra-tall">Extra tall</button>
+            </div>
+          </div>
+          <div class="relative">
+            <button id="btn-font-size" class="w-full flex items-center justify-between px-3 py-2 text-sm text-[#1C1C1C] hover:bg-[#FAFAFA] text-left">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1C1C1C"><text x="2" y="18" font-size="18" font-weight="bold" fill="#1C1C1C">T</text><text x="13" y="18" font-size="13" font-weight="bold" fill="#1C1C1C">T</text></svg>
+                Font size
+              </span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
+            </button>
+            <div id="font-size-sub" class="hidden absolute left-full top-0 bg-white border border-[#DDDDDD] rounded-[4px] shadow-lg z-40 w-[120px] py-1">
+              <button class="fs-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA]" data-size="small">Small</button>
+              <button class="fs-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA] font-bold" data-size="medium">
+                <span class="inline-block w-2 h-2 bg-[#1C1C1C] rounded-full mr-1 align-middle"></span> Medium
+              </button>
+              <button class="fs-option w-full text-left px-3 py-1.5 text-sm hover:bg-[#FAFAFA]" data-size="large">Large</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column settings panel -->
+        <div id="col-settings-panel" class="hidden absolute right-4 top-12 bg-white border border-[#DDDDDD] rounded-[4px] shadow-lg z-30 w-[220px] py-2">
+          <div class="px-3 pb-2">
+            <input type="text" id="col-search" placeholder="Search column..." class="w-full border border-[#DDDDDD] rounded-[4px] px-2 py-1.5 text-sm outline-none focus:border-[#4573D2]">
+          </div>
+          <div id="col-list"></div>
+        </div>
+
+        <!-- Settings table -->
+        <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+          <table class="w-full text-sm border-collapse" id="settings-table">
+            <thead>
+              <tr class="border-b border-[#DDDDDD]" id="settings-thead-row"></tr>
+            </thead>
+            <tbody id="settings-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TABLE3 — Editing ==================== -->
+    <section class="mb-6 overflow-visible mt-6" id="editing-section">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Table3 — Editing</h2>
+      <div class="text-sm text-[#1C1C1C] mb-1">Has changes: <span id="edit-has-changes">false</span></div>
+      <div class="text-sm text-[#595959] mb-3">Validation rules: Year must be later than 2019, Entry no. must be greater than 0</div>
+      <!-- Toolbar -->
+      <div class="flex items-center justify-end gap-2 pb-3">
+        <!-- Edit toggle (pill switch) -->
+        <div id="edit-toggle" role="button" class="w-[52px] h-8 rounded-full relative flex items-center shrink-0 cursor-pointer" style="background-color: #595959;" title="Edit table ⌘ E">
+          <span id="edit-toggle-knob" class="absolute w-6 h-6 bg-white rounded-full shadow flex items-center justify-center" style="left: 4px; transition: left 0.15s ease;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#595959"><path d="M20.25 20.5a.75.75 0 110 1.5H3.75a.75.75 0 110-1.5h16.5zM16.013 2.927a1.75 1.75 0 012.35-.114l.124.114 1.586 1.586a1.75 1.75 0 01.114 2.35l-.114.124L8.061 19H4v-4.06L16.013 2.926zM14.499 6.56l-8.999 9v1.94h1.938l9-9-1.939-1.94zm2.928-2.573a.25.25 0 00-.3-.04l-.054.04L15.56 5.5l1.939 1.94 1.514-1.512a.25.25 0 00.065-.24l-.025-.06-.04-.054-1.586-1.586z" fill-rule="evenodd"/></svg>
+          </span>
+        </div>
+        <!-- Filters (24x24 from icon library) -->
+        <button class="inline-flex items-center gap-1.5 px-3 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm leading-5 text-[#1C1C1C] hover:bg-[#F6F6F6] transition-colors">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M20.25 2a.75.75 0 01.75.75v2a.75.75 0 01-.15.45l-5.7 7.6a.75.75 0 00-.15.45v6.725a.75.75 0 01-.494.705l-4 1.454A.75.75 0 019.5 21.43v-8.163a.75.75 0 00-.168-.473L3.168 5.207A.75.75 0 013 4.734V2.75A.75.75 0 013.75 2h16.5zm-.75 1.5h-15v.967l5.996 7.38c.285.351.457.779.496 1.226l.008.193v7.092l2.5-.91V13.25c0-.426.12-.842.347-1.2l.103-.15 5.55-7.401V3.5z" fill-rule="evenodd"/></svg>
+          Filters
+        </button>
+        <!-- Print (24x24 from icon library) -->
+        <button class="icon-toolbar-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] transition-colors" style="background-color: #EBEBEB" aria-label="Print">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M16.75 2c.966 0 1.75.784 1.75 1.75v1.758A3.75 3.75 0 0122 9.25v7.5a1.75 1.75 0 01-1.75 1.75H18.5v1.75A1.75 1.75 0 0116.75 22h-9.5a1.75 1.75 0 01-1.75-1.75V18.5H3.75A1.75 1.75 0 012 16.75v-7.5a3.75 3.75 0 013.5-3.742V3.75C5.5 2.784 6.284 2 7.25 2h9.5zM17 14.5H7v5.75a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193L17 20.25V14.5zM18.25 7H5.75a2.25 2.25 0 00-2.245 2.096L3.5 9.25v7.5a.25.25 0 00.193.243L3.75 17H5.5v-3.25a.75.75 0 01.75-.75h11.5a.75.75 0 01.75.75V17h1.75a.25.25 0 00.243-.193l.007-.057v-7.5a2.25 2.25 0 00-2.096-2.245L18.25 7zm-.5 3a.75.75 0 110 1.5h-2.5a.75.75 0 110-1.5h2.5zm-1-6.5h-9.5a.25.25 0 00-.243.193L7 3.75V5.5h10V3.75a.25.25 0 00-.193-.243L16.75 3.5z" fill-rule="evenodd"/></svg>
+        </button>
+        <!-- Settings/Sliders (24x24 from icon library) -->
+        <button class="icon-toolbar-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] transition-colors" style="background-color: #EBEBEB" aria-label="Settings">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M2.5 12.75H7a.75.75 0 110 1.5H5.5v7a.75.75 0 11-1.5 0v-7H2.5a.75.75 0 110-1.5zm9.5-2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V11.5a.75.75 0 01.75-.75zm9.5 4a.75.75 0 110 1.5H20v5a.75.75 0 11-1.5 0v-5H17a.75.75 0 110-1.5h4.5zM19.25 2a.75.75 0 01.75.75v9.75a.75.75 0 11-1.5 0V2.75a.75.75 0 01.75-.75zM4.75 2a.75.75 0 01.75.75v7.75a.75.75 0 11-1.5 0V2.75A.75.75 0 014.75 2zM12 2a.75.75 0 01.75.75v5h1.5a.75.75 0 110 1.5h-4.5a.75.75 0 010-1.5h1.5v-5A.75.75 0 0112 2z" fill-rule="evenodd"/></svg>
+        </button>
+        <!-- Search (icon from library) -->
+        <div class="relative">
+          <svg class="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4" viewBox="0 0 24 24" fill="#ACACAC"><path d="M10 2.25a7.75 7.75 0 015.985 12.674l5.545 5.546a.75.75 0 01-.976 1.133l-.084-.073-5.546-5.545A7.75 7.75 0 1110 2.25zm0 1.5a6.25 6.25 0 100 12.5 6.25 6.25 0 000-12.5z" fill-rule="evenodd"/></svg>
+          <input type="text" placeholder="Search..." class="pl-8 pr-12 py-[6px] w-[180px] text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2] placeholder:text-[#ACACAC]" />
+          <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-[#ACACAC] border border-[#DDDDDD] rounded px-1">⌘ F</span>
+        </div>
+      </div>
+      <!-- Table -->
+      <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+        <table class="w-full text-sm border-collapse" id="edit-table">
+          <thead>
+            <tr class="border-b border-[#DDDDDD]">
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Date</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[90px]"><span class="inline-flex items-center gap-0.5">Entry no. <svg class="w-6 h-6 inline-block" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 15.5C5.76165 15.5 5.53857 14.9614 5.85355 14.6464L11.6464 8.85355C11.8417 8.65829 12.1583 8.65829 12.3536 8.85355L18.1464 14.6464C18.4614 14.9614 18.2383 15.5 17.7929 15.5H6.20711Z" /></svg></span></th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2">Text</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[100px]">Amount</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[90px]">Account</th>
+              <th class="text-left font-bold text-[#1C1C1C] px-4 py-2 w-[60px]">VAT</th>
+              <th class="text-right font-bold text-[#1C1C1C] px-4 py-2 w-[110px]">Contra account</th>
+              <th class="w-[90px]"></th>
+            </tr>
+          </thead>
+          <tbody id="edit-body"></tbody>
+        </table>
+      </div>
+      <div id="edit-new-row" class="hidden px-4 py-2 border-t border-[#EBEBEB]">
+        <button id="edit-add-row" class="flex items-center gap-1 text-sm text-[#595959] hover:text-[#1C1C1C]">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 1.5a8.5 8.5 0 100 17 8.5 8.5 0 000-17zm0 3.75a.75.75 0 01.743.648L12.75 8v3.25H16a.75.75 0 01.102 1.493L16 12.75h-3.25V16a.75.75 0 01-1.493.102L11.25 16v-3.25H8a.75.75 0 01-.102-1.493L8 11.25h3.25V8a.75.75 0 01.75-.75z" fill-rule="evenodd"/></svg>
+          New
+        </button>
+      </div>
+      <div class="px-4 py-2 border-t border-[#DDDDDD] text-sm font-bold text-[#1C1C1C]">Records: <span id="edit-record-count">0</span></div>
+    </section>
+
+  </div>
+
+<script>
+// ── DATA ──
+const ROWS = [
+  { no: '1000', name: 'RESULTATOPGØRELSE', type: '', vat: '', totalfrom: '', balance: '', isHeading: true },
+  { no: '1010', name: 'Investment Account', type: 'Profit and loss', vat: '', totalfrom: '', balance: '45.603,58' },
+  { no: '1020', name: 'Personal Loan Account', type: 'Profit and loss', vat: '', totalfrom: '', balance: '34.830,10' },
+  { no: '1030', name: 'Checking Account', type: 'Profit and loss', vat: 'Abr', totalfrom: '', balance: '14.767,61' },
+  { no: '1040', name: 'Auto Loan Account', type: 'Profit and loss', vat: '', totalfrom: 'Totalfrom', balance: '16.573,79' },
+  { no: '1050', name: 'Credit Card Account', type: 'Heading', vat: '', totalfrom: 'Heading', balance: '' },
+  { no: '1060', name: 'Investment Account', type: 'Profit and loss', vat: 'HREP', totalfrom: '', balance: '19.143,56' },
+  { no: '1070', name: 'Personal Loan Account', type: 'Profit and loss', vat: '', totalfrom: '', balance: '10.755,26' },
+  { no: '1080', name: 'Savings Account', type: 'Profit and loss', vat: 'IV25', totalfrom: '', balance: '8.912,44' },
+  { no: '1090', name: 'Money Market Account', type: 'Profit and loss', vat: '', totalfrom: '', balance: '22.301,15' },
+];
+
+// ── STATE ──
+let data = [...ROWS];
+let selected = new Set();
+let sortCol = null;       // column index or null
+let sortDir = null;       // 'asc' | 'desc' | null
+let hiddenCols = new Set();
+let frozenCols = 0;       // number of frozen data columns (after checkbox)
+let activeMenuCol = null;
+
+// ── COLUMN DEFS ──
+const COLS = [
+  { key: 'no', label: 'No.', align: 'left', type: 'number' },
+  { key: 'name', label: 'Name', align: 'left', type: 'text' },
+  { key: 'type', label: 'Type', align: 'left', type: 'text' },
+  { key: 'vat', label: 'VAT', align: 'left', type: 'text' },
+  { key: 'totalfrom', label: 'Totalfrom', align: 'left', type: 'text' },
+  { key: 'balance', label: 'Balance', align: 'right', type: 'number' },
+];
+
+// ── RENDER TABLE ──
+function renderTable() {
+  const tbody = document.getElementById('table-body');
+  const headerRow = document.getElementById('header-row');
+
+  // Update header visibility
+  const ths = headerRow.querySelectorAll('th[data-col]');
+  ths.forEach(th => {
+    const ci = parseInt(th.dataset.col);
+    th.style.display = hiddenCols.has(ci) ? 'none' : '';
+    // Frozen styling
+    if (ci < frozenCols) {
+      th.classList.add('bg-white', 'sticky', 'z-10');
+    } else {
+      th.classList.remove('bg-white', 'sticky', 'z-10');
+    }
+    // Sort icon
+    const icon = th.querySelector('.sort-icon');
+    if (ci === sortCol) {
+      icon.innerHTML = sortDir === 'asc'
+        ? '<svg class="w-6 h-6 inline-block" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 15.5C5.76165 15.5 5.53857 14.9614 5.85355 14.6464L11.6464 8.85355C11.8417 8.65829 12.1583 8.65829 12.3536 8.85355L18.1464 14.6464C18.4614 14.9614 18.2383 15.5 17.7929 15.5H6.20711Z" /></svg>'
+        : '<svg class="w-6 h-6 inline-block" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>';
+    } else {
+      icon.innerHTML = '';
+    }
+  });
+
+  // Sort data
+  let rows = [...data];
+  if (sortCol !== null && sortDir) {
+    const key = COLS[sortCol].key;
+    const type = COLS[sortCol].type;
+    rows.sort((a, b) => {
+      let va = a[key] || '';
+      let vb = b[key] || '';
+      if (type === 'number') {
+        va = parseFloat(va.replace(/\./g, '').replace(',', '.')) || 0;
+        vb = parseFloat(vb.replace(/\./g, '').replace(',', '.')) || 0;
+      } else {
+        va = va.toLowerCase();
+        vb = vb.toLowerCase();
+      }
+      if (va < vb) return sortDir === 'asc' ? -1 : 1;
+      if (va > vb) return sortDir === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }
+
+  // Apply search filter
+  const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+
+  // Apply column filters
+  const filterRows = document.querySelectorAll('#filter-rows .filter-row');
+  const activeFilters = [];
+  if (!document.getElementById('filter-panel').classList.contains('hidden')) {
+    filterRows.forEach(row => {
+      const colSel = row.querySelector('.filter-col');
+      const opSel = row.querySelector('.filter-op');
+      const valInput = row.querySelector('.filter-val');
+      if (colSel.value !== '' && valInput.value.trim() !== '') {
+        activeFilters.push({
+          col: parseInt(colSel.value),
+          op: opSel.value,
+          val: valInput.value.trim().toLowerCase()
+        });
+      }
+    });
+  }
+
+  const filteredRows = rows.filter(row => {
+    // Search
+    if (searchVal) {
+      const text = COLS.map(c => row[c.key]).join(' ').toLowerCase();
+      if (!text.includes(searchVal)) return false;
+    }
+    // Column filters
+    for (const f of activeFilters) {
+      const cellVal = (row[COLS[f.col].key] || '').toLowerCase();
+      if (f.op === 'Contains' && !cellVal.includes(f.val)) return false;
+      if (f.op === 'Equals' && cellVal !== f.val) return false;
+      if (f.op === 'Starts with' && !cellVal.startsWith(f.val)) return false;
+    }
+    return true;
+  });
+
+  // Update filter count
+  document.getElementById('visible-count').textContent = filteredRows.length;
+
+  tbody.innerHTML = '';
+  filteredRows.forEach((row, ri) => {
+    const tr = document.createElement('tr');
+    const rowId = row.no;
+    const isSelected = selected.has(rowId);
+    const isHeading = row.isHeading;
+
+    tr.className = `text-sm leading-5 border-b border-[#EBEBEB] transition-colors cursor-pointer group/row ${
+      isSelected ? 'bg-[#DEEBFF]' : 'bg-white hover:bg-[#FAFAFA]'
+    } ${isHeading ? 'font-bold' : 'font-normal'}`;
+
+    // Checkbox cell
+    const tdCheck = document.createElement('td');
+    tdCheck.className = 'w-10 px-2 py-2 text-center';
+    tdCheck.innerHTML = `<input type="checkbox" class="row-check w-4 h-4 rounded border-[#ACACAC] cursor-pointer accent-[#4573D2]" data-id="${rowId}" ${isSelected ? 'checked' : ''} />`;
+    tr.appendChild(tdCheck);
+
+    // Data cells
+    COLS.forEach((col, ci) => {
+      if (hiddenCols.has(ci)) return;
+      const td = document.createElement('td');
+      td.className = `px-3 py-2 text-[#1C1C1C] ${col.align === 'right' ? 'text-right' : 'text-left'} ${isHeading ? 'font-bold' : ''}`;
+      if (ci < frozenCols) {
+        td.classList.add('bg-inherit', 'sticky', 'z-[5]');
+      }
+      td.textContent = row[col.key];
+      tr.appendChild(td);
+    });
+
+    // Actions cell
+    const tdAct = document.createElement('td');
+    tdAct.className = 'w-[120px] px-2 py-2 text-right';
+    tdAct.innerHTML = `
+      <div class="flex items-center justify-end gap-0.5 opacity-0 group-hover/row:opacity-100 transition-opacity">
+        <button class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Edit" title="Edit">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20.25 20.5a.75.75 0 110 1.5H3.75a.75.75 0 110-1.5h16.5zM16.013 2.927a1.75 1.75 0 012.35-.114l.124.114 1.586 1.586a1.75 1.75 0 01.114 2.35l-.114.124L8.061 19H4v-4.06L16.013 2.926zM14.499 6.56l-8.999 9v1.94h1.938l9-9-1.939-1.94zm2.928-2.573a.25.25 0 00-.3-.04l-.054.04L15.56 5.5l1.939 1.94 1.514-1.512a.25.25 0 00.065-.24l-.025-.06-.04-.054-1.586-1.586z" fill-rule="evenodd"/></svg>
+        </button>
+        <button class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Copy" title="Copy">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5v1.5h-.25a.25.25 0 00-.243.193L5.5 6.75v13.5a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193l.007-.057V20H17v.25A1.75 1.75 0 0115.25 22h-9.5A1.75 1.75 0 014 20.25V6.75C4 5.784 4.784 5 5.75 5H6zm7.586-3a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836zM13 3.5H8.75a.25.25 0 00-.243.193L8.5 3.75v13.5a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193l.007-.057V9h-3.75a1.75 1.75 0 01-1.744-1.606L13 7.25V3.5zm1.5 1.121V7.25a.25.25 0 00.193.243l.057.007h2.629L14.5 4.621z" fill-rule="evenodd"/></svg>
+        </button>
+        <button class="row-delete inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Delete" title="Delete" data-id="${rowId}">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a4.5 4.5 0 014.472 4h3.778a.75.75 0 110 1.5h-.75V18a4 4 0 01-4 4h-7a4 4 0 01-4-4V7.5h-.75a.75.75 0 010-1.5h3.777A4.5 4.5 0 0112 2zm6 5.5H6V18a2.5 2.5 0 002.336 2.495l.164.005h7a2.5 2.5 0 002.495-2.336L18 18V7.5zm-8.25 2a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zm4.5 0a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zM12 3.5A3 3 0 009.041 6h5.917A3 3 0 0012 3.5z" fill-rule="evenodd"/></svg>
+        </button>
+      </div>`;
+    tr.appendChild(tdAct);
+
+    tbody.appendChild(tr);
+  });
+
+  // Update select-all state
+  const allChecked = filteredRows.length > 0 && filteredRows.every(r => selected.has(r.no));
+  document.getElementById('select-all').checked = allChecked;
+}
+
+// ── SORTING (click header text) ──
+document.querySelectorAll('#header-row th[data-col]').forEach(th => {
+  th.addEventListener('click', (e) => {
+    // Don't sort if clicking the menu button
+    if (e.target.closest('.col-menu-btn')) return;
+    const ci = parseInt(th.dataset.col);
+    if (sortCol === ci) {
+      if (sortDir === 'asc') sortDir = 'desc';
+      else if (sortDir === 'desc') { sortCol = null; sortDir = null; }
+    } else {
+      sortCol = ci;
+      sortDir = 'asc';
+    }
+    renderTable();
+  });
+});
+
+// ── SELECT ALL ──
+document.getElementById('select-all').addEventListener('change', function () {
+  const checks = document.querySelectorAll('.row-check');
+  if (this.checked) {
+    checks.forEach(c => { selected.add(c.dataset.id); c.checked = true; });
+  } else {
+    selected.clear();
+    checks.forEach(c => { c.checked = false; });
+  }
+  renderTable();
+});
+
+// ── ROW CHECKBOX ──
+document.getElementById('table-body').addEventListener('change', (e) => {
+  if (e.target.classList.contains('row-check')) {
+    const id = e.target.dataset.id;
+    if (e.target.checked) selected.add(id); else selected.delete(id);
+    renderTable();
+  }
+});
+
+// ── ROW DELETE ──
+document.getElementById('table-body').addEventListener('click', (e) => {
+  const btn = e.target.closest('.row-delete');
+  if (btn) {
+    const id = btn.dataset.id;
+    data = data.filter(r => r.no !== id);
+    selected.delete(id);
+    renderTable();
+  }
+});
+
+// ── SEARCH ──
+document.getElementById('search-input').addEventListener('input', () => renderTable());
+
+// ── MORE DROPDOWN ──
+document.getElementById('more-btn').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('more-menu').classList.toggle('hidden');
+});
+
+// ── FILTERS PANEL ──
+document.getElementById('filters-btn').addEventListener('click', () => {
+  document.getElementById('filter-panel').classList.toggle('hidden');
+  renderTable();
+});
+document.getElementById('filter-cancel').addEventListener('click', () => {
+  document.getElementById('filter-panel').classList.add('hidden');
+  renderTable();
+});
+document.getElementById('filter-clear').addEventListener('click', () => {
+  document.querySelectorAll('.filter-row').forEach((row, i) => {
+    if (i > 0) row.remove();
+    else {
+      row.querySelector('.filter-col').value = '';
+      row.querySelector('.filter-val').value = '';
+    }
+  });
+  renderTable();
+});
+document.getElementById('filter-apply').addEventListener('click', () => renderTable());
+document.getElementById('add-filter-btn').addEventListener('click', () => {
+  const container = document.getElementById('filter-rows');
+  const first = container.querySelector('.filter-row');
+  const clone = first.cloneNode(true);
+  clone.querySelector('.filter-col').value = '';
+  clone.querySelector('.filter-val').value = '';
+  // Remove button
+  clone.querySelector('.filter-remove').addEventListener('click', () => { clone.remove(); renderTable(); });
+  container.appendChild(clone);
+});
+// Remove for first filter row
+document.querySelector('.filter-remove').addEventListener('click', function() {
+  const rows = document.querySelectorAll('.filter-row');
+  if (rows.length > 1) { this.closest('.filter-row').remove(); renderTable(); }
+  else { this.closest('.filter-row').querySelector('.filter-col').value = ''; this.closest('.filter-row').querySelector('.filter-val').value = ''; renderTable(); }
+});
+
+// ── COLUMN CONTEXT MENU ──
+const colMenu = document.getElementById('col-menu');
+const sortSub = document.getElementById('sort-submenu');
+
+document.querySelectorAll('.col-menu-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const th = btn.closest('th');
+    activeMenuCol = parseInt(th.dataset.col);
+    const rect = btn.getBoundingClientRect();
+
+    // Position menu
+    colMenu.style.top = (rect.bottom + 4) + 'px';
+    colMenu.style.left = rect.left + 'px';
+    colMenu.classList.remove('hidden');
+    sortSub.classList.add('hidden');
+
+    // Update freeze label
+    const colIdx = activeMenuCol + 1; // +1 because checkbox is first
+    document.getElementById('freeze-label').textContent = `Freeze first ${colIdx + 1} columns`;
+
+    // Show/hide unfreeze
+    if (frozenCols > 0) {
+      document.getElementById('cm-unfreeze').classList.remove('hidden');
+      document.getElementById('cm-unfreeze').classList.add('flex');
+    } else {
+      document.getElementById('cm-unfreeze').classList.add('hidden');
+      document.getElementById('cm-unfreeze').classList.remove('flex');
+    }
+
+    // Update sort bullets
+    updateSortBullets();
+  });
+});
+
+function updateSortBullets() {
+  document.querySelectorAll('.sort-bullet').forEach(b => b.textContent = '');
+  if (sortCol === activeMenuCol) {
+    if (sortDir === 'asc') document.querySelector('#sort-asc .sort-bullet').textContent = '●';
+    else if (sortDir === 'desc') document.querySelector('#sort-desc .sort-bullet').textContent = '●';
+    else document.querySelector('#sort-none .sort-bullet').textContent = '●';
+  } else {
+    document.querySelector('#sort-none .sort-bullet').textContent = '●';
+  }
+}
+
+// Sorting submenu hover
+document.getElementById('cm-sorting').addEventListener('mouseenter', () => {
+  const rect = document.getElementById('cm-sorting').getBoundingClientRect();
+  sortSub.style.top = rect.top + 'px';
+  sortSub.style.left = (rect.right + 4) + 'px';
+  sortSub.classList.remove('hidden');
+});
+colMenu.addEventListener('mouseleave', (e) => {
+  if (!sortSub.contains(e.relatedTarget)) {
+    sortSub.classList.add('hidden');
+  }
+});
+sortSub.addEventListener('mouseleave', (e) => {
+  if (!colMenu.contains(e.relatedTarget)) {
+    sortSub.classList.add('hidden');
+    colMenu.classList.add('hidden');
+  }
+});
+
+// Sort actions
+document.getElementById('sort-asc').addEventListener('click', () => {
+  sortCol = activeMenuCol; sortDir = 'asc';
+  closeColMenu(); renderTable();
+});
+document.getElementById('sort-desc').addEventListener('click', () => {
+  sortCol = activeMenuCol; sortDir = 'desc';
+  closeColMenu(); renderTable();
+});
+document.getElementById('sort-none').addEventListener('click', () => {
+  sortCol = null; sortDir = null;
+  closeColMenu(); renderTable();
+});
+
+// Hide column
+document.getElementById('cm-hide').addEventListener('click', () => {
+  hiddenCols.add(activeMenuCol);
+  closeColMenu(); renderTable();
+});
+
+// Freeze columns
+document.getElementById('cm-freeze').addEventListener('click', () => {
+  frozenCols = activeMenuCol + 1;
+  closeColMenu(); renderTable();
+});
+document.getElementById('cm-unfreeze').addEventListener('click', () => {
+  frozenCols = 0;
+  closeColMenu(); renderTable();
+});
+
+// Filter from column menu
+document.getElementById('cm-filter').addEventListener('click', () => {
+  closeColMenu();
+  document.getElementById('filter-panel').classList.remove('hidden');
+  // Pre-select column in first filter row
+  const firstRow = document.querySelector('.filter-row');
+  firstRow.querySelector('.filter-col').value = activeMenuCol;
+  firstRow.querySelector('.filter-val').focus();
+});
+
+function closeColMenu() {
+  colMenu.classList.add('hidden');
+  sortSub.classList.add('hidden');
+}
+
+// ── CLOSE MENUS ON OUTSIDE CLICK ──
+document.addEventListener('click', (e) => {
+  if (!colMenu.contains(e.target) && !sortSub.contains(e.target) && !e.target.closest('.col-menu-btn')) {
+    closeColMenu();
+  }
+  if (!e.target.closest('#more-dropdown-wrapper')) {
+    document.getElementById('more-menu').classList.add('hidden');
+  }
+});
+
+// ── SHOW HIDDEN COLUMNS TOGGLE ──
+// If any columns are hidden, show a restore button
+function checkHiddenCols() {
+  let existing = document.getElementById('restore-cols-bar');
+  if (hiddenCols.size > 0 && !existing) {
+    const bar = document.createElement('div');
+    bar.id = 'restore-cols-bar';
+    bar.className = 'flex items-center gap-2 px-4 py-2 bg-[#FFF1C3] text-sm';
+    bar.innerHTML = `<span class="text-[#733700]">${hiddenCols.size} column(s) hidden</span>
+      <button id="restore-cols" class="text-[#4573D2] hover:text-[#2B57B4] underline text-sm">Show all columns</button>`;
+    document.querySelector('#table-section .overflow-x-auto').before(bar);
+    document.getElementById('restore-cols').addEventListener('click', () => {
+      hiddenCols.clear();
+      bar.remove();
+      renderTable();
+    });
+  } else if (hiddenCols.size === 0 && existing) {
+    existing.remove();
+  }
+}
+
+// Patch renderTable to also check hidden cols
+const _origRender = renderTable;
+renderTable = function() { _origRender(); checkHiddenCols(); };
+
+// ── INITIAL RENDER ──
+renderTable();
+
+// ══════════════════════════════════════════════
+// ── ROW EXPANSION TABLE ──
+// ══════════════════════════════════════════════
+const EXP_ROWS = [
+  { date: '05.03.23', entry: 1, text: 'accusamus Hybrid Southeast', amount: '5.397,64', expandable: true,
+    children: [{ entry: 1, amount: '5.397,64' }, { entry: 2, amount: '9.225,00' }, { entry: 3, amount: '8.781,28' }] },
+  { date: '30.07.22', entry: 2, text: 'Paraguay Southeast Crew Electronic Branding', amount: '9.225,00', expandable: true,
+    children: [{ entry: 1, amount: '3.100,00' }, { entry: 2, amount: '6.125,00' }] },
+  { date: '16.04.22', entry: 3, text: 'when Classical Chair Shoes digital', amount: '8.781,28', expandable: true,
+    children: [{ entry: 1, amount: '4.200,50' }, { entry: 2, amount: '2.580,78' }, { entry: 3, amount: '2.000,00' }] },
+  { date: '19.05.22', entry: 4, text: 'transmitting invoice knowledge Specialist payment Hybrid Integration', amount: '7.661,43', expandable: true,
+    children: [{ entry: 1, amount: '5.397,64' }, { entry: 2, amount: '9.225,00' }, { entry: 3, amount: '8.781,28' }] },
+  { date: '31.05.21', entry: 5, text: 'back Folk mindshare', amount: '2.220,20', expandable: false },
+  { date: '29.12.21', entry: 6, text: 'Web Bicycle male', amount: '9.031,90', expandable: true,
+    children: [{ entry: 1, amount: '4.500,00' }, { entry: 2, amount: '4.531,90' }] },
+  { date: '22.12.22', entry: 7, text: 'systemic deposit moderator Southwest Sausages North protocol', amount: '6.122,43', expandable: true,
+    children: [{ entry: 1, amount: '6.122,43' }] },
+  { date: '04.10.22', entry: 8, text: 'wireless Texas overriding male redundant executive Serbia', amount: '8.842,36', expandable: true,
+    children: [{ entry: 1, amount: '3.842,36' }, { entry: 2, amount: '5.000,00' }] },
+  { date: '01.05.21', entry: 9, text: 'since Managed circuit', amount: '8.354,33', expandable: true,
+    children: [{ entry: 1, amount: '8.354,33' }] },
+  { date: '20.02.20', entry: 10, text: 'Springfield Chevrolet Computer', amount: '2.287,96', expandable: false },
+];
+
+let expandedRows = new Set();
+let expSelected = new Set();
+
+function renderExpansionTable() {
+  const tbody = document.getElementById('expand-body');
+  tbody.innerHTML = '';
+
+  EXP_ROWS.forEach((row) => {
+    const isExpanded = expandedRows.has(row.entry);
+    const isSelected = expSelected.has(row.entry);
+
+    // Main row
+    const tr = document.createElement('tr');
+    tr.className = `text-sm leading-5 border-b border-[#EBEBEB] transition-colors cursor-pointer ${
+      isSelected ? 'bg-[#DEEBFF]' : 'bg-white hover:bg-[#FAFAFA]'}`;
+
+    // Checkbox
+    const tdCheck = document.createElement('td');
+    tdCheck.className = 'w-10 px-2 py-2 text-center';
+    tdCheck.innerHTML = `<input type="checkbox" class="exp-row-check w-4 h-4 rounded border-[#ACACAC] cursor-pointer accent-[#4573D2]" data-id="${row.entry}" ${isSelected ? 'checked' : ''} />`;
+    tr.appendChild(tdCheck);
+
+    // Expand chevron
+    const tdExp = document.createElement('td');
+    tdExp.className = 'w-10 px-1 py-2 text-center';
+    if (row.expandable) {
+      const chevronSvg = isExpanded
+        ? '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>'
+        : '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>';
+      tdExp.innerHTML = `<button class="exp-toggle inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB] text-[#1C1C1C]" data-entry="${row.entry}" title="${isExpanded ? 'Collapse row' : 'Expand row'}">
+        ${chevronSvg}
+      </button>`;
+    }
+    tr.appendChild(tdExp);
+
+    // Date
+    const tdDate = document.createElement('td');
+    tdDate.className = 'px-3 py-2 text-[#1C1C1C]';
+    tdDate.textContent = row.date;
+    tr.appendChild(tdDate);
+
+    // Entry no.
+    const tdEntry = document.createElement('td');
+    tdEntry.className = 'px-3 py-2 text-[#1C1C1C]';
+    tdEntry.textContent = row.entry;
+    tr.appendChild(tdEntry);
+
+    // Text
+    const tdText = document.createElement('td');
+    tdText.className = 'px-3 py-2 text-[#1C1C1C]';
+    tdText.textContent = row.text;
+    tr.appendChild(tdText);
+
+    // Amount
+    const tdAmt = document.createElement('td');
+    tdAmt.className = 'px-3 py-2 text-right text-[#1C1C1C]';
+    tdAmt.textContent = row.amount;
+    tr.appendChild(tdAmt);
+
+    tbody.appendChild(tr);
+
+    // Expanded sub-table row
+    if (isExpanded && row.children) {
+      const trSub = document.createElement('tr');
+      trSub.className = 'bg-white border-b border-[#EBEBEB]';
+      const tdSub = document.createElement('td');
+      tdSub.colSpan = 6;
+      tdSub.className = 'p-0';
+      tdSub.innerHTML = `
+        <div class="pl-[88px] pr-4 py-2">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[#DDDDDD]">
+                <th class="px-3 py-1.5 text-left text-xs leading-4 font-bold text-[#1C1C1C]">Entry no.</th>
+                <th class="px-3 py-1.5 text-right text-xs leading-4 font-bold text-[#1C1C1C]">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${row.children.map(c => `
+                <tr class="border-b border-[#EBEBEB]">
+                  <td class="px-3 py-1.5 text-[#1C1C1C]">${c.entry}</td>
+                  <td class="px-3 py-1.5 text-right text-[#1C1C1C]">${c.amount}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>`;
+      trSub.appendChild(tdSub);
+      tbody.appendChild(trSub);
+    }
+  });
+
+  // Update expand-all button icon
+  const allExpandable = EXP_ROWS.filter(r => r.expandable);
+  const allExpanded = allExpandable.length > 0 && allExpandable.every(r => expandedRows.has(r.entry));
+  const expandBtn = document.getElementById('expand-all-btn');
+  if (allExpanded) {
+    expandBtn.innerHTML = `<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 12.5303C6.2034 12.2641 6.1792 11.8474 6.39705 11.5538L6.46967 11.4697L11.4697 6.46967L11.5538 6.39705C11.8148 6.2034 12.173 6.20101 12.4364 6.38988L12.5303 6.46967L17.5303 11.4697L17.6029 11.5538C17.7966 11.8148 17.799 12.173 17.6101 12.4364L17.5303 12.5303L17.4462 12.6029C17.1852 12.7966 16.827 12.799 16.5636 12.6101L16.4697 12.5303L12 8.061L7.53033 12.5303L7.44621 12.6029C7.1526 12.8208 6.73594 12.7966 6.46967 12.5303ZM6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L11.4697 11.4697L11.5538 11.3971C11.8148 11.2034 12.173 11.201 12.4364 11.3899L12.5303 11.4697L17.5303 16.4697L17.6029 16.5538C17.7966 16.8148 17.799 17.173 17.6101 17.4364L17.5303 17.5303L17.4462 17.6029C17.1852 17.7966 16.827 17.799 16.5636 17.6101L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303Z" /></svg>`;
+    expandBtn.title = 'Collapse all rows';
+  } else {
+    expandBtn.innerHTML = `<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967C16.7359 6.2034 17.1526 6.1792 17.4462 6.39705L17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L12.5303 12.5303C12.2641 12.7966 11.8474 12.8208 11.5538 12.6029L11.4697 12.5303L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967ZM6.46967 11.4697C6.73594 11.2034 7.1526 11.1792 7.44621 11.3971L7.53033 11.4697L12 15.939L16.4697 11.4697C16.7359 11.2034 17.1526 11.1792 17.4462 11.3971L17.5303 11.4697C17.7966 11.7359 17.8208 12.1526 17.6029 12.4462L17.5303 12.5303L12.5303 17.5303C12.2641 17.7966 11.8474 17.8208 11.5538 17.6029L11.4697 17.5303L6.46967 12.5303C6.17678 12.2374 6.17678 11.7626 6.46967 11.4697Z" /></svg>`;
+    expandBtn.title = 'Expand all rows';
+  }
+
+  // Update select-all
+  const allSel = EXP_ROWS.length > 0 && EXP_ROWS.every(r => expSelected.has(r.entry));
+  document.getElementById('exp-select-all').checked = allSel;
+}
+
+// Expand/collapse individual rows
+document.getElementById('expand-body').addEventListener('click', (e) => {
+  const btn = e.target.closest('.exp-toggle');
+  if (btn) {
+    const entry = parseInt(btn.dataset.entry);
+    if (expandedRows.has(entry)) expandedRows.delete(entry);
+    else expandedRows.add(entry);
+    renderExpansionTable();
+  }
+});
+
+// Expand/collapse all
+document.getElementById('expand-all-btn').addEventListener('click', () => {
+  const allExpandable = EXP_ROWS.filter(r => r.expandable);
+  const allExpanded = allExpandable.every(r => expandedRows.has(r.entry));
+  if (allExpanded) {
+    expandedRows.clear();
+  } else {
+    allExpandable.forEach(r => expandedRows.add(r.entry));
+  }
+  renderExpansionTable();
+});
+
+// Row selection for expansion table
+document.getElementById('exp-select-all').addEventListener('change', function() {
+  if (this.checked) EXP_ROWS.forEach(r => expSelected.add(r.entry));
+  else expSelected.clear();
+  renderExpansionTable();
+});
+document.getElementById('expand-body').addEventListener('change', (e) => {
+  if (e.target.classList.contains('exp-row-check')) {
+    const id = parseInt(e.target.dataset.id);
+    if (e.target.checked) expSelected.add(id); else expSelected.delete(id);
+    renderExpansionTable();
+  }
+});
+
+renderExpansionTable();
+
+// ── ROW GROUPS ──
+const GROUP_DATA = [
+  { group: 'Abr', rows: [
+    { date: '16.04.22', entry: 3, text: 'when Classical Chair Shoes digital', amount: '8.781,28', account: 1480 },
+    { date: '10.01.21', entry: 34, text: 'Shoes abrade Saudi networks DRAM', amount: '1.335,53', account: 1170 },
+    { date: '06.01.21', entry: 54, text: 'Intelligent Tuvalu Technetium magenta frictionless quietly panel', amount: '7.431,26', account: 1330 },
+    { date: '06.07.22', entry: 135, text: 'id Alabama needily adipisci olive', amount: '7.664,27', account: 1220 },
+    { date: '23.05.22', entry: 210, text: 'Bronze Rancho Steel Reggae Modern', amount: '2.706,35', account: 1180 },
+    { date: '23.02.20', entry: 214, text: 'Darussalam Van Lead AGP Account AI Sausages', amount: '6.907,03', account: 1070 },
+    { date: '08.12.22', entry: 216, text: 'Fresh Electric sulks calculate copy', amount: '328,47', account: 1210 },
+    { date: '18.02.21', entry: 461, text: 'behind reboot payment payment Wooden', amount: '4.929,03', account: 1380 },
+    { date: '05.06.22', entry: 487, text: 'i am a deterministic string', amount: '4.946,91', account: 1337 },
+  ]},
+  { group: 'B25', rows: [
+    { date: '09.10.20', entry: 97, text: 'Islands feed capability Gasoline Towels PCI Salad', amount: '1.814,40', account: 1310 },
+    { date: '02.06.22', entry: 98, text: 'Direct Cadillac Volkswagen applications East', amount: '668,04', account: 1420 },
+    { date: '27.03.21', entry: 160, text: 'South Small enim hairy Cab calculate Baht', amount: '2.223,39', account: 1250 },
+    { date: '30.04.23', entry: 183, text: 'Cedi Carolina East Cape violet Rover engineer', amount: '2.460,55', account: 1000 },
+  ]},
+  { group: 'C10', rows: [
+    { date: '14.08.21', entry: 12, text: 'Steel withdrawal Frozen Handmade Pants', amount: '3.109,88', account: 1150 },
+    { date: '22.11.22', entry: 45, text: 'payment Borders Licensed Concrete Salad', amount: '5.221,70', account: 1290 },
+    { date: '03.03.20', entry: 78, text: 'override Avon transmitting Senior', amount: '1.442,15', account: 1060 },
+  ]},
+];
+
+function renderGroupsTable() {
+  const tbody = document.getElementById('groups-body');
+  let html = '';
+  GROUP_DATA.forEach(g => {
+    html += `<tr class="group-header sticky z-10 bg-[#FAFAFA] border-b border-[#DDDDDD]" style="top: 37px;">
+      <td colspan="5" class="px-4 py-2 font-bold text-[#1C1C1C] text-sm">${g.group}</td>
+    </tr>`;
+    g.rows.forEach(r => {
+      html += `<tr class="border-b border-[#EBEBEB] hover:bg-[#FAFAFA]">
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.date}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.entry}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.text}</td>
+        <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.amount}</td>
+        <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.account}</td>
+      </tr>`;
+    });
+  });
+  tbody.innerHTML = html;
+}
+
+renderGroupsTable();
+
+// ── ROW SELECTION ──
+const SEL_ROWS = [
+  { date: '05.03.23', entry: 1, text: 'accusamus Hybrid Southeast', amount: '5.397,64', account: 1360 },
+  { date: '30.07.22', entry: 2, text: 'Paraguay Southeast Crew Electronic Branding', amount: '9.225,00', account: 1420 },
+  { date: '16.04.22', entry: 3, text: 'when Classical Chair Shoes digital', amount: '8.781,28', account: 1480 },
+  { date: '19.05.22', entry: 4, text: 'transmitting invoice knowledge Specialist payment Hybrid Integration', amount: '7.661,43', account: 1350 },
+  { date: '31.05.21', entry: 5, text: 'back Folk mindshare', amount: '2.220,20', account: 1000 },
+  { date: '29.12.21', entry: 6, text: 'Web Bicycle male', amount: '9.031,90', account: 1480 },
+  { date: '22.12.22', entry: 7, text: 'systemic deposit moderator Southwest Sausages North protocol', amount: '6.122,43', account: 1240 },
+  { date: '04.10.22', entry: 8, text: 'wireless Texas overriding male redundant executive Serbia', amount: '8.842,36', account: 1270 },
+  { date: '01.05.21', entry: 9, text: 'since Managed circuit', amount: '8.354,33', account: 1150 },
+  { date: '20.02.20', entry: 10, text: 'Springfield Chevrolet Computer', amount: '2.287,96', account: 1160 },
+  { date: '12.08.20', entry: 11, text: 'suscipit New bypass Optimization rarely Polestar Total', amount: '2.608,02', account: 1000 },
+];
+
+const selSelected = new Set();
+
+function renderSelectionTable() {
+  const tbody = document.getElementById('selection-body');
+  let html = '';
+  SEL_ROWS.forEach(r => {
+    const isChecked = selSelected.has(r.entry);
+    const rowBg = isChecked ? 'bg-[#EBF0FA]' : 'hover:bg-[#FAFAFA]';
+    html += `<tr class="border-b border-[#EBEBEB] ${rowBg}">
+      <td class="px-4 py-3"><input type="checkbox" class="sel-row-check w-4 h-4 accent-[#4573D2] cursor-pointer" data-entry="${r.entry}" data-account="${r.account}" ${isChecked ? 'checked' : ''}></td>
+      <td class="px-4 py-3 text-[#1C1C1C]">${r.date}</td>
+      <td class="px-4 py-3 text-[#1C1C1C]">${r.entry}</td>
+      <td class="px-4 py-3 text-[#1C1C1C]">${r.text}</td>
+      <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.amount}</td>
+      <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.account}</td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+  updateSelectionInfo();
+}
+
+function updateSelectionInfo() {
+  const span = document.getElementById('selection-accounts');
+  const selAll = document.getElementById('sel-all');
+  if (selSelected.size === 0) {
+    span.textContent = '—';
+    selAll.checked = false;
+    selAll.indeterminate = false;
+  } else {
+    const accounts = SEL_ROWS.filter(r => selSelected.has(r.entry)).map(r => r.account);
+    span.textContent = accounts.join(', ');
+    selAll.checked = selSelected.size === SEL_ROWS.length;
+    selAll.indeterminate = selSelected.size > 0 && selSelected.size < SEL_ROWS.length;
+  }
+}
+
+document.getElementById('sel-all').addEventListener('change', function() {
+  if (this.checked) SEL_ROWS.forEach(r => selSelected.add(r.entry));
+  else selSelected.clear();
+  renderSelectionTable();
+});
+
+document.getElementById('selection-body').addEventListener('change', (e) => {
+  if (e.target.classList.contains('sel-row-check')) {
+    const entry = parseInt(e.target.dataset.entry);
+    if (e.target.checked) selSelected.add(entry); else selSelected.delete(entry);
+    renderSelectionTable();
+  }
+});
+
+renderSelectionTable();
+
+// ── SETTINGS TABLE ──
+const SETTINGS_COLS = [
+  { key: 'date', label: 'Date', align: 'left', visible: true },
+  { key: 'entry', label: 'Entry no.', align: 'left', visible: true },
+  { key: 'text', label: 'Text', align: 'left', visible: true },
+  { key: 'amount', label: 'Amount', align: 'right', visible: true },
+  { key: 'account', label: 'Account', align: 'right', visible: true },
+  { key: 'vat', label: 'VAT', align: 'right', visible: true },
+  { key: 'contra', label: 'Contra account', align: 'right', visible: true },
+  { key: 'currency', label: 'Currency', align: 'right', visible: true },
+];
+
+const SETTINGS_ROWS = [
+  { date: '05.03.23', entry: 1, text: 'accusamus Hybrid Southeast', amount: '5.397,64', account: 1360, vat: '', contra: '', currency: '' },
+  { date: '30.07.22', entry: 2, text: 'Paraguay Southeast Crew Electronic Branding', amount: '9.225,00', account: 1420, vat: '', contra: '', currency: '' },
+  { date: '16.04.22', entry: 3, text: 'when Classical Chair Shoes digital', amount: '8.781,28', account: 1480, vat: '', contra: '', currency: '' },
+  { date: '19.05.22', entry: 4, text: 'transmitting invoice knowledge Specialist payment Hybrid Integration', amount: '7.661,43', account: 1350, vat: '', contra: '', currency: '' },
+  { date: '31.05.21', entry: 5, text: 'back Folk mindshare', amount: '2.220,20', account: 1000, vat: '', contra: '', currency: '' },
+  { date: '29.12.21', entry: 6, text: 'Web Bicycle male', amount: '9.031,90', account: 1480, vat: '', contra: '', currency: '' },
+  { date: '22.12.22', entry: 7, text: 'systemic deposit moderator Southwest Sausages North protocol', amount: '6.122,43', account: 1240, vat: 'REP', contra: '', currency: '' },
+  { date: '04.10.22', entry: 8, text: 'wireless Texas overriding male redundant executive Serbia', amount: '8.842,36', account: 1270, vat: 'HREP', contra: '', currency: '' },
+  { date: '01.05.21', entry: 9, text: 'since Managed circuit', amount: '8.354,33', account: 1150, vat: '', contra: '', currency: '' },
+  { date: '20.02.20', entry: 10, text: 'Springfield Chevrolet Computer', amount: '2.287,96', account: 1160, vat: '', contra: '', currency: '' },
+  { date: '12.08.20', entry: 11, text: 'suscipit New bypass Optimization rarely Polestar Total', amount: '2.608,02', account: 1000, vat: 'HREP', contra: '', currency: '' },
+];
+
+let settingsRowHeight = 'medium';
+let settingsFontSize = 'medium';
+
+const ROW_HEIGHT_MAP = { short: 'py-1.5', medium: 'py-3', tall: 'py-5', 'extra-tall': 'py-7' };
+const FONT_SIZE_MAP = { small: 'text-xs', medium: 'text-sm', large: 'text-base' };
+
+function renderSettingsTable() {
+  const visibleCols = SETTINGS_COLS.filter(c => c.visible);
+  const padClass = ROW_HEIGHT_MAP[settingsRowHeight];
+  const fontClass = FONT_SIZE_MAP[settingsFontSize];
+
+  // Header
+  const theadRow = document.getElementById('settings-thead-row');
+  theadRow.innerHTML = visibleCols.map(c =>
+    `<th class="text-${c.align} font-bold text-[#1C1C1C] px-4 py-2 ${fontClass}">${c.label}</th>`
+  ).join('');
+
+  // Body
+  const tbody = document.getElementById('settings-body');
+  tbody.innerHTML = SETTINGS_ROWS.map(r =>
+    `<tr class="border-b border-[#EBEBEB] hover:bg-[#FAFAFA]">${
+      visibleCols.map(c =>
+        `<td class="px-4 ${padClass} text-[#1C1C1C] text-${c.align} ${fontClass}">${r[c.key]}</td>`
+      ).join('')
+    }</tr>`
+  ).join('');
+}
+
+function renderColList(filter) {
+  const colList = document.getElementById('col-list');
+  const q = (filter || '').toLowerCase();
+  colList.innerHTML = SETTINGS_COLS
+    .filter(c => !q || c.label.toLowerCase().includes(q))
+    .map(c => `
+      <label class="flex items-center gap-2 px-3 py-1.5 text-sm text-[#1C1C1C] hover:bg-[#FAFAFA] cursor-pointer">
+        <svg class="w-4 h-4 opacity-40" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 15.5C10.3284 15.5 11 16.1716 11 17C11 17.8284 10.3284 18.5 9.5 18.5C8.67157 18.5 8 17.8284 8 17C8 16.1716 8.67157 15.5 9.5 15.5ZM14.5 15.5C15.3284 15.5 16 16.1716 16 17C16 17.8284 15.3284 18.5 14.5 18.5C13.6716 18.5 13 17.8284 13 17C13 16.1716 13.6716 15.5 14.5 15.5ZM9.5 10.5C10.3284 10.5 11 11.1716 11 12C11 12.8284 10.3284 13.5 9.5 13.5C8.67157 13.5 8 12.8284 8 12C8 11.1716 8.67157 10.5 9.5 10.5ZM14.5 10.5C15.3284 10.5 16 11.1716 16 12C16 12.8284 15.3284 13.5 14.5 13.5C13.6716 13.5 13 12.8284 13 12C13 11.1716 13.6716 10.5 14.5 10.5ZM9.5 5.5C10.3284 5.5 11 6.17157 11 7C11 7.82843 10.3284 8.5 9.5 8.5C8.67157 8.5 8 7.82843 8 7C8 6.17157 8.67157 5.5 9.5 5.5ZM14.5 5.5C15.3284 5.5 16 6.17157 16 7C16 7.82843 15.3284 8.5 14.5 8.5C13.6716 8.5 13 7.82843 13 7C13 6.17157 13.6716 5.5 14.5 5.5Z" /></svg>
+        <span class="flex-1">${c.label}</span>
+        <input type="checkbox" class="col-toggle w-4 h-4 accent-[#4573D2] cursor-pointer" data-key="${c.key}" ${c.visible ? 'checked' : ''}>
+      </label>
+    `).join('');
+}
+
+// Toggle dropdown
+document.getElementById('settings-btn').addEventListener('click', (e) => {
+  e.stopPropagation();
+  const dd = document.getElementById('settings-dropdown');
+  const cp = document.getElementById('col-settings-panel');
+  cp.classList.add('hidden');
+  dd.classList.toggle('hidden');
+});
+
+// Column settings button
+document.getElementById('btn-col-settings').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('settings-dropdown').classList.add('hidden');
+  const cp = document.getElementById('col-settings-panel');
+  cp.classList.toggle('hidden');
+  if (!cp.classList.contains('hidden')) renderColList('');
+});
+
+// Row height sub-menu
+document.getElementById('btn-row-height').addEventListener('mouseenter', () => {
+  document.getElementById('row-height-sub').classList.remove('hidden');
+  document.getElementById('font-size-sub').classList.add('hidden');
+});
+document.getElementById('btn-row-height').parentElement.addEventListener('mouseleave', () => {
+  document.getElementById('row-height-sub').classList.add('hidden');
+});
+
+document.querySelectorAll('.rh-option').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsRowHeight = btn.dataset.size;
+    document.querySelectorAll('.rh-option').forEach(b => {
+      b.classList.remove('font-bold');
+      b.innerHTML = b.dataset.size.charAt(0).toUpperCase() + b.dataset.size.slice(1).replace('-', ' ');
+    });
+    btn.classList.add('font-bold');
+    btn.innerHTML = `<span class="inline-block w-2 h-2 bg-[#1C1C1C] rounded-full mr-1 align-middle"></span> ${btn.dataset.size.charAt(0).toUpperCase() + btn.dataset.size.slice(1).replace('-', ' ')}`;
+    renderSettingsTable();
+    document.getElementById('settings-dropdown').classList.add('hidden');
+    document.getElementById('row-height-sub').classList.add('hidden');
+  });
+});
+
+// Font size sub-menu
+document.getElementById('btn-font-size').addEventListener('mouseenter', () => {
+  document.getElementById('font-size-sub').classList.remove('hidden');
+  document.getElementById('row-height-sub').classList.add('hidden');
+});
+document.getElementById('btn-font-size').parentElement.addEventListener('mouseleave', () => {
+  document.getElementById('font-size-sub').classList.add('hidden');
+});
+
+document.querySelectorAll('.fs-option').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsFontSize = btn.dataset.size;
+    document.querySelectorAll('.fs-option').forEach(b => {
+      b.classList.remove('font-bold');
+      b.innerHTML = b.dataset.size.charAt(0).toUpperCase() + b.dataset.size.slice(1);
+    });
+    btn.classList.add('font-bold');
+    btn.innerHTML = `<span class="inline-block w-2 h-2 bg-[#1C1C1C] rounded-full mr-1 align-middle"></span> ${btn.dataset.size.charAt(0).toUpperCase() + btn.dataset.size.slice(1)}`;
+    renderSettingsTable();
+    document.getElementById('settings-dropdown').classList.add('hidden');
+    document.getElementById('font-size-sub').classList.add('hidden');
+  });
+});
+
+// Column search
+document.getElementById('col-search').addEventListener('input', (e) => {
+  renderColList(e.target.value);
+});
+
+// Column toggle
+document.getElementById('col-list').addEventListener('change', (e) => {
+  if (e.target.classList.contains('col-toggle')) {
+    const col = SETTINGS_COLS.find(c => c.key === e.target.dataset.key);
+    if (col) { col.visible = e.target.checked; renderSettingsTable(); }
+  }
+});
+
+// Close panels on outside click
+document.addEventListener('click', () => {
+  document.getElementById('settings-dropdown').classList.add('hidden');
+  document.getElementById('col-settings-panel').classList.add('hidden');
+  document.getElementById('row-height-sub').classList.add('hidden');
+  document.getElementById('font-size-sub').classList.add('hidden');
+});
+
+document.getElementById('col-settings-panel').addEventListener('click', (e) => e.stopPropagation());
+document.getElementById('settings-dropdown').addEventListener('click', (e) => e.stopPropagation());
+
+renderSettingsTable();
+
+// ── EDITING TABLE ──
+let editMode = false;
+let editHasChanges = false;
+let editData = [
+  { id: 1, date: '01.01.22', entry: 1, text: 'Southeast gold cosy', amount: '3.627,80', account: 1440, vat: '', contra: '' },
+  { id: 2, date: '10.03.20', entry: 2, text: 'National anti Cargo Implementation Accountability haptic driver', amount: '2.627,14', account: 1210, vat: 'REP', contra: '1280' },
+  { id: 3, date: '18.09.21', entry: 3, text: 'Virginia female Luettgen', amount: '1.161,74', account: 1390, vat: '', contra: '' },
+  { id: 4, date: '10.05.22', entry: 4, text: 'mole Gorgeous Internal', amount: '1.522,17', account: 1390, vat: '', contra: '' },
+  { id: 5, date: '11.01.23', entry: 5, text: 'Berkshire Argon Account black Potassium green Sodium', amount: '2.979,11', account: 1320, vat: 'U25', contra: '1190' },
+  { id: 6, date: '26.02.21', entry: 6, text: 'Elegant mole obediently', amount: '297,83', account: 1200, vat: '', contra: '' },
+  { id: 7, date: '25.04.21', entry: 7, text: 'payment Folk deposit', amount: '9.167,90', account: 1240, vat: '', contra: '' },
+  { id: 8, date: '23.10.22', entry: 8, text: 'Plastic Washington pfft Refined set tangible Rap', amount: '2.677,29', account: 1450, vat: 'REP', contra: '1480' },
+  { id: 9, date: '11.01.23', entry: 9, text: 'Soul Quality Walk', amount: '4.081,12', account: 1090, vat: '', contra: '' },
+];
+let editNextId = 10;
+
+const ACCOUNT_OPTIONS = [1000, 1090, 1150, 1190, 1200, 1210, 1240, 1280, 1320, 1350, 1390, 1420, 1440, 1450, 1480];
+const VAT_OPTIONS = ['', 'REP', 'U25', 'HREP', 'Abr'];
+
+function renderEditTable() {
+  const tbody = document.getElementById('edit-body');
+  const toggle = document.getElementById('edit-toggle');
+  const knob = document.getElementById('edit-toggle-knob');
+  const newRow = document.getElementById('edit-new-row');
+
+  // Toggle styling
+  if (editMode) {
+    toggle.style.backgroundColor = '#4573D2';
+    knob.style.left = '22px';
+    newRow.classList.remove('hidden');
+  } else {
+    toggle.style.backgroundColor = '#595959';
+    knob.style.left = '4px';
+    newRow.classList.add('hidden');
+  }
+
+  document.getElementById('edit-has-changes').textContent = editHasChanges ? 'true' : 'false';
+  document.getElementById('edit-record-count').textContent = editData.length;
+
+  let html = '';
+  editData.forEach(r => {
+    if (editMode) {
+      html += `<tr class="border-b border-[#EBEBEB]" data-id="${r.id}">
+        <td class="px-2 py-2"><div class="flex items-center gap-1"><input type="text" value="${r.date}" class="edit-field border border-[#DDDDDD] rounded-[2px] px-1.5 py-1 w-[80px] text-sm focus:border-[#4573D2] outline-none" data-field="date" data-id="${r.id}"><svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="#595959"><path d="M20.25 6c.966 0 1.75.784 1.75 1.75v12.5A1.75 1.75 0 0120.25 22H7.75A1.75 1.75 0 016 20.25V19h1.5v1.25a.25.25 0 00.193.243l.057.007h12.5a.25.25 0 00.243-.193l.007-.057V7.75a.25.25 0 00-.193-.243L20.25 7.5H19V6h1.25zm-7-5a.75.75 0 01.75.75V2h2.25c.966 0 1.75.784 1.75 1.75v12.5A1.75 1.75 0 0116.25 18H3.75A1.75 1.75 0 012 16.25V3.75C2 2.784 2.784 2 3.75 2H6v-.25a.75.75 0 011.5 0V2h5v-.25a.75.75 0 01.75-.75zm3.25 6.5h-13v8.75a.25.25 0 00.193.243l.057.007h12.5a.25.25 0 00.243-.193l.007-.057V7.5zM6 3.5H3.75a.25.25 0 00-.243.193L3.5 3.75V6h13V3.75a.25.25 0 00-.193-.243L16.25 3.5H14v.25a.75.75 0 11-1.5 0V3.5h-5v.25a.75.75 0 01-1.5 0V3.5z" fill-rule="evenodd"/></svg></div></td>
+        <td class="px-2 py-2"><input type="number" value="${r.entry}" class="edit-field border border-[#DDDDDD] rounded-[2px] px-1.5 py-1 w-[60px] text-sm focus:border-[#4573D2] outline-none" data-field="entry" data-id="${r.id}"></td>
+        <td class="px-2 py-2"><input type="text" value="${r.text}" class="edit-field border border-[#DDDDDD] rounded-[2px] px-1.5 py-1 w-full text-sm focus:border-[#4573D2] outline-none" data-field="text" data-id="${r.id}"></td>
+        <td class="px-2 py-2"><input type="text" value="${r.amount.replace(/\./g, '')}" class="edit-field border border-[#DDDDDD] rounded-[2px] px-1.5 py-1 w-[80px] text-sm text-right focus:border-[#4573D2] outline-none" data-field="amount" data-id="${r.id}"></td>
+        <td class="px-2 py-2"><select class="edit-field border border-[#DDDDDD] rounded-[2px] px-1 py-1 text-sm focus:border-[#4573D2] outline-none" data-field="account" data-id="${r.id}">${ACCOUNT_OPTIONS.map(a => `<option value="${a}" ${a === r.account ? 'selected' : ''}>${a}</option>`).join('')}</select></td>
+        <td class="px-2 py-2"><select class="edit-field border border-[#DDDDDD] rounded-[2px] px-1 py-1 w-[56px] text-sm focus:border-[#4573D2] outline-none" data-field="vat" data-id="${r.id}">${VAT_OPTIONS.map(v => `<option value="${v}" ${v === r.vat ? 'selected' : ''}>${v || '—'}</option>`).join('')}</select></td>
+        <td class="px-2 py-2 text-right text-[#1C1C1C]">${r.contra}</td>
+        <td class="px-2 py-2">
+          <div class="flex items-center gap-1">
+            <button class="edit-copy p-1 hover:bg-[#EBEBEB] rounded" data-id="${r.id}" title="Copy">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#595959"><path d="M6 5v1.5h-.25a.25.25 0 00-.243.193L5.5 6.75v13.5a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193l.007-.057V20H17v.25A1.75 1.75 0 0115.25 22h-9.5A1.75 1.75 0 014 20.25V6.75C4 5.784 4.784 5 5.75 5H6zm7.586-3a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836zM13 3.5H8.75a.25.25 0 00-.243.193L8.5 3.75v13.5a.25.25 0 00.193.243l.057.007h9.5a.25.25 0 00.243-.193l.007-.057V9h-3.75a1.75 1.75 0 01-1.744-1.606L13 7.25V3.5zm1.5 1.121V7.25a.25.25 0 00.193.243l.057.007h2.629L14.5 4.621z" fill-rule="evenodd"/></svg>
+            </button>
+            <button class="edit-delete p-1 hover:bg-[#EBEBEB] rounded" data-id="${r.id}" title="Delete">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#595959"><path d="M12 2a4.5 4.5 0 014.472 4h3.778a.75.75 0 110 1.5h-.75V18a4 4 0 01-4 4h-7a4 4 0 01-4-4V7.5h-.75a.75.75 0 010-1.5h3.777A4.5 4.5 0 0112 2zm6 5.5H6V18a2.5 2.5 0 002.336 2.495l.164.005h7a2.5 2.5 0 002.495-2.336L18 18V7.5zm-8.25 2a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zm4.5 0a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zM12 3.5A3 3 0 009.041 6h5.917A3 3 0 0012 3.5z" fill-rule="evenodd"/></svg>
+            </button>
+            <button class="p-1 hover:bg-[#EBEBEB] rounded" title="More">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#595959"><path d="M12 10a2 2 0 110 4 2 2 0 010-4zm0 6.5a2 2 0 110 4 2 2 0 010-4zm0-13a2 2 0 110 4 2 2 0 010-4z" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </td>
+      </tr>`;
+    } else {
+      html += `<tr class="border-b border-[#EBEBEB] hover:bg-[#FAFAFA]">
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.date}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.entry}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.text}</td>
+        <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.amount}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.account}</td>
+        <td class="px-4 py-3 text-[#1C1C1C]">${r.vat}</td>
+        <td class="px-4 py-3 text-[#1C1C1C] text-right">${r.contra}</td>
+        <td></td>
+      </tr>`;
+    }
+  });
+  tbody.innerHTML = html;
+}
+
+// Edit toggle
+document.getElementById('edit-toggle').addEventListener('click', () => {
+  editMode = !editMode;
+  renderEditTable();
+});
+
+// Field changes
+document.getElementById('edit-body').addEventListener('input', (e) => {
+  if (e.target.classList.contains('edit-field')) {
+    const id = parseInt(e.target.dataset.id);
+    const field = e.target.dataset.field;
+    const row = editData.find(r => r.id === id);
+    if (row) {
+      if (field === 'entry' || field === 'account') row[field] = parseInt(e.target.value) || 0;
+      else row[field] = e.target.value;
+      editHasChanges = true;
+      document.getElementById('edit-has-changes').textContent = 'true';
+    }
+  }
+});
+
+document.getElementById('edit-body').addEventListener('change', (e) => {
+  if (e.target.classList.contains('edit-field')) {
+    const id = parseInt(e.target.dataset.id);
+    const field = e.target.dataset.field;
+    const row = editData.find(r => r.id === id);
+    if (row) {
+      if (field === 'account') row[field] = parseInt(e.target.value);
+      else if (field === 'vat') row[field] = e.target.value === '—' ? '' : e.target.value;
+      editHasChanges = true;
+      document.getElementById('edit-has-changes').textContent = 'true';
+    }
+  }
+});
+
+// Copy row
+document.getElementById('edit-body').addEventListener('click', (e) => {
+  const copyBtn = e.target.closest('.edit-copy');
+  if (copyBtn) {
+    const id = parseInt(copyBtn.dataset.id);
+    const source = editData.find(r => r.id === id);
+    if (source) {
+      const newRow = { ...source, id: editNextId++, entry: editData.length + 1 };
+      editData.push(newRow);
+      editHasChanges = true;
+      renderEditTable();
+    }
+  }
+  const delBtn = e.target.closest('.edit-delete');
+  if (delBtn) {
+    const id = parseInt(delBtn.dataset.id);
+    editData = editData.filter(r => r.id !== id);
+    editHasChanges = true;
+    renderEditTable();
+  }
+});
+
+// Add new row
+document.getElementById('edit-add-row').addEventListener('click', () => {
+  editData.push({ id: editNextId++, date: '', entry: editData.length + 1, text: '', amount: '', account: 1000, vat: '', contra: '' });
+  editHasChanges = true;
+  renderEditTable();
+});
+
+renderEditTable();
+</script>
+</body>
+</html>

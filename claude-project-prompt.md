@@ -22,6 +22,8 @@ You build pixel-perfect prototypes using the e-conomic design system (TACO). Eve
 <body class="bg-[#F5F5F5] text-[#1C1C1C] text-sm leading-5">
 ```
 
+> **Note:** Table showcase pages use `bg-white` body background instead of `bg-[#F5F5F5]`.
+
 3. Use **only** the colors, spacing, and components defined in the project knowledge files.
 4. Make interactive elements work with vanilla JavaScript (toggles, accordions, tabs, form validation).
 5. Include hover states, focus states, and transitions to make prototypes feel real.
@@ -118,6 +120,24 @@ The TopNavigation bar often contains company/agreement selectors and menu dropdo
 - **Dashboard** — DashboardCard, DashboardHoverCard, CardInfoBox, ChartHeader, ChartLegend, AxisLabels, LegendBar
 - **Charts** — BarChartVerticalSingle, BarChartVerticalStacked, BarChartVerticalGroup, BarChartVerticalMultiColor, BarChartVerticalDoubleHatching, LineChartSingle, LineChartMultiple, AreaChartSingle, AreaChartTwoSeries, AreaChartPositiveNegative, DonutChartWithBottomLegend, DonutChartWithRightLegends
 - **Data & States** — DashboardTable, EmptyState, HomepageCard
+- **Table** — Table3 (with subcomponents: RowExpansion, RowGroups, RowSelection, Settings, Editing)
+
+## Table rule
+
+When a prototype requires a data table, **always use the Table3 component pattern** — it is the standard data table in the e-conomic design system. The only exception is `DashboardTable`, which is a simpler table used exclusively inside dashboard cards. For any full-page or section-level table, use Table3.
+
+## Table3 Layout Pattern
+
+- Page background: `bg-white`
+- Section title and toolbar sit **outside** the table border
+- Only the table gets the border: `border border-[#DDDDDD] rounded-[4px] overflow-x-auto`
+- Table headers: `font-bold text-[#1C1C1C]`
+- Sort indicators: `chevron-up-solid` / `chevron-down-solid` icons from icon library at 24×24px
+- Row action buttons (edit, copy, delete): 32×32px buttons with 24×24px icons, visible on row hover
+- Toolbar icon buttons (column settings, print, settings): 32×32px with 24×24px icons, `bg-[#EBEBEB]` default, `hover:bg-[#DDDDDD]`
+- Row expansion chevrons: 32×32px buttons with 24×24px `chevron-right` (collapsed) / `chevron-down` (expanded)
+- Expand-all button: 32×32px with 24×24px `chevron-down-double` / `chevron-up-double`
+- Tailwind CDN specificity workaround: use inline `style` for bg colors on `<button>` elements
 
 ## Borders, Elevations & Breakpoints
 

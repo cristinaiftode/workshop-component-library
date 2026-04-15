@@ -23,6 +23,12 @@ When generating components from Figma MCP:
 - Use PascalCase for React component files: `Button.tsx`, `IconButton.tsx`
 - Match Figma component names when possible
 
+### Icons
+- ALWAYS use icons from the existing icon library in `showcase/icons.html` — do NOT invent or create new icon SVGs
+- The icon library contains 137+ icons at 24×24px with `viewBox="0 0 24 24"` and `fill="#1C1C1C"`
+- When you need an icon, look up its exact SVG path data from icons.html first
+- If an icon doesn't exist in the library, ASK the user before creating a new one
+
 ### Design Tokens
 - Reference `tokens.json` for the correct color values, spacing, and typography
 - Use the exact hex values from tokens.json (e.g., `#4573D2` for blue-500, `#CE3F42` for red-500)
@@ -39,12 +45,22 @@ When generating components from Figma MCP:
 ### Showcase Pages
 - Showcase HTML pages use Tailwind CDN (`<script src="https://cdn.tailwindcss.com"></script>`)
 - Use vanilla JavaScript for interactivity (no frameworks)
-- Follow the existing section pattern:
-  ```html
-  <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
-    <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Component Name</h2>
-    <!-- component content exactly as in Figma -->
-  </section>
-  ```
 - Font: Helvetica, Arial, sans-serif
 - Always verify output in the preview server before considering a task done
+- Tailwind CDN has specificity issues with arbitrary value classes on `<button>` elements — use inline styles or `<div role="button">` as workaround when bg colors don't apply
+
+### Table Rule
+- When a prototype requires a data table, **always use Table3** — it is the standard data table in the design system
+- The only exception is `DashboardTable`, a simpler table used exclusively inside dashboard cards
+- For any full-page or section-level table, always use the Table3 pattern below
+
+### Table3 Layout Pattern
+- Page background is white (`bg-white`)
+- Section title and toolbar sit **outside** the table border
+- Only the table itself gets the border: `border border-[#DDDDDD] rounded-[4px] overflow-x-auto`
+- Table headers: `font-bold text-[#1C1C1C]` (dark, not grey)
+- Sort indicator: use `chevron-up-solid` / `chevron-down-solid` icons from the icon library at 24×24px
+- Row action buttons (edit, copy, delete): 32×32px buttons with 24×24px icons, visible on row hover
+- Toolbar icon buttons (column settings, print, settings): 32×32px with 24×24px icons, grey background (`bg-[#EBEBEB]`, hover `bg-[#DDDDDD]`)
+- Row expansion chevrons: 32×32px buttons with 24×24px `chevron-right` (collapsed) / `chevron-down` (expanded) icons
+- Expand-all button: 32×32px with 24×24px `chevron-down-double` / `chevron-up-double` icons

@@ -405,33 +405,68 @@
       "usage": "<ListGroup title=\"Recent\"><ListItem>Item 1</ListItem></ListGroup>"
     },
 
-    "TableRow": {
-      "description": "A single row in a data table. Supports header, selectable (checkbox), and expandable variants.",
-      "figmaComponentKey": "a2266214f0fccaaf3b59f08fe4652505b6b8001d",
+    "Table3": {
+      "description": "Full-featured interactive data table (Table3). Supports sortable columns, column filtering, column visibility (hide/show), freeze columns, row selection with checkboxes, row hover actions (edit, copy, delete), toolbar with primary action button, 'More' dropdown, filters panel, and search. Column headers show a 3-dot menu on hover with: Hide column, Sorting (Ascending/Descending/No sorting submenu), Freeze columns, Filter.",
       "figmaNodeId": "120:2577",
+      "storybook": "https://design.e-conomic.net/?path=/docs/components-data-display-table3--docs",
+      "import": "import { Table3 } from '@economic/taco';",
       "props": {
-        "cells": {
+        "columns": {
           "type": "array",
-          "description": "Array of cell content values"
+          "description": "Column definitions: { key, label, align ('left'|'right'), type ('text'|'number') }"
         },
-        "selected": { "type": "boolean", "default": false },
-        "selectable": { "type": "boolean", "default": false, "description": "Show selection checkbox" },
-        "header": { "type": "boolean", "default": false, "description": "Render as header row (th, bold, smaller text)" },
-        "expandable": { "type": "boolean", "default": false, "description": "Show expand/collapse chevron" },
-        "expanded": { "type": "boolean", "default": false },
-        "expandContent": { "type": "ReactNode", "description": "Content shown when row is expanded" },
-        "onClick": { "type": "function" },
-        "onSelect": { "type": "function", "description": "Callback when checkbox toggled" },
-        "onToggleExpand": { "type": "function" }
+        "data": {
+          "type": "array",
+          "description": "Array of row objects keyed by column keys"
+        },
+        "selectable": { "type": "boolean", "default": false, "description": "Show row selection checkboxes" },
+        "sortable": { "type": "boolean", "default": true, "description": "Allow column sorting (click header or use column menu)" },
+        "filterable": { "type": "boolean", "default": true, "description": "Show Filters button and filter panel" },
+        "searchable": { "type": "boolean", "default": true, "description": "Show search input in toolbar" },
+        "freezable": { "type": "boolean", "default": true, "description": "Allow freezing columns via column menu" },
+        "onRowClick": { "type": "function" },
+        "onRowSelect": { "type": "function" },
+        "onRowDelete": { "type": "function" },
+        "toolbar": {
+          "type": "ReactNode",
+          "description": "Custom toolbar content (buttons, dropdowns)"
+        }
+      },
+      "subComponents": {
+        "Table3.Toolbar": "Container for toolbar actions (left: primary + more, right: filters + icons + search)",
+        "Table3.Column": "Column definition with sortable, filterable, freezable, hideable props",
+        "Table3.ColumnMenu": "3-dot context menu on column header: Hide column, Sorting submenu (Asc/Desc/None with bullet indicator), Freeze first N columns, Unfreeze all, Filter",
+        "Table3.FilterPanel": "Floating filter builder: Where [column] [Contains|Equals|Starts with] [value], + Add new filter, Cancel/Clear/Apply buttons",
+        "Table3.RowActions": "Hover-visible action buttons on each row (edit, copy, delete icons in 32×32px buttons with 24×24px icons)",
+        "Table3.RowExpansion": "Expandable rows with chevron-right (collapsed) / chevron-down (expanded) in 32×32px button with 24×24px icon. Expand-all button in header uses chevron-down-double / chevron-up-double. Expanded row shows nested sub-table with white background.",
+        "Table3.RowGroups": "Grouped rows with sticky group header that stays at top during scroll until next group header replaces it. Scrollable container with max-height.",
+        "Table3.RowSelection": "Row selection with checkboxes, select-all in header. Selected row count displayed above table. Selected rows highlighted with bg-[#DEEBFF].",
+        "Table3.Settings": "Settings dropdown with Column settings panel (search + toggle visibility), Row height sub-menu (Short/Medium/Tall/Extra tall), Font size sub-menu (Small/Medium/Large).",
+        "Table3.Editing": "Edit mode toggle (pill switch), inline editing with text inputs and dropdowns. Has changes indicator, validation rules display, + New row button, Records count footer."
       },
       "styling": {
-        "headerRow": "border-b-2 border-[#DDDDDD], text-xs font-bold text-[#595959]",
-        "bodyRow": "border-b border-[#EBEBEB], text-sm text-[#1C1C1C]",
+        "headerRow": "border-b-2 border-[#DDDDDD] text-xs leading-4 font-bold text-[#1C1C1C]",
+        "bodyRow": "border-b border-[#EBEBEB] text-sm leading-5 text-[#1C1C1C]",
+        "headingRow": "font-bold",
         "selected": "bg-[#DEEBFF]",
-        "hover": "bg-[#F5F5F5]",
-        "expandedContent": "bg-[#F5F5F5] text-[#595959]"
+        "hover": "bg-[#FAFAFA]",
+        "sortIndicator": "chevron-up-solid (ascending) or chevron-down-solid (descending) SVG icon, 24×24px, next to column label",
+        "columnMenuTrigger": "opacity-0 on rest, opacity-100 on header hover — vertical 3-dot icon",
+        "columnMenu": "bg-white rounded-[8px] shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)] py-1",
+        "rowActions": "opacity-0 on rest, opacity-100 on row hover — edit/copy/delete icons in 32×32px buttons with 24×24px icons",
+        "frozenCol": "sticky bg-inherit z-[5]",
+        "hiddenColBar": "bg-[#FFF1C3] text-[#733700] with 'Show all columns' link",
+        "tableContainer": "border border-[#DDDDDD] rounded-[4px] overflow-x-auto — border wraps ONLY the table, toolbar and title sit outside",
+        "filterPanel": "bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_2px_4px_rgba(47,51,68,0.1),0px_1px_6px_rgba(47,51,68,0.1)] p-4",
+        "toolbar": {
+          "primaryButton": "bg-[#4573D2] text-white rounded-[4px] px-4 py-[6px] hover:bg-[#2B57B4]",
+          "moreButton": "bg-[#EBEBEB] rounded-[4px] px-3 py-[6px] hover:bg-[#DDDDDD]",
+          "filtersButton": "border border-[#DDDDDD] rounded-[4px] px-3 py-[6px] hover:bg-[#F6F6F6]",
+          "iconButton": "w-8 h-8 rounded-[4px] bg-[#EBEBEB] hover:bg-[#DDDDDD] with 24×24px icon inside",
+          "search": "border border-[#DDDDDD] rounded-[4px] pl-8 pr-12 py-[6px] w-[180px] focus:border-[#4573D2]"
+        }
       },
-      "usage": "<TableRow cells={['#1234','Acme','12,500 DKK']} selectable selected={false} expandable expandContent={<div>Details</div>} />"
+      "usage": "<Table3 columns={[{key:'no',label:'No.'}, {key:'name',label:'Name'}]} data={rows} selectable sortable filterable />"
     },
 
     "Calendar": {
@@ -1712,6 +1747,222 @@
         "button": "border border-[#DDDDDD] rounded-[4px] px-4 py-1.5 text-[14px]"
       },
       "usage": "<HomepageCard message=\"Chat with us all weekdays\" buttonLabel=\"Start chat\" />"
+    },
+
+    "MenuItems": {
+      "description": "Individual menu item for use inside Menu. Supports list items, headers, and dividers. List items can have optional icons (left or right) and keyboard shortcuts.",
+      "figmaNodeId": "480:18395",
+      "import": "import { Menu } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": ["list-item", "header", "divider"],
+          "default": "list-item",
+          "description": "Item type: list-item for actionable row, header for section label, divider for separator line"
+        },
+        "icon": {
+          "type": "enum",
+          "values": ["none", "left", "right"],
+          "default": "none",
+          "description": "Icon placement relative to text"
+        },
+        "shortcut": {
+          "type": "string",
+          "description": "Optional keyboard shortcut text displayed on the right (e.g. '⌘,')"
+        },
+        "children": {
+          "type": "string",
+          "description": "Item label text"
+        }
+      },
+      "styling": {
+        "listItem": "flex items-center px-[8px] py-[6px] w-[160px] text-[14px] leading-[20px] text-[#1C1C1C]",
+        "listItemHover": "bg-[#EBEBEB] rounded-[4px]",
+        "iconLeft": "gap-[4px]",
+        "iconRight": "justify-between",
+        "withShortcut": "justify-between",
+        "shortcutText": "text-[14px] leading-[20px] text-[#595959] pl-[8px]",
+        "header": "flex items-center px-[8px] py-[6px] text-[12px] leading-[16px] text-[#595959]",
+        "divider": "flex items-center px-[8px] py-[4px] rounded-[4px]",
+        "dividerLine": "flex-1 h-px bg-[#DDDDDD]"
+      },
+      "usage": "<Menu.Item>Text</Menu.Item>"
+    },
+
+    "MenuContent": {
+      "description": "Container that holds multiple MenuItems stacked vertically. Auto-sizes width to fit its content.",
+      "figmaNodeId": "482:18060",
+      "import": "import { Menu } from '@economic/taco';",
+      "props": {
+        "children": {
+          "type": "ReactNode",
+          "description": "MenuItems to display inside the content area"
+        }
+      },
+      "styling": {
+        "container": "flex flex-col items-start"
+      },
+      "usage": "<Menu.Content><Menu.Item>Option 1</Menu.Item><Menu.Item>Option 2</Menu.Item></Menu.Content>"
+    },
+
+    "Menu": {
+      "description": "Floating menu container with elevation shadow and rounded corners. Contains MenuContent with MenuItems. Two width modes: narrow (auto-width) and wide (>340px minimum).",
+      "figmaNodeId": "482:20861",
+      "storybook": "https://design.e-conomic.ws/components/actions/menu",
+      "import": "import { Menu } from '@economic/taco';",
+      "props": {
+        "wide": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, menu has a minimum width of 340px"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "MenuContent and MenuItems"
+        }
+      },
+      "styling": {
+        "container": "inline-flex flex-col items-start bg-white rounded-[8px] py-[4px]",
+        "shadow": "shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)]",
+        "wide": "min-w-[340px]"
+      },
+      "subComponents": ["MenuContent", "MenuItems"],
+      "usage": "<Menu><Menu.Content><Menu.Item>Option 1</Menu.Item><Menu.Item>Option 2</Menu.Item></Menu.Content></Menu>"
+    },
+
+    "Icon": {
+      "description": "Icon component from the TACO icon library. All icons are 24×24px with fill color #1C1C1C. Used throughout the navigation, toolbar, and action elements.",
+      "figmaFileKey": "KSd3tFPtF25o4FsDhDkUik",
+      "import": "import { Icon } from '@economic/taco';",
+      "props": {
+        "name": {
+          "type": "enum",
+          "description": "Icon name from the TACO icon set",
+          "values": [
+            "home", "accounting", "projects", "settings-solid", "inbox", "sales",
+            "report-solid", "bell", "chat-solid", "inventory", "e-copedia", "market",
+            "inbox-smart", "inbox-scanning", "inbox-einvoicing", "e-signature",
+            "more-solid", "profile", "search-bold", "question-mark-bold",
+            "journal-pro", "menu", "log-out", "partner-api", "developer",
+            "basic", "placeholder", "blank",
+            "lock-open", "lock", "dot", "unreconsiled", "document-cut", "account-preview",
+            "hash", "inventory-matrix", "secure-tick", "refresh", "entry-type-journal-entry",
+            "project-cards", "layout-first", "webshop", "search", "lightbulb", "depricate",
+            "basic-tabs", "document-split", "clamp-open", "autotext-insert", "play",
+            "cash-reports", "document-error", "person-minus", "person-plus", "person-change",
+            "note-follow-up", "distribution-template", "period", "more", "document-merge",
+            "entry-type-customer-payment", "process-payment", "restore", "copy",
+            "document-approve", "shortcuts", "show-all", "entries-on-account",
+            "document-preview", "envelope", "list-bulleted", "entry-type-supplier-invoice",
+            "mileage", "layout-last", "sliders", "list-search", "chat", "quicklinks",
+            "sort-by", "document-create-entry", "clamp", "show-less", "entries-open",
+            "circle-plus", "circle-minus", "rotate-left", "navigation-list", "person-tick",
+            "delete-permanently", "import", "export", "modal-shrink", "product-ledger-card",
+            "layout", "budget", "search-super", "undock",
+            "entry-type-manual-customer-invoice", "circle-tick", "accounting-year",
+            "star-solid", "calendar", "envelope-approved", "rating-bankruptsy", "note",
+            "note-read", "filter", "document", "booking", "document-move", "contacts",
+            "log", "delete", "credit", "list", "entry-type-supplier-payment", "layout-both",
+            "match-amount", "images", "edit", "document-isolate-page", "show-more",
+            "cash-account", "entries-warning", "secure", "rotate-right", "move", "time",
+            "layout-none", "export-to-excel", "export-to-pdf", "document-time",
+            "template-override", "show-template", "download", "print",
+            "entry-type-customer-invoice", "courses", "accounting-year-cancel", "star",
+            "reconciled", "templates", "system-entries", "report", "plus-minus", "expenses",
+            "autotext", "subscriptions", "website", "settings", "ledger-card", "book",
+            "expand-view", "graph-solid", "rating-payment-problems", "tag",
+            "thumb-up-solid", "thumb-down-solid", "thumb-up", "thumb-down", "thumb-both",
+            "transfer", "document-received", "transfer-locked", "document-rejected-request",
+            "transfer-cancel", "filter-solid", "match-entries", "attach-auto",
+            "attach-cancel", "attach", "partial-payment-scheduled", "connection-enable",
+            "connection-revoke", "ledger-card-manual-customer-invoice",
+            "ledger-card-reserved-entry", "ledger-card-opening-entry",
+            "ledger-card-transferred-opening-entry", "ledger-card-customer-reminder",
+            "ledger-card-obsolete-stock", "ledger-card-shrinkage-pilferage",
+            "ledger-card-stock-adjustment", "workflow", "wallet-solid", "remove", "numbers",
+            "row-height-4", "row-height-3", "row-height-2", "row-height-1", "columns",
+            "undo", "column-freeze", "column-unfreeze", "eye", "eye-off", "text-font-size",
+            "payment-unpaid", "payment-paid", "document-partial", "document-warning",
+            "payment-pending", "chart-line", "chart-area", "chart-bar", "chart-table",
+            "chart-pie", "attach-warning", "wallet", "circle-warning", "circle-information",
+            "circle-questionmark", "edit-simple", "location", "envelope-solid",
+            "phone-solid", "ai-chat-solid", "ai-stars", "phone", "id", "document-signed",
+            "house", "mastercard", "november-first", "person", "person-solid", "autopay",
+            "autopay-paused"
+          ]
+        },
+        "size": {
+          "type": "number",
+          "default": 24,
+          "description": "Icon size in pixels"
+        },
+        "color": {
+          "type": "string",
+          "default": "#1C1C1C",
+          "description": "Icon fill color"
+        }
+      },
+      "styling": {
+        "size": "w-6 h-6 (24×24px)",
+        "color": "fill-[#1C1C1C] or text-[#1C1C1C] with currentColor",
+        "whiteOnDark": "fill-white or text-white (when on dark backgrounds like top navigation)"
+      },
+      "categories": {
+        "navigation-primary": [
+          "home", "accounting", "projects", "settings-solid", "inbox", "sales",
+          "report-solid", "bell", "chat-solid", "inventory", "e-copedia", "market",
+          "inbox-smart", "inbox-scanning", "inbox-einvoicing", "e-signature",
+          "more-solid", "profile", "search-bold", "question-mark-bold",
+          "journal-pro", "menu", "log-out", "partner-api", "developer", "basic"
+        ],
+        "system": [
+          "lock-open", "lock", "dot", "unreconsiled", "document-cut", "account-preview",
+          "hash", "inventory-matrix", "secure-tick", "refresh", "entry-type-journal-entry",
+          "project-cards", "layout-first", "webshop", "search", "lightbulb", "depricate",
+          "basic-tabs", "document-split", "clamp-open", "autotext-insert", "play",
+          "cash-reports", "document-error", "person-minus", "person-plus", "person-change",
+          "note-follow-up", "distribution-template", "period", "more", "document-merge",
+          "entry-type-customer-payment", "process-payment", "restore", "copy",
+          "document-approve", "shortcuts", "show-all", "entries-on-account",
+          "document-preview", "envelope", "list-bulleted", "entry-type-supplier-invoice",
+          "mileage", "layout-last", "sliders", "list-search", "chat", "quicklinks",
+          "sort-by", "document-create-entry", "clamp", "show-less", "entries-open",
+          "circle-plus", "circle-minus", "rotate-left", "navigation-list", "person-tick",
+          "delete-permanently", "import", "export", "modal-shrink", "product-ledger-card",
+          "layout", "budget", "search-super", "undock",
+          "entry-type-manual-customer-invoice", "circle-tick", "accounting-year",
+          "star-solid", "calendar", "envelope-approved", "rating-bankruptsy", "note",
+          "note-read", "filter", "document", "booking", "document-move", "contacts",
+          "log", "delete", "credit", "list", "entry-type-supplier-payment", "layout-both",
+          "match-amount", "images", "edit", "document-isolate-page", "show-more",
+          "cash-account", "entries-warning", "secure", "rotate-right", "move", "time",
+          "layout-none", "export-to-excel", "export-to-pdf", "document-time",
+          "template-override", "show-template", "download", "print",
+          "entry-type-customer-invoice", "courses", "accounting-year-cancel", "star",
+          "reconciled", "templates", "system-entries", "report", "plus-minus", "expenses",
+          "autotext", "subscriptions", "website", "settings", "ledger-card", "book",
+          "expand-view", "graph-solid", "rating-payment-problems", "tag",
+          "thumb-up-solid", "thumb-down-solid", "thumb-up", "thumb-down", "thumb-both",
+          "transfer", "document-received", "transfer-locked", "document-rejected-request",
+          "transfer-cancel", "filter-solid", "match-entries", "attach-auto",
+          "attach-cancel", "attach", "partial-payment-scheduled", "connection-enable",
+          "connection-revoke", "ledger-card-manual-customer-invoice",
+          "ledger-card-reserved-entry", "ledger-card-opening-entry",
+          "ledger-card-transferred-opening-entry", "ledger-card-customer-reminder",
+          "ledger-card-obsolete-stock", "ledger-card-shrinkage-pilferage",
+          "ledger-card-stock-adjustment", "workflow", "wallet-solid", "remove", "numbers",
+          "row-height-4", "row-height-3", "row-height-2", "row-height-1", "columns",
+          "undo", "column-freeze", "column-unfreeze", "eye", "eye-off", "text-font-size",
+          "payment-unpaid", "payment-paid", "document-partial", "document-warning",
+          "payment-pending", "chart-line", "chart-area", "chart-bar", "chart-table",
+          "chart-pie", "attach-warning", "wallet", "circle-warning", "circle-information",
+          "circle-questionmark", "edit-simple", "location", "envelope-solid",
+          "phone-solid", "ai-chat-solid", "ai-stars", "phone", "id", "document-signed",
+          "house", "mastercard", "november-first", "person", "person-solid", "autopay",
+          "autopay-paused"
+        ]
+      },
+      "usage": "<Icon name=\"home\" />"
     }
   }
 }

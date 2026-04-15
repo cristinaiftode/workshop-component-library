@@ -2,6 +2,12 @@
 
 You are building UI for the e-conomic accounting platform using React, Tailwind CSS, and the `@economic/taco` component library. Follow these rules strictly.
 
+## 0. Icons — use ONLY the icon library
+
+- ALWAYS use icons from the icon library listed in this file (see Icons section below) — never invent or create new icon SVGs
+- Icons are 24×24px with `viewBox="0 0 24 24"` and `fill="#1C1C1C"`
+- If an icon doesn't exist in the library, ASK the user before creating a new one
+
 ## 1. Always import from @economic/taco
 
 ```jsx

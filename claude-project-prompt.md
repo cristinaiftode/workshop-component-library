@@ -38,6 +38,7 @@ You build pixel-perfect prototypes using the e-conomic design system (TACO). Eve
 - The primary blue is `#4573D2`, hover is `#2B57B4`
 - Disabled states use `opacity-50`, never color changes
 - Use the component names from `manifest.json` when the user references them
+- **Icons:** ALWAYS use icons from the icon library defined in `manifest.json` — never invent or create new icon SVGs. Icons are 24×24px with `viewBox="0 0 24 24"` and `fill="#1C1C1C"`. If an icon doesn't exist in the library, ask the user before creating a new one
 
 ## e-conomic logo in TopNavigation
 

@@ -1,5 +1,11 @@
 # CLAUDE.md - Project Rules
 
+## Styling & Component Rules (reference files)
+- For full color palette, typography, spacing, and component styling: see `prompt-rules.md`
+- For boilerplate, interactive patterns, and page-building steps: see `claude-project-prompt.md`
+- For design token values: see `tokens.json`
+- For component definitions and props: see `manifest.json`
+
 ## Component Generation Rules
 
 ### STRICT: Do NOT add extra elements

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Dashboard — e-conomic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    button { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C] text-sm leading-5">
+
+  <!-- TopNavigation -->
+  <nav class="h-16 bg-[#29283E] flex items-center px-4 gap-2 relative z-50">
+    <div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
+      <img src="../logos/orange-logo.svg" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+    </div>
+    <div class="flex items-center gap-1 ml-2">
+      <a href="dashboard.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Hjem</a>
+      <a href="invoices.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm bg-[rgba(255,255,255,0.08)]">Salg</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Regnskab</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Rapporter</a>
+    </div>
+    <div class="ml-auto flex items-center gap-3">
+      <div class="relative" id="agreement-wrapper">
+        <button id="agreement-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">
+          <span>Demo Virksomhed ApS</span>
+          <svg class="w-4 h-4 transition-transform" id="agreement-chevron" viewBox="0 0 24 24" fill="white"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+        </button>
+        <div id="agreement-dropdown" class="hidden absolute right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[220px]">
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 font-bold text-[#1C1C1C]">Demo Virksomhed ApS</div>
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Test Firma A/S</div>
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Produktions Selskab</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-6 py-6">
+
+    <!-- ModeSwitch -->
+    <div class="flex items-center gap-4 mb-6">
+      <h1 class="text-2xl font-bold">Salgsoversigt</h1>
+      <div class="flex items-center bg-[#EBEBEB] rounded-[4px] p-0.5">
+        <button class="mode-btn px-4 py-1.5 rounded-[4px] text-sm bg-white shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)] text-[#1C1C1C]" data-mode="overview">Oversigt</button>
+        <button class="mode-btn px-4 py-1.5 rounded-[4px] text-sm text-[#595959]" data-mode="details">Detaljer</button>
+      </div>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="grid grid-cols-4 gap-4 mb-6">
+      <!-- Revenue -->
+      <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="text-xs text-[#595959] mb-1">Omsaetning</div>
+        <div class="text-2xl font-bold mb-2">1.245.000 kr</div>
+        <div class="flex items-end gap-1 h-8">
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:40%"></div>
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:55%"></div>
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:45%"></div>
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:70%"></div>
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:85%"></div>
+          <div class="w-4 bg-[#75A0F5] rounded-[2px]" style="height:100%"></div>
+        </div>
+      </div>
+      <!-- Outstanding Invoices -->
+      <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="text-xs text-[#595959] mb-1">Udestaaende fakturaer</div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-bold">342.500 kr</span>
+        </div>
+        <div class="mt-2">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFDAD2] text-[#CE3F42]">12 forfaldne</span>
+        </div>
+      </div>
+      <!-- Quotes Sent -->
+      <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="text-xs text-[#595959] mb-1">Tilbud sendt</div>
+        <div class="text-2xl font-bold">27</div>
+        <div class="mt-2">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">8 accepteret</span>
+        </div>
+      </div>
+      <!-- Top Customer -->
+      <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="text-xs text-[#595959] mb-1">Top kunde</div>
+        <div class="text-base font-bold">Novo Nordisk A/S</div>
+        <div class="text-lg text-[#595959] mt-1">425.000 kr</div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-3 gap-4 mb-6">
+      <!-- Line Chart — Revenue vs Expenses -->
+      <div class="col-span-2 bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="flex items-center justify-between mb-4">
+          <div class="font-bold">Omsaetning vs. Udgifter</div>
+          <div class="flex items-center gap-4 text-xs">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#75A0F5] inline-block rounded"></span> Omsaetning</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#E66568] inline-block rounded"></span> Udgifter</span>
+          </div>
+        </div>
+        <div class="relative h-[200px]">
+          <!-- Y axis labels -->
+          <div class="absolute left-0 top-0 bottom-0 w-12 flex flex-col justify-between text-xs text-[#595959] py-1">
+            <span>300k</span><span>200k</span><span>100k</span><span>0</span>
+          </div>
+          <!-- Chart area -->
+          <svg class="absolute left-12 top-0 right-0 bottom-0" viewBox="0 0 500 200" preserveAspectRatio="none">
+            <!-- Grid lines -->
+            <line x1="0" y1="0" x2="500" y2="0" stroke="#EBEBEB" stroke-width="1"/>
+            <line x1="0" y1="66" x2="500" y2="66" stroke="#EBEBEB" stroke-width="1"/>
+            <line x1="0" y1="133" x2="500" y2="133" stroke="#EBEBEB" stroke-width="1"/>
+            <line x1="0" y1="199" x2="500" y2="199" stroke="#EBEBEB" stroke-width="1"/>
+            <!-- Revenue line -->
+            <polyline points="0,120 100,100 200,80 300,90 400,50 500,30" fill="none" stroke="#75A0F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Expenses line -->
+            <polyline points="0,150 100,140 200,155 300,135 400,145 500,130" fill="none" stroke="#E66568" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- X axis labels -->
+          <div class="absolute left-12 right-0 bottom-[-20px] flex justify-between text-xs text-[#595959]">
+            <span>Okt</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donut Chart -->
+      <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="font-bold mb-4">Omsaetning pr. kategori</div>
+        <div class="flex items-center gap-4">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <!-- Donut segments -->
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#75A0F5" stroke-width="20" stroke-dasharray="113 283" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#52C7AB" stroke-width="20" stroke-dasharray="71 283" stroke-dashoffset="-113" transform="rotate(-90 60 60)"/>
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#FFD665" stroke-width="20" stroke-dasharray="57 283" stroke-dashoffset="-184" transform="rotate(-90 60 60)"/>
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#CBBCFE" stroke-width="20" stroke-dasharray="42 283" stroke-dashoffset="-241" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div class="flex flex-col gap-2 text-xs">
+            <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-[2px] bg-[#75A0F5]"></span><span>Konsulentydelser<br/><span class="text-[#595959]">40%</span></span></div>
+            <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-[2px] bg-[#52C7AB]"></span><span>Software<br/><span class="text-[#595959]">25%</span></span></div>
+            <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-[2px] bg-[#FFD665]"></span><span>Support<br/><span class="text-[#595959]">20%</span></span></div>
+            <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-[2px] bg-[#CBBCFE]"></span><span>Andet<br/><span class="text-[#595959]">15%</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-white rounded-[4px] p-4 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+      <div class="font-bold mb-3">Seneste aktivitet</div>
+      <div class="flex flex-col">
+        <div class="flex items-center justify-between py-3 shadow-[inset_0_-1px_0_0_#DDDDDD]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-[4px] bg-[#DEEBFF] flex items-center justify-center text-xs font-bold text-[#4573D2]">FA</div>
+            <div>
+              <div class="text-sm">Faktura #1047 til <span class="font-bold">Matas A/S</span></div>
+              <div class="text-xs text-[#595959]">Sendt i dag kl. 09:32</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold">12.500 kr</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFF1C3] text-[#FFBD3B]">Afventer</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-3 shadow-[inset_0_-1px_0_0_#DDDDDD]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-[4px] bg-[#CDF0E7] flex items-center justify-center text-xs font-bold text-[#08AE87]">FA</div>
+            <div>
+              <div class="text-sm">Faktura #1046 til <span class="font-bold">Novo Nordisk A/S</span></div>
+              <div class="text-xs text-[#595959]">Betalt i gaar</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold">85.000 kr</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">Betalt</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-3 shadow-[inset_0_-1px_0_0_#DDDDDD]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-[4px] bg-[#EEE5FF] flex items-center justify-center text-xs font-bold text-[#9270FA]">TI</div>
+            <div>
+              <div class="text-sm">Tilbud #312 til <span class="font-bold">Vestas Wind Systems</span></div>
+              <div class="text-xs text-[#595959]">Accepteret 13. apr</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold">145.000 kr</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">Accepteret</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-3 shadow-[inset_0_-1px_0_0_#DDDDDD]">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-[4px] bg-[#FFDAD2] flex items-center justify-center text-xs font-bold text-[#CE3F42]">FA</div>
+            <div>
+              <div class="text-sm">Faktura #1038 til <span class="font-bold">Carlsberg A/S</span></div>
+              <div class="text-xs text-[#595959]">Forfalden 7 dage</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold">28.750 kr</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFDAD2] text-[#CE3F42]">Forfalden</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-3">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-[4px] bg-[#DEEBFF] flex items-center justify-center text-xs font-bold text-[#4573D2]">TI</div>
+            <div>
+              <div class="text-sm">Tilbud #311 til <span class="font-bold">Maersk A/S</span></div>
+              <div class="text-xs text-[#595959]">Sendt 11. apr</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold">230.000 kr</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFF1C3] text-[#FFBD3B]">Afventer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Agreement dropdown
+    const agreeBtn = document.getElementById('agreement-btn');
+    const agreeDd = document.getElementById('agreement-dropdown');
+    const agreeChev = document.getElementById('agreement-chevron');
+    agreeBtn.addEventListener('click', () => {
+      agreeDd.classList.toggle('hidden');
+      agreeChev.classList.toggle('rotate-180');
+    });
+    document.addEventListener('click', e => {
+      if (!document.getElementById('agreement-wrapper').contains(e.target)) {
+        agreeDd.classList.add('hidden');
+        agreeChev.classList.remove('rotate-180');
+      }
+    });
+    agreeDd.querySelectorAll('div').forEach(opt => {
+      opt.addEventListener('click', () => {
+        agreeBtn.querySelector('span').textContent = opt.textContent.trim();
+        agreeDd.classList.add('hidden');
+        agreeChev.classList.remove('rotate-180');
+      });
+    });
+
+    // ModeSwitch
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.mode-btn').forEach(b => {
+          b.classList.remove('bg-white', 'shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]', 'text-[#1C1C1C]');
+          b.classList.add('text-[#595959]');
+        });
+        btn.classList.add('bg-white', 'shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]', 'text-[#1C1C1C]');
+        btn.classList.remove('text-[#595959]');
+      });
+    });
+  </script>
+</body>
+</html>

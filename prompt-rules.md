@@ -285,6 +285,80 @@ Container **w-[48px]** (NOT w-[72px]). Image 28×28px. White logo on dark `#2928
 - Input border: `border border-[#DDDDDD]`
 - Input padding: `px-2 py-1.5`
 
+### Badge — inline status label
+- Shape: `rounded-full` pill (exception to the 4px rule — badges use full rounding)
+- Variants: `strong` (filled bg, white/dark text), `subtle` (light tinted bg, dark text)
+- Sizes: default (`py-[2px] px-[8px] text-xs font-bold`), small (`py-[1px] px-[6px] text-[10px] font-bold`)
+- Colors: blue (`#4573D2`), green (`#028465`), yellow (`#FFBD3B`), red (`#CE3F42`), neutral (`#EBEBEB`), dark (`#29283E`), purple (`#6542D1`), magenta (`#CF49AA`), brown (`#73503B`), orange (`#F99702`)
+- Subtle backgrounds: blue `#DEEBFF`, green `#CDF0E7`, yellow `#FFF1C3`, red `#FFDAD2`, neutral `#F5F5F5`, purple `#EDE8FF`, magenta `#FFE1F5`, brown `#F0E0D4`, orange `#FFEED0`
+
+### BadgeDot — 8px colored status dot
+- Size: `w-2 h-2 rounded-full`
+- Same 10 color options as Badge
+
+### BadgeIcon — small status icon circle
+- Sizes: 20px and 16px diameter circles
+- Types: info (blue, `circle-information`), success (green, `circle-tick`), warning (yellow, `warning`), error (red, `circle-warning`), neutral (grey, `questionmark`)
+- Variants: default (filled circle), subtle (outlined)
+
+### LinkText — styled text link
+- Color: `#4573D2`, hover `#2B57B4`, underlined
+- Sizes: small (`text-xs leading-4`), medium (`text-sm leading-5`), large (`text-base leading-6`)
+- Weights: regular (400), bold (700)
+
+### Spinner — loading indicator
+- Color: `#4573D2`
+- Sizes: 12px, 20px, 24px, 40px
+- Animation: `spin 1s linear infinite`
+- Optional text label below (only with size 40)
+
+### SkeletonLoader — shimmer placeholder
+- Variants: text block, card, table-row
+- Colors: base `#EBEBEB`, highlight `#F5F5F5`
+- Animation: shimmer gradient moving left to right, 1.5s ease-in-out infinite
+- Border radius: `rounded-[4px]`
+
+### Toast — temporary notification
+- Variants: compact (small pill), wide (384px panel)
+- Types: success (`#CDF0E7`), error (`#FFDAD2`), warning (`#FFF1C3`), info (`#DEEBFF`), neutral (`#EBEBEB`)
+- Icons: success=`circle-tick`, error=`circle-warning`, warning=`warning`, info=`circle-information`
+- Styling: `rounded-[8px]`, elevation Dark E1 shadow, dismiss X button
+- Compact: `pl-[9px] pr-[6px] py-[11px]`, Wide: `w-[384px] p-[12px]`
+
+### Alert — full-width inline alert
+- Types: info, success, warning, error, neutral (same colors as Toast)
+- Styling: `w-full p-[12px] rounded-[8px]`, icon + title + close button
+- Same iconMapping as Toast
+
+### Banner — prominent notification bar
+- Types: information, success, warning, error
+- Width: `w-[600px]`, left border accent: `border-l-4`
+- Colors: info (`#DEEBFF` bg, `#4573D2` border), success (`#CDF0E7` bg, `#028465` border), warning (`#FFF1C3` bg, `#FFBD3B` border), error (`#FFDAD2` bg, `#CE3F42` border)
+- Styling: `p-4 rounded-[4px]`, icon + title + description + close button
+
+### Callout — contextual help tooltip
+- Variants: compact (title only), description (title + body)
+- Arrow directions: top, bottom, left, right
+- Width: `352px`, white bg, `rounded-[8px]`, elevation Dark E1 shadow
+- Padding: `12px 16px`
+
+### Tour — onboarding step tooltip
+- Similar to Callout but with Back/Next navigation buttons and step counter
+- Width: `352px`, white bg, `rounded-[8px]`, elevation Dark E1 shadow
+- Next button: primary blue (`#4573D2`), Back button: discrete text (`#4573D2`)
+- Step counter: "Step N of M"
+
+### Popover — floating content panel
+- Positions: top, bottom, left, right (with directional arrow)
+- Blue bg (`#4573D2`), white text, `rounded-[8px]`, elevation Dark E1 shadow
+- Padding: `12px 16px`
+
+### TableRow — enhanced interactive row
+- Features: selectable (checkbox), expandable (chevron), inline status badges
+- Row height: 40px, hover bg: `rgba(0,99,255,0.05)`, selected bg: `rgba(0,99,255,0.1)`
+- Divider: `shadow-[inset_0_-1px_0_0_#DDDDDD]`
+- Expand icons: `chevron-right` (collapsed) / `chevron-down` (expanded)
+
 ## 7. Layout conventions
 
 - Use **Form** component to wrap related form fields

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opret faktura — e-conomic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    button { font-weight: 400; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C] text-sm leading-5">
+
+  <!-- TopNavigation -->
+  <nav class="h-16 bg-[#29283E] flex items-center px-4 gap-2 relative z-50">
+    <div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
+      <img src="../logos/orange-logo.svg" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+    </div>
+    <div class="flex items-center gap-1 ml-2">
+      <a href="dashboard.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Hjem</a>
+      <a href="invoices.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm bg-[rgba(255,255,255,0.08)]">Salg</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Regnskab</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Rapporter</a>
+    </div>
+    <div class="ml-auto flex items-center gap-3">
+      <div class="relative" id="agreement-wrapper">
+        <button id="agreement-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">
+          <span>Demo Virksomhed ApS</span>
+          <svg class="w-4 h-4 transition-transform" id="agreement-chevron" viewBox="0 0 24 24" fill="white"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+        </button>
+        <div id="agreement-dropdown" class="hidden absolute right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[220px]">
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Demo Virksomhed ApS</div>
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Test Firma A/S</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex min-h-[calc(100vh-64px)]">
+    <!-- SideNavigation -->
+    <aside class="w-[200px] bg-[#F6F6F6] shadow-[1px_0_0_0_#DDDDDD] shrink-0 py-2">
+      <a href="invoices.html" class="flex items-center gap-2 px-4 py-2 text-sm bg-[#EBEBEB] text-[#1C1C1C] font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Fakturaer
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Tilbud
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Ordrer
+      </a>
+      <a href="customer.html" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M12 4a4 4 0 100 8 4 4 0 000-8zM6.5 8a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0zM12 14.5c-4.694 0-8.5 2.243-8.5 5v.5h17v-.5c0-2.757-3.806-5-8.5-5z" fill-rule="evenodd"/></svg>
+        Kunder
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6z" fill-rule="evenodd"/></svg>
+        Produkter
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto">
+      <div class="flex items-center gap-2 mb-4">
+        <a href="invoices.html" class="text-[#4573D2] hover:text-[#2B57B4] text-xs">&larr; Tilbage til fakturaer</a>
+      </div>
+      <h2 class="text-xl font-bold mb-6">Opret faktura</h2>
+
+      <!-- Form -->
+      <div class="bg-white rounded-[4px] p-6 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)] mb-6">
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Left column -->
+          <div class="flex flex-col gap-4">
+            <!-- Customer Combobox -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Kunde</label>
+              <div class="relative" id="customer-combo-wrapper">
+                <input type="text" id="customer-input" placeholder="Soeg kunde..." class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2] placeholder:text-[#ACACAC]" autocomplete="off" />
+                <svg class="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none transition-transform" id="customer-chevron" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+                <div id="customer-dropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 max-h-[200px] overflow-y-auto">
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Novo Nordisk A/S</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Matas A/S</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Vestas Wind Systems</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Carlsberg A/S</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Maersk A/S</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">DSV Panalpina</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Coloplast A/S</div>
+                  <div class="combo-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Pandora A/S</div>
+                </div>
+              </div>
+            </div>
+            <!-- Invoice number -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Fakturanummer</label>
+              <input type="text" value="1048" disabled class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] bg-[#F6F6F6] opacity-50 cursor-not-allowed" />
+            </div>
+            <!-- Invoice date -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Fakturadato</label>
+              <input type="date" value="2026-04-15" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" />
+            </div>
+            <!-- Due date -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Forfaldsdato</label>
+              <input type="date" value="2026-04-29" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" />
+            </div>
+            <!-- Payment terms -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Betalingsbetingelser</label>
+              <div class="relative" id="payment-wrapper">
+                <div role="button" id="payment-trigger" class="flex items-center justify-between w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] cursor-pointer bg-white hover:border-[#ACACAC]">
+                  <span id="payment-value">Netto 14 dage</span>
+                  <svg class="w-5 h-5 transition-transform" id="payment-chevron" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+                </div>
+                <div id="payment-dropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50">
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 8 dage</div>
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 14 dage</div>
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 30 dage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div class="flex flex-col gap-4">
+            <!-- Currency -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Valuta</label>
+              <div class="relative" id="currency-wrapper">
+                <div role="button" id="currency-trigger" class="flex items-center justify-between w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] cursor-pointer bg-white hover:border-[#ACACAC]">
+                  <span id="currency-value">DKK</span>
+                  <svg class="w-5 h-5 transition-transform" id="currency-chevron" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+                </div>
+                <div id="currency-dropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50">
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">DKK</div>
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">EUR</div>
+                  <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">USD</div>
+                </div>
+              </div>
+            </div>
+            <!-- Notes -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-1">Bemaeerkninger</label>
+              <textarea class="w-full px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2] placeholder:text-[#ACACAC] resize-y" rows="3" placeholder="Tilfoej bemaeerkninger..."></textarea>
+            </div>
+            <!-- Send automatically -->
+            <div class="flex items-center justify-between">
+              <label class="text-xs leading-4 font-bold">Send automatisk</label>
+              <button id="auto-switch" class="relative w-10 h-5 rounded-full bg-[#DDDDDD] transition-colors" role="switch" aria-checked="false">
+                <span class="switch-thumb absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform"></span>
+              </button>
+            </div>
+            <!-- Delivery method -->
+            <div>
+              <label class="text-xs leading-4 font-bold block mb-2">Leveringsmetode</label>
+              <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="delivery" value="email" checked class="w-4 h-4 accent-[#4573D2]" />
+                  <span class="text-sm">Email</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="delivery" value="print" class="w-4 h-4 accent-[#4573D2]" />
+                  <span class="text-sm">Print</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="delivery" value="ean" class="w-4 h-4 accent-[#4573D2]" />
+                  <span class="text-sm">EAN</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Invoice Lines -->
+      <div class="bg-white rounded-[4px] p-6 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)] mb-6">
+        <h3 class="font-bold mb-3">Fakturalinjer</h3>
+        <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+          <table class="w-full border-collapse" id="lines-table">
+            <thead>
+              <tr class="border-b-2 border-[#DDDDDD]">
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C] w-[200px]">Produkt</th>
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Beskrivelse</th>
+                <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C] w-[80px]">Antal</th>
+                <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C] w-[100px]">Enhedspris</th>
+                <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C] w-[80px]">Rabat %</th>
+                <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C] w-[100px]">Beloeb</th>
+                <th class="w-10"></th>
+              </tr>
+            </thead>
+            <tbody id="lines-body">
+              <tr class="shadow-[inset_0_-1px_0_0_#DDDDDD]">
+                <td class="px-3 py-2"><input type="text" value="Konsulentydelse" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+                <td class="px-3 py-2"><input type="text" value="Strategisk raadgivning - april" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+                <td class="px-3 py-2"><input type="number" value="10" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-qty" /></td>
+                <td class="px-3 py-2"><input type="number" value="1500" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-price" /></td>
+                <td class="px-3 py-2"><input type="number" value="0" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-disc" /></td>
+                <td class="px-3 py-2 text-right font-bold line-amount">15.000,00</td>
+                <td class="px-2 py-2">
+                  <button class="remove-line inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Fjern linje">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5538 6.39705C16.8474 6.1792 17.2641 6.2034 17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L13.061 12L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2641 17.7966 16.8474 17.8208 16.5538 17.6029L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L10.939 12L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967L16.5538 6.39705Z" /></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="shadow-[inset_0_-1px_0_0_#DDDDDD]">
+                <td class="px-3 py-2"><input type="text" value="Software licens" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+                <td class="px-3 py-2"><input type="text" value="Enterprise licens - maanedlig" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+                <td class="px-3 py-2"><input type="number" value="1" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-qty" /></td>
+                <td class="px-3 py-2"><input type="number" value="4500" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-price" /></td>
+                <td class="px-3 py-2"><input type="number" value="10" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-disc" /></td>
+                <td class="px-3 py-2 text-right font-bold line-amount">4.050,00</td>
+                <td class="px-2 py-2">
+                  <button class="remove-line inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Fjern linje">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5538 6.39705C16.8474 6.1792 17.2641 6.2034 17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L13.061 12L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2641 17.7966 16.8474 17.8208 16.5538 17.6029L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L10.939 12L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967L16.5538 6.39705Z" /></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button id="add-line" class="mt-3 text-sm text-[#4573D2] hover:text-[#2B57B4]">+ Tilfoej linje</button>
+      </div>
+
+      <!-- Footer Totals & Actions -->
+      <div class="bg-white rounded-[4px] p-6 shadow-[0px_1px_2px_rgba(47,51,68,0.1),0px_1px_3px_rgba(47,51,68,0.1)]">
+        <div class="flex justify-end mb-4">
+          <div class="w-[280px]">
+            <div class="flex justify-between py-1"><span class="text-[#595959]">Subtotal</span><span id="subtotal" class="font-bold">19.050,00</span></div>
+            <div class="flex justify-between py-1"><span class="text-[#595959]">Moms 25%</span><span id="vat" class="font-bold">4.762,50</span></div>
+            <div class="flex justify-between py-2 border-t border-[#DDDDDD] mt-1"><span class="font-bold text-base">Total</span><span id="total" class="font-bold text-base">23.812,50</span></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <button id="delete-btn" class="px-4 py-[6px] rounded-[4px] bg-[#CE3F42] text-white text-sm hover:bg-[#950027] transition-colors">Slet</button>
+            <a href="invoices.html" class="px-4 py-[6px] rounded-[4px] text-sm text-[#4573D2] hover:bg-[#DEEBFF] transition-colors">Annuller</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="px-4 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Gem som kladde</button>
+            <button class="px-4 py-[6px] rounded-[4px] bg-[#4573D2] text-white text-sm hover:bg-[#2B57B4] transition-colors">Send faktura</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- AlertDialog (Delete confirmation) -->
+  <div id="alert-overlay" class="hidden fixed inset-0 bg-black/40 z-[100] flex items-center justify-center">
+    <div class="bg-white rounded-[4px] p-6 shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)] max-w-[400px] w-full mx-4">
+      <h3 class="text-base font-bold mb-2">Slet faktura?</h3>
+      <p class="text-sm text-[#595959] mb-6">Er du sikker paa, at du vil slette denne faktura? Denne handling kan ikke fortrydes.</p>
+      <div class="flex items-center justify-end gap-2">
+        <button id="alert-cancel" class="px-4 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Annuller</button>
+        <button id="alert-confirm" class="px-4 py-[6px] rounded-[4px] bg-[#CE3F42] text-white text-sm hover:bg-[#950027] transition-colors">Slet</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Customer combobox
+    const custInput = document.getElementById('customer-input');
+    const custDd = document.getElementById('customer-dropdown');
+    const custChev = document.getElementById('customer-chevron');
+    custInput.addEventListener('focus', () => { custDd.classList.remove('hidden'); custChev.classList.add('rotate-180'); });
+    custInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      custDd.querySelectorAll('.combo-opt').forEach(opt => {
+        opt.style.display = opt.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+      custDd.classList.remove('hidden');
+    });
+    custDd.querySelectorAll('.combo-opt').forEach(opt => opt.addEventListener('click', () => {
+      custInput.value = opt.textContent;
+      custDd.classList.add('hidden');
+      custChev.classList.remove('rotate-180');
+    }));
+    document.addEventListener('click', e => {
+      if (!document.getElementById('customer-combo-wrapper').contains(e.target)) {
+        custDd.classList.add('hidden');
+        custChev.classList.remove('rotate-180');
+      }
+    });
+
+    // Generic Select helper
+    function initSelect(wrapperId, triggerId, valueId, chevronId, dropdownId) {
+      const wrapper = document.getElementById(wrapperId);
+      const trigger = document.getElementById(triggerId);
+      const valueEl = document.getElementById(valueId);
+      const chevron = document.getElementById(chevronId);
+      const dropdown = document.getElementById(dropdownId);
+      trigger.addEventListener('click', () => { dropdown.classList.toggle('hidden'); chevron.classList.toggle('rotate-180'); });
+      document.addEventListener('click', e => {
+        if (!wrapper.contains(e.target)) { dropdown.classList.add('hidden'); chevron.classList.remove('rotate-180'); }
+      });
+      dropdown.querySelectorAll('.select-opt').forEach(opt => opt.addEventListener('click', () => {
+        valueEl.textContent = opt.textContent;
+        dropdown.classList.add('hidden');
+        chevron.classList.remove('rotate-180');
+      }));
+    }
+    initSelect('payment-wrapper', 'payment-trigger', 'payment-value', 'payment-chevron', 'payment-dropdown');
+    initSelect('currency-wrapper', 'currency-trigger', 'currency-value', 'currency-chevron', 'currency-dropdown');
+
+    // Switch
+    const sw = document.getElementById('auto-switch');
+    sw.addEventListener('click', () => {
+      const on = sw.getAttribute('aria-checked') === 'true';
+      sw.setAttribute('aria-checked', !on);
+      sw.style.backgroundColor = !on ? '#4573D2' : '#DDDDDD';
+      sw.querySelector('.switch-thumb').style.transform = !on ? 'translateX(20px)' : 'translateX(0)';
+    });
+
+    // Calculate line amounts
+    function recalc() {
+      let subtotal = 0;
+      document.querySelectorAll('#lines-body tr').forEach(row => {
+        const qty = parseFloat(row.querySelector('.line-qty')?.value) || 0;
+        const price = parseFloat(row.querySelector('.line-price')?.value) || 0;
+        const disc = parseFloat(row.querySelector('.line-disc')?.value) || 0;
+        const amount = qty * price * (1 - disc / 100);
+        subtotal += amount;
+        const amountEl = row.querySelector('.line-amount');
+        if (amountEl) amountEl.textContent = amount.toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      });
+      const vat = subtotal * 0.25;
+      document.getElementById('subtotal').textContent = subtotal.toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('vat').textContent = vat.toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('total').textContent = (subtotal + vat).toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    document.getElementById('lines-table').addEventListener('input', recalc);
+
+    // Add line
+    document.getElementById('add-line').addEventListener('click', () => {
+      const tr = document.createElement('tr');
+      tr.className = 'shadow-[inset_0_-1px_0_0_#DDDDDD]';
+      tr.innerHTML = `
+        <td class="px-3 py-2"><input type="text" placeholder="Produkt" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+        <td class="px-3 py-2"><input type="text" placeholder="Beskrivelse" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></td>
+        <td class="px-3 py-2"><input type="number" value="1" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-qty" /></td>
+        <td class="px-3 py-2"><input type="number" value="0" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-price" /></td>
+        <td class="px-3 py-2"><input type="number" value="0" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] text-right focus:outline-none focus:border-[#4573D2] line-disc" /></td>
+        <td class="px-3 py-2 text-right font-bold line-amount">0,00</td>
+        <td class="px-2 py-2">
+          <button class="remove-line inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Fjern linje">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5538 6.39705C16.8474 6.1792 17.2641 6.2034 17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L13.061 12L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2641 17.7966 16.8474 17.8208 16.5538 17.6029L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L10.939 12L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967L16.5538 6.39705Z" /></svg>
+          </button>
+        </td>`;
+      document.getElementById('lines-body').appendChild(tr);
+    });
+
+    // Remove line (event delegation)
+    document.getElementById('lines-body').addEventListener('click', e => {
+      const btn = e.target.closest('.remove-line');
+      if (btn) { btn.closest('tr').remove(); recalc(); }
+    });
+
+    // AlertDialog
+    const alertOverlay = document.getElementById('alert-overlay');
+    document.getElementById('delete-btn').addEventListener('click', () => alertOverlay.classList.remove('hidden'));
+    document.getElementById('alert-cancel').addEventListener('click', () => alertOverlay.classList.add('hidden'));
+    document.getElementById('alert-confirm').addEventListener('click', () => { alertOverlay.classList.add('hidden'); window.location.href = 'invoices.html'; });
+    alertOverlay.addEventListener('click', e => { if (e.target === alertOverlay) alertOverlay.classList.add('hidden'); });
+
+    // Agreement dropdown
+    const agreeBtn = document.getElementById('agreement-btn');
+    const agreeDd = document.getElementById('agreement-dropdown');
+    const agreeChev = document.getElementById('agreement-chevron');
+    agreeBtn.addEventListener('click', () => { agreeDd.classList.toggle('hidden'); agreeChev.classList.toggle('rotate-180'); });
+    document.addEventListener('click', e => {
+      if (!document.getElementById('agreement-wrapper').contains(e.target)) { agreeDd.classList.add('hidden'); agreeChev.classList.remove('rotate-180'); }
+    });
+  </script>
+</body>
+</html>

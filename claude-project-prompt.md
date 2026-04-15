@@ -114,9 +114,10 @@ The TopNavigation bar often contains company/agreement selectors and menu dropdo
 ## Component categories available
 
 - **Inputs** — Button, IconButton, Field, Textarea, Combobox, Select, SearchInput, Switch, Checkbox, RadioGroup
-- **Display** — Tag, Tooltip, ListItem, ListGroup, TableRow
+- **Display** — Tag, Tooltip, ListItem, ListGroup, TableRow, Badge, BadgeDot, BadgeIcon, LinkText
 - **Navigation** — Tabs, Drawer, Pagination, Calendar, DatePicker, ModeSwitch, SideNavigation, TopNavigation
-- **Feedback** — Accordion, AlertDialog, ModalDialog
+- **Feedback** — Accordion, AlertDialog, ModalDialog, Toast, Alert, Banner, Callout, Tour, Popover
+- **Loading** — Spinner, SkeletonLoader
 - **Lists** — CardList, CardListItem, ListIcon, Status
 - **Layout** — Form, FormGrid
 - **Dashboard** — DashboardCard, DashboardHoverCard, CardInfoBox, ChartHeader, ChartLegend, AxisLabels, LegendBar

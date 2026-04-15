@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundedetaljer — e-conomic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    button { font-weight: 400; }
+    .switch-thumb { transition: transform 0.2s; }
+  </style>
+</head>
+<body class="bg-white text-[#1C1C1C] text-sm leading-5">
+
+  <!-- TopNavigation -->
+  <nav class="h-16 bg-[#29283E] flex items-center px-4 gap-2 relative z-50">
+    <div class="flex items-center justify-center px-[8px] shrink-0 w-[48px] h-[36px] rounded-[4px]">
+      <img src="../logos/orange-logo.svg" alt="e-conomic" class="shrink-0" style="height:28px;width:28px;object-fit:contain;">
+    </div>
+    <div class="flex items-center gap-1 ml-2">
+      <a href="dashboard.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Hjem</a>
+      <a href="invoices.html" class="px-3 py-1.5 rounded-[4px] text-white text-sm bg-[rgba(255,255,255,0.08)]">Salg</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Regnskab</a>
+      <a href="#" class="px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">Rapporter</a>
+    </div>
+    <div class="ml-auto flex items-center gap-3">
+      <div class="relative" id="agreement-wrapper">
+        <button id="agreement-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-white text-sm hover:bg-[rgba(255,255,255,0.08)] transition-colors">
+          <span>Demo Virksomhed ApS</span>
+          <svg class="w-4 h-4 transition-transform" id="agreement-chevron" viewBox="0 0 24 24" fill="white"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+        </button>
+        <div id="agreement-dropdown" class="hidden absolute right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[220px]">
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Demo Virksomhed ApS</div>
+          <div class="px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1 text-[#1C1C1C]">Test Firma A/S</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex min-h-[calc(100vh-64px)]">
+    <!-- SideNavigation -->
+    <aside class="w-[200px] bg-[#F6F6F6] shadow-[1px_0_0_0_#DDDDDD] shrink-0 py-2">
+      <a href="invoices.html" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Fakturaer
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Tilbud
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M13.586 2a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707v8.836A1.75 1.75 0 0118.25 19h-9.5A1.75 1.75 0 017 17.25V3.75C7 2.784 7.784 2 8.75 2h4.836z" fill-rule="evenodd"/></svg>
+        Ordrer
+      </a>
+      <a href="customer.html" class="flex items-center gap-2 px-4 py-2 text-sm bg-[#EBEBEB] text-[#1C1C1C] font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#1C1C1C"><path d="M12 4a4 4 0 100 8 4 4 0 000-8zM6.5 8a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0zM12 14.5c-4.694 0-8.5 2.243-8.5 5v.5h17v-.5c0-2.757-3.806-5-8.5-5z" fill-rule="evenodd"/></svg>
+        Kunder
+      </a>
+      <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#595959] hover:bg-[#EBEBEB]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#595959"><path d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6z" fill-rule="evenodd"/></svg>
+        Produkter
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto">
+      <!-- Customer Header -->
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-bold" id="cust-name">Novo Nordisk A/S</h2>
+          <div class="flex items-center gap-4 mt-1 text-sm text-[#595959]">
+            <span>CVR: 24256790</span>
+            <span>kontakt@novonordisk.com</span>
+            <span>+45 4444 8888</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="send-reminder-btn" class="px-4 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Send paamindelse</button>
+          <button id="edit-customer-btn" class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#DDDDDD] bg-white hover:bg-[#EBEBEB] transition-colors" aria-label="Rediger kunde">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20.25 20.5a.75.75 0 110 1.5H3.75a.75.75 0 110-1.5h16.5zM16.013 2.927a1.75 1.75 0 012.35-.114l.124.114 1.586 1.586a1.75 1.75 0 01.114 2.35l-.114.124L8.061 19H4v-4.06L16.013 2.926zM14.499 6.56l-8.999 9v1.94h1.938l9-9-1.939-1.94zm2.928-2.573a.25.25 0 00-.3-.04l-.054.04L15.56 5.5l1.939 1.94 1.514-1.512a.25.25 0 00.065-.24l-.025-.06-.04-.054-1.586-1.586z" fill-rule="evenodd"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex items-center gap-0 mb-6 shadow-[inset_0_-2px_0_0_#DDDDDD]">
+        <button class="tab-btn px-4 py-2 text-sm shadow-[inset_0_-2px_0_0_#4573D2] text-[#4573D2]" data-tab="invoices">Fakturaer</button>
+        <button class="tab-btn px-4 py-2 text-sm text-[#595959] hover:text-[#1C1C1C]" data-tab="quotes">Tilbud</button>
+        <button class="tab-btn px-4 py-2 text-sm text-[#595959] hover:text-[#1C1C1C]" data-tab="activity">Aktivitet</button>
+      </div>
+
+      <!-- Invoices Tab -->
+      <div id="tab-invoices" class="tab-content">
+        <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+          <table class="w-full border-collapse min-w-[800px]">
+            <thead>
+              <tr class="border-b-2 border-[#DDDDDD]">
+                <th class="w-10 px-2 py-2">
+                  <button id="expand-all-btn" class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Expand all">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967C16.7359 6.2034 17.1526 6.1792 17.4462 6.39705L17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L12.5303 12.5303C12.2641 12.7966 11.8474 12.8208 11.5538 12.6029L11.4697 12.5303L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967ZM6.46967 11.4697C6.73594 11.2034 7.1526 11.1792 7.44621 11.3971L7.53033 11.4697L12 15.939L16.4697 11.4697C16.7359 11.2034 17.1526 11.1792 17.4462 11.3971L17.5303 11.4697C17.7966 11.7359 17.8208 12.1526 17.6029 12.4462L17.5303 12.5303L12.5303 17.5303C12.2641 17.7966 11.8474 17.8208 11.5538 17.6029L11.4697 17.5303L6.46967 12.5303C6.17678 12.2374 6.17678 11.7626 6.46967 11.4697Z" /></svg>
+                  </button>
+                </th>
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Faktura #</th>
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Dato</th>
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Forfaldsdato</th>
+                <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C]">Beloeb</th>
+                <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Status</th>
+              </tr>
+            </thead>
+            <tbody id="inv-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Quotes Tab -->
+      <div id="tab-quotes" class="tab-content hidden">
+        <!-- Accepted group -->
+        <div class="mb-4">
+          <div class="flex items-center gap-2 py-2 px-3 bg-[#F6F6F6] rounded-[4px] mb-1 cursor-pointer quote-group-header" data-group="accepted">
+            <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            <span class="text-xs font-bold text-[#1C1C1C]">Accepteret (3)</span>
+          </div>
+          <div class="quote-group-body" data-group-body="accepted">
+            <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead><tr class="border-b-2 border-[#DDDDDD]">
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Tilbud #</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Dato</th>
+                  <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C]">Beloeb</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Status</th>
+                </tr></thead>
+                <tbody>
+                  <tr class="shadow-[inset_0_-1px_0_0_#DDDDDD] hover:bg-[#FAFAFA]"><td class="px-3 py-2">312</td><td class="px-3 py-2">13.04.2026</td><td class="px-3 py-2 text-right">145.000,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">Accepteret</span></td></tr>
+                  <tr class="shadow-[inset_0_-1px_0_0_#DDDDDD] hover:bg-[#FAFAFA]"><td class="px-3 py-2">298</td><td class="px-3 py-2">02.03.2026</td><td class="px-3 py-2 text-right">87.500,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">Accepteret</span></td></tr>
+                  <tr class="hover:bg-[#FAFAFA]"><td class="px-3 py-2">281</td><td class="px-3 py-2">15.01.2026</td><td class="px-3 py-2 text-right">210.000,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#CDF0E7] text-[#08AE87]">Accepteret</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Pending group -->
+        <div class="mb-4">
+          <div class="flex items-center gap-2 py-2 px-3 bg-[#F6F6F6] rounded-[4px] mb-1 cursor-pointer quote-group-header" data-group="pending">
+            <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            <span class="text-xs font-bold text-[#1C1C1C]">Afventer (2)</span>
+          </div>
+          <div class="quote-group-body" data-group-body="pending">
+            <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead><tr class="border-b-2 border-[#DDDDDD]">
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Tilbud #</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Dato</th>
+                  <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C]">Beloeb</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Status</th>
+                </tr></thead>
+                <tbody>
+                  <tr class="shadow-[inset_0_-1px_0_0_#DDDDDD] hover:bg-[#FAFAFA]"><td class="px-3 py-2">318</td><td class="px-3 py-2">14.04.2026</td><td class="px-3 py-2 text-right">52.000,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFF1C3] text-[#FFBD3B]">Afventer</span></td></tr>
+                  <tr class="hover:bg-[#FAFAFA]"><td class="px-3 py-2">315</td><td class="px-3 py-2">10.04.2026</td><td class="px-3 py-2 text-right">38.000,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFF1C3] text-[#FFBD3B]">Afventer</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Declined group -->
+        <div>
+          <div class="flex items-center gap-2 py-2 px-3 bg-[#F6F6F6] rounded-[4px] mb-1 cursor-pointer quote-group-header" data-group="declined">
+            <svg class="w-6 h-6 transition-transform rotate-[-90deg]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            <span class="text-xs font-bold text-[#1C1C1C]">Afvist (1)</span>
+          </div>
+          <div class="quote-group-body hidden" data-group-body="declined">
+            <div class="border border-[#DDDDDD] rounded-[4px] overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead><tr class="border-b-2 border-[#DDDDDD]">
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Tilbud #</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Dato</th>
+                  <th class="px-3 py-2 text-right text-xs font-bold text-[#1C1C1C]">Beloeb</th>
+                  <th class="px-3 py-2 text-left text-xs font-bold text-[#1C1C1C]">Status</th>
+                </tr></thead>
+                <tbody>
+                  <tr class="hover:bg-[#FAFAFA]"><td class="px-3 py-2">275</td><td class="px-3 py-2">20.12.2025</td><td class="px-3 py-2 text-right">175.000,00</td><td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs bg-[#FFDAD2] text-[#CE3F42]">Afvist</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Tab -->
+      <div id="tab-activity" class="tab-content hidden">
+        <div class="flex flex-col gap-2">
+          <div class="accordion-item border border-[#DDDDDD] rounded-[4px]">
+            <button class="accordion-trigger flex items-center justify-between w-full px-4 py-3 text-left hover:bg-[#FAFAFA]">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-[#595959]">15.04.2026</span>
+                <span class="font-bold text-sm">Faktura #1046 betalt</span>
+              </div>
+              <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            </button>
+            <div class="accordion-content hidden px-4 pb-3 text-sm text-[#595959]">Beloeb: 85.000,00 DKK. Betalt via bankoverfoersel. Reference: NNO-2026-1046.</div>
+          </div>
+          <div class="accordion-item border border-[#DDDDDD] rounded-[4px]">
+            <button class="accordion-trigger flex items-center justify-between w-full px-4 py-3 text-left hover:bg-[#FAFAFA]">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-[#595959]">14.04.2026</span>
+                <span class="font-bold text-sm">Faktura #1047 sendt</span>
+              </div>
+              <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            </button>
+            <div class="accordion-content hidden px-4 pb-3 text-sm text-[#595959]">Sendt til kontakt@novonordisk.com via email. Beloeb: 12.500,00 DKK. Forfaldsdato: 29.04.2026.</div>
+          </div>
+          <div class="accordion-item border border-[#DDDDDD] rounded-[4px]">
+            <button class="accordion-trigger flex items-center justify-between w-full px-4 py-3 text-left hover:bg-[#FAFAFA]">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-[#595959]">13.04.2026</span>
+                <span class="font-bold text-sm">Tilbud #312 accepteret</span>
+              </div>
+              <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            </button>
+            <div class="accordion-content hidden px-4 pb-3 text-sm text-[#595959]">Tilbud #312 paa 145.000,00 DKK blev accepteret af kunden. Konverteret til faktura.</div>
+          </div>
+          <div class="accordion-item border border-[#DDDDDD] rounded-[4px]">
+            <button class="accordion-trigger flex items-center justify-between w-full px-4 py-3 text-left hover:bg-[#FAFAFA]">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-[#595959]">01.04.2026</span>
+                <span class="font-bold text-sm">Kunde opdateret</span>
+              </div>
+              <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            </button>
+            <div class="accordion-content hidden px-4 pb-3 text-sm text-[#595959]">Kontaktoplysninger opdateret. Nyt telefonnummer tilfojet. Betalingsbetingelser aendret til Netto 14 dage.</div>
+          </div>
+          <div class="accordion-item border border-[#DDDDDD] rounded-[4px]">
+            <button class="accordion-trigger flex items-center justify-between w-full px-4 py-3 text-left hover:bg-[#FAFAFA]">
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-[#595959]">15.03.2026</span>
+                <span class="font-bold text-sm">Paamindelse sendt</span>
+              </div>
+              <svg class="w-6 h-6 transition-transform" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+            </button>
+            <div class="accordion-content hidden px-4 pb-3 text-sm text-[#595959]">Betalingspaemindelse sendt for Faktura #1032. Forfalden 5 dage. Beloeb: 67.500,00 DKK.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Drawer (Edit Customer) -->
+  <div id="drawer-overlay" class="hidden fixed inset-0 bg-black/40 z-[100]">
+    <div id="drawer-panel" class="absolute right-0 top-0 bottom-0 w-[400px] bg-white shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)] p-6 overflow-y-auto transform translate-x-full transition-transform duration-300">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-base font-bold">Rediger kunde</h3>
+        <button id="drawer-close" class="inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" aria-label="Luk">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5538 6.39705C16.8474 6.1792 17.2641 6.2034 17.5303 6.46967C17.7966 6.73594 17.8208 7.1526 17.6029 7.44621L17.5303 7.53033L13.061 12L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2641 17.7966 16.8474 17.8208 16.5538 17.6029L16.4697 17.5303L12 13.061L7.53033 17.5303L7.44621 17.6029C7.1526 17.8208 6.73594 17.7966 6.46967 17.5303C6.2034 17.2641 6.1792 16.8474 6.39705 16.5538L6.46967 16.4697L10.939 12L6.46967 7.53033C6.17678 7.23744 6.17678 6.76256 6.46967 6.46967C6.73594 6.2034 7.1526 6.1792 7.44621 6.39705L7.53033 6.46967L12 10.939L16.4697 6.46967L16.5538 6.39705Z" /></svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div><label class="text-xs font-bold block mb-1">Firmanavn</label><input type="text" value="Novo Nordisk A/S" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></div>
+        <div><label class="text-xs font-bold block mb-1">CVR-nummer</label><input type="text" value="24256790" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></div>
+        <div><label class="text-xs font-bold block mb-1">Email</label><input type="email" value="kontakt@novonordisk.com" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></div>
+        <div><label class="text-xs font-bold block mb-1">Telefon</label><input type="tel" value="+45 4444 8888" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" /></div>
+        <div><label class="text-xs font-bold block mb-1">Adresse</label><textarea class="w-full px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" rows="2">Novo Alle 1, 2880 Bagsvaerd</textarea></div>
+        <div>
+          <label class="text-xs font-bold block mb-1">Betalingsbetingelser</label>
+          <div class="relative" id="drawer-payment-wrapper">
+            <div role="button" id="drawer-payment-trigger" class="flex items-center justify-between w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] cursor-pointer bg-white">
+              <span id="drawer-payment-value">Netto 14 dage</span>
+              <svg class="w-5 h-5 transition-transform" id="drawer-payment-chevron" viewBox="0 0 24 24" fill="#595959"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>
+            </div>
+            <div id="drawer-payment-dropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50">
+              <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 8 dage</div>
+              <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 14 dage</div>
+              <div class="select-opt px-2 py-1.5 text-sm cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1">Netto 30 dage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-2 mt-8">
+        <button id="drawer-cancel" class="px-4 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Annuller</button>
+        <button id="drawer-save" class="px-4 py-[6px] rounded-[4px] bg-[#4573D2] text-white text-sm hover:bg-[#2B57B4] transition-colors">Gem</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal (Send Reminder) -->
+  <div id="modal-overlay" class="hidden fixed inset-0 bg-black/40 z-[100] flex items-center justify-center">
+    <div class="bg-white rounded-[4px] p-6 shadow-[0px_4px_8px_rgba(47,51,68,0.3),0px_8px_24px_rgba(47,51,68,0.15)] max-w-[480px] w-full mx-4">
+      <h3 class="text-base font-bold mb-4">Send paemindelse</h3>
+      <div class="mb-4">
+        <label class="text-xs font-bold block mb-1">Til</label>
+        <input type="text" value="kontakt@novonordisk.com" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" />
+      </div>
+      <div class="mb-4">
+        <label class="text-xs font-bold block mb-1">Emne</label>
+        <input type="text" value="Betalingspaemindelse - Novo Nordisk A/S" class="w-full h-8 px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2]" />
+      </div>
+      <div class="mb-6">
+        <label class="text-xs font-bold block mb-1">Besked</label>
+        <textarea class="w-full px-2 py-1.5 text-sm border border-[#DDDDDD] rounded-[4px] focus:outline-none focus:border-[#4573D2] resize-y" rows="4">Kaere Novo Nordisk,
+
+Vi goer opmaerksom paa, at nedenstaaende faktura(er) endnu ikke er betalt. Vi beder venligst om betaling hurtigst muligt.
+
+Med venlig hilsen,
+Demo Virksomhed ApS</textarea>
+      </div>
+      <div class="flex items-center justify-end gap-2">
+        <button id="modal-cancel" class="px-4 py-[6px] rounded-[4px] border border-[#DDDDDD] bg-white text-sm text-[#1C1C1C] hover:bg-[#EBEBEB] transition-colors">Annuller</button>
+        <button id="modal-send" class="px-4 py-[6px] rounded-[4px] bg-[#4573D2] text-white text-sm hover:bg-[#2B57B4] transition-colors">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Invoice data for customer
+    const custInvoices = [
+      { id: '1047', date: '15.04.2026', due: '29.04.2026', amount: '12.500,00', status: 'pending', lines: [
+        { product: 'Konsulentydelse', desc: 'Strategisk raadgivning', qty: 5, price: '2.500,00' },
+      ]},
+      { id: '1046', date: '14.04.2026', due: '28.04.2026', amount: '85.000,00', status: 'paid', lines: [
+        { product: 'Konsulentydelse', desc: 'Projektledelse Q1', qty: 20, price: '3.500,00' },
+        { product: 'Software licens', desc: 'Enterprise licens', qty: 1, price: '15.000,00' },
+      ]},
+      { id: '1038', date: '06.04.2026', due: '20.04.2026', amount: '45.600,00', status: 'overdue', lines: [
+        { product: 'Support aftale', desc: 'Premium support', qty: 12, price: '3.800,00' },
+      ]},
+      { id: '1029', date: '15.03.2026', due: '29.03.2026', amount: '67.500,00', status: 'paid', lines: [
+        { product: 'Konsulentydelse', desc: 'Workshop facilitering', qty: 9, price: '7.500,00' },
+      ]},
+      { id: '1015', date: '01.02.2026', due: '15.02.2026', amount: '125.000,00', status: 'paid', lines: [
+        { product: 'Software licens', desc: 'Enterprise licens', qty: 1, price: '75.000,00' },
+        { product: 'Implementering', desc: 'Opsaetning og konfiguration', qty: 10, price: '5.000,00' },
+      ]},
+    ];
+
+    const statusMap = {
+      paid: { label: 'Betalt', bg: 'bg-[#CDF0E7]', text: 'text-[#08AE87]' },
+      pending: { label: 'Afventer', bg: 'bg-[#FFF1C3]', text: 'text-[#FFBD3B]' },
+      overdue: { label: 'Forfalden', bg: 'bg-[#FFDAD2]', text: 'text-[#CE3F42]' }
+    };
+
+    const chevRight = '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>';
+    const chevDown = '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.46967 10.0303C6.17678 9.73744 6.17678 9.26256 6.46967 8.96967C6.73594 8.7034 7.1526 8.6792 7.44621 8.89705L7.53033 8.96967L12 13.439L16.4697 8.96967C16.7359 8.7034 17.1526 8.6792 17.4462 8.89705L17.5303 8.96967C17.7966 9.23594 17.8208 9.6526 17.6029 9.94621L17.5303 10.0303L12.5303 15.0303C12.2641 15.2966 11.8474 15.3208 11.5538 15.1029L11.4697 15.0303L6.46967 10.0303Z" /></svg>';
+
+    // Render invoice table with expandable rows
+    const invTbody = document.getElementById('inv-tbody');
+    function renderInvTable() {
+      invTbody.innerHTML = custInvoices.map(inv => {
+        const s = statusMap[inv.status];
+        let html = `<tr class="inv-row shadow-[inset_0_-1px_0_0_#DDDDDD] hover:bg-[#FAFAFA] cursor-pointer" data-inv="${inv.id}">
+          <td class="px-2 py-2 text-center"><button class="expand-btn inline-flex items-center justify-center w-8 h-8 rounded-[4px] hover:bg-[#EBEBEB]" data-inv="${inv.id}">${chevRight}</button></td>
+          <td class="px-3 py-2 text-[#4573D2]">${inv.id}</td>
+          <td class="px-3 py-2">${inv.date}</td>
+          <td class="px-3 py-2">${inv.due}</td>
+          <td class="px-3 py-2 text-right">${inv.amount}</td>
+          <td class="px-3 py-2"><span class="inline-flex items-center px-2 py-0.5 rounded-[4px] text-xs ${s.bg} ${s.text}">${s.label}</span></td>
+        </tr>`;
+        // Expansion row
+        html += `<tr class="inv-detail hidden bg-white" data-detail="${inv.id}">
+          <td colspan="6" class="px-3 py-3">
+            <table class="w-full text-xs">
+              <thead><tr class="text-[#595959]"><th class="text-left py-1 pr-4">Produkt</th><th class="text-left py-1 pr-4">Beskrivelse</th><th class="text-right py-1 pr-4">Antal</th><th class="text-right py-1">Enhedspris</th></tr></thead>
+              <tbody>${inv.lines.map(l => `<tr><td class="py-1 pr-4">${l.product}</td><td class="py-1 pr-4">${l.desc}</td><td class="py-1 pr-4 text-right">${l.qty}</td><td class="py-1 text-right">${l.price}</td></tr>`).join('')}</tbody>
+            </table>
+          </td>
+        </tr>`;
+        return html;
+      }).join('');
+    }
+    renderInvTable();
+
+    // Row expansion
+    invTbody.addEventListener('click', e => {
+      const btn = e.target.closest('.expand-btn');
+      if (!btn) return;
+      const id = btn.dataset.inv;
+      const detail = document.querySelector(`[data-detail="${id}"]`);
+      const isHidden = detail.classList.contains('hidden');
+      detail.classList.toggle('hidden');
+      btn.innerHTML = isHidden ? chevDown : chevRight;
+    });
+
+    // Expand all
+    let allExpanded = false;
+    document.getElementById('expand-all-btn').addEventListener('click', function() {
+      allExpanded = !allExpanded;
+      document.querySelectorAll('.inv-detail').forEach(d => d.classList.toggle('hidden', !allExpanded));
+      document.querySelectorAll('.expand-btn').forEach(b => b.innerHTML = allExpanded ? chevDown : chevRight);
+    });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('shadow-[inset_0_-2px_0_0_#4573D2]', 'text-[#4573D2]');
+          b.classList.add('text-[#595959]');
+        });
+        btn.classList.add('shadow-[inset_0_-2px_0_0_#4573D2]', 'text-[#4573D2]');
+        btn.classList.remove('text-[#595959]');
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.add('hidden'));
+        document.getElementById('tab-' + btn.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Quote group toggle
+    document.querySelectorAll('.quote-group-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const group = header.dataset.group;
+        const body = document.querySelector(`[data-group-body="${group}"]`);
+        const icon = header.querySelector('svg');
+        body.classList.toggle('hidden');
+        icon.classList.toggle('rotate-[-90deg]');
+      });
+    });
+
+    // Accordion
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const icon = trigger.querySelector('svg');
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+
+    // Drawer
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerPanel = document.getElementById('drawer-panel');
+    function openDrawer() {
+      drawerOverlay.classList.remove('hidden');
+      requestAnimationFrame(() => drawerPanel.style.transform = 'translateX(0)');
+    }
+    function closeDrawer() {
+      drawerPanel.style.transform = 'translateX(100%)';
+      setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
+    }
+    document.getElementById('edit-customer-btn').addEventListener('click', openDrawer);
+    document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+    document.getElementById('drawer-cancel').addEventListener('click', closeDrawer);
+    document.getElementById('drawer-save').addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', e => { if (e.target === drawerOverlay) closeDrawer(); });
+
+    // Drawer Select
+    const dpw = document.getElementById('drawer-payment-wrapper');
+    const dpt = document.getElementById('drawer-payment-trigger');
+    const dpv = document.getElementById('drawer-payment-value');
+    const dpc = document.getElementById('drawer-payment-chevron');
+    const dpd = document.getElementById('drawer-payment-dropdown');
+    dpt.addEventListener('click', () => { dpd.classList.toggle('hidden'); dpc.classList.toggle('rotate-180'); });
+    dpd.querySelectorAll('.select-opt').forEach(opt => opt.addEventListener('click', () => {
+      dpv.textContent = opt.textContent; dpd.classList.add('hidden'); dpc.classList.remove('rotate-180');
+    }));
+    document.addEventListener('click', e => { if (!dpw.contains(e.target)) { dpd.classList.add('hidden'); dpc.classList.remove('rotate-180'); } });
+
+    // Modal
+    const modalOverlay = document.getElementById('modal-overlay');
+    document.getElementById('send-reminder-btn').addEventListener('click', () => modalOverlay.classList.remove('hidden'));
+    document.getElementById('modal-cancel').addEventListener('click', () => modalOverlay.classList.add('hidden'));
+    document.getElementById('modal-send').addEventListener('click', () => modalOverlay.classList.add('hidden'));
+    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.classList.add('hidden'); });
+
+    // Agreement dropdown
+    const agreeBtn = document.getElementById('agreement-btn');
+    const agreeDd = document.getElementById('agreement-dropdown');
+    const agreeChev = document.getElementById('agreement-chevron');
+    agreeBtn.addEventListener('click', () => { agreeDd.classList.toggle('hidden'); agreeChev.classList.toggle('rotate-180'); });
+    document.addEventListener('click', e => {
+      if (!document.getElementById('agreement-wrapper').contains(e.target)) { agreeDd.classList.add('hidden'); agreeChev.classList.remove('rotate-180'); }
+    });
+  </script>
+</body>
+</html>

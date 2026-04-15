@@ -9,7 +9,6 @@
     "storybookDev": "https://design.e-conomic.ws/storybook/",
     "styling": "tailwind"
   },
-
   "components": {
     "Button": {
       "description": "Primary CTA component. Use for all clickable actions.",
@@ -20,7 +19,14 @@
       "props": {
         "appearance": {
           "type": "enum",
-          "values": ["default", "primary", "ghost", "discrete", "danger", "transparent"],
+          "values": [
+            "default",
+            "primary",
+            "ghost",
+            "discrete",
+            "danger",
+            "transparent"
+          ],
           "default": "default",
           "description": "Visual style. default=grey bg, primary=blue bg, ghost=outlined, discrete=text-only, danger=red bg, transparent=no bg"
         },
@@ -40,7 +46,12 @@
         },
         "target": {
           "type": "enum",
-          "values": ["_self", "_blank", "_parent", "_top"],
+          "values": [
+            "_self",
+            "_blank",
+            "_parent",
+            "_top"
+          ],
           "description": "Provides target for buttons being used as a link"
         },
         "tooltip": {
@@ -57,16 +68,41 @@
         }
       },
       "colorMapping": {
-        "default": { "bg": "#EBEBEB", "text": "#1C1C1C", "hoverBg": "#DDDDDD" },
-        "primary": { "bg": "#4573D2", "text": "#FFFFFF", "hoverBg": "#2B57B4" },
-        "ghost": { "bg": "#FFFFFF", "text": "#4573D2", "border": "#4573D2", "hoverBg": "#DEEBFF", "hoverBorder": "#2B57B4" },
-        "discrete": { "bg": "transparent", "text": "#4573D2", "hoverText": "#2B57B4" },
-        "danger": { "bg": "#CE3F42", "text": "#FFFFFF", "hoverBg": "#950027" },
-        "transparent": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "#EBEBEB" }
+        "default": {
+          "bg": "#EBEBEB",
+          "text": "#1C1C1C",
+          "hoverBg": "#DDDDDD"
+        },
+        "primary": {
+          "bg": "#4573D2",
+          "text": "#FFFFFF",
+          "hoverBg": "#2B57B4"
+        },
+        "ghost": {
+          "bg": "#FFFFFF",
+          "text": "#4573D2",
+          "border": "#4573D2",
+          "hoverBg": "#DEEBFF",
+          "hoverBorder": "#2B57B4"
+        },
+        "discrete": {
+          "bg": "transparent",
+          "text": "#4573D2",
+          "hoverText": "#2B57B4"
+        },
+        "danger": {
+          "bg": "#CE3F42",
+          "text": "#FFFFFF",
+          "hoverBg": "#950027"
+        },
+        "transparent": {
+          "bg": "transparent",
+          "text": "#1C1C1C",
+          "hoverBg": "#EBEBEB"
+        }
       },
       "usage": "<Button appearance=\"primary\">Save</Button>"
     },
-
     "IconButton": {
       "description": "Icon-only button for toolbar actions, close buttons, etc.",
       "figmaComponentKey": "3890c7ec1ec511c348c56ff098525cdabeb56082",
@@ -79,7 +115,14 @@
         },
         "appearance": {
           "type": "enum",
-          "values": ["default", "primary", "ghost", "discrete", "danger", "transparent"],
+          "values": [
+            "default",
+            "primary",
+            "ghost",
+            "discrete",
+            "danger",
+            "transparent"
+          ],
           "default": "default"
         },
         "rounded": {
@@ -102,16 +145,41 @@
         }
       },
       "colorMapping": {
-        "default": { "bg": "#EBEBEB", "text": "#1C1C1C", "hoverBg": "#DDDDDD" },
-        "primary": { "bg": "#4573D2", "text": "#FFFFFF", "hoverBg": "#2B57B4" },
-        "ghost": { "bg": "#FFFFFF", "text": "#4573D2", "border": "#4573D2", "hoverBg": "#DEEBFF", "hoverBorder": "#2B57B4" },
-        "discrete": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "rgba(0,0,0,0.08)" },
-        "danger": { "bg": "#CE3F42", "text": "#FFFFFF", "hoverBg": "#950027" },
-        "transparent": { "bg": "transparent", "text": "#1C1C1C", "hoverBg": "#EBEBEB" }
+        "default": {
+          "bg": "#EBEBEB",
+          "text": "#1C1C1C",
+          "hoverBg": "#DDDDDD"
+        },
+        "primary": {
+          "bg": "#4573D2",
+          "text": "#FFFFFF",
+          "hoverBg": "#2B57B4"
+        },
+        "ghost": {
+          "bg": "#FFFFFF",
+          "text": "#4573D2",
+          "border": "#4573D2",
+          "hoverBg": "#DEEBFF",
+          "hoverBorder": "#2B57B4"
+        },
+        "discrete": {
+          "bg": "transparent",
+          "text": "#1C1C1C",
+          "hoverBg": "rgba(0,0,0,0.08)"
+        },
+        "danger": {
+          "bg": "#CE3F42",
+          "text": "#FFFFFF",
+          "hoverBg": "#950027"
+        },
+        "transparent": {
+          "bg": "transparent",
+          "text": "#1C1C1C",
+          "hoverBg": "#EBEBEB"
+        }
       },
       "usage": "<IconButton icon=\"edit-simple\" aria-label=\"Edit\" />"
     },
-
     "Field": {
       "description": "Text input field with label and optional helper text. The primary input component.",
       "figmaComponentKey": "e71387414405a7583f9cf245fcf59d1ef34d4f1a",
@@ -134,7 +202,13 @@
         },
         "state": {
           "type": "enum",
-          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "values": [
+            "default",
+            "highlighted",
+            "error",
+            "disabled",
+            "read-only"
+          ],
           "default": "default"
         },
         "onChange": {
@@ -143,7 +217,6 @@
       },
       "usage": "<Field label=\"Company name\" placeholder=\"Enter name\" />"
     },
-
     "Textarea": {
       "description": "Multi-line text input for longer content.",
       "props": {
@@ -162,13 +235,18 @@
         },
         "state": {
           "type": "enum",
-          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "values": [
+            "default",
+            "highlighted",
+            "error",
+            "disabled",
+            "read-only"
+          ],
           "default": "default"
         }
       },
       "usage": "<Textarea label=\"Notes\" rows={4} />"
     },
-
     "Combobox": {
       "description": "Searchable dropdown select. Combines text input with a filterable list. MUST be interactive: focus/click opens dropdown, typing filters options in real-time, clicking an option fills the input and closes dropdown, clicking outside closes. Click the list button to show all items.",
       "figmaComponentKey": "3e51b41c9072aae87583d057beb14a6f9b273801",
@@ -220,7 +298,12 @@
         }
       },
       "styling": {
-        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value input (flex-1, px-[8px] py-[6px])", "Field button (32×32, bg #EBEBEB, list-search icon, 1px left divider)", "Listbox dropdown (elevation shadow, rounded-[4px])"],
+        "anatomy": [
+          "Field container (32px, border #DDD, rounded-[4px])",
+          "Value input (flex-1, px-[8px] py-[6px])",
+          "Field button (32×32, bg #EBEBEB, list-search icon, 1px left divider)",
+          "Listbox dropdown (elevation shadow, rounded-[4px])"
+        ],
         "listbox": {
           "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
           "itemHover": "bg-[rgba(0,99,255,0.1)]",
@@ -230,7 +313,6 @@
       },
       "usage": "<Combobox label=\"Country\" options={countries} value={val} onChange={setVal} />"
     },
-
     "Switch": {
       "description": "Toggle switch for binary on/off settings.",
       "props": {
@@ -252,7 +334,6 @@
       },
       "usage": "<Switch label=\"Enable notifications\" checked={true} />"
     },
-
     "RadioGroup": {
       "description": "Group of radio buttons for single-selection from multiple options. Uses custom styled 16px circular radio buttons.",
       "figmaComponentKey": "bdad4ea4dab0eb2ceb99b61712233f8967ebf0b5",
@@ -275,7 +356,10 @@
         },
         "orientation": {
           "type": "enum",
-          "values": ["vertical", "horizontal"],
+          "values": [
+            "vertical",
+            "horizontal"
+          ],
           "default": "vertical",
           "description": "Layout direction of radio buttons"
         },
@@ -293,7 +377,6 @@
       },
       "usage": "<RadioGroup name=\"plan\" options={[{value:'free',label:'Free'},{value:'pro',label:'Pro'}]} />"
     },
-
     "Tag": {
       "description": "Small colored label for categorization and status indication. Uses pastel backgrounds with dark text for readability.",
       "import": "import { Tag } from '@economic/taco';",
@@ -304,7 +387,17 @@
         },
         "color": {
           "type": "enum",
-          "values": ["blue", "green", "yellow", "red", "purple", "pink", "brown", "orange", "grey"],
+          "values": [
+            "blue",
+            "green",
+            "yellow",
+            "red",
+            "purple",
+            "pink",
+            "brown",
+            "orange",
+            "grey"
+          ],
           "default": "blue"
         },
         "icon": {
@@ -317,19 +410,45 @@
         }
       },
       "colorMapping": {
-        "blue":   { "bg": "#DEEBFF", "text": "#29283E" },
-        "green":  { "bg": "#CDF0E7", "text": "#14493A" },
-        "yellow": { "bg": "#FFF1C3", "text": "#733700" },
-        "red":    { "bg": "#FFDAD2", "text": "#64001B" },
-        "purple": { "bg": "#EEE5FF", "text": "#412970" },
-        "pink":   { "bg": "#FFE3F7", "text": "#870062" },
-        "brown":  { "bg": "#EEE0DA", "text": "#45291F" },
-        "orange": { "bg": "#FFE3BB", "text": "#4A2811" },
-        "grey":   { "bg": "#EBEBEB", "text": "#1C1C1C" }
+        "blue": {
+          "bg": "#DEEBFF",
+          "text": "#29283E"
+        },
+        "green": {
+          "bg": "#CDF0E7",
+          "text": "#14493A"
+        },
+        "yellow": {
+          "bg": "#FFF1C3",
+          "text": "#733700"
+        },
+        "red": {
+          "bg": "#FFDAD2",
+          "text": "#64001B"
+        },
+        "purple": {
+          "bg": "#EEE5FF",
+          "text": "#412970"
+        },
+        "pink": {
+          "bg": "#FFE3F7",
+          "text": "#870062"
+        },
+        "brown": {
+          "bg": "#EEE0DA",
+          "text": "#45291F"
+        },
+        "orange": {
+          "bg": "#FFE3BB",
+          "text": "#4A2811"
+        },
+        "grey": {
+          "bg": "#EBEBEB",
+          "text": "#1C1C1C"
+        }
       },
       "usage": "<Tag color=\"green\">Active</Tag>"
     },
-
     "Tooltip": {
       "description": "Contextual information popup that appears on hover. Dark background with arrow pointing to trigger. Two width modes: auto (shrink-wrap) or fixed 224px.",
       "figmaNodeId": "112:2358",
@@ -342,7 +461,12 @@
         },
         "placement": {
           "type": "enum",
-          "values": ["top", "bottom", "left", "right"],
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
           "default": "top"
         },
         "wide": {
@@ -370,7 +494,6 @@
       },
       "usage": "<Tooltip content=\"Delete this item\" placement=\"top\"><IconButton icon=\"delete\" /></Tooltip>"
     },
-
     "ListItem": {
       "description": "Single item in a list. Can contain text, icons, and actions.",
       "figmaComponentKey": "73701c0e5fd0bfa858846ca59344f7a23c1d1dcf",
@@ -388,7 +511,6 @@
       },
       "usage": "<ListItem>Invoice #1234</ListItem>"
     },
-
     "ListGroup": {
       "description": "Container for grouping ListItems with an optional header.",
       "figmaComponentKey": "3ba028984b93491bb031595b9dce06e50569561b",
@@ -404,7 +526,6 @@
       },
       "usage": "<ListGroup title=\"Recent\"><ListItem>Item 1</ListItem></ListGroup>"
     },
-
     "Table3": {
       "description": "Full-featured interactive data table (Table3). Supports sortable columns, column filtering, column visibility (hide/show), freeze columns, row selection with checkboxes, row hover actions (edit, copy, delete), toolbar with primary action button, 'More' dropdown, filters panel, and search. Column headers show a 3-dot menu on hover with: Hide column, Sorting (Ascending/Descending/No sorting submenu), Freeze columns, Filter.",
       "figmaNodeId": "120:2577",
@@ -419,14 +540,40 @@
           "type": "array",
           "description": "Array of row objects keyed by column keys"
         },
-        "selectable": { "type": "boolean", "default": false, "description": "Show row selection checkboxes" },
-        "sortable": { "type": "boolean", "default": true, "description": "Allow column sorting (click header or use column menu)" },
-        "filterable": { "type": "boolean", "default": true, "description": "Show Filters button and filter panel" },
-        "searchable": { "type": "boolean", "default": true, "description": "Show search input in toolbar" },
-        "freezable": { "type": "boolean", "default": true, "description": "Allow freezing columns via column menu" },
-        "onRowClick": { "type": "function" },
-        "onRowSelect": { "type": "function" },
-        "onRowDelete": { "type": "function" },
+        "selectable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show row selection checkboxes"
+        },
+        "sortable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Allow column sorting (click header or use column menu)"
+        },
+        "filterable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Filters button and filter panel"
+        },
+        "searchable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show search input in toolbar"
+        },
+        "freezable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Allow freezing columns via column menu"
+        },
+        "onRowClick": {
+          "type": "function"
+        },
+        "onRowSelect": {
+          "type": "function"
+        },
+        "onRowDelete": {
+          "type": "function"
+        },
         "toolbar": {
           "type": "ReactNode",
           "description": "Custom toolbar content (buttons, dropdowns)"
@@ -468,9 +615,8 @@
       },
       "usage": "<Table3 columns={[{key:'no',label:'No.'}, {key:'name',label:'Name'}]} data={rows} selectable sortable filterable />"
     },
-
     "Calendar": {
-      "description": "Single-month date picker calendar. White card with elevation shadow, 7×40px grid of circular date cells. Separate month/year dropdown selectors with chevron-down, and prev/next chevron buttons.",
+      "description": "Single-month date picker calendar. White card with elevation shadow, 7x40px grid of circular date cells. Separate month/year dropdown selectors with chevron-down, and prev/next chevron buttons. Two variants: with or without a Today button.",
       "figmaNodeId": "463:16484",
       "storybook": "https://design.e-conomic.ws/components/dataInput/calendar",
       "props": {
@@ -481,29 +627,38 @@
         "showToday": {
           "type": "boolean",
           "default": true,
-          "description": "Show 'Today' link at the bottom of the calendar"
+          "description": "Show 'Today' link at the bottom of the calendar. When false, calendar omits the Today button."
         },
         "onChange": {
-          "type": "function"
+          "type": "function",
+          "description": "Called with date string when user clicks a date cell"
         }
       },
+      "variants": {
+        "withTodayButton": "Calendar with a 'Today' text link centered below the date grid",
+        "withoutTodayButton": "Calendar without the Today link, just the grid and header"
+      },
       "styling": {
-        "container": "white bg, rounded-[4px], shadow elevation (no border), p-[16px]",
-        "grid": "7 columns × 40px = 280px wide",
-        "dateCell": "40×40px circle (rounded-[20px]), 14px/20px Regular",
+        "container": "inline-flex flex-col, white bg, rounded-[4px], shadow-[0px_1px_2px_rgba(0,0,0,0.3),0px_2px_6px_rgba(0,0,0,0.15)], p-[16px]",
+        "grid": "grid grid-cols-7, width 280px (7 x 40px)",
+        "dateCell": "w-[40px] h-[40px] rounded-full (circle), text 14px/20px Regular, centered",
         "dateStates": {
           "normal": "no bg, text #1C1C1C",
-          "hover": "bg #EBEBEB circle, text #1C1C1C",
-          "active": "no bg, text #4573D2 (blue text only)",
-          "activeHover": "bg #EBEBEB circle, text #4573D2",
-          "disabled": "opacity 50% (outside-month days)"
+          "hover": "bg-[#EBEBEB] circle, text #1C1C1C",
+          "selected": "no bg, text #4573D2 (blue text only, NOT blue background)",
+          "selectedHover": "bg-[#EBEBEB] circle, text #4573D2",
+          "disabled": "opacity-50 (outside-month days, e.g. Oct 31 shown in November view)"
         },
-        "dayHeaders": "MON-SUN, uppercase, Regular 12px/20px, text #595959, centered in 40px",
-        "periodHeader": "Month + Year as separate Bold 12px/16px labels with chevron-down icons",
-        "todayLink": "Regular 12px/16px, text #4573D2, hover #75A0F5, centered"
+        "dayHeaders": "MON-SUN, uppercase, Regular 12px/20px, text #595959, centered in 40px cells, pt-[8px]",
+        "periodHeader": {
+          "layout": "flex items-center justify-between w-[280px]",
+          "monthLabel": "Bold 12px/16px text #1C1C1C with chevron-down 24x24 icon, clickable to open month dropdown",
+          "yearLabel": "Bold 12px/16px text #1C1C1C with chevron-down 24x24 icon, clickable to open year dropdown",
+          "prevNextButtons": "p-[6px] rounded-[4px] hover:bg-[#EBEBEB], 20x20 chevron icons, gap-[4px]"
+        },
+        "todayLink": "text 12px/16px Regular, text #4573D2, hover text #75A0F5, centered, pt-[8px], cursor-pointer, bg-transparent border-none"
       }
     },
-
     "DatePicker": {
       "description": "Date input field with a calendar icon button that opens a Calendar dropdown. Combines text input with calendar for date selection.",
       "figmaNodeId": "463:16608",
@@ -528,7 +683,13 @@
         },
         "state": {
           "type": "enum",
-          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "values": [
+            "default",
+            "highlighted",
+            "error",
+            "disabled",
+            "read-only"
+          ],
           "default": "default",
           "description": "Normal=grey border, Highlighted=blue border, Error=red border, Disabled=50% opacity, ReadOnly=grey bg + disabled calendar button"
         },
@@ -545,61 +706,152 @@
       },
       "usage": "<DatePicker label=\"Invoice date\" placeholder=\"YYYY-MM-DD\" />"
     },
-
     "Pagination": {
-      "description": "Navigation between pages of content.",
+      "description": "Full pagination bar with left info group (page counter + page-size Select) and right navigation group (first/prev/page numbers/next/last). Adapts to page count with 7 right-group variants.",
       "figmaComponentKey": "0629fc13d19854337b0d2a9c6ad2621f1d97fd68",
       "props": {
         "currentPage": {
-          "type": "number"
+          "type": "number",
+          "required": true,
+          "description": "Currently active page (1-based)"
         },
         "totalPages": {
-          "type": "number"
+          "type": "number",
+          "required": true,
+          "description": "Total number of pages"
+        },
+        "pageSize": {
+          "type": "number",
+          "default": 10,
+          "description": "Number of items per page"
         },
         "onPageChange": {
-          "type": "function"
+          "type": "function",
+          "description": "Called with page number when user navigates"
+        },
+        "onPageSizeChange": {
+          "type": "function",
+          "description": "Called with new page size when user changes the page-size Select"
+        },
+        "showPageCounter": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 'Showing X-Y of Z' text in the left group"
+        },
+        "pageSizeOptions": {
+          "type": "array",
+          "default": [
+            10,
+            25,
+            50,
+            100
+          ],
+          "description": "Options for the page-size Select dropdown"
         }
       },
-      "usage": "<Pagination currentPage={1} totalPages={10} />"
+      "subComponents": {
+        "LeftGroup": {
+          "description": "Left side of the pagination bar. Contains optional page counter text ('Showing 1-10 of 100') and a page-size Select dropdown.",
+          "variants": {
+            "withPageCounter": "Page counter text + Select dropdown (gap-[16px])",
+            "selectOnly": "Select dropdown only, no page counter text"
+          }
+        },
+        "RightGroup": {
+          "description": "Right side of the pagination bar. Navigation buttons: first, prev, page number buttons, next, last.",
+          "variants": [
+            "5 pages",
+            "4 pages",
+            "3 pages",
+            "2 pages",
+            "1 page",
+            "only arrows",
+            "text"
+          ]
+        }
+      },
+      "variants": {
+        "5 pages": "First + Prev + 5 page number buttons + Next + Last",
+        "4 pages": "First + Prev + 4 page number buttons + Next + Last",
+        "3 pages": "First + Prev + 3 page number buttons + Next + Last",
+        "2 pages": "First + Prev + 2 page number buttons + Next + Last",
+        "1 page": "First + Prev + 1 page number button + Next + Last",
+        "only arrows": "First + Prev + Next + Last (no page number buttons)",
+        "text": "Plain text showing total count, e.g. '190 item(s) in total'"
+      },
+      "styling": {
+        "container": "flex items-center justify-between (left group + right group)",
+        "pageButton": "w-[32px] h-[32px] rounded-[4px], text-[14px] leading-[20px], border-none",
+        "activePageButton": "bg-[#4573D2] text-white",
+        "defaultPageButton": "bg-[#EBEBEB] text-[#1C1C1C], hover:bg-[#DDDDDD]",
+        "arrowButton": "w-[32px] h-[32px] rounded-[4px] bg-[#EBEBEB], 24x24 icon, hover:bg-[#DDDDDD]",
+        "disabledButton": "opacity-50 cursor-not-allowed (applied to first/prev when on page 1, next/last when on last page)",
+        "navGap": "gap-[8px] between all navigation buttons",
+        "leftGroupGap": "gap-[16px] between page counter text and Select",
+        "pageSizeSelect": "h-[32px] px-[8px] border border-[#DDDDDD] rounded-[4px] bg-white, dropdown opens upward"
+      },
+      "iconMapping": {
+        "first": "arrow-start (vertical bar + left arrow)",
+        "prev": "arrow-left",
+        "next": "arrow-right",
+        "last": "arrow-end (left arrow + vertical bar)"
+      },
+      "usage": "<Pagination currentPage={1} totalPages={10} pageSize={10} showPageCounter onPageChange={fn} onPageSizeChange={fn} />"
     },
-
     "Form": {
-      "description": "Form container that provides consistent layout and spacing for form fields.",
+      "description": "Form container that provides consistent layout and spacing for form fields. Use with FormGrid and FormRow for multi-column layouts with vertical dividers.",
       "figmaComponentKey": "69c888a78f5b3499252300a79b6e4db0240b99a7",
       "props": {
         "children": {
-          "type": "ReactNode"
+          "type": "ReactNode",
+          "description": "Form content — typically FormGrid with column groups, or simple stacked fields"
         },
         "onSubmit": {
-          "type": "function"
+          "type": "function",
+          "description": "Form submission handler"
         }
       },
-      "usage": "<Form><Field label=\"Name\" /><Button appearance=\"Primary\">Save</Button></Form>"
+      "relatedComponents": [
+        "FormGrid",
+        "FormRow",
+        "Field",
+        "Combobox",
+        "Select",
+        "DatePicker",
+        "Textarea",
+        "Checkbox"
+      ],
+      "usage": "<Form><Field label=\"Name\" /><Button appearance=\"primary\">Save</Button></Form>"
     },
-
     "FormGrid": {
-      "description": "Multi-column form layout with vertical dividers between column groups. Each column group stretches equally and contains stacked FormRows.",
+      "description": "Multi-column form layout with vertical dividers between column groups. Each column group stretches equally (flex-1) and contains stacked FormRows. Supports 2 or 3 column groups (or more).",
       "figmaNodeId": "518:44640",
       "storybook": "https://design.e-conomic.ws/components/dataInput/form",
       "props": {
         "columns": {
           "type": "number",
           "default": 2,
-          "description": "Number of column groups"
+          "description": "Number of column groups (e.g. 2 or 3)"
         },
         "children": {
           "type": "ReactNode",
-          "description": "Column group elements. Dividers are inserted automatically between them."
+          "description": "Column group elements. Vertical dividers are inserted automatically between each pair of groups."
         }
       },
+      "variants": {
+        "2 column groups": "Two equal-width column groups separated by one vertical divider. Each group contains stacked FormRows with side-by-side fields.",
+        "3 column groups": "Three equal-width column groups separated by two vertical dividers. Demonstrates scalability for complex forms."
+      },
       "styling": {
-        "layout": "flex row, column groups are flex-1",
-        "divider": "1px vertical line #DDD with 16px padding on each side between column groups",
-        "formRow": "flex row, gap 16px, fields are flex-1 within the row"
+        "container": "flex items-start",
+        "columnGroup": "flex-1 flex flex-col items-start min-w-0 gap-0",
+        "divider": "flex items-start self-stretch px-[16px] shrink-0 — contains a w-px h-full bg-[#DDDDDD] line (1px vertical line with 16px padding on each side)",
+        "formRow": "flex gap-[16px] items-start w-full — fields inside are flex-1 flex-col items-stretch",
+        "fieldLabel": "text-[12px] leading-[16px] text-[#1C1C1C] py-[4px] font-bold",
+        "fieldInput": "h-[32px] w-full px-[8px] py-[6px] rounded-[4px] border border-[#DDDDDD] text-[14px] leading-[20px] bg-white, hover:border-[#ACACAC], focus:border-[#4573D2] focus:shadow-[0_0_0_1px_#4573D2]"
       },
       "usage": "<FormGrid><div><FormRow><Field label=\"First\" /><Field label=\"Last\" /></FormRow></div><div><FormRow><Field label=\"Email\" /><Field label=\"Phone\" /></FormRow></div></FormGrid>"
     },
-
     "FormRow": {
       "description": "A row within a FormGrid column group, arranging fields side-by-side with 16px gap.",
       "figmaNodeId": "504:19089",
@@ -611,34 +863,47 @@
       },
       "usage": "<FormRow><Field label=\"First name\" /><Field label=\"Last name\" /></FormRow>"
     },
-
     "ModeSwitch": {
-      "description": "Toggle between two modes/views (e.g., list view vs grid view).",
+      "description": "Toggle between two modes/views (e.g., list vs grid, monthly vs yearly). A small pill-shaped switch track with left/right labels. Active side label is bold, inactive side is grey.",
       "figmaNodeId": "4386:9699",
       "props": {
         "checked": {
           "type": "boolean",
-          "default": false
+          "default": false,
+          "description": "When false the left label is active (bold), when true the right label is active (bold)"
         },
         "labelOff": {
           "type": "string",
-          "description": "Label for the off/left state"
+          "description": "Label for the off/left state (displayed left of the track)"
         },
         "labelOn": {
           "type": "string",
-          "description": "Label for the on/right state"
+          "description": "Label for the on/right state (displayed right of the track)"
         },
         "disabled": {
           "type": "boolean",
-          "default": false
+          "default": false,
+          "description": "When disabled, entire row is opacity-50 and track shows cursor-not-allowed"
         },
         "onChange": {
-          "type": "function"
+          "type": "function",
+          "description": "Called with new checked state when user clicks the track"
         }
+      },
+      "styling": {
+        "container": "inline-flex items-center gap-2, text-sm leading-5 text-[#1C1C1C]",
+        "track": "relative inline-flex items-center w-9 (36px) h-5 (20px) rounded-full cursor-pointer",
+        "trackOn": "bg-[#4573D2] (blue when checked/on)",
+        "trackOff": "bg-[#ACACAC] (grey when unchecked/off)",
+        "thumb": "absolute w-3.5 h-3.5 (14px) rounded-full bg-white",
+        "thumbOn": "translate-x-[18px] (right position)",
+        "thumbOff": "translate-x-[3px] (left position)",
+        "activeLabel": "font-bold text-[#1C1C1C]",
+        "inactiveLabel": "text-[#595959] (grey, not bold)",
+        "disabled": "opacity-50 on container, cursor-not-allowed on track"
       },
       "usage": "<ModeSwitch labelOff=\"List\" labelOn=\"Grid\" checked={isGrid} onChange={setIsGrid} />"
     },
-
     "Select": {
       "description": "Dropdown select for choosing one option from a predefined list. Click to open, no typing/filtering. Uses chevron icon. MUST be interactive: click trigger toggles dropdown, click option updates value and closes, click outside closes. Chevron rotates 180° when open.",
       "figmaNodeId": "518:32665",
@@ -663,7 +928,13 @@
         },
         "state": {
           "type": "enum",
-          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "values": [
+            "default",
+            "highlighted",
+            "error",
+            "disabled",
+            "read-only"
+          ],
           "default": "default"
         },
         "onChange": {
@@ -671,7 +942,12 @@
         }
       },
       "styling": {
-        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value display (px-[8px] py-[6px])", "Chevron icon (32×32 area, rotates when open)", "Listbox dropdown (elevation shadow)"],
+        "anatomy": [
+          "Field container (32px, border #DDD, rounded-[4px])",
+          "Value display (px-[8px] py-[6px])",
+          "Chevron icon (32×32 area, rotates when open)",
+          "Listbox dropdown (elevation shadow)"
+        ],
         "listbox": {
           "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
           "itemHover": "bg-[rgba(0,99,255,0.1)]",
@@ -680,7 +956,6 @@
       },
       "usage": "<Select label=\"Country\" options={countries} value={val} onChange={setVal} />"
     },
-
     "SearchInput": {
       "description": "Text input with a search icon button. Fires onSearch when the icon is clicked or Enter is pressed.",
       "figmaNodeId": "586:54954",
@@ -700,7 +975,13 @@
         },
         "state": {
           "type": "enum",
-          "values": ["default", "highlighted", "error", "disabled", "read-only"],
+          "values": [
+            "default",
+            "highlighted",
+            "error",
+            "disabled",
+            "read-only"
+          ],
           "default": "default"
         },
         "onChange": {
@@ -713,11 +994,14 @@
         }
       },
       "styling": {
-        "anatomy": ["Field container (32px, border #DDD, rounded-[4px])", "Value input (flex-1, px-[8px] py-[6px])", "Search icon button (32×32, no background, magnifying glass SVG)"]
+        "anatomy": [
+          "Field container (32px, border #DDD, rounded-[4px])",
+          "Value input (flex-1, px-[8px] py-[6px])",
+          "Search icon button (32×32, no background, magnifying glass SVG)"
+        ]
       },
       "usage": "<SearchInput placeholder=\"Search…\" value={query} onChange={setQuery} onSearch={handleSearch} />"
     },
-
     "Checkbox": {
       "description": "Checkbox for selecting one or more options. Supports checked, unchecked, and indeterminate states.",
       "figmaNodeId": "463:16458",
@@ -761,9 +1045,8 @@
       },
       "usage": "<Checkbox label=\"I agree\" checked={agreed} onChange={setAgreed} />"
     },
-
     "Tabs": {
-      "description": "Horizontal or vertical tab navigation. Organizes content into multiple sections with an active indicator bar.",
+      "description": "Horizontal or vertical tab navigation. Organizes content into multiple sections with a 2px blue active indicator bar. Supports disabled tabs.",
       "figmaNodeId": "485:18001",
       "storybook": "https://design.e-conomic.ws/components/layout/tabs",
       "import": "import { Tabs } from '@economic/taco';",
@@ -779,38 +1062,57 @@
         },
         "orientation": {
           "type": "enum",
-          "values": ["horizontal", "vertical"],
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
           "default": "horizontal"
         },
         "divider": {
           "type": "boolean",
           "default": true,
-          "description": "Show bottom (horizontal) or right (vertical) divider line"
+          "description": "Show bottom divider (horizontal) or right border (vertical)"
         },
         "onChange": {
           "type": "function",
           "description": "Called with the tab ID when a tab is clicked"
         }
       },
-      "styling": {
-        "tab": "px-[16px] py-[8px], text 14px/20px Regular #1C1C1C",
-        "activeIndicator": "2px bar, bg #4573D2, bottom (horizontal) or left (vertical)",
-        "divider": "shadow-[0px_1px_0px_0px_#ddd] (horizontal) or border-right (vertical)",
-        "hover": "bg rgba(0,0,0,0.08)",
-        "disabled": "opacity 50%, cursor-not-allowed",
-        "verticalTab": "h-[32px]"
+      "variants": {
+        "horizontal": {
+          "description": "Tabs laid out in a row with bottom divider. Active indicator is a 2px blue bar at the bottom.",
+          "tabStructure": "flex flex-col items-center, rounded-tl-[4px] rounded-tr-[4px], overflow-clip",
+          "labelArea": "px-[16px] py-[8px], text 14px/20px Regular #1C1C1C, whitespace-nowrap",
+          "activeIndicator": "bg-[#4573D2] h-[2px] w-full rounded-tl-[2px] rounded-tr-[2px] at bottom of tab",
+          "inactiveIndicator": "same element with opacity-0 (hidden but reserves space)",
+          "divider": "shadow-[0px_1px_0px_0px_#ddd] on the container"
+        },
+        "vertical": {
+          "description": "Tabs stacked vertically with a right border divider. Active indicator is a 2px blue bar on the left.",
+          "tabStructure": "flex items-center h-[32px]",
+          "activeIndicator": "bg-[#4573D2] w-[2px] h-full rounded-tr-[2px] rounded-br-[2px] at left of tab",
+          "inactiveIndicator": "same element with opacity-0",
+          "divider": "border-r border-[#DDDDDD] on the container"
+        }
       },
-      "usage": "<Tabs tabs={[{id:'overview',label:'Overview'},{id:'details',label:'Details'}]} activeTab=\"overview\" />"
+      "styling": {
+        "tab": "px-[16px] py-[8px], text 14px/20px Regular #1C1C1C, whitespace-nowrap, cursor-pointer",
+        "activeIndicator": "2px bar, bg-[#4573D2], bottom (horizontal) or left (vertical), with 2px rounded corners on outer edges",
+        "divider": "shadow-[0px_1px_0px_0px_#ddd] (horizontal) or border-r border-[#DDDDDD] (vertical)",
+        "hover": "bg-[rgba(0,0,0,0.08)] on inactive tabs",
+        "disabled": "opacity-50, cursor-not-allowed, click ignored",
+        "verticalTab": "h-[32px], label inside px-[16px]"
+      },
+      "usage": "<Tabs tabs={[{id:'overview',label:'Overview'},{id:'details',label:'Details'},{id:'settings',label:'Settings',disabled:true}]} activeTab=\"overview\" />"
     },
-
     "Drawer": {
-      "description": "Side panel overlay for supplementary content. Contains Header (title, tabs, actions, close), scrollable Body, and Footer with button group.",
+      "description": "Side panel overlay for supplementary content. Three-part anatomy: Header (title row with action icons + close, optional tabs), scrollable Body, and Footer with right-aligned button group.",
       "figmaNodeId": "7038:36168",
       "import": "import { Drawer } from '@economic/taco';",
       "props": {
         "title": {
           "type": "string",
-          "description": "Drawer title displayed in the header (24px Regular)"
+          "description": "Drawer title displayed in the header (24px/32px Regular)"
         },
         "showHeader": {
           "type": "boolean",
@@ -830,29 +1132,61 @@
         },
         "tabs": {
           "type": "array",
-          "description": "Optional tabs in header: Array of { id, label }"
+          "description": "Optional tabs in header: Array of { id, label }. Rendered below the title row using horizontal Tabs component."
         },
         "activeTab": {
           "type": "string"
         },
-        "onClose": { "type": "function" },
-        "onBack": { "type": "function" },
-        "onTabChange": { "type": "function" },
-        "children": { "type": "ReactNode", "description": "Body content" },
-        "footer": { "type": "ReactNode", "description": "Footer content (typically buttons)" },
-        "actions": { "type": "ReactNode", "description": "Additional action icons in the header" }
+        "onClose": {
+          "type": "function"
+        },
+        "onBack": {
+          "type": "function"
+        },
+        "onTabChange": {
+          "type": "function"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Body content (scrollable area)"
+        },
+        "footer": {
+          "type": "ReactNode",
+          "description": "Footer content (typically Cancel + Save buttons)"
+        },
+        "actions": {
+          "type": "ReactNode",
+          "description": "Action icon buttons in the header (e.g., share, delete), placed left of the close button with a vertical divider separator"
+        }
+      },
+      "anatomy": {
+        "header": {
+          "description": "Top section with border-b. Contains title row and optional tabs row.",
+          "titleRow": "flex items-start p-[16px] gap-[8px]. Left: title (flex-1, 24px/32px Regular #1C1C1C). Right: action icons + divider + close button.",
+          "actionIcons": "p-[6px] rounded-[4px] hover:bg-[#EBEBEB], 20x20 icons in #595959 stroke",
+          "divider": "w-px h-[20px] bg-[#DDDDDD] mx-0 between action icons and close button",
+          "closeButton": "p-[6px] rounded-[4px] hover:bg-[#EBEBEB], 20x20 X icon in #595959 stroke",
+          "tabsRow": "px-[16px], horizontal Tabs component with shadow divider"
+        },
+        "body": {
+          "description": "Scrollable middle section. flex-1 overflow-y-auto p-[16px]."
+        },
+        "footer": {
+          "description": "Bottom section with border-t. Contains right-aligned button group.",
+          "layout": "p-[16px], flex gap-[8px] justify-end",
+          "buttons": "Typically Cancel (default appearance) + Save (primary appearance), h-[32px] px-[12px]"
+        }
       },
       "styling": {
-        "container": "w-[420px], border-l #DDD, bg-white, flex column, full height",
-        "header": "p-[16px], border-b #DDD, title 24px/32px",
+        "container": "w-[420px], border-l border-[#DDDDDD], bg-white, flex flex-col, full height",
+        "header": "bg-white border-b border-[#DDDDDD], flex flex-col",
         "body": "flex-1, overflow-y-auto, p-[16px]",
-        "footer": "p-[16px], border-t #DDD, button group justify-end gap-[8px]",
-        "closeButton": "p-[6px], 20×20 × icon",
-        "actionDivider": "w-px h-[20px] bg-[#DDD]"
+        "footer": "bg-white border-t border-[#DDDDDD], p-[16px], flex gap-[8px] justify-end",
+        "closeButton": "p-[6px] rounded-[4px] hover:bg-[#EBEBEB], 20x20 icon",
+        "actionDivider": "w-px h-[20px] bg-[#DDDDDD]"
       },
-      "usage": "<Drawer title=\"Invoice details\" onClose={close}><FormContent /></Drawer>"
+      "usage": "<Drawer title=\"Invoice details\" tabs={[{id:'details',label:'Details'},{id:'lines',label:'Lines'},{id:'log',label:'Log'}]} activeTab=\"details\" onClose={close}><FormContent /><footer><Button>Cancel</Button><Button appearance=\"primary\">Save</Button></footer></Drawer>"
     },
-
     "AgreementSelector": {
       "description": "Dark-themed dropdown panel for switching between company agreements. Contains search, agreement list with avatars, and action buttons.",
       "figmaNodeId": "7038:31849",
@@ -874,10 +1208,18 @@
           "type": "string",
           "default": "Log af"
         },
-        "onSearch": { "type": "function" },
-        "onSelect": { "type": "function" },
-        "onAdd": { "type": "function" },
-        "onLogout": { "type": "function" }
+        "onSearch": {
+          "type": "function"
+        },
+        "onSelect": {
+          "type": "function"
+        },
+        "onAdd": {
+          "type": "function"
+        },
+        "onLogout": {
+          "type": "function"
+        }
       },
       "styling": {
         "container": "w-[256px], bg #29283E",
@@ -890,7 +1232,6 @@
       },
       "usage": "<AgreementSelector groups={[{agreements:[{id:'1',companyName:'Acme',agreementNumber:'123'}]}]} />"
     },
-
     "SideNavigation": {
       "description": "Left sidebar navigation with 4 types: 'normal' (collapsible menu groups), 'inbox' (header + groups + panel), 'overview' (bold root items with chevron-right drill-in + bottom icon items), 'subpage' (back-chevron header + groups). Width is always 255px, bg #FAFAFA.",
       "figmaNodeId": "7038:32925",
@@ -898,7 +1239,12 @@
       "props": {
         "type": {
           "type": "enum",
-          "values": ["normal", "inbox", "overview", "subpage"],
+          "values": [
+            "normal",
+            "inbox",
+            "overview",
+            "subpage"
+          ],
           "default": "normal",
           "description": "Navigation layout type. 'normal'=collapsible groups only, 'inbox'=header+groups+panel, 'overview'=root bold items with drill-in, 'subpage'=back header+groups"
         },
@@ -922,11 +1268,24 @@
           "type": "array",
           "description": "For overview type. Items shown in bottom panel section (Inbox, Settings, Log off, etc.) with icons"
         },
-        "onItemClick": { "type": "function" },
-        "onGroupToggle": { "type": "function" },
-        "onBack": { "type": "function", "description": "Callback for subpage type back button" },
-        "showNewCategory": { "type": "boolean", "default": false },
-        "panelContent": { "type": "ReactNode", "description": "Bottom panel content (for inbox type: 'Add documents' button + email links)" }
+        "onItemClick": {
+          "type": "function"
+        },
+        "onGroupToggle": {
+          "type": "function"
+        },
+        "onBack": {
+          "type": "function",
+          "description": "Callback for subpage type back button"
+        },
+        "showNewCategory": {
+          "type": "boolean",
+          "default": false
+        },
+        "panelContent": {
+          "type": "ReactNode",
+          "description": "Bottom panel content (for inbox type: 'Add documents' button + email links)"
+        }
       },
       "subComponents": {
         "MenuHeader": {
@@ -995,11 +1354,24 @@
         "panel": "border-t-2 border-[rgba(28,28,28,0.08)], px-[12px], pt-[14px], pb-[12px]",
         "newCategory": "text-[#9DA3AE], hover: bg #FAFAFA + border #DDD, focus: border #4573D2 + shadow"
       },
+      "iconMapping": {
+        "menuGroupChevron": "chevron-down-solid (16px, rotated -90° when collapsed)",
+        "overviewDrillIn": "chevron-right (24px, shown on right of overview items with sub-pages)",
+        "subpageBack": "chevron-left (20px, in subpage header for 'Go to overview')",
+        "binItem": "delete (16px, trash icon for Bin menu item in inbox type)",
+        "bottomItems": {
+          "Inbox": "inbox",
+          "All settings": "settings-solid",
+          "My settings": "profile",
+          "Market": "market",
+          "Chat": "chat-solid",
+          "Log off": "log-out"
+        }
+      },
       "usage_normal": "<SideNavigation type=\"normal\" groups={[{ id: 'g1', label: 'Sales', items: [{ id: 'i1', label: 'Invoices' }] }]} />",
       "usage_inbox": "<SideNavigation type=\"inbox\" title=\"Inbox\" titleBadge=\"12\" groups={inboxGroups} panelContent={<>...</>} />",
       "usage_overview": "<SideNavigation type=\"overview\" items={[{ id: 'sales', label: 'Sales', chevron: true }]} bottomItems={[{ id: 'inbox', label: 'Inbox', icon: <InboxIcon /> }]} />"
     },
-
     "TopNavigation": {
       "description": "Dark top navigation bar with logo, primary text menu items, secondary round icon buttons (some colored), divider, and agreement selector with avatar. Sub-components: VismaLogo (5 detail levels: Icon+Visma+e-con, Icon+e-con, e-con, Menu hamburger, Splash symbol), PrimaryMenuItem (white text, optional chevron-down for submenus, hover bg rgba(255,255,255,0.08)), SecondaryMenuItem (round 32px icon button, colored backgrounds: None/Orange=#E89C2E/Green=#08AE87/Blue=#4573D2), CurrentAgreement (avatar 36px + company name + agreement number + optional admin Badge, compact mode = avatar only), Avatar (36px round, placeholder image or vector).",
       "figmaNodeId": "7038:31186",
@@ -1018,46 +1390,96 @@
           "type": "array",
           "description": "Array of { id, icon, label, color? } — icon is name like 'search', 'inbox', 'bell', 'chat', 'settings'"
         },
-        "companyName": { "type": "string" },
-        "agreementNumber": { "type": "string" },
-        "agreementAdmin": { "type": "boolean", "default": false },
-        "avatarUrl": { "type": "string" },
-        "onPrimaryClick": { "type": "function" },
-        "onSecondaryClick": { "type": "function" },
-        "onAgreementClick": { "type": "function" }
+        "companyName": {
+          "type": "string"
+        },
+        "agreementNumber": {
+          "type": "string"
+        },
+        "agreementAdmin": {
+          "type": "boolean",
+          "default": false
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "onPrimaryClick": {
+          "type": "function"
+        },
+        "onSecondaryClick": {
+          "type": "function"
+        },
+        "onAgreementClick": {
+          "type": "function"
+        }
       },
       "styling": {
         "container": "bg #29283E, h-[64px], full width",
         "primaryItem": "px-[12px] py-[8px], white 14px, hover bg rgba(255,255,255,0.08), rounded-[4px]",
         "secondaryItem": "p-[6px], rounded-full (32px), 24×24 icon, colored bg optional",
-        "iconColors": { "chat": "#08AE87", "e-copedia": "#08AE87", "settings": "#E89C2E" },
+        "iconColors": {
+          "chat": "#08AE87",
+          "e-copedia": "#08AE87",
+          "settings": "#E89C2E"
+        },
         "divider": "w-px h-[36px] bg rgba(255,255,255,0.3)",
         "agreement": "avatar 36×36, white text, chevron-down, hover bg rgba(255,255,255,0.1)",
         "adminBadge": "bg #4573D2, rounded-[10px], px-[4px], bold 12px white"
       },
       "usage": "<TopNavigation primaryItems={[{id:'home',label:'Hjem'}]} companyName=\"Acme\" agreementNumber=\"1234567\" />"
     },
-
     "AlertDialog": {
       "description": "Modal alert dialog with 5 variants. Badge icon is INLINE with title on same row (flex gap-[8px]). Only error/warning/info have badges; confirmation and destructive have NO badge.",
       "figmaNodeId": "4409:46514",
       "import": "import { AlertDialog } from '@economic/taco';",
       "props": {
-        "open": { "type": "boolean", "default": true },
+        "open": {
+          "type": "boolean",
+          "default": true
+        },
         "variant": {
           "type": "enum",
-          "values": ["error", "warning", "info", "confirmation", "destructive"],
+          "values": [
+            "error",
+            "warning",
+            "info",
+            "confirmation",
+            "destructive"
+          ],
           "default": "confirmation",
           "description": "error=red badge + single OK button (default grey), warning=yellow badge + Cancel/Continue, info=blue badge + Cancel/Continue, confirmation=no badge + Cancel/Continue, destructive=no badge + Cancel/Delete (red) + safety step"
         },
-        "title": { "type": "string", "required": true },
-        "description": { "type": "string", "required": true, "description": "Body text below the title" },
-        "content": { "type": "ReactNode", "description": "Optional content slot between description and footer" },
-        "confirmLabel": { "type": "string", "description": "Defaults per variant: error='OK', destructive='Delete', others='Continue'" },
-        "cancelLabel": { "type": "string", "default": "Cancel" },
-        "safetyText": { "type": "string", "description": "For destructive: user must type this text to enable Delete button. Shows prompt 'To confirm, please enter the name of the category:' + input field" },
-        "onConfirm": { "type": "function" },
-        "onCancel": { "type": "function" }
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "string",
+          "required": true,
+          "description": "Body text below the title"
+        },
+        "content": {
+          "type": "ReactNode",
+          "description": "Optional content slot between description and footer"
+        },
+        "confirmLabel": {
+          "type": "string",
+          "description": "Defaults per variant: error='OK', destructive='Delete', others='Continue'"
+        },
+        "cancelLabel": {
+          "type": "string",
+          "default": "Cancel"
+        },
+        "safetyText": {
+          "type": "string",
+          "description": "For destructive: user must type this text to enable Delete button. Shows prompt 'To confirm, please enter the name of the category:' + input field"
+        },
+        "onConfirm": {
+          "type": "function"
+        },
+        "onCancel": {
+          "type": "function"
+        }
       },
       "styling": {
         "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
@@ -1083,7 +1505,6 @@
       },
       "usage": "<AlertDialog variant=\"error\" title=\"Delete failed\" description=\"Could not delete the invoice.\" onConfirm={fn} onCancel={fn} />"
     },
-
     "Accordion": {
       "description": "Collapsible content section with chevron toggle. Supports single or multiple open items.",
       "figmaNodeId": "7967:52058",
@@ -1094,8 +1515,15 @@
           "description": "Array of { id, title, content } objects",
           "required": true
         },
-        "multiple": { "type": "boolean", "default": false, "description": "Allow multiple items open simultaneously" },
-        "defaultOpen": { "type": "array", "description": "Array of item ids to open by default" }
+        "multiple": {
+          "type": "boolean",
+          "default": false,
+          "description": "Allow multiple items open simultaneously"
+        },
+        "defaultOpen": {
+          "type": "array",
+          "description": "Array of item ids to open by default"
+        }
       },
       "styling": {
         "item": "border-b border-[#EBEBEB]",
@@ -1106,26 +1534,52 @@
       },
       "usage": "<Accordion items={[{id:'1',title:'Section',content:'Body text'}]} />"
     },
-
     "ModalDialog": {
       "description": "Large modal dialog with 4 size variants. Single p-[24px] container (NO inner borders between header/body/footer). Close icon floats top-right. Optional grey bottom section.",
       "figmaNodeId": "289:4412",
       "import": "import { ModalDialog } from '@economic/taco';",
       "props": {
-        "open": { "type": "boolean", "default": true },
+        "open": {
+          "type": "boolean",
+          "default": true
+        },
         "size": {
           "type": "enum",
-          "values": ["xs", "s", "m", "l"],
+          "values": [
+            "xs",
+            "s",
+            "m",
+            "l"
+          ],
           "default": "xs",
           "description": "xs=512px, s=768px, m=1024px, l=1280px"
         },
-        "title": { "type": "string", "required": true },
-        "children": { "type": "ReactNode", "description": "Main body content" },
-        "extraContent": { "type": "ReactNode", "description": "Optional grey bottom section bg-[#F6F6F6] p-[24px] with rounded-bl-[4px] rounded-br-[4px]" },
-        "confirmLabel": { "type": "string", "default": "Save" },
-        "cancelLabel": { "type": "string", "default": "Cancel" },
-        "onConfirm": { "type": "function" },
-        "onClose": { "type": "function" }
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Main body content"
+        },
+        "extraContent": {
+          "type": "ReactNode",
+          "description": "Optional grey bottom section bg-[#F6F6F6] p-[24px] with rounded-bl-[4px] rounded-br-[4px]"
+        },
+        "confirmLabel": {
+          "type": "string",
+          "default": "Save"
+        },
+        "cancelLabel": {
+          "type": "string",
+          "default": "Cancel"
+        },
+        "onConfirm": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        }
       },
       "styling": {
         "overlay": "bg-[rgba(61,65,83,0.5)] fixed inset-0",
@@ -1142,7 +1596,6 @@
       },
       "usage": "<ModalDialog size=\"s\" title=\"Edit Invoice\" onConfirm={fn} onClose={fn}>Body content</ModalDialog>"
     },
-
     "CardList": {
       "description": "Container for card-style list items. Supports separated (gap between cards) and grouped (joined borders, shared rounded corners) layouts.",
       "figmaNodeId": "5317:33171",
@@ -1150,11 +1603,18 @@
       "props": {
         "variant": {
           "type": "enum",
-          "values": ["separated", "grouped"],
+          "values": [
+            "separated",
+            "grouped"
+          ],
           "default": "separated",
           "description": "separated = gap-[8px] between items with individual rounded-[10px]; grouped = joined with shared borders, first/last rounded-[8px]"
         },
-        "children": { "type": "ReactNode", "required": true, "description": "CardListItem children" }
+        "children": {
+          "type": "ReactNode",
+          "required": true,
+          "description": "CardListItem children"
+        }
       },
       "styling": {
         "separated": "flex flex-col gap-[8px], each child rounded-[10px]",
@@ -1162,7 +1622,6 @@
       },
       "usage": "<CardList variant=\"separated\">{items}</CardList>"
     },
-
     "CardListItem": {
       "description": "Rich card-style list item with 6 interaction types: link-internal (chevron-right), link-external (open-in-new icon), button (no trailing icon), switch (toggle), checkbox (tick), collapsible (expandable content).",
       "figmaNodeId": "7488:46805",
@@ -1170,20 +1629,57 @@
       "props": {
         "type": {
           "type": "enum",
-          "values": ["link-internal", "link-external", "button", "switch", "checkbox", "collapsible"],
+          "values": [
+            "link-internal",
+            "link-external",
+            "button",
+            "switch",
+            "checkbox",
+            "collapsible"
+          ],
           "default": "link-internal",
           "description": "Determines trailing element and interaction behavior"
         },
-        "title": { "type": "string", "required": true },
-        "description": { "type": "string" },
-        "status": { "type": "ReactNode", "description": "Status text after title — use <Status> component" },
-        "icon": { "type": "ReactNode", "description": "Left icon — use <ListIcon> component" },
-        "checked": { "type": "boolean", "default": false, "description": "For switch and checkbox types" },
-        "expanded": { "type": "boolean", "default": false, "description": "For collapsible type" },
-        "expandContent": { "type": "ReactNode", "description": "Content shown when collapsible is expanded" },
-        "onClick": { "type": "function" },
-        "onCheckedChange": { "type": "function", "description": "Callback for switch/checkbox toggle" },
-        "onExpandedChange": { "type": "function", "description": "Callback for collapsible expand/collapse" }
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "ReactNode",
+          "description": "Status text after title — use <Status> component"
+        },
+        "icon": {
+          "type": "ReactNode",
+          "description": "Left icon — use <ListIcon> component"
+        },
+        "checked": {
+          "type": "boolean",
+          "default": false,
+          "description": "For switch and checkbox types"
+        },
+        "expanded": {
+          "type": "boolean",
+          "default": false,
+          "description": "For collapsible type"
+        },
+        "expandContent": {
+          "type": "ReactNode",
+          "description": "Content shown when collapsible is expanded"
+        },
+        "onClick": {
+          "type": "function"
+        },
+        "onCheckedChange": {
+          "type": "function",
+          "description": "Callback for switch/checkbox toggle"
+        },
+        "onExpandedChange": {
+          "type": "function",
+          "description": "Callback for collapsible expand/collapse"
+        }
       },
       "styling": {
         "container": "bg-white border border-[#DDDDDD], min-h-[64px], p-[12px], gap-[12px]",
@@ -1195,7 +1691,6 @@
       },
       "usage": "<CardListItem type=\"link-internal\" title=\"Account\" description=\"Manage account\" icon={<ListIcon color=\"blue\" />} />"
     },
-
     "ListIcon": {
       "description": "Colored icon container for use inside CardListItem. 40×40px square with rounded corners and colored background from the tag palette.",
       "figmaNodeId": "7488:46967",
@@ -1203,18 +1698,30 @@
       "props": {
         "color": {
           "type": "enum",
-          "values": ["grey", "blue", "green", "yellow", "red", "pink", "purple", "brown", "orange"],
+          "values": [
+            "grey",
+            "blue",
+            "green",
+            "yellow",
+            "red",
+            "pink",
+            "purple",
+            "brown",
+            "orange"
+          ],
           "default": "grey",
           "description": "Background color: grey=rgba(28,28,28,0.08), blue=#DEEBFF, green=#CDF0E7, yellow=#FFF1C3, red=#FFDAD2, pink=#FFE3F7, purple=#EEE5FF, brown=#EEE0DA, orange=#FFE3BB"
         },
-        "icon": { "type": "ReactNode", "description": "24×24 icon element; defaults to book placeholder" }
+        "icon": {
+          "type": "ReactNode",
+          "description": "24×24 icon element; defaults to book placeholder"
+        }
       },
       "styling": {
         "container": "40×40px, rounded-[4px], border border-[rgba(0,0,0,0.08)], overflow-hidden"
       },
       "usage": "<ListIcon color=\"blue\" icon={<MyIcon />} />"
     },
-
     "Status": {
       "description": "Inline colored text label used inside CardListItem to show status after the title. Bold 14px text in 5 semantic colors.",
       "figmaNodeId": "7488:46990",
@@ -1222,15 +1729,23 @@
       "props": {
         "color": {
           "type": "enum",
-          "values": ["green", "yellow", "red", "blue", "grey"],
+          "values": [
+            "green",
+            "yellow",
+            "red",
+            "blue",
+            "grey"
+          ],
           "default": "green",
           "description": "green=#028465 (Success), yellow=#E89C2E (Warning), red=#CE3F42 (Error), blue=#4573D2 (Info), grey=#ACACAC (Neutral)"
         },
-        "children": { "type": "ReactNode", "required": true }
+        "children": {
+          "type": "ReactNode",
+          "required": true
+        }
       },
       "usage": "<Status color=\"green\">(Active)</Status>"
     },
-
     "DashboardCard": {
       "description": "Dashboard card containing a bar chart visualization with title, value, trend indicator, and optional info box. Used on the main dashboard to display KPIs with chart context.",
       "category": "dashboard",
@@ -1245,7 +1760,11 @@
         },
         "trend": {
           "type": "enum",
-          "values": ["up", "down", "neutral"],
+          "values": [
+            "up",
+            "down",
+            "neutral"
+          ],
           "description": "Arrow direction for trend indicator"
         },
         "trendValue": {
@@ -1259,7 +1778,10 @@
         },
         "state": {
           "type": "enum",
-          "values": ["normal", "hover"],
+          "values": [
+            "normal",
+            "hover"
+          ],
           "default": "normal"
         }
       },
@@ -1270,16 +1792,25 @@
       },
       "usage": "<DashboardCard title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
     },
-
     "DashboardHoverCard": {
       "description": "Expanded dashboard card shown on hover with detailed chart, more menu, and additional info. 5 states: normal, more-menu, legends, hover, hover+infobox.",
       "category": "dashboard",
       "props": {
-        "title": { "type": "string" },
-        "value": { "type": "string" },
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
         "variant": {
           "type": "enum",
-          "values": ["normal", "more-menu", "legends", "hover", "hover-infobox"],
+          "values": [
+            "normal",
+            "more-menu",
+            "legends",
+            "hover",
+            "hover-infobox"
+          ],
           "default": "normal"
         }
       },
@@ -1288,7 +1819,6 @@
       },
       "usage": "<DashboardHoverCard title=\"Revenue\" value=\"234.351\" variant=\"normal\" />"
     },
-
     "DashboardMoreMenuLegends": {
       "description": "Dropdown menu with color-coded legend items and checkboxes for toggling chart series visibility.",
       "category": "dashboard",
@@ -1300,27 +1830,36 @@
       },
       "usage": "<DashboardMoreMenuLegends items={[{label: 'Revenue', color: '#75A0F5', checked: true}]} />"
     },
-
     "CardInfoBox": {
       "description": "Small tooltip-like overlay box that appears on dashboard charts showing a specific data point value.",
       "category": "dashboard",
       "props": {
-        "label": { "type": "string", "description": "Data point label" },
-        "value": { "type": "string", "description": "Data point value" }
+        "label": {
+          "type": "string",
+          "description": "Data point label"
+        },
+        "value": {
+          "type": "string",
+          "description": "Data point value"
+        }
       },
       "styling": {
         "container": "bg-white border border-[#DDDDDD] rounded-[4px] p-2 shadow-sm text-[11px]"
       },
       "usage": "<CardInfoBox label=\"Mar\" value=\"45.200\" />"
     },
-
     "BarSegment": {
       "description": "Individual bar chart segment. 16 variants covering single/end/middle/beginning positions in both solid and hatched styles, each in two widths (16px and 24px).",
       "category": "dashboard",
       "props": {
         "position": {
           "type": "enum",
-          "values": ["single", "end", "middle", "beginning"],
+          "values": [
+            "single",
+            "end",
+            "middle",
+            "beginning"
+          ],
           "description": "Position in a stacked bar — affects border-radius"
         },
         "hatched": {
@@ -1330,7 +1869,10 @@
         },
         "width": {
           "type": "enum",
-          "values": ["16", "24"],
+          "values": [
+            "16",
+            "24"
+          ],
           "default": "16"
         },
         "color": {
@@ -1347,7 +1889,6 @@
       },
       "usage": "<BarSegment position=\"single\" color=\"#75A0F5\" height={80} />"
     },
-
     "Bar": {
       "description": "Complete vertical bar composed of stacked BarSegments. Supports single-color and multi-color stacked configurations. 14 variants shown in Figma.",
       "category": "dashboard",
@@ -1363,7 +1904,6 @@
       },
       "usage": "<Bar segments={[{color: '#75A0F5', height: 60}, {color: '#52C7AB', height: 40}]} label=\"Jan\" />"
     },
-
     "ChartLegend": {
       "description": "Color-coded legend item for charts. Square color swatch + text label. 10 variants covering all chart colors including hatched variants.",
       "category": "dashboard",
@@ -1388,27 +1928,45 @@
       },
       "usage": "<ChartLegend color=\"#75A0F5\" label=\"Revenue\" />"
     },
-
     "ChartHeader": {
       "description": "Header row for dashboard chart cards with title, value, trend arrow, and optional kebab menu button.",
       "category": "dashboard",
       "props": {
-        "title": { "type": "string" },
-        "value": { "type": "string" },
-        "trend": { "type": "enum", "values": ["up", "down", "neutral"] },
-        "trendValue": { "type": "string" },
-        "showMenu": { "type": "boolean", "default": false }
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "trend": {
+          "type": "enum",
+          "values": [
+            "up",
+            "down",
+            "neutral"
+          ]
+        },
+        "trendValue": {
+          "type": "string"
+        },
+        "showMenu": {
+          "type": "boolean",
+          "default": false
+        }
       },
       "usage": "<ChartHeader title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
     },
-
     "AxisLabels": {
       "description": "Chart axis labels component. 3 variants: Y-axis (vertical values like 100K, 200K), X-axis (horizontal month/category labels), and combined.",
       "category": "dashboard",
       "props": {
         "axis": {
           "type": "enum",
-          "values": ["x", "y", "both"],
+          "values": [
+            "x",
+            "y",
+            "both"
+          ],
           "description": "Which axis labels to show"
         },
         "labels": {
@@ -1421,13 +1979,11 @@
       },
       "usage": "<AxisLabels axis=\"y\" labels={['0', '100K', '200K', '300K', '400K', '500K']} />"
     },
-
     "LegendBar": {
       "description": "Horizontal row of ChartLegend items displayed below a chart. Used as the standard legend placement for bar and line charts.",
       "category": "dashboard",
       "usage": "<LegendBar items={[{color: '#75A0F5', label: 'Revenue'}, {color: '#52C7AB', label: 'Costs'}]} />"
     },
-
     "DonutChart": {
       "description": "SVG donut/ring chart with center label showing total value. Uses stroke-dasharray for segment rendering. Supports multiple color segments.",
       "category": "dashboard",
@@ -1452,7 +2008,6 @@
       },
       "usage": "<DonutChart segments={[{value: 40, color: '#75A0F5'}, {value: 30, color: '#52C7AB'}]} total=\"234.351\" />"
     },
-
     "DonutChartLegend": {
       "description": "Legend list for donut charts with color swatch, label, value, and optional percentage. 2 states: collapsed and expanded.",
       "category": "dashboard",
@@ -1468,7 +2023,6 @@
       },
       "usage": "<DonutChartLegend items={[{color: '#75A0F5', label: 'Category A', value: '120.000', percentage: '51%'}]} />"
     },
-
     "CheckboxColorGrid": {
       "description": "Grid of color-coded checkboxes used in the more menu for toggling chart series. 9 colors x 5 columns layout.",
       "category": "dashboard",
@@ -1484,7 +2038,6 @@
       },
       "usage": "<CheckboxColorGrid items={[{color: '#75A0F5', label: 'Series 1', checked: true}]} />"
     },
-
     "CheckboxWithWhiteTick": {
       "description": "Colored checkbox with white checkmark tick when checked. 9 color variants matching the chart color palette.",
       "category": "dashboard",
@@ -1503,7 +2056,6 @@
       },
       "usage": "<CheckboxWithWhiteTick color=\"#75A0F5\" checked label=\"Revenue\" />"
     },
-
     "BarChartVerticalSingle": {
       "description": "Vertical bar chart with single-color bars. Y-axis with value labels, X-axis with category labels, and bottom legend.",
       "category": "dashboard",
@@ -1524,7 +2076,6 @@
       },
       "usage": "<BarChartVerticalSingle data={[{label: 'Jan', value: 350}, {label: 'Feb', value: 420}]} />"
     },
-
     "BarChartVerticalStacked": {
       "description": "Vertical bar chart with stacked multi-color segments per bar. Each bar shows multiple data series stacked on top of each other.",
       "category": "dashboard",
@@ -1540,7 +2091,6 @@
       },
       "usage": "<BarChartVerticalStacked data={[{label: 'Jan', segments: [{value: 200, color: '#75A0F5'}, {value: 150, color: '#52C7AB'}]}]} />"
     },
-
     "BarChartVerticalGroup": {
       "description": "Vertical bar chart with grouped (side-by-side) bars per category. Each category shows multiple bars next to each other.",
       "category": "dashboard",
@@ -1556,7 +2106,6 @@
       },
       "usage": "<BarChartVerticalGroup data={[{label: 'Jan', values: [{value: 300, color: '#75A0F5'}, {value: 200, color: '#52C7AB'}]}]} />"
     },
-
     "BarChartVerticalMultiColor": {
       "description": "Vertical bar chart where each bar has a different color. Used to compare distinct categories rather than series.",
       "category": "dashboard",
@@ -1568,7 +2117,6 @@
       },
       "usage": "<BarChartVerticalMultiColor data={[{label: 'Q1', value: 350, color: '#75A0F5'}, {label: 'Q2', value: 420, color: '#52C7AB'}]} />"
     },
-
     "BarChartVerticalDoubleHatching": {
       "description": "Vertical bar chart with paired bars per category — solid + hatched variants. Used to show actual vs. projected or budget vs. actual comparisons.",
       "category": "dashboard",
@@ -1587,7 +2135,6 @@
       },
       "usage": "<BarChartVerticalDoubleHatching data={[{label: 'Jan', solid: {value: 250, color: '#52C7AB'}, hatched: {value: 200, color: '#52C7AB'}}]} />"
     },
-
     "LineChartSingle": {
       "description": "Line chart with a single data series. SVG polyline rendering with optional area fill below the line.",
       "category": "dashboard",
@@ -1607,7 +2154,6 @@
       },
       "usage": "<LineChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
     },
-
     "LineChartMultiple": {
       "description": "Line chart with multiple data series. Each series is a different color polyline. Supports up to 4+ series with legend.",
       "category": "dashboard",
@@ -1619,7 +2165,6 @@
       },
       "usage": "<LineChartMultiple series={[{color: '#75A0F5', label: 'Revenue', data: [{label: 'Jan', value: 200}]}]} />"
     },
-
     "AreaChartSingle": {
       "description": "Area chart with a single series. SVG path with semi-transparent fill below the line.",
       "category": "dashboard",
@@ -1639,7 +2184,6 @@
       },
       "usage": "<AreaChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
     },
-
     "AreaChartTwoSeries": {
       "description": "Area chart with two data series, each with its own fill color. Series may overlap.",
       "category": "dashboard",
@@ -1651,7 +2195,6 @@
       },
       "usage": "<AreaChartTwoSeries series={[{color: '#75A0F5', label: 'Income', data: [...]}, {color: '#52C7AB', label: 'Costs', data: [...]}]} />"
     },
-
     "AreaChartPositiveNegative": {
       "description": "Area chart showing values above and below zero. Positive area filled in green, negative area filled in red. Zero line drawn as reference.",
       "category": "dashboard",
@@ -1668,27 +2211,34 @@
       },
       "usage": "<AreaChartPositiveNegative data={[{label: 'Jan', value: 30}, {label: 'Mar', value: -20}]} />"
     },
-
     "DonutChartWithBottomLegend": {
       "description": "Composed donut chart visualization with the legend placed below the chart. Includes center total label.",
       "category": "dashboard",
       "props": {
-        "segments": { "type": "array", "description": "Donut segments with { value, color, label }" },
-        "total": { "type": "string" }
+        "segments": {
+          "type": "array",
+          "description": "Donut segments with { value, color, label }"
+        },
+        "total": {
+          "type": "string"
+        }
       },
       "usage": "<DonutChartWithBottomLegend segments={[{value: 40, color: '#75A0F5', label: 'Category A'}]} total=\"234.351\" />"
     },
-
     "DonutChartWithRightLegends": {
       "description": "Composed donut chart visualization with detailed legends placed to the right of the chart. Legends show label, value, and percentage.",
       "category": "dashboard",
       "props": {
-        "segments": { "type": "array", "description": "Donut segments with { value, color, label, percentage }" },
-        "total": { "type": "string" }
+        "segments": {
+          "type": "array",
+          "description": "Donut segments with { value, color, label, percentage }"
+        },
+        "total": {
+          "type": "string"
+        }
       },
       "usage": "<DonutChartWithRightLegends segments={[{value: 40, color: '#75A0F5', label: 'Category A', percentage: '40%'}]} total=\"234.351\" />"
     },
-
     "DashboardTable": {
       "description": "Simple data table used in dashboard cards. Columns: Type (with color indicator), Date, Amount. Shows transaction/entry rows.",
       "category": "dashboard",
@@ -1709,7 +2259,6 @@
       },
       "usage": "<DashboardTable columns={['Type', 'Date', 'Amount']} rows={[{type: 'Journal entry', typeColor: '#75A0F5', date: '21.04.22', amount: '12.400'}]} />"
     },
-
     "EmptyState": {
       "description": "Empty state placeholder shown when a dashboard card has no data. Contains an illustration placeholder area and descriptive message.",
       "category": "dashboard",
@@ -1726,7 +2275,6 @@
       },
       "usage": "<EmptyState message=\"You don't have any registrations yet.\" />"
     },
-
     "HomepageCard": {
       "description": "Chat/support card for the homepage. Contains message text, avatar placeholder, and action button.",
       "category": "dashboard",
@@ -1748,7 +2296,6 @@
       },
       "usage": "<HomepageCard message=\"Chat with us all weekdays\" buttonLabel=\"Start chat\" />"
     },
-
     "MenuItems": {
       "description": "Individual menu item for use inside Menu. Supports list items, headers, and dividers. List items can have optional icons (left or right) and keyboard shortcuts.",
       "figmaNodeId": "480:18395",
@@ -1756,13 +2303,21 @@
       "props": {
         "type": {
           "type": "enum",
-          "values": ["list-item", "header", "divider"],
+          "values": [
+            "list-item",
+            "header",
+            "divider"
+          ],
           "default": "list-item",
           "description": "Item type: list-item for actionable row, header for section label, divider for separator line"
         },
         "icon": {
           "type": "enum",
-          "values": ["none", "left", "right"],
+          "values": [
+            "none",
+            "left",
+            "right"
+          ],
           "default": "none",
           "description": "Icon placement relative to text"
         },
@@ -1788,7 +2343,6 @@
       },
       "usage": "<Menu.Item>Text</Menu.Item>"
     },
-
     "MenuContent": {
       "description": "Container that holds multiple MenuItems stacked vertically. Auto-sizes width to fit its content.",
       "figmaNodeId": "482:18060",
@@ -1804,7 +2358,6 @@
       },
       "usage": "<Menu.Content><Menu.Item>Option 1</Menu.Item><Menu.Item>Option 2</Menu.Item></Menu.Content>"
     },
-
     "Menu": {
       "description": "Floating menu container with elevation shadow and rounded corners. Contains MenuContent with MenuItems. Two width modes: narrow (auto-width) and wide (>340px minimum).",
       "figmaNodeId": "482:20861",
@@ -1826,10 +2379,12 @@
         "shadow": "shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)]",
         "wide": "min-w-[340px]"
       },
-      "subComponents": ["MenuContent", "MenuItems"],
+      "subComponents": [
+        "MenuContent",
+        "MenuItems"
+      ],
       "usage": "<Menu><Menu.Content><Menu.Item>Option 1</Menu.Item><Menu.Item>Option 2</Menu.Item></Menu.Content></Menu>"
     },
-
     "Icon": {
       "description": "Icon component from the TACO icon library. All icons are 24×24px with fill color #1C1C1C. Used throughout the navigation, toolbar, and action elements.",
       "figmaFileKey": "KSd3tFPtF25o4FsDhDkUik",
@@ -1839,56 +2394,265 @@
           "type": "enum",
           "description": "Icon name from the TACO icon set",
           "values": [
-            "home", "accounting", "projects", "settings-solid", "inbox", "sales",
-            "report-solid", "bell", "chat-solid", "inventory", "e-copedia", "market",
-            "inbox-smart", "inbox-scanning", "inbox-einvoicing", "e-signature",
-            "more-solid", "profile", "search-bold", "question-mark-bold",
-            "journal-pro", "menu", "log-out", "partner-api", "developer",
-            "basic", "placeholder", "blank",
-            "lock-open", "lock", "dot", "unreconsiled", "document-cut", "account-preview",
-            "hash", "inventory-matrix", "secure-tick", "refresh", "entry-type-journal-entry",
-            "project-cards", "layout-first", "webshop", "search", "lightbulb", "depricate",
-            "basic-tabs", "document-split", "clamp-open", "autotext-insert", "play",
-            "cash-reports", "document-error", "person-minus", "person-plus", "person-change",
-            "note-follow-up", "distribution-template", "period", "more", "document-merge",
-            "entry-type-customer-payment", "process-payment", "restore", "copy",
-            "document-approve", "shortcuts", "show-all", "entries-on-account",
-            "document-preview", "envelope", "list-bulleted", "entry-type-supplier-invoice",
-            "mileage", "layout-last", "sliders", "list-search", "chat", "quicklinks",
-            "sort-by", "document-create-entry", "clamp", "show-less", "entries-open",
-            "circle-plus", "circle-minus", "rotate-left", "navigation-list", "person-tick",
-            "delete-permanently", "import", "export", "modal-shrink", "product-ledger-card",
-            "layout", "budget", "search-super", "undock",
-            "entry-type-manual-customer-invoice", "circle-tick", "accounting-year",
-            "star-solid", "calendar", "envelope-approved", "rating-bankruptsy", "note",
-            "note-read", "filter", "document", "booking", "document-move", "contacts",
-            "log", "delete", "credit", "list", "entry-type-supplier-payment", "layout-both",
-            "match-amount", "images", "edit", "document-isolate-page", "show-more",
-            "cash-account", "entries-warning", "secure", "rotate-right", "move", "time",
-            "layout-none", "export-to-excel", "export-to-pdf", "document-time",
-            "template-override", "show-template", "download", "print",
-            "entry-type-customer-invoice", "courses", "accounting-year-cancel", "star",
-            "reconciled", "templates", "system-entries", "report", "plus-minus", "expenses",
-            "autotext", "subscriptions", "website", "settings", "ledger-card", "book",
-            "expand-view", "graph-solid", "rating-payment-problems", "tag",
-            "thumb-up-solid", "thumb-down-solid", "thumb-up", "thumb-down", "thumb-both",
-            "transfer", "document-received", "transfer-locked", "document-rejected-request",
-            "transfer-cancel", "filter-solid", "match-entries", "attach-auto",
-            "attach-cancel", "attach", "partial-payment-scheduled", "connection-enable",
-            "connection-revoke", "ledger-card-manual-customer-invoice",
-            "ledger-card-reserved-entry", "ledger-card-opening-entry",
-            "ledger-card-transferred-opening-entry", "ledger-card-customer-reminder",
-            "ledger-card-obsolete-stock", "ledger-card-shrinkage-pilferage",
-            "ledger-card-stock-adjustment", "workflow", "wallet-solid", "remove", "numbers",
-            "row-height-4", "row-height-3", "row-height-2", "row-height-1", "columns",
-            "undo", "column-freeze", "column-unfreeze", "eye", "eye-off", "text-font-size",
-            "payment-unpaid", "payment-paid", "document-partial", "document-warning",
-            "payment-pending", "chart-line", "chart-area", "chart-bar", "chart-table",
-            "chart-pie", "attach-warning", "wallet", "circle-warning", "circle-information",
-            "circle-questionmark", "edit-simple", "location", "envelope-solid",
-            "phone-solid", "ai-chat-solid", "ai-stars", "phone", "id", "document-signed",
-            "house", "mastercard", "november-first", "person", "person-solid", "autopay",
-            "autopay-paused"
+            "home",
+            "accounting",
+            "projects",
+            "settings-solid",
+            "inbox",
+            "sales",
+            "report-solid",
+            "bell",
+            "chat-solid",
+            "inventory",
+            "e-copedia",
+            "market",
+            "inbox-smart",
+            "inbox-scanning",
+            "inbox-einvoicing",
+            "e-signature",
+            "more-solid",
+            "profile",
+            "search-bold",
+            "question-mark-bold",
+            "journal-pro",
+            "menu",
+            "log-out",
+            "partner-api",
+            "developer",
+            "basic",
+            "placeholder",
+            "blank",
+            "lock-open",
+            "lock",
+            "dot",
+            "unreconsiled",
+            "document-cut",
+            "account-preview",
+            "hash",
+            "inventory-matrix",
+            "secure-tick",
+            "refresh",
+            "entry-type-journal-entry",
+            "project-cards",
+            "layout-first",
+            "webshop",
+            "search",
+            "lightbulb",
+            "depricate",
+            "basic-tabs",
+            "document-split",
+            "clamp-open",
+            "autotext-insert",
+            "play",
+            "cash-reports",
+            "document-error",
+            "person-minus",
+            "person-plus",
+            "person-change",
+            "note-follow-up",
+            "distribution-template",
+            "period",
+            "more",
+            "document-merge",
+            "entry-type-customer-payment",
+            "process-payment",
+            "restore",
+            "copy",
+            "document-approve",
+            "shortcuts",
+            "show-all",
+            "entries-on-account",
+            "document-preview",
+            "envelope",
+            "list-bulleted",
+            "entry-type-supplier-invoice",
+            "mileage",
+            "layout-last",
+            "sliders",
+            "list-search",
+            "chat",
+            "quicklinks",
+            "sort-by",
+            "document-create-entry",
+            "clamp",
+            "show-less",
+            "entries-open",
+            "circle-plus",
+            "circle-minus",
+            "rotate-left",
+            "navigation-list",
+            "person-tick",
+            "delete-permanently",
+            "import",
+            "export",
+            "modal-shrink",
+            "product-ledger-card",
+            "layout",
+            "budget",
+            "search-super",
+            "undock",
+            "entry-type-manual-customer-invoice",
+            "circle-tick",
+            "accounting-year",
+            "star-solid",
+            "calendar",
+            "envelope-approved",
+            "rating-bankruptsy",
+            "note",
+            "note-read",
+            "filter",
+            "document",
+            "booking",
+            "document-move",
+            "contacts",
+            "log",
+            "delete",
+            "credit",
+            "list",
+            "entry-type-supplier-payment",
+            "layout-both",
+            "match-amount",
+            "images",
+            "edit",
+            "document-isolate-page",
+            "show-more",
+            "cash-account",
+            "entries-warning",
+            "secure",
+            "rotate-right",
+            "move",
+            "time",
+            "layout-none",
+            "export-to-excel",
+            "export-to-pdf",
+            "document-time",
+            "template-override",
+            "show-template",
+            "download",
+            "print",
+            "entry-type-customer-invoice",
+            "courses",
+            "accounting-year-cancel",
+            "star",
+            "reconciled",
+            "templates",
+            "system-entries",
+            "report",
+            "plus-minus",
+            "expenses",
+            "autotext",
+            "subscriptions",
+            "website",
+            "settings",
+            "ledger-card",
+            "book",
+            "expand-view",
+            "graph-solid",
+            "rating-payment-problems",
+            "tag",
+            "thumb-up-solid",
+            "thumb-down-solid",
+            "thumb-up",
+            "thumb-down",
+            "thumb-both",
+            "transfer",
+            "document-received",
+            "transfer-locked",
+            "document-rejected-request",
+            "transfer-cancel",
+            "filter-solid",
+            "match-entries",
+            "attach-auto",
+            "attach-cancel",
+            "attach",
+            "partial-payment-scheduled",
+            "connection-enable",
+            "connection-revoke",
+            "ledger-card-manual-customer-invoice",
+            "ledger-card-reserved-entry",
+            "ledger-card-opening-entry",
+            "ledger-card-transferred-opening-entry",
+            "ledger-card-customer-reminder",
+            "ledger-card-obsolete-stock",
+            "ledger-card-shrinkage-pilferage",
+            "ledger-card-stock-adjustment",
+            "workflow",
+            "wallet-solid",
+            "remove",
+            "numbers",
+            "row-height-4",
+            "row-height-3",
+            "row-height-2",
+            "row-height-1",
+            "columns",
+            "undo",
+            "column-freeze",
+            "column-unfreeze",
+            "eye",
+            "eye-off",
+            "text-font-size",
+            "payment-unpaid",
+            "payment-paid",
+            "document-partial",
+            "document-warning",
+            "payment-pending",
+            "chart-line",
+            "chart-area",
+            "chart-bar",
+            "chart-table",
+            "chart-pie",
+            "attach-warning",
+            "wallet",
+            "circle-warning",
+            "circle-information",
+            "circle-questionmark",
+            "edit-simple",
+            "location",
+            "envelope-solid",
+            "phone-solid",
+            "ai-chat-solid",
+            "ai-stars",
+            "phone",
+            "id",
+            "document-signed",
+            "house",
+            "mastercard",
+            "november-first",
+            "person",
+            "person-solid",
+            "autopay",
+            "autopay-paused",
+            "arrow-up",
+            "arrow-down",
+            "arrow-left",
+            "arrow-right",
+            "arrow-top",
+            "arrow-bottom",
+            "arrow-start",
+            "arrow-end",
+            "chevron-up",
+            "chevron-down",
+            "chevron-left",
+            "chevron-right",
+            "chevron-up-double",
+            "chevron-down-double",
+            "chevron-left-double",
+            "chevron-right-double",
+            "chevron-up-solid",
+            "chevron-down-solid",
+            "chevron-left-solid",
+            "chevron-right-solid",
+            "close",
+            "tick",
+            "line",
+            "drag",
+            "elipsis-horisontal",
+            "elipsis-vertical",
+            "info",
+            "warning",
+            "questionmark",
+            "modal-resize",
+            "open-in-new"
           ]
         },
         "size": {
@@ -1909,60 +2673,969 @@
       },
       "categories": {
         "navigation-primary": [
-          "home", "accounting", "projects", "settings-solid", "inbox", "sales",
-          "report-solid", "bell", "chat-solid", "inventory", "e-copedia", "market",
-          "inbox-smart", "inbox-scanning", "inbox-einvoicing", "e-signature",
-          "more-solid", "profile", "search-bold", "question-mark-bold",
-          "journal-pro", "menu", "log-out", "partner-api", "developer", "basic"
+          "home",
+          "accounting",
+          "projects",
+          "settings-solid",
+          "inbox",
+          "sales",
+          "report-solid",
+          "bell",
+          "chat-solid",
+          "inventory",
+          "e-copedia",
+          "market",
+          "inbox-smart",
+          "inbox-scanning",
+          "inbox-einvoicing",
+          "e-signature",
+          "more-solid",
+          "profile",
+          "search-bold",
+          "question-mark-bold",
+          "journal-pro",
+          "menu",
+          "log-out",
+          "partner-api",
+          "developer",
+          "basic",
+          "placeholder",
+          "blank",
+          "arrow-up",
+          "arrow-down",
+          "arrow-left",
+          "arrow-right",
+          "arrow-top",
+          "arrow-bottom",
+          "arrow-start",
+          "arrow-end",
+          "chevron-up",
+          "chevron-down",
+          "chevron-left",
+          "chevron-right",
+          "chevron-up-double",
+          "chevron-down-double",
+          "chevron-left-double",
+          "chevron-right-double",
+          "chevron-up-solid",
+          "chevron-down-solid",
+          "chevron-left-solid",
+          "chevron-right-solid",
+          "close",
+          "tick",
+          "line",
+          "drag",
+          "elipsis-horisontal",
+          "elipsis-vertical",
+          "info",
+          "warning",
+          "questionmark",
+          "refresh",
+          "modal-resize",
+          "open-in-new"
         ],
         "system": [
-          "lock-open", "lock", "dot", "unreconsiled", "document-cut", "account-preview",
-          "hash", "inventory-matrix", "secure-tick", "refresh", "entry-type-journal-entry",
-          "project-cards", "layout-first", "webshop", "search", "lightbulb", "depricate",
-          "basic-tabs", "document-split", "clamp-open", "autotext-insert", "play",
-          "cash-reports", "document-error", "person-minus", "person-plus", "person-change",
-          "note-follow-up", "distribution-template", "period", "more", "document-merge",
-          "entry-type-customer-payment", "process-payment", "restore", "copy",
-          "document-approve", "shortcuts", "show-all", "entries-on-account",
-          "document-preview", "envelope", "list-bulleted", "entry-type-supplier-invoice",
-          "mileage", "layout-last", "sliders", "list-search", "chat", "quicklinks",
-          "sort-by", "document-create-entry", "clamp", "show-less", "entries-open",
-          "circle-plus", "circle-minus", "rotate-left", "navigation-list", "person-tick",
-          "delete-permanently", "import", "export", "modal-shrink", "product-ledger-card",
-          "layout", "budget", "search-super", "undock",
-          "entry-type-manual-customer-invoice", "circle-tick", "accounting-year",
-          "star-solid", "calendar", "envelope-approved", "rating-bankruptsy", "note",
-          "note-read", "filter", "document", "booking", "document-move", "contacts",
-          "log", "delete", "credit", "list", "entry-type-supplier-payment", "layout-both",
-          "match-amount", "images", "edit", "document-isolate-page", "show-more",
-          "cash-account", "entries-warning", "secure", "rotate-right", "move", "time",
-          "layout-none", "export-to-excel", "export-to-pdf", "document-time",
-          "template-override", "show-template", "download", "print",
-          "entry-type-customer-invoice", "courses", "accounting-year-cancel", "star",
-          "reconciled", "templates", "system-entries", "report", "plus-minus", "expenses",
-          "autotext", "subscriptions", "website", "settings", "ledger-card", "book",
-          "expand-view", "graph-solid", "rating-payment-problems", "tag",
-          "thumb-up-solid", "thumb-down-solid", "thumb-up", "thumb-down", "thumb-both",
-          "transfer", "document-received", "transfer-locked", "document-rejected-request",
-          "transfer-cancel", "filter-solid", "match-entries", "attach-auto",
-          "attach-cancel", "attach", "partial-payment-scheduled", "connection-enable",
-          "connection-revoke", "ledger-card-manual-customer-invoice",
-          "ledger-card-reserved-entry", "ledger-card-opening-entry",
-          "ledger-card-transferred-opening-entry", "ledger-card-customer-reminder",
-          "ledger-card-obsolete-stock", "ledger-card-shrinkage-pilferage",
-          "ledger-card-stock-adjustment", "workflow", "wallet-solid", "remove", "numbers",
-          "row-height-4", "row-height-3", "row-height-2", "row-height-1", "columns",
-          "undo", "column-freeze", "column-unfreeze", "eye", "eye-off", "text-font-size",
-          "payment-unpaid", "payment-paid", "document-partial", "document-warning",
-          "payment-pending", "chart-line", "chart-area", "chart-bar", "chart-table",
-          "chart-pie", "attach-warning", "wallet", "circle-warning", "circle-information",
-          "circle-questionmark", "edit-simple", "location", "envelope-solid",
-          "phone-solid", "ai-chat-solid", "ai-stars", "phone", "id", "document-signed",
-          "house", "mastercard", "november-first", "person", "person-solid", "autopay",
+          "lock-open",
+          "lock",
+          "dot",
+          "unreconsiled",
+          "document-cut",
+          "account-preview",
+          "hash",
+          "inventory-matrix",
+          "secure-tick",
+          "refresh",
+          "entry-type-journal-entry",
+          "project-cards",
+          "layout-first",
+          "webshop",
+          "search",
+          "lightbulb",
+          "depricate",
+          "basic-tabs",
+          "document-split",
+          "clamp-open",
+          "autotext-insert",
+          "play",
+          "cash-reports",
+          "document-error",
+          "person-minus",
+          "person-plus",
+          "person-change",
+          "note-follow-up",
+          "distribution-template",
+          "period",
+          "more",
+          "document-merge",
+          "entry-type-customer-payment",
+          "process-payment",
+          "restore",
+          "copy",
+          "document-approve",
+          "shortcuts",
+          "show-all",
+          "entries-on-account",
+          "document-preview",
+          "envelope",
+          "list-bulleted",
+          "entry-type-supplier-invoice",
+          "mileage",
+          "layout-last",
+          "sliders",
+          "list-search",
+          "chat",
+          "quicklinks",
+          "sort-by",
+          "document-create-entry",
+          "clamp",
+          "show-less",
+          "entries-open",
+          "circle-plus",
+          "circle-minus",
+          "rotate-left",
+          "navigation-list",
+          "person-tick",
+          "delete-permanently",
+          "import",
+          "export",
+          "modal-shrink",
+          "product-ledger-card",
+          "layout",
+          "budget",
+          "search-super",
+          "undock",
+          "entry-type-manual-customer-invoice",
+          "circle-tick",
+          "accounting-year",
+          "star-solid",
+          "calendar",
+          "envelope-approved",
+          "rating-bankruptsy",
+          "note",
+          "note-read",
+          "filter",
+          "document",
+          "booking",
+          "document-move",
+          "contacts",
+          "log",
+          "delete",
+          "credit",
+          "list",
+          "entry-type-supplier-payment",
+          "layout-both",
+          "match-amount",
+          "images",
+          "edit",
+          "document-isolate-page",
+          "show-more",
+          "cash-account",
+          "entries-warning",
+          "secure",
+          "rotate-right",
+          "move",
+          "time",
+          "layout-none",
+          "export-to-excel",
+          "export-to-pdf",
+          "document-time",
+          "template-override",
+          "show-template",
+          "download",
+          "print",
+          "entry-type-customer-invoice",
+          "courses",
+          "accounting-year-cancel",
+          "star",
+          "reconciled",
+          "templates",
+          "system-entries",
+          "report",
+          "plus-minus",
+          "expenses",
+          "autotext",
+          "subscriptions",
+          "website",
+          "settings",
+          "ledger-card",
+          "book",
+          "expand-view",
+          "graph-solid",
+          "rating-payment-problems",
+          "tag",
+          "thumb-up-solid",
+          "thumb-down-solid",
+          "thumb-up",
+          "thumb-down",
+          "thumb-both",
+          "transfer",
+          "document-received",
+          "transfer-locked",
+          "document-rejected-request",
+          "transfer-cancel",
+          "filter-solid",
+          "match-entries",
+          "attach-auto",
+          "attach-cancel",
+          "attach",
+          "partial-payment-scheduled",
+          "connection-enable",
+          "connection-revoke",
+          "ledger-card-manual-customer-invoice",
+          "ledger-card-reserved-entry",
+          "ledger-card-opening-entry",
+          "ledger-card-transferred-opening-entry",
+          "ledger-card-customer-reminder",
+          "ledger-card-obsolete-stock",
+          "ledger-card-shrinkage-pilferage",
+          "ledger-card-stock-adjustment",
+          "workflow",
+          "wallet-solid",
+          "remove",
+          "numbers",
+          "row-height-4",
+          "row-height-3",
+          "row-height-2",
+          "row-height-1",
+          "columns",
+          "undo",
+          "column-freeze",
+          "column-unfreeze",
+          "eye",
+          "eye-off",
+          "text-font-size",
+          "payment-unpaid",
+          "payment-paid",
+          "document-partial",
+          "document-warning",
+          "payment-pending",
+          "chart-line",
+          "chart-area",
+          "chart-bar",
+          "chart-table",
+          "chart-pie",
+          "attach-warning",
+          "wallet",
+          "circle-warning",
+          "circle-information",
+          "circle-questionmark",
+          "edit-simple",
+          "location",
+          "envelope-solid",
+          "phone-solid",
+          "ai-chat-solid",
+          "ai-stars",
+          "phone",
+          "id",
+          "document-signed",
+          "house",
+          "mastercard",
+          "november-first",
+          "person",
+          "person-solid",
+          "autopay",
           "autopay-paused"
         ]
       },
       "usage": "<Icon name=\"home\" />"
+    },
+    "Badge": {
+      "description": "Small rounded-full pill for status indication or numeric counts. Bolder than Tag with fully rounded shape. Available in 5 variant styles: default (strong fill), subtle (light fill), outline (deprecated, white bg with colored border), with status dot (6px dot before label), and small (compact 10px text).",
+      "import": "import { Badge } from '@economic/taco';",
+      "props": {
+        "variant": {
+          "type": "enum",
+          "values": [
+            "strong",
+            "subtle",
+            "outline",
+            "dot",
+            "small"
+          ],
+          "default": "strong",
+          "description": "strong = filled background, subtle = light tinted background, outline = white bg with colored border (deprecated), dot = strong fill with 6x6px status dot before label, small = compact size with 10px text"
+        },
+        "color": {
+          "type": "enum",
+          "values": [
+            "blue",
+            "green",
+            "yellow",
+            "red",
+            "neutral",
+            "dark",
+            "purple",
+            "magenta",
+            "brown",
+            "orange"
+          ],
+          "default": "neutral",
+          "description": "Color theme of the badge"
+        },
+        "size": {
+          "type": "enum",
+          "values": [
+            "default",
+            "small"
+          ],
+          "default": "default",
+          "description": "default = text-xs py-[2px] px-[8px], small = text-[10px] py-[1px] px-[6px]"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Badge label text"
+        }
+      },
+      "colorMapping": {
+        "blue": {
+          "strong": {
+            "bg": "#4573D2",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#DEEBFF",
+            "text": "#29283E"
+          }
+        },
+        "green": {
+          "strong": {
+            "bg": "#028465",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#CDF0E7",
+            "text": "#14493A"
+          }
+        },
+        "yellow": {
+          "strong": {
+            "bg": "#FFBD3B",
+            "text": "#29283E"
+          },
+          "subtle": {
+            "bg": "#FFF1C3",
+            "text": "#29283E"
+          }
+        },
+        "red": {
+          "strong": {
+            "bg": "#CE3F42",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#FFDAD2",
+            "text": "#5B0F11"
+          }
+        },
+        "neutral": {
+          "strong": {
+            "bg": "#EBEBEB",
+            "text": "#1C1C1C"
+          },
+          "subtle": {
+            "bg": "#F5F5F5",
+            "text": "#595959"
+          }
+        },
+        "dark": {
+          "strong": {
+            "bg": "#29283E",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#595959",
+            "text": "#FFFFFF"
+          }
+        },
+        "purple": {
+          "strong": {
+            "bg": "#6542D1",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#EDE8FF",
+            "text": "#3D1F97"
+          }
+        },
+        "magenta": {
+          "strong": {
+            "bg": "#CF49AA",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#FFE1F5",
+            "text": "#7D1560"
+          }
+        },
+        "brown": {
+          "strong": {
+            "bg": "#73503B",
+            "text": "#FFFFFF"
+          },
+          "subtle": {
+            "bg": "#F0E0D4",
+            "text": "#4A2E1E"
+          }
+        },
+        "orange": {
+          "strong": {
+            "bg": "#F99702",
+            "text": "#29283E"
+          },
+          "subtle": {
+            "bg": "#FFEED0",
+            "text": "#7A4B00"
+          }
+        }
+      },
+      "styling": {
+        "default": "py-[2px] px-[8px] text-xs font-bold rounded-full inline-flex items-center",
+        "small": "py-[1px] px-[6px] text-[10px] font-bold rounded-full inline-flex items-center"
+      },
+      "usage": "<Badge color=\"blue\" variant=\"strong\">Active</Badge>"
+    },
+    "BadgeDot": {
+      "description": "Small colored dot indicator for status display. 8px diameter circle.",
+      "import": "import { BadgeDot } from '@economic/taco';",
+      "props": {
+        "color": {
+          "type": "enum",
+          "values": [
+            "blue",
+            "green",
+            "yellow",
+            "red",
+            "neutral",
+            "dark",
+            "purple",
+            "magenta",
+            "brown",
+            "orange"
+          ],
+          "default": "neutral",
+          "description": "Dot color"
+        }
+      },
+      "colorMapping": {
+        "blue": "#4573D2",
+        "green": "#028465",
+        "yellow": "#FFBD3B",
+        "red": "#CE3F42",
+        "neutral": "#EBEBEB",
+        "dark": "#29283E",
+        "purple": "#6542D1",
+        "magenta": "#CF49AA",
+        "brown": "#73503B",
+        "orange": "#F99702"
+      },
+      "styling": "w-2 h-2 rounded-full inline-block",
+      "usage": "<BadgeDot color=\"green\" />"
+    },
+    "BadgeIcon": {
+      "description": "Small circular icon badge for status indicators (info, success, warning, error). Available in default (filled) and subtle (outlined) variants at 20px and 16px sizes.",
+      "import": "import { BadgeIcon } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": [
+            "info",
+            "success",
+            "warning",
+            "error",
+            "neutral"
+          ],
+          "description": "Status type determining icon and color"
+        },
+        "variant": {
+          "type": "enum",
+          "values": [
+            "default",
+            "subtle"
+          ],
+          "default": "default",
+          "description": "default = filled circle, subtle = outlined circle"
+        },
+        "size": {
+          "type": "enum",
+          "values": [
+            "20",
+            "16"
+          ],
+          "default": "20",
+          "description": "Icon badge size in pixels"
+        }
+      },
+      "iconMapping": {
+        "info": "info",
+        "success": "tick",
+        "warning": "warning",
+        "error": "close",
+        "neutral": "questionmark"
+      },
+      "colorMapping": {
+        "info": "#4573D2",
+        "success": "#028465",
+        "warning": "#FFBD3B",
+        "error": "#CE3F42",
+        "neutral": "#595959"
+      },
+      "usage": "<BadgeIcon type=\"success\" size=\"20\" />"
+    },
+    "LinkText": {
+      "description": "Styled text link with underline. Available in 3 sizes with regular and bold weights.",
+      "import": "import { LinkText } from '@economic/taco';",
+      "props": {
+        "size": {
+          "type": "enum",
+          "values": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "default": "medium",
+          "description": "small = 12px/16px, medium = 14px/20px, large = 16px/24px"
+        },
+        "weight": {
+          "type": "enum",
+          "values": [
+            "regular",
+            "bold"
+          ],
+          "default": "regular",
+          "description": "Font weight: regular = 400, bold = 700"
+        },
+        "href": {
+          "type": "string",
+          "description": "Link URL"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Link text"
+        }
+      },
+      "styling": {
+        "color": "#4573D2",
+        "hoverColor": "#2B57B4",
+        "textDecoration": "underline",
+        "small": "text-xs leading-4",
+        "medium": "text-sm leading-5",
+        "large": "text-base leading-6"
+      },
+      "usage": "<LinkText href=\"/invoices\" size=\"medium\">View invoices</LinkText>"
+    },
+    "Spinner": {
+      "description": "Loading spinner indicator. Available in 4 sizes, optionally with a text label below.",
+      "import": "import { Spinner } from '@economic/taco';",
+      "props": {
+        "size": {
+          "type": "enum",
+          "values": [
+            "12",
+            "20",
+            "24",
+            "40"
+          ],
+          "default": "24",
+          "description": "Spinner diameter in pixels"
+        },
+        "label": {
+          "type": "string",
+          "description": "Optional text label shown below the spinner (only with size 40)"
+        }
+      },
+      "styling": {
+        "color": "#4573D2",
+        "animation": "spin 1s linear infinite",
+        "strokeWidths": {
+          "12": "1.5px",
+          "20": "2px",
+          "24": "2.5px",
+          "40": "3px"
+        }
+      },
+      "usage": "<Spinner size=\"24\" />"
+    },
+    "SkeletonLoader": {
+      "description": "Placeholder shimmer animation for loading states. Available as text block, card, or table row placeholders.",
+      "import": "import { SkeletonLoader } from '@economic/taco';",
+      "props": {
+        "variant": {
+          "type": "enum",
+          "values": [
+            "text",
+            "card",
+            "table-row"
+          ],
+          "default": "text",
+          "description": "Shape variant for the skeleton"
+        }
+      },
+      "styling": {
+        "colors": {
+          "base": "#EBEBEB",
+          "highlight": "#F5F5F5"
+        },
+        "animation": "shimmer 1.5s ease-in-out infinite (linear-gradient moving left to right)",
+        "borderRadius": "4px",
+        "textHeight": "12px",
+        "secondaryTextHeight": "10px",
+        "avatarHeight": "40px"
+      },
+      "usage": "<SkeletonLoader variant=\"text\" />"
+    },
+    "Toast": {
+      "description": "Notification toast for transient feedback messages. White background with colored border. Available in compact (auto-width) and wide (384px) variants. Supports 5 types: success, information, error, warning, and loading.",
+      "import": "import { Toast } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": [
+            "success",
+            "information",
+            "error",
+            "warning",
+            "loading"
+          ],
+          "description": "Determines icon badge and border color"
+        },
+        "variant": {
+          "type": "enum",
+          "values": [
+            "compact",
+            "wide"
+          ],
+          "default": "compact",
+          "description": "compact = auto-width inline, wide = 384px fixed width"
+        },
+        "children": {
+          "type": "ReactNode",
+          "required": true,
+          "description": "Toast message text"
+        },
+        "onClose": {
+          "type": "function",
+          "description": "Close button handler"
+        }
+      },
+      "colorMapping": {
+        "success":     { "border": "#ACACAC", "iconBg": "#028465", "iconColor": "white" },
+        "information": { "border": "#4573D2", "iconBg": "#4573D2", "iconColor": "white" },
+        "error":       { "border": "#CE3F42", "iconBg": "#CE3F42", "iconColor": "white" },
+        "warning":     { "border": "#E89C2E", "iconBg": "#FFBD3B", "iconColor": "white" },
+        "loading":     { "border": "#ACACAC", "icon": "Spinner 20px #4573D2" }
+      },
+      "styling": {
+        "container": "flex items-start gap-[8px] bg-white rounded-[4px] overflow-clip pl-[9px] pr-[6px] py-[11px] border",
+        "wide": "w-[384px]",
+        "iconBadge": "w-[20px] h-[20px] rounded-full shrink-0",
+        "text": "text-[14px] leading-[20px] text-[#1C1C1C]",
+        "closeButton": "bg-transparent border-none cursor-pointer text-[#595959] p-0",
+        "closeIcon": "20x20px"
+      },
+      "usage": "<Toast type=\"success\">Invoice saved.</Toast>"
+    },
+    "Alert": {
+      "description": "Inline alert message for contextual feedback. Full-width box with icon badge, bold title, body text, and optional close button. Available in 6 types: info, success, warning, error, default, and experiment.",
+      "import": "import { Alert } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": [
+            "info",
+            "success",
+            "warning",
+            "error",
+            "default",
+            "experiment"
+          ],
+          "description": "Alert type determining color scheme and icon"
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "description": "Bold title text"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Body text content below the title"
+        },
+        "onClose": {
+          "type": "function",
+          "description": "If provided, shows a close (x) button"
+        }
+      },
+      "styling": {
+        "container": "flex gap-[8px] items-start p-[12px] rounded-[8px] w-full",
+        "iconBadge": "w-[20px] h-[20px] rounded-full shrink-0 with centered SVG icon",
+        "text": "text-[14px] leading-[20px]",
+        "titleFont": "font-bold",
+        "closeButton": "bg-transparent border-none cursor-pointer p-0"
+      },
+      "colorMapping": {
+        "info": {
+          "bg": "#DEEBFF",
+          "text": "#29283E",
+          "iconBg": "#4573D2",
+          "iconColor": "white"
+        },
+        "success": {
+          "bg": "#CDF0E7",
+          "text": "#14493A",
+          "iconBg": "#028465",
+          "iconColor": "white"
+        },
+        "warning": {
+          "bg": "#FFF1C3",
+          "text": "#733700",
+          "iconBg": "#FFBD3B",
+          "iconColor": "white"
+        },
+        "error": {
+          "bg": "#FFDAD2",
+          "text": "#64001B",
+          "iconBg": "#CE3F42",
+          "iconColor": "white"
+        },
+        "default": {
+          "bg": "#EBEBEB",
+          "text": "#1C1C1C",
+          "iconBg": "#595959",
+          "iconColor": "white"
+        },
+        "experiment": {
+          "bg": "#EEE5FF",
+          "text": "#412970",
+          "iconBg": "#6542D1",
+          "iconColor": "white"
+        }
+      },
+      "iconMapping": {
+        "info": "circle-information",
+        "success": "circle-tick",
+        "warning": "warning",
+        "error": "circle-warning",
+        "neutral": "info"
+      },
+      "styling": "w-full p-[12px] rounded-[8px] flex items-start gap-2",
+      "usage": "<Alert type=\"info\" title=\"Your trial ends in 14 days\" />"
+    },
+    "Banner": {
+      "description": "Full-width notification bar with icon badge, text message, and close button. White background with elevation shadow. Available in 5 types: information, success, help, error, and warning.",
+      "import": "import { Banner } from '@economic/taco';",
+      "props": {
+        "type": {
+          "type": "enum",
+          "values": [
+            "information",
+            "success",
+            "help",
+            "error",
+            "warning"
+          ],
+          "description": "Determines the icon badge color and icon"
+        },
+        "children": {
+          "type": "ReactNode",
+          "required": true,
+          "description": "Banner message text"
+        },
+        "onClose": {
+          "type": "function",
+          "description": "Close button handler"
+        }
+      },
+      "colorMapping": {
+        "information": { "iconBg": "#4573D2", "iconColor": "white" },
+        "success":     { "iconBg": "#028465", "iconColor": "white" },
+        "help":        { "iconBg": "#595959", "iconColor": "white" },
+        "error":       { "iconBg": "#CE3F42", "iconColor": "white" },
+        "warning":     { "iconBg": "#FFBD3B", "iconColor": "white" }
+      },
+      "styling": {
+        "container": "flex items-center bg-white pl-[16px] pr-[8px] py-[8px]",
+        "shadow": "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)",
+        "content": "flex flex-1 items-start gap-[8px] py-[6px]",
+        "iconBadge": "w-[20px] h-[20px] rounded-full shrink-0",
+        "text": "text-[14px] leading-[20px] text-[#1C1C1C]",
+        "closeButton": "p-[6px] bg-transparent rounded-[4px] text-[#595959] hover:bg-[rgba(0,0,0,0.08)]"
+      },
+      "usage": "<Banner type=\"success\">Invoice sent successfully.</Banner>"
+    },
+    "Callout": {
+      "description": "Blue informational callout tooltip with an arrow pointer. Used for onboarding hints and feature discovery. Available in compact (title only) and description (title + body) variants, with 8 arrow placement directions.",
+      "import": "import { Callout } from '@economic/taco';",
+      "props": {
+        "variant": {
+          "type": "enum",
+          "values": [
+            "compact",
+            "description"
+          ],
+          "default": "compact",
+          "description": "compact = title only (auto-width), description = title + body text (224px wide)"
+        },
+        "arrowPosition": {
+          "type": "enum",
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ],
+          "default": "bottom",
+          "description": "Direction the arrow points from the callout"
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "description": "Callout heading text"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Body text (only for description variant)"
+        }
+      },
+      "styling": {
+        "compact": {
+          "container": "bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]",
+          "text": "text-white text-[12px] leading-[16px] font-normal whitespace-nowrap"
+        },
+        "withDescription": {
+          "container": "w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]",
+          "title": "text-white text-[12px] leading-[16px] font-bold block",
+          "description": "text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90"
+        },
+        "arrow": "6px CSS triangle using border trick, colored #4573D2"
+      },
+      "usage": "<Callout title=\"New feature\" arrowPosition=\"bottom\" />"
+    },
+    "Tour": {
+      "description": "Step-by-step onboarding guide tooltip. Similar to Callout but with navigation controls (Back/Next) and step counter.",
+      "import": "import { Tour } from '@economic/taco';",
+      "props": {
+        "step": {
+          "type": "number",
+          "description": "Current step number"
+        },
+        "totalSteps": {
+          "type": "number",
+          "description": "Total number of steps"
+        },
+        "arrowPosition": {
+          "type": "enum",
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "default": "bottom",
+          "description": "Direction the arrow points from the tour tooltip"
+        },
+        "title": {
+          "type": "string",
+          "description": "Tour step heading"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Step description text"
+        },
+        "showBack": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show Back button (false for first step)"
+        }
+      },
+      "styling": {
+        "container": "w-[352px] bg-white rounded-[4px] p-[16px]",
+        "shadow": "filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15))",
+        "title": "text-[16px] leading-[24px] font-bold text-[#1C1C1C] pb-[4px] pr-[28px]",
+        "body": "text-[14px] leading-[20px] text-[#1C1C1C]",
+        "footer": "flex items-center justify-end gap-[8px] pt-[16px]",
+        "nextButton": {
+          "bg": "#4573D2",
+          "text": "#FFFFFF",
+          "style": "px-[12px] py-[6px] rounded-[4px] text-[14px] leading-[20px] font-normal"
+        },
+        "backLink": "text-[14px] leading-[20px] text-[#4573D2] cursor-pointer",
+        "closeButton": "absolute top-0 right-0 p-[6px] bg-transparent text-[#595959] hover:bg-[rgba(0,0,0,0.08)] rounded-[4px]",
+        "arrow": "10px CSS triangle using border trick, colored white"
+      },
+      "usage": "<Tour step={1} totalSteps={4} title=\"Welcome\" arrowPosition=\"bottom\">Let's get started</Tour>"
+    },
+    "Popover": {
+      "description": "Generic floating white container with an arrow pointer and elevation shadow. Used as a base for menus, tooltips, and other floating UI. Supports 4 placement directions.",
+      "import": "import { Popover } from '@economic/taco';",
+      "props": {
+        "position": {
+          "type": "enum",
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "default": "bottom",
+          "description": "Position relative to the trigger element"
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Popover content"
+        }
+      },
+      "styling": {
+        "bg": "#FFFFFF",
+        "container": "bg-white rounded-[4px]",
+        "shadow": "filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)) drop-shadow(0px 2px 6px rgba(0,0,0,0.15))",
+        "defaultSize": "w-[164px] h-[164px] (content determines actual size)",
+        "arrow": "10px CSS triangle using border trick, colored white",
+        "borderRadius": "4px"
+      },
+      "usage": "<Popover position=\"bottom\">{content}</Popover>"
+    },
+    "TableRow": {
+      "description": "Enhanced table row component with selection (checkbox), expansion (chevron), and inline status badges. Used within Table3 for interactive row behavior.",
+      "import": "import { TableRow } from '@economic/taco';",
+      "props": {
+        "selectable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Adds checkbox for row selection"
+        },
+        "expandable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Adds chevron for row expansion with nested content"
+        },
+        "selected": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the row is currently selected"
+        },
+        "expanded": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the row is currently expanded"
+        }
+      },
+      "iconMapping": {
+        "expand": "chevron-right",
+        "collapse": "chevron-down",
+        "checkbox": "tick"
+      },
+      "styling": {
+        "height": "40px",
+        "hoverBg": "rgba(0,99,255,0.05)",
+        "selectedBg": "rgba(0,99,255,0.1)",
+        "divider": "shadow-[inset_0_-1px_0_0_#DDDDDD]",
+        "checkboxSize": "16px",
+        "chevronButtonSize": "32px"
+      },
+      "usage": "<TableRow selectable expandable>...</TableRow>"
     }
   },
   "illustrations": {
@@ -2234,6 +3907,1062 @@
         "description": "Woman working on a laptop",
         "usage": "General productivity, working, getting things done, feature pages"
       }
+    }
+  },
+  "icons": {
+    "spec": "24x24px, viewBox='0 0 24 24', fill='#1C1C1C'",
+    "usage": "<svg class='w-6 h-6' viewBox='0 0 24 24' fill='#1C1C1C'>...</svg>",
+    "source": "showcase/icons.html — contains full SVG markup for all icons in the systemIconSVGs JavaScript object",
+    "note": "To get the full SVG path data for any icon, look it up in showcase/icons.html. Navigation icons have inline SVG in the HTML markup. System icons have their SVG paths in the systemIconSVGs JavaScript object near the bottom of the file.",
+    "navigationPrimary": {
+      "description": "Primary and secondary navigation icons used in TopNavigation, SideNavigation, and directional/utility contexts",
+      "items": [
+        {
+          "name": "home",
+          "tags": "house"
+        },
+        {
+          "name": "accounting",
+          "tags": "calculator"
+        },
+        {
+          "name": "projects",
+          "tags": "time clock"
+        },
+        {
+          "name": "settings-solid",
+          "tags": "gear cog"
+        },
+        {
+          "name": "inbox",
+          "tags": "tray mail"
+        },
+        {
+          "name": "sales",
+          "tags": "dollar money currency"
+        },
+        {
+          "name": "report-solid",
+          "tags": "graph chart dashboard bar"
+        },
+        {
+          "name": "bell",
+          "tags": "notifications alert"
+        },
+        {
+          "name": "chat-solid",
+          "tags": "message speech bubble"
+        },
+        {
+          "name": "inventory",
+          "tags": "cart shopping"
+        },
+        {
+          "name": "e-copedia",
+          "tags": "book knowledge help"
+        },
+        {
+          "name": "market",
+          "tags": "grid apps store blocks"
+        },
+        {
+          "name": "inbox-smart",
+          "tags": "star favorite"
+        },
+        {
+          "name": "inbox-scanning",
+          "tags": "document scan"
+        },
+        {
+          "name": "inbox-einvoicing",
+          "tags": "e invoice electronic"
+        },
+        {
+          "name": "e-signature",
+          "tags": "document sign contract"
+        },
+        {
+          "name": "more-solid",
+          "tags": "ellipsis dots menu overflow"
+        },
+        {
+          "name": "profile",
+          "tags": "person user avatar account"
+        },
+        {
+          "name": "search-bold",
+          "tags": "find magnifying glass"
+        },
+        {
+          "name": "question-mark-bold",
+          "tags": "help support info"
+        },
+        {
+          "name": "journal-pro",
+          "tags": "rocket launch upgrade"
+        },
+        {
+          "name": "menu",
+          "tags": "hamburger burger navigation"
+        },
+        {
+          "name": "log-out",
+          "tags": "sign out exit logout"
+        },
+        {
+          "name": "partner-api",
+          "tags": "exchange transfer arrows"
+        },
+        {
+          "name": "developer",
+          "tags": "code brackets programming"
+        },
+        {
+          "name": "basic",
+          "tags": "grid dots blocks modules"
+        },
+        {
+          "name": "placeholder",
+          "tags": "smiley face emoji"
+        },
+        {
+          "name": "blank",
+          "tags": "empty none"
+        },
+        {
+          "name": "arrow-up",
+          "tags": "direction navigate"
+        },
+        {
+          "name": "arrow-down",
+          "tags": "direction navigate"
+        },
+        {
+          "name": "arrow-left",
+          "tags": "direction navigate back"
+        },
+        {
+          "name": "arrow-right",
+          "tags": "direction navigate forward"
+        },
+        {
+          "name": "arrow-top",
+          "tags": "direction bar"
+        },
+        {
+          "name": "arrow-bottom",
+          "tags": "direction bar"
+        },
+        {
+          "name": "arrow-start",
+          "tags": "direction bar beginning"
+        },
+        {
+          "name": "arrow-end",
+          "tags": "direction bar end"
+        },
+        {
+          "name": "chevron-up",
+          "tags": "caret expand"
+        },
+        {
+          "name": "chevron-down",
+          "tags": "caret collapse"
+        },
+        {
+          "name": "chevron-left",
+          "tags": "caret back"
+        },
+        {
+          "name": "chevron-right",
+          "tags": "caret forward"
+        },
+        {
+          "name": "chevron-up-double",
+          "tags": "caret expand double"
+        },
+        {
+          "name": "chevron-down-double",
+          "tags": "caret collapse double"
+        },
+        {
+          "name": "chevron-left-double",
+          "tags": "caret back double"
+        },
+        {
+          "name": "chevron-right-double",
+          "tags": "caret forward double"
+        },
+        {
+          "name": "chevron-up-solid",
+          "tags": "caret expand filled"
+        },
+        {
+          "name": "chevron-down-solid",
+          "tags": "caret collapse filled"
+        },
+        {
+          "name": "chevron-left-solid",
+          "tags": "caret back filled"
+        },
+        {
+          "name": "chevron-right-solid",
+          "tags": "caret forward filled"
+        },
+        {
+          "name": "close",
+          "tags": "x dismiss cancel"
+        },
+        {
+          "name": "tick",
+          "tags": "check confirm done"
+        },
+        {
+          "name": "line",
+          "tags": "minus horizontal"
+        },
+        {
+          "name": "drag",
+          "tags": "grip handle move"
+        },
+        {
+          "name": "elipsis-horisontal",
+          "tags": "dots more kebab"
+        },
+        {
+          "name": "elipsis-vertical",
+          "tags": "dots more kebab"
+        },
+        {
+          "name": "info",
+          "tags": "information help"
+        },
+        {
+          "name": "warning",
+          "tags": "alert caution exclamation"
+        },
+        {
+          "name": "questionmark",
+          "tags": "help support"
+        },
+        {
+          "name": "refresh",
+          "tags": "reload sync"
+        },
+        {
+          "name": "modal-resize",
+          "tags": "resize scale dots"
+        },
+        {
+          "name": "open-in-new",
+          "tags": "external link window"
+        }
+      ]
+    },
+    "system": {
+      "description": "System icons for actions, status, and UI elements",
+      "items": [
+        {
+          "name": "lock-open",
+          "tags": "unlock security"
+        },
+        {
+          "name": "lock",
+          "tags": "security password"
+        },
+        {
+          "name": "dot",
+          "tags": "circle point"
+        },
+        {
+          "name": "unreconsiled",
+          "tags": "mismatch bank"
+        },
+        {
+          "name": "document-cut",
+          "tags": "scissors split"
+        },
+        {
+          "name": "account-preview",
+          "tags": "view eye"
+        },
+        {
+          "name": "hash",
+          "tags": "number pound"
+        },
+        {
+          "name": "inventory-matrix",
+          "tags": "grid table"
+        },
+        {
+          "name": "secure-tick",
+          "tags": "check shield"
+        },
+        {
+          "name": "refresh",
+          "tags": "reload sync"
+        },
+        {
+          "name": "entry-type-journal-entry",
+          "tags": "journal accounting"
+        },
+        {
+          "name": "project-cards",
+          "tags": "kanban board"
+        },
+        {
+          "name": "layout-first",
+          "tags": "position left"
+        },
+        {
+          "name": "webshop",
+          "tags": "store online"
+        },
+        {
+          "name": "search",
+          "tags": "find magnify"
+        },
+        {
+          "name": "lightbulb",
+          "tags": "idea tip"
+        },
+        {
+          "name": "depricate",
+          "tags": "warning obsolete"
+        },
+        {
+          "name": "basic-tabs",
+          "tags": "tab navigation"
+        },
+        {
+          "name": "document-split",
+          "tags": "divide page"
+        },
+        {
+          "name": "clamp-open",
+          "tags": "grip handle"
+        },
+        {
+          "name": "autotext-insert",
+          "tags": "template text"
+        },
+        {
+          "name": "play",
+          "tags": "start video"
+        },
+        {
+          "name": "cash-reports",
+          "tags": "money finance"
+        },
+        {
+          "name": "document-error",
+          "tags": "file warning"
+        },
+        {
+          "name": "person-minus",
+          "tags": "user remove"
+        },
+        {
+          "name": "person-plus",
+          "tags": "user add"
+        },
+        {
+          "name": "person-change",
+          "tags": "user switch"
+        },
+        {
+          "name": "note-follow-up",
+          "tags": "reminder task"
+        },
+        {
+          "name": "distribution-template",
+          "tags": "share layout"
+        },
+        {
+          "name": "period",
+          "tags": "date range"
+        },
+        {
+          "name": "more",
+          "tags": "dots ellipsis"
+        },
+        {
+          "name": "document-merge",
+          "tags": "combine join"
+        },
+        {
+          "name": "entry-type-customer-payment",
+          "tags": "money receive"
+        },
+        {
+          "name": "process-payment",
+          "tags": "pay transaction"
+        },
+        {
+          "name": "restore",
+          "tags": "undo recover"
+        },
+        {
+          "name": "copy",
+          "tags": "duplicate clone"
+        },
+        {
+          "name": "document-approve",
+          "tags": "check accept"
+        },
+        {
+          "name": "shortcuts",
+          "tags": "keyboard hotkey"
+        },
+        {
+          "name": "show-all",
+          "tags": "expand reveal"
+        },
+        {
+          "name": "entries-on-account",
+          "tags": "ledger list"
+        },
+        {
+          "name": "document-preview",
+          "tags": "view file"
+        },
+        {
+          "name": "envelope",
+          "tags": "email mail"
+        },
+        {
+          "name": "list-bulleted",
+          "tags": "ul dots"
+        },
+        {
+          "name": "entry-type-supplier-invoice",
+          "tags": "bill vendor"
+        },
+        {
+          "name": "mileage",
+          "tags": "car distance"
+        },
+        {
+          "name": "layout-last",
+          "tags": "position right"
+        },
+        {
+          "name": "sliders",
+          "tags": "controls adjust"
+        },
+        {
+          "name": "list-search",
+          "tags": "filter find"
+        },
+        {
+          "name": "chat",
+          "tags": "message bubble"
+        },
+        {
+          "name": "quicklinks",
+          "tags": "bookmark fast"
+        },
+        {
+          "name": "sort-by",
+          "tags": "order arrange"
+        },
+        {
+          "name": "document-create-entry",
+          "tags": "new file"
+        },
+        {
+          "name": "clamp",
+          "tags": "grip handle"
+        },
+        {
+          "name": "show-less",
+          "tags": "collapse hide"
+        },
+        {
+          "name": "entries-open",
+          "tags": "ledger pending"
+        },
+        {
+          "name": "circle-plus",
+          "tags": "add new"
+        },
+        {
+          "name": "circle-minus",
+          "tags": "subtract remove"
+        },
+        {
+          "name": "rotate-left",
+          "tags": "turn undo"
+        },
+        {
+          "name": "navigation-list",
+          "tags": "nav menu"
+        },
+        {
+          "name": "person-tick",
+          "tags": "user approve"
+        },
+        {
+          "name": "delete-permanently",
+          "tags": "trash destroy"
+        },
+        {
+          "name": "import",
+          "tags": "upload bring"
+        },
+        {
+          "name": "export",
+          "tags": "download send"
+        },
+        {
+          "name": "modal-shrink",
+          "tags": "minimize reduce"
+        },
+        {
+          "name": "product-ledger-card",
+          "tags": "item account"
+        },
+        {
+          "name": "layout",
+          "tags": "arrange grid"
+        },
+        {
+          "name": "budget",
+          "tags": "money plan"
+        },
+        {
+          "name": "search-super",
+          "tags": "find advanced"
+        },
+        {
+          "name": "undock",
+          "tags": "detach float"
+        },
+        {
+          "name": "entry-type-manual-customer-invoice",
+          "tags": "bill manual"
+        },
+        {
+          "name": "circle-tick",
+          "tags": "check success"
+        },
+        {
+          "name": "accounting-year",
+          "tags": "fiscal period"
+        },
+        {
+          "name": "star-solid",
+          "tags": "favorite filled"
+        },
+        {
+          "name": "calendar",
+          "tags": "date picker"
+        },
+        {
+          "name": "envelope-approved",
+          "tags": "email check"
+        },
+        {
+          "name": "rating-bankruptsy",
+          "tags": "warning finance"
+        },
+        {
+          "name": "note",
+          "tags": "sticky memo"
+        },
+        {
+          "name": "note-read",
+          "tags": "memo open"
+        },
+        {
+          "name": "filter",
+          "tags": "funnel sort"
+        },
+        {
+          "name": "document",
+          "tags": "file page"
+        },
+        {
+          "name": "booking",
+          "tags": "reserve schedule"
+        },
+        {
+          "name": "document-move",
+          "tags": "file transfer"
+        },
+        {
+          "name": "contacts",
+          "tags": "addressbook people"
+        },
+        {
+          "name": "log",
+          "tags": "history record"
+        },
+        {
+          "name": "delete",
+          "tags": "trash remove"
+        },
+        {
+          "name": "credit",
+          "tags": "card payment"
+        },
+        {
+          "name": "list",
+          "tags": "lines rows"
+        },
+        {
+          "name": "entry-type-supplier-payment",
+          "tags": "vendor pay"
+        },
+        {
+          "name": "layout-both",
+          "tags": "split view"
+        },
+        {
+          "name": "match-amount",
+          "tags": "equal compare"
+        },
+        {
+          "name": "images",
+          "tags": "photo picture"
+        },
+        {
+          "name": "edit",
+          "tags": "pencil modify"
+        },
+        {
+          "name": "document-isolate-page",
+          "tags": "extract single"
+        },
+        {
+          "name": "show-more",
+          "tags": "expand reveal"
+        },
+        {
+          "name": "cash-account",
+          "tags": "money bank"
+        },
+        {
+          "name": "entries-warning",
+          "tags": "ledger alert"
+        },
+        {
+          "name": "secure",
+          "tags": "shield lock"
+        },
+        {
+          "name": "rotate-right",
+          "tags": "turn redo"
+        },
+        {
+          "name": "move",
+          "tags": "drag arrows"
+        },
+        {
+          "name": "time",
+          "tags": "clock hour"
+        },
+        {
+          "name": "layout-none",
+          "tags": "remove grid"
+        },
+        {
+          "name": "export-to-excel",
+          "tags": "spreadsheet xls"
+        },
+        {
+          "name": "export-to-pdf",
+          "tags": "file pdf"
+        },
+        {
+          "name": "document-time",
+          "tags": "file clock"
+        },
+        {
+          "name": "template-override",
+          "tags": "replace custom"
+        },
+        {
+          "name": "show-template",
+          "tags": "view layout"
+        },
+        {
+          "name": "download",
+          "tags": "save arrow"
+        },
+        {
+          "name": "print",
+          "tags": "printer paper"
+        },
+        {
+          "name": "entry-type-customer-invoice",
+          "tags": "bill client"
+        },
+        {
+          "name": "courses",
+          "tags": "education learn"
+        },
+        {
+          "name": "accounting-year-cancel",
+          "tags": "fiscal close"
+        },
+        {
+          "name": "star",
+          "tags": "favorite outline"
+        },
+        {
+          "name": "reconciled",
+          "tags": "match check"
+        },
+        {
+          "name": "templates",
+          "tags": "layout preset"
+        },
+        {
+          "name": "system-entries",
+          "tags": "auto generated"
+        },
+        {
+          "name": "report",
+          "tags": "chart data"
+        },
+        {
+          "name": "plus-minus",
+          "tags": "math calculate"
+        },
+        {
+          "name": "expenses",
+          "tags": "receipt cost"
+        },
+        {
+          "name": "autotext",
+          "tags": "template auto"
+        },
+        {
+          "name": "subscriptions",
+          "tags": "recurring repeat"
+        },
+        {
+          "name": "website",
+          "tags": "globe internet"
+        },
+        {
+          "name": "settings",
+          "tags": "gear config"
+        },
+        {
+          "name": "ledger-card",
+          "tags": "account detail"
+        },
+        {
+          "name": "book",
+          "tags": "read reference"
+        },
+        {
+          "name": "expand-view",
+          "tags": "fullscreen maximize"
+        },
+        {
+          "name": "graph-solid",
+          "tags": "chart filled"
+        },
+        {
+          "name": "rating-payment-problems",
+          "tags": "warning pay"
+        },
+        {
+          "name": "tag",
+          "tags": "label category"
+        },
+        {
+          "name": "thumb-up-solid",
+          "tags": "like approve filled"
+        },
+        {
+          "name": "thumb-down-solid",
+          "tags": "dislike reject filled"
+        },
+        {
+          "name": "thumb-up",
+          "tags": "like approve"
+        },
+        {
+          "name": "thumb-down",
+          "tags": "dislike reject"
+        },
+        {
+          "name": "thumb-both",
+          "tags": "feedback rate"
+        },
+        {
+          "name": "transfer",
+          "tags": "move send"
+        },
+        {
+          "name": "document-received",
+          "tags": "file inbox"
+        },
+        {
+          "name": "transfer-locked",
+          "tags": "locked send"
+        },
+        {
+          "name": "document-rejected-request",
+          "tags": "file deny"
+        },
+        {
+          "name": "transfer-cancel",
+          "tags": "stop send"
+        },
+        {
+          "name": "filter-solid",
+          "tags": "funnel filled"
+        },
+        {
+          "name": "match-entries",
+          "tags": "link pair"
+        },
+        {
+          "name": "attach-auto",
+          "tags": "clip automatic"
+        },
+        {
+          "name": "attach-cancel",
+          "tags": "clip remove"
+        },
+        {
+          "name": "attach",
+          "tags": "clip paperclip"
+        },
+        {
+          "name": "partial-payment-scheduled",
+          "tags": "pay part"
+        },
+        {
+          "name": "connection-enable",
+          "tags": "plug on"
+        },
+        {
+          "name": "connection-revoke",
+          "tags": "plug off"
+        },
+        {
+          "name": "ledger-card-manual-customer-invoice",
+          "tags": "bill manual entry"
+        },
+        {
+          "name": "ledger-card-reserved-entry",
+          "tags": "reserved booking"
+        },
+        {
+          "name": "ledger-card-opening-entry",
+          "tags": "opening balance"
+        },
+        {
+          "name": "ledger-card-transferred-opening-entry",
+          "tags": "transferred opening balance"
+        },
+        {
+          "name": "ledger-card-customer-reminder",
+          "tags": "reminder notice"
+        },
+        {
+          "name": "ledger-card-obsolete-stock",
+          "tags": "inventory obsolete"
+        },
+        {
+          "name": "ledger-card-shrinkage-pilferage",
+          "tags": "inventory loss"
+        },
+        {
+          "name": "ledger-card-stock-adjustment",
+          "tags": "inventory adjust"
+        },
+        {
+          "name": "workflow",
+          "tags": "process flow"
+        },
+        {
+          "name": "wallet-solid",
+          "tags": "money filled"
+        },
+        {
+          "name": "remove",
+          "tags": "minus delete"
+        },
+        {
+          "name": "numbers",
+          "tags": "digits numeric"
+        },
+        {
+          "name": "row-height-4",
+          "tags": "table tall"
+        },
+        {
+          "name": "row-height-3",
+          "tags": "table medium"
+        },
+        {
+          "name": "row-height-2",
+          "tags": "table compact"
+        },
+        {
+          "name": "row-height-1",
+          "tags": "table small"
+        },
+        {
+          "name": "columns",
+          "tags": "table vertical"
+        },
+        {
+          "name": "undo",
+          "tags": "back revert"
+        },
+        {
+          "name": "column-freeze",
+          "tags": "pin lock"
+        },
+        {
+          "name": "column-unfreeze",
+          "tags": "unpin unlock"
+        },
+        {
+          "name": "eye",
+          "tags": "show visible"
+        },
+        {
+          "name": "eye-off",
+          "tags": "hide invisible"
+        },
+        {
+          "name": "text-font-size",
+          "tags": "typography scale"
+        },
+        {
+          "name": "payment-unpaid",
+          "tags": "money pending"
+        },
+        {
+          "name": "payment-paid",
+          "tags": "money done"
+        },
+        {
+          "name": "document-partial",
+          "tags": "file half"
+        },
+        {
+          "name": "document-warning",
+          "tags": "file alert"
+        },
+        {
+          "name": "payment-pending",
+          "tags": "money wait"
+        },
+        {
+          "name": "chart-line",
+          "tags": "graph trend"
+        },
+        {
+          "name": "chart-area",
+          "tags": "graph fill"
+        },
+        {
+          "name": "chart-bar",
+          "tags": "graph column"
+        },
+        {
+          "name": "chart-table",
+          "tags": "data grid"
+        },
+        {
+          "name": "chart-pie",
+          "tags": "graph donut"
+        },
+        {
+          "name": "attach-warning",
+          "tags": "clip alert"
+        },
+        {
+          "name": "wallet",
+          "tags": "money purse"
+        },
+        {
+          "name": "circle-warning",
+          "tags": "alert caution"
+        },
+        {
+          "name": "circle-information",
+          "tags": "info help"
+        },
+        {
+          "name": "circle-questionmark",
+          "tags": "help question"
+        },
+        {
+          "name": "edit-simple",
+          "tags": "pencil basic"
+        },
+        {
+          "name": "location",
+          "tags": "pin map"
+        },
+        {
+          "name": "envelope-solid",
+          "tags": "email filled"
+        },
+        {
+          "name": "phone-solid",
+          "tags": "call filled"
+        },
+        {
+          "name": "ai-chat-solid",
+          "tags": "artificial intelligence"
+        },
+        {
+          "name": "ai-stars",
+          "tags": "artificial intelligence sparkle"
+        },
+        {
+          "name": "phone",
+          "tags": "call ring"
+        },
+        {
+          "name": "id",
+          "tags": "identity badge"
+        },
+        {
+          "name": "document-signed",
+          "tags": "file signature"
+        },
+        {
+          "name": "house",
+          "tags": "home building"
+        },
+        {
+          "name": "mastercard",
+          "tags": "card payment"
+        },
+        {
+          "name": "november-first",
+          "tags": "date holiday"
+        },
+        {
+          "name": "person",
+          "tags": "user human"
+        },
+        {
+          "name": "person-solid",
+          "tags": "user filled"
+        },
+        {
+          "name": "autopay",
+          "tags": "automatic payment"
+        },
+        {
+          "name": "autopay-paused",
+          "tags": "automatic payment stop"
+        }
+      ]
     }
   }
 }

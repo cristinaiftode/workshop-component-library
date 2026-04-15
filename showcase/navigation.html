@@ -102,36 +102,210 @@
     <!-- Pagination -->
     <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
       <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-4">Pagination</h2>
-      <div class="flex flex-col gap-4">
-        <!-- Short -->
-        <div>
-          <span class="text-xs text-[#595959] mb-2 block">Few pages</span>
-          <nav class="inline-flex items-center gap-1">
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none text-[#1C1C1C] opacity-50 cursor-not-allowed pointer-events-none">&#8249;</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer bg-[#4573D2] text-white font-bold">1</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">2</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">3</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">4</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">5</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8250;</button>
-          </nav>
-        </div>
-        <!-- Long with ellipsis -->
-        <div>
-          <span class="text-xs text-[#595959] mb-2 block">Many pages (page 5 of 20)</span>
-          <nav class="inline-flex items-center gap-1">
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8249;</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">1</button>
-            <span class="min-w-[32px] h-8 inline-flex items-center justify-center text-sm text-[#595959]">...</span>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">4</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer bg-[#4573D2] text-white font-bold">5</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">6</button>
-            <span class="min-w-[32px] h-8 inline-flex items-center justify-center text-sm text-[#595959]">...</span>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">20</button>
-            <button class="inline-flex items-center justify-center min-w-[32px] h-8 px-2 rounded-[4px] text-sm leading-5 outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#EBEBEB]">&#8250;</button>
+
+      <!-- Full Pagination bar -->
+      <div class="mb-6">
+        <span class="text-xs text-[#595959] mb-2 block">Full pagination bar — left counter + page-size Select, right navigation</span>
+        <div class="flex items-center justify-between">
+          <!-- Left group: page counter + page-size select -->
+          <div class="flex items-center gap-[16px]">
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Showing 1- 10 of 100</span>
+            <!-- Page-size select -->
+            <div class="relative" data-pagination-select>
+              <button class="flex items-center gap-[4px] h-[32px] px-[8px] border border-[#DDDDDD] rounded-[4px] bg-white text-[14px] leading-[20px] text-[#1C1C1C] cursor-pointer hover:border-[#ACACAC]" data-select-trigger>
+                <span data-select-value>10</span>
+                <svg class="w-[24px] h-[24px] shrink-0 transition-transform duration-150" viewBox="0 0 24 24" fill="#1C1C1C" data-select-chevron><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+              </button>
+              <div class="absolute bottom-full left-0 mb-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[64px] hidden" data-select-dropdown>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>10</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>25</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>50</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>100</div>
+              </div>
+            </div>
+          </div>
+          <!-- Right group: navigation buttons -->
+          <nav class="flex items-center gap-[8px]">
+            <!-- First page -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] cursor-pointer border-none outline-none opacity-50 cursor-not-allowed" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <!-- Previous page -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] cursor-pointer border-none outline-none opacity-50 cursor-not-allowed" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <!-- Page 1 (active) -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <!-- Page 2 -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">2</button>
+            <!-- Page 3 -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">3</button>
+            <!-- Next page -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] cursor-pointer border-none outline-none hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <!-- Last page -->
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] cursor-pointer border-none outline-none hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
           </nav>
         </div>
       </div>
+
+      <!-- Right Group variants -->
+      <div class="mb-6">
+        <span class="text-xs text-[#595959] mb-3 block">Right group variants — adapts to number of pages</span>
+        <div class="flex flex-col gap-[16px]">
+          <!-- 5 pages -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">2</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">3</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">4</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">5</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- 4 pages -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">2</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">3</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">4</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- 3 pages -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">2</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">3</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- 2 pages -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-[#1C1C1C] hover:bg-[#DDDDDD]" style="background:#EBEBEB">2</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- 1 page -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] text-[14px] leading-[20px] border-none outline-none cursor-pointer text-white" style="background:#4573D2">1</button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- Only arrows (no page numbers) -->
+          <nav class="flex items-center gap-[8px]">
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 7.5C5.66421 7.5 6 7.83579 6 8.25V15.75C6 16.1642 5.66421 16.5 5.25 16.5C4.83579 16.5 4.5 16.1642 4.5 15.75V8.25C4.5 7.83579 4.83579 7.5 5.25 7.5ZM12.7803 7.96967C13.0466 8.23594 13.0708 8.6526 12.8529 8.94621L12.7803 9.03033L10.561 11.25H18.75C19.1642 11.25 19.5 11.5858 19.5 12C19.5 12.3797 19.2178 12.6935 18.8518 12.7432L18.75 12.75H10.561L12.7803 14.9697C13.0732 15.2626 13.0732 15.7374 12.7803 16.0303C12.5141 16.2966 12.0974 16.3208 11.8038 16.1029L11.7197 16.0303L8.21966 12.5303L8.16535 12.4699L8.11872 12.4053L8.07015 12.3172L8.02596 12.1962L8.00775 12.1083L8.00082 11.9646L8.01957 11.829L8.0498 11.7307L8.09685 11.631L8.15096 11.5486L8.21966 11.4697L11.7197 7.96967C12.0126 7.67678 12.4874 7.67678 12.7803 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none opacity-50" style="background:#EBEBEB" disabled>
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 7.96967C11.2966 8.23594 11.3208 8.6526 11.1029 8.94621L11.0303 9.03033L8.811 11.249L17 11.25C17.4142 11.25 17.75 11.5858 17.75 12C17.75 12.3797 17.4678 12.6935 17.1018 12.7432L17 12.75L8.81 12.749L11.0303 14.9697C11.3232 15.2626 11.3232 15.7374 11.0303 16.0303C10.7641 16.2966 10.3474 16.3208 10.0538 16.1029L9.96967 16.0303L6.46967 12.5303L6.38988 12.4364L6.33895 12.3547L6.28881 12.2387L6.26242 12.1363L6.25146 12.0471L6.25149 11.9525L6.26973 11.8286L6.29999 11.7302L6.34686 11.631L6.40096 11.5486L6.46967 11.4697L9.96967 7.96967C10.2626 7.67678 10.7374 7.67678 11.0303 7.96967Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9462 7.89705L14.0303 7.96967L17.5303 11.4697L17.5659 11.5078L17.6101 11.5636L17.661 11.6453L17.7112 11.7613L17.7376 11.8637L17.7482 11.9485L17.7482 12.0514L17.7303 12.1714L17.6911 12.2919L17.6531 12.369L17.5937 12.4583L17.5303 12.5303L14.0303 16.0303C13.7374 16.3232 13.2626 16.3232 12.9697 16.0303C12.7034 15.7641 12.6792 15.3474 12.8971 15.0538L12.9697 14.9697L15.188 12.75H7C6.58579 12.75 6.25 12.4142 6.25 12C6.25 11.6203 6.53215 11.3065 6.89823 11.2568L7 11.25H15.189L12.9697 9.03033C12.6768 8.73744 12.6768 8.26256 12.9697 7.96967C13.2359 7.7034 13.6526 7.6792 13.9462 7.89705Z" /></svg>
+            </button>
+            <button class="inline-flex items-center justify-center w-[32px] h-[32px] rounded-[4px] border-none outline-none cursor-pointer hover:bg-[#DDDDDD]" style="background:#EBEBEB">
+              <svg class="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 7.5C19.1642 7.5 19.5 7.83579 19.5 8.25V15.75C19.5 16.1642 19.1642 16.5 18.75 16.5C18.3358 16.5 18 16.1642 18 15.75V8.25C18 7.83579 18.3358 7.5 18.75 7.5ZM12.1962 7.89705L12.2803 7.96967L15.7803 11.4697C15.8049 11.4943 15.8278 11.5206 15.8488 11.5484L15.7803 11.4697L15.8192 11.5116L15.8601 11.5636L15.9278 11.6785L15.9659 11.7759L15.9869 11.8598L15.9982 11.9477V12.0523L15.9804 12.171L15.9502 12.2693L15.9031 12.3689L15.8712 12.4203L15.8437 12.4583L15.7803 12.5303L12.2803 16.0303C11.9874 16.3232 11.5126 16.3232 11.2197 16.0303C10.9534 15.7641 10.9292 15.3474 11.1471 15.0538L11.2197 14.9697L13.439 12.75H5.25C4.83579 12.75 4.5 12.4142 4.5 12C4.5 11.6203 4.78215 11.3065 5.14823 11.2568L5.25 11.25H13.439L11.2197 9.03033C10.9268 8.73744 10.9268 8.26256 11.2197 7.96967C11.4859 7.7034 11.9026 7.6792 12.1962 7.89705Z" /></svg>
+            </button>
+          </nav>
+          <!-- Text variant -->
+          <div class="flex items-center h-[32px]">
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C]">190 item(s) in total</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left Group variants -->
+      <div>
+        <span class="text-xs text-[#595959] mb-3 block">Left group variants — page counter + page-size Select</span>
+        <div class="flex flex-col gap-[16px]">
+          <!-- With page counter -->
+          <div class="flex items-center gap-[16px]">
+            <span class="text-[14px] leading-[20px] text-[#1C1C1C] whitespace-nowrap">Showing 1- 10 of 100</span>
+            <div class="relative" data-pagination-select>
+              <button class="flex items-center gap-[4px] h-[32px] px-[8px] border border-[#DDDDDD] rounded-[4px] bg-white text-[14px] leading-[20px] text-[#1C1C1C] cursor-pointer hover:border-[#ACACAC]" data-select-trigger>
+                <span data-select-value>10</span>
+                <svg class="w-[24px] h-[24px] shrink-0 transition-transform duration-150" viewBox="0 0 24 24" fill="#1C1C1C" data-select-chevron><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+              </button>
+              <div class="absolute bottom-full left-0 mb-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[64px] hidden" data-select-dropdown>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>10</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>25</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>50</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>100</div>
+              </div>
+            </div>
+          </div>
+          <!-- Without page counter (select only) -->
+          <div class="flex items-center">
+            <div class="relative" data-pagination-select>
+              <button class="flex items-center gap-[4px] h-[32px] px-[8px] border border-[#DDDDDD] rounded-[4px] bg-white text-[14px] leading-[20px] text-[#1C1C1C] cursor-pointer hover:border-[#ACACAC]" data-select-trigger>
+                <span data-select-value>10</span>
+                <svg class="w-[24px] h-[24px] shrink-0 transition-transform duration-150" viewBox="0 0 24 24" fill="#1C1C1C" data-select-chevron><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
+              </button>
+              <div class="absolute bottom-full left-0 mb-1 bg-white border border-[#DDDDDD] rounded-[4px] shadow-[0px_1px_2px_rgba(47,51,68,0.3),0px_2px_6px_rgba(47,51,68,0.15)] py-1 z-50 min-w-[64px] hidden" data-select-dropdown>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>10</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>25</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>50</div>
+                <div class="px-2 py-1.5 text-[14px] leading-[20px] cursor-pointer hover:bg-[rgba(0,99,255,0.1)] rounded-[4px] mx-1" data-select-option>100</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-[#595959] mt-4">Sub-components: Select (page size), IconButton (first/prev/next/last with arrow-start, arrow-left, arrow-right, arrow-end icons), Button (page numbers — Primary for active, Default for others). Adapts to page count (5→1 pages, only arrows, or text variant).</p>
     </section>
 
     <!-- FormGrid — 2 Column Groups with Divider -->
@@ -445,7 +619,7 @@
           <div class="flex flex-col mb-[2px]" data-menu-group>
             <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)]" data-group-toggle>
               <div class="p-[2px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C" class="transition-transform duration-150"><path d="M4 6l4 4 4-4z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1C1C" class="transition-transform duration-150"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
               </div>
               <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Documents</span>
             </button>
@@ -473,7 +647,7 @@
               <!-- Bin icon (trash) item -->
               <div class="flex gap-[4px] h-[32px] items-center pl-[20px] pr-[8px] py-[6px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer" data-menu-item>
                 <div class="w-[16px] h-[24px] flex items-center justify-center -ml-[4px]">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#1C1C1C" stroke-width="1.5"><path d="M4 6h12M8 6V4h4v2M6 6v10h8V6"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" d="M12 2a4.5 4.5 0 014.472 4h3.778a.75.75 0 110 1.5h-.75V18a4 4 0 01-4 4h-7a4 4 0 01-4-4V7.5h-.75a.75.75 0 010-1.5h3.777A4.5 4.5 0 0112 2zm6 5.5H6V18a2.5 2.5 0 002.336 2.495l.164.005h7a2.5 2.5 0 002.495-2.336L18 18V7.5zm-8.25 2a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zm4.5 0a.75.75 0 01.75.75v7.5a.75.75 0 11-1.5 0v-7.5a.75.75 0 01.75-.75zM12 3.5A3 3 0 009.041 6h5.917A3 3 0 0012 3.5z" /></svg>
                 </div>
                 <span class="flex-1 text-[14px] leading-[20px] text-[#1C1C1C] truncate">Bin</span>
               </div>
@@ -483,7 +657,7 @@
           <div class="flex flex-col mb-[2px]" data-menu-group>
             <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)]" data-group-toggle>
               <div class="p-[2px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C" class="transition-transform duration-150 -rotate-90"><path d="M4 6l4 4 4-4z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1C1C" class="transition-transform duration-150 -rotate-90"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
               </div>
               <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Processing</span>
             </button>
@@ -504,7 +678,7 @@
           <div class="flex flex-col" data-menu-group>
             <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)]" data-group-toggle>
               <div class="p-[2px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C" class="transition-transform duration-150"><path d="M4 6l4 4 4-4z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1C1C" class="transition-transform duration-150"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
               </div>
               <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Categories</span>
             </button>
@@ -546,23 +720,23 @@
             <!-- With chevron = drill-in -->
             <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
               <span class="flex-1 truncate text-left">Sales</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
             </button>
             <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none bg-[rgba(0,99,255,0.1)]" data-overview-item>
               <span class="flex-1 truncate text-left">Accounting</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
             </button>
             <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
               <span class="flex-1 truncate text-left">Reports</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
             </button>
             <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
               <span class="flex-1 truncate text-left">Inventory</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
             </button>
             <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
               <span class="flex-1 truncate text-left">Projects</span>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
             </button>
             <button class="flex h-[32px] items-center px-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>Journal Pro</button>
           </div>
@@ -570,29 +744,29 @@
         <!-- Bottom items with icons -->
         <div class="border-t-2 border-[rgba(28,28,28,0.08)] flex flex-col gap-[2px] items-start pb-[12px] pt-[14px] px-[12px]">
           <button class="flex gap-[4px] h-[32px] items-center px-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="14" height="10" rx="1"/><path d="M3 9h14"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.2584 4C18.0021 4 18.6645 4.46999 18.9102 5.17189L21.9018 13.7193C21.9668 13.9051 22 14.1005 22 14.2974V18.25C22 19.1682 21.2929 19.9212 20.3935 19.9942L20.25 20H3.75C2.7835 20 2 19.2165 2 18.25V14.2974C2 14.1005 2.03322 13.9051 2.09825 13.7193L5.08984 5.17189C5.33551 4.46999 5.99794 4 6.74159 4H17.2584ZM17.081 6H6.918L4.118 14H7.34689C7.74373 14 8.10301 14.2347 8.26254 14.598L9.23746 16.8187C9.39698 17.182 9.75627 17.4167 10.1531 17.4167H13.8469C14.2437 17.4167 14.603 17.182 14.7625 16.8187L15.7375 14.598C15.897 14.2347 16.2563 14 16.6531 14H19.881L17.081 6Z" /></svg>
             <span class="flex-1 truncate text-left">Inbox</span>
           </button>
           <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="3"/><path d="M10 1v2M10 17v2M1 10h2M17 10h2M3.5 3.5l1.4 1.4M15.1 15.1l1.4 1.4M3.5 16.5l1.4-1.4M15.1 4.9l1.4-1.4"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 2C13.5523 2 14 2.44772 14 3L14.0008 4.76984C14.5999 4.93526 15.1689 5.17315 15.6979 5.47349L16.9497 4.22183C17.3403 3.8313 17.9734 3.8313 18.364 4.22183L19.7782 5.63604C20.1687 6.02656 20.1687 6.65973 19.7782 7.05025L18.5265 8.30212C18.827 8.83136 19.065 9.40073 19.2304 10.0002L21 10C21.5523 10 22 10.4477 22 11V13C22 13.5523 21.5523 14 21 14L19.2302 14.0008C19.0647 14.5999 18.8268 15.1689 18.5265 15.6979L19.7782 16.9497C20.1687 17.3403 20.1687 17.9734 19.7782 18.364L18.364 19.7782C17.9734 20.1687 17.3403 20.1687 16.9497 19.7782L15.6979 18.5265C15.1689 18.8268 14.5999 19.0647 14.0008 19.2302L14 21C14 21.5523 13.5523 22 13 22H11C10.4477 22 10 21.5523 10 21L10.0002 19.2304C9.40073 19.065 8.83136 18.827 8.30212 18.5265L7.05025 19.7782C6.65973 20.1687 6.02656 20.1687 5.63604 19.7782L4.22183 18.364C3.8313 17.9734 3.8313 17.3403 4.22183 16.9497L5.47349 15.6979C5.17315 15.1689 4.93526 14.5999 4.76984 14.0008L3 14C2.44772 14 2 13.5523 2 13V11C2 10.4477 2.44772 10 3 10L4.76956 10.0002C4.935 9.40073 5.17299 8.83136 5.47349 8.30212L4.22183 7.05025C3.8313 6.65973 3.8313 6.02656 4.22183 5.63604L5.63604 4.22183C6.02656 3.8313 6.65973 3.8313 7.05025 4.22183L8.30212 5.47349C8.83136 5.17299 9.40073 4.935 10.0002 4.76956L10 3C10 2.44772 10.4477 2 11 2H13ZM12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8Z" /></svg>
             <span class="flex-1 truncate text-left">All settings</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
           </button>
           <button class="flex gap-[4px] h-[32px] items-center pl-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.8208 3.16798 17.3689 5.04672 19.1869C6.84629 20.9284 9.298 22 12 22C14.702 22 17.1537 20.9284 18.9533 19.1869C20.832 17.3689 22 14.8208 22 12ZM5.70422 16.9365C7.16882 18.8018 9.44448 20 12 20C14.5555 20 16.8312 18.8018 18.2958 16.9365C17.1596 14.6058 14.7673 13 12 13C9.23269 13 6.84043 14.6058 5.70422 16.9365ZM12 12C13.933 12 15.5 10.433 15.5 8.5C15.5 6.567 13.933 5 12 5C10.067 5 8.5 6.567 8.5 8.5C8.5 10.433 10.067 12 12 12Z" /></svg>
             <span class="flex-1 truncate text-left">My settings</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6L15 12L9 18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0303 6.46967C9.73744 6.17678 9.26256 6.17678 8.96967 6.46967C8.7034 6.73594 8.6792 7.1526 8.89705 7.44621L8.96967 7.53033L13.439 12L8.96967 16.4697C8.7034 16.7359 8.6792 17.1526 8.89705 17.4462L8.96967 17.5303C9.23594 17.7966 9.6526 17.8208 9.94621 17.6029L10.0303 17.5303L15.0303 12.5303C15.2966 12.2641 15.3208 11.8474 15.1029 11.5538L15.0303 11.4697L10.0303 6.46967Z" /></svg>
           </button>
           <button class="flex gap-[4px] h-[32px] items-center px-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 17.5C7.27614 17.5 7.5 17.7239 7.5 18V21.5C7.5 21.7761 7.27614 22 7 22H3.5C3.22386 22 3 21.7761 3 21.5V18C3 17.7239 3.22386 17.5 3.5 17.5H7ZM12.5 17.5C12.7761 17.5 13 17.7239 13 18V21.5C13 21.7761 12.7761 22 12.5 22H9C8.72386 22 8.5 21.7761 8.5 21.5V18C8.5 17.7239 8.72386 17.5 9 17.5H12.5ZM18 17.5C18.2761 17.5 18.5 17.7239 18.5 18V21.5C18.5 21.7761 18.2761 22 18 22H14.5C14.2239 22 14 21.7761 14 21.5V18C14 17.7239 14.2239 17.5 14.5 17.5H18ZM7 12C7.27614 12 7.5 12.2239 7.5 12.5V16C7.5 16.2761 7.27614 16.5 7 16.5H3.5C3.22386 16.5 3 16.2761 3 16V12.5C3 12.2239 3.22386 12 3.5 12H7ZM12.5 12C12.7761 12 13 12.2239 13 12.5V16C13 16.2761 12.7761 16.5 12.5 16.5H9C8.72386 16.5 8.5 16.2761 8.5 16V12.5C8.5 12.2239 8.72386 12 9 12H12.5ZM19.4704 9.47728L20.3763 12.858C20.4477 13.1248 20.2894 13.3989 20.0227 13.4704L16.642 14.3763C16.3752 14.4477 16.1011 14.2894 16.0296 14.0227L15.1237 10.642C15.0523 10.3752 15.2105 10.1011 15.4773 10.0296L18.858 9.12373C19.1248 9.05226 19.3989 9.21055 19.4704 9.47728ZM7 6.5C7.27614 6.5 7.5 6.72386 7.5 7V10.5C7.5 10.7761 7.27614 11 7 11H3.5C3.22386 11 3 10.7761 3 10.5V7C3 6.72386 3.22386 6.5 3.5 6.5H7ZM10.642 4.12373L14.0227 5.0296C14.2894 5.10107 14.4477 5.37523 14.3763 5.64197L13.4704 9.02271C13.3989 9.28944 13.1248 9.44773 12.858 9.37626L9.47728 8.47039C9.21055 8.39892 9.05226 8.12476 9.12373 7.85802L10.0296 4.47728C10.1011 4.21055 10.3752 4.05226 10.642 4.12373ZM20 2C20.2761 2 20.5 2.22386 20.5 2.5V6C20.5 6.27614 20.2761 6.5 20 6.5H16.5C16.2239 6.5 16 6.27614 16 6V2.5C16 2.22386 16.2239 2 16.5 2H20Z" /></svg>
             <span class="flex-1 truncate text-left">Market</span>
           </button>
           <button class="flex gap-[4px] h-[32px] items-center px-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 2H3a1 1 0 00-1 1v10a1 1 0 001 1h12l3 3V3a1 1 0 00-1-1z"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="#1C1C1C"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.5568 13.056C21.0311 13.7552 22 14.9373 22 16.2778C22 17.5718 21.0971 18.7182 19.7082 19.4252L20.5976 21.0069C20.7087 21.2044 20.6888 21.4494 20.5473 21.6263C20.3769 21.8393 20.0817 21.8937 19.85 21.7685L19.7664 21.7131L17.707 20.0658C17.3014 20.1318 16.8787 20.1667 16.4444 20.1667C13.5906 20.1667 11.2394 18.6604 10.9247 16.7217C13.5904 16.7152 15.9954 15.9564 17.7408 14.7564C18.4591 14.2626 19.0657 13.6954 19.5434 13.0745L19.5568 13.056ZM10.8889 3.5C15.7981 3.5 19.7778 6.23604 19.7778 9.61111C19.7778 12.92 15.9526 15.6147 11.1766 15.7191L10.7513 15.7215L5.34473 20.0464C5.10514 20.2381 4.75553 20.1993 4.56386 19.9597C4.42235 19.7828 4.40241 19.5377 4.51347 19.3403L6.91084 15.0776C3.99886 14.074 2 12.003 2 9.61111C2 6.23604 5.97969 3.5 10.8889 3.5Z" /></svg>
             <span class="flex-1 truncate text-left">Chat</span>
           </button>
           <button class="flex gap-[4px] h-[32px] items-center px-[8px] py-[6px] rounded-[4px] w-[232px] font-bold text-[14px] leading-[20px] text-[#1C1C1C] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none" data-overview-item>
-            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 4l4 4M14 4H6a2 2 0 00-2 2v8a2 2 0 002 2h4M12 14h6M12 14l3-3M12 14l3 3"/></svg>
+            <svg class="w-[20px] h-[20px] shrink-0" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             <span class="flex-1 truncate text-left">Log off</span>
           </button>
         </div>
@@ -607,7 +781,7 @@
         <!-- Header (Sub-page back) -->
         <div class="border-b-2 border-[rgba(28,28,28,0.08)] flex flex-col h-[50px] items-center py-[8px]">
           <button class="flex h-[32px] items-center py-[6px] pr-[8px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)] cursor-pointer bg-transparent border-none outline-none">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#1C1C1C" stroke-width="2" class="shrink-0"><path d="M12 4L6 10L12 16"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1C1C1C" class="shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9697 6.46967C14.2626 6.17678 14.7374 6.17678 15.0303 6.46967C15.2966 6.73594 15.3208 7.1526 15.1029 7.44621L15.0303 7.53033L10.561 12L15.0303 16.4697C15.2966 16.7359 15.3208 17.1526 15.1029 17.4462L15.0303 17.5303C14.7641 17.7966 14.3474 17.8208 14.0538 17.6029L13.9697 17.5303L8.96967 12.5303C8.7034 12.2641 8.6792 11.8474 8.89705 11.5538L8.96967 11.4697L13.9697 6.46967Z" /></svg>
             <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate text-left">Go to overview</span>
           </button>
         </div>
@@ -617,7 +791,7 @@
           <div class="flex flex-col mb-[2px]" data-menu-group>
             <button class="flex h-[32px] items-center pr-[8px] py-[6px] rounded-[4px] w-[232px] hover:bg-[rgba(28,28,28,0.06)]" data-group-toggle>
               <div class="p-[2px]">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="#1C1C1C" class="transition-transform duration-150"><path d="M4 6l4 4 4-4z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1C1C" class="transition-transform duration-150"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.20711 8.5C5.76165 8.5 5.53857 9.03857 5.85355 9.35355L11.6464 15.1464C11.8417 15.3417 12.1583 15.3417 12.3536 15.1464L18.1464 9.35355C18.4614 9.03857 18.2383 8.5 17.7929 8.5H6.20711Z" /></svg>
               </div>
               <span class="flex-1 font-bold text-[14px] leading-[20px] text-[#1C1C1C] truncate">Sales</span>
             </button>
@@ -1208,6 +1382,42 @@ document.querySelectorAll('section').forEach(sec => {
     closeAllTopNavDropdowns();
   });
 })();
+
+// ── Pagination Select dropdowns ──
+document.querySelectorAll('[data-pagination-select]').forEach(container => {
+  const trigger = container.querySelector('[data-select-trigger]');
+  const dropdown = container.querySelector('[data-select-dropdown]');
+  const chevron = container.querySelector('[data-select-chevron]');
+  const valueEl = container.querySelector('[data-select-value]');
+  const options = container.querySelectorAll('[data-select-option]');
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    // Close other pagination selects
+    document.querySelectorAll('[data-pagination-select] [data-select-dropdown]').forEach(d => {
+      if (d !== dropdown) d.classList.add('hidden');
+    });
+    document.querySelectorAll('[data-pagination-select] [data-select-chevron]').forEach(c => {
+      if (c !== chevron) c.classList.remove('rotate-180');
+    });
+    dropdown.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+  });
+
+  options.forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      valueEl.textContent = opt.textContent;
+      dropdown.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+    });
+  });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('[data-pagination-select] [data-select-dropdown]').forEach(d => d.classList.add('hidden'));
+  document.querySelectorAll('[data-pagination-select] [data-select-chevron]').forEach(c => c.classList.remove('rotate-180'));
+});
 </script>
 </body>
 </html>

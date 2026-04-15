@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illustrations — e-conomic Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { font-family: Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-[#F5F5F5] text-[#1C1C1C]">
+  <div class="max-w-6xl mx-auto py-10 px-6">
+    <a href="index.html" class="text-xs text-[#4573D2] hover:text-[#2B57B4] mb-4 inline-block">&larr; Back to overview</a>
+    <h1 class="text-2xl font-bold mb-2">Illustration Library</h1>
+    <p class="text-sm text-[#595959] mb-6">53 TACO illustrations. Use for empty states, onboarding, feature pages, error screens, and contextual visuals.</p>
+
+    <!-- Search -->
+    <div class="relative mb-6">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#ACACAC]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+      <input type="text" id="illust-search" placeholder="Search illustrations..." class="w-full pl-10 pr-4 py-2 text-sm border border-[#DDDDDD] rounded-[4px] bg-white focus:outline-none focus:border-[#4573D2] placeholder:text-[#ACACAC]" />
+    </div>
+
+    <!-- Sales Documents -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Sales Documents — Invoices, Quotes, Orders</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" id="sales-grid">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Invoice draft" data-tags="invoice draft new create empty">
+          <img src="illustrations/Invoice draft.svg" alt="Invoice draft" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Invoice draft</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="invoice sent" data-tags="invoice sent delivery">
+          <img src="illustrations/invoice sent.svg" alt="invoice sent" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">invoice sent</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="invoice invoiced" data-tags="invoice invoiced finalized complete">
+          <img src="illustrations/invoice invoiced.svg" alt="invoice invoiced" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">invoice invoiced</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Quote draft" data-tags="quote draft new create empty">
+          <img src="illustrations/Quote draft.svg" alt="Quote draft" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Quote draft</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Quote sent" data-tags="quote sent delivery">
+          <img src="illustrations/Quote sent.svg" alt="Quote sent" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Quote sent</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="quote archive" data-tags="quote archive history">
+          <img src="illustrations/quote archive.svg" alt="quote archive" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">quote archive</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="order draft" data-tags="order draft new create empty">
+          <img src="illustrations/order draft.svg" alt="order draft" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">order draft</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="order sent" data-tags="order sent delivery">
+          <img src="illustrations/order sent.svg" alt="order sent" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">order sent</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="order archive" data-tags="order archive history">
+          <img src="illustrations/order archive.svg" alt="order archive" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">order archive</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Documents & Notifications -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Documents & Notifications</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="document with notification" data-tags="document notification badge alert new">
+          <img src="illustrations/document with notification.svg" alt="document with notification" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">document with notification</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="document with coffee" data-tags="document coffee casual review relax">
+          <img src="illustrations/document with coffee.svg" alt="document with coffee" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">document with coffee</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="documents with chain link" data-tags="documents chain link connected integration attached">
+          <img src="illustrations/documents with chain link.svg" alt="documents with chain link" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">documents with chain link</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Hand signing document" data-tags="hand signing contract agreement signature approve">
+          <img src="illustrations/Hand signing document.svg" alt="Hand signing document" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Hand signing document</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="charts and documents in a box" data-tags="charts documents box reports archive collection">
+          <img src="illustrations/charts and documents in a box.svg" alt="charts and documents in a box" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">charts and documents in a box</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="book" data-tags="book knowledge documentation help learn e-copedia">
+          <img src="illustrations/book.svg" alt="book" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">book</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="man shows paper-3" data-tags="man paper document presenting showing results">
+          <img src="illustrations/man shows paper-3.svg" alt="man shows paper-3" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">man shows paper</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="man with envelopes" data-tags="man envelopes email inbox messages correspondence">
+          <img src="illustrations/man with envelopes.svg" alt="man with envelopes" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">man with envelopes</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Payments & Money -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Payments & Money</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="paper plane with dollar sign" data-tags="paper plane dollar money payment send transfer billing">
+          <img src="illustrations/paper plane with dollar sign.svg" alt="paper plane with dollar sign" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">paper plane with dollar sign</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="money-paperplane" data-tags="money paperplane payment send transfer fast">
+          <img src="illustrations/money-paperplane.svg" alt="money-paperplane" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">money-paperplane</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="paper plane with toggle" data-tags="paper plane toggle auto-pay automated scheduled">
+          <img src="illustrations/paper plane with toggle.svg" alt="paper plane with toggle" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">paper plane with toggle</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Firmakort_Man-pays-scans-receipt" data-tags="firmakort company card expense receipt scan payment">
+          <img src="illustrations/Firmakort_Man-pays-scans-receipt.svg" alt="Firmakort Man pays scans receipt" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Firmakort: Man pays, scans receipt</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Firmakort_Man-in-bakery-pays-scans-receipt" data-tags="firmakort bakery company card expense receipt scan">
+          <img src="illustrations/Firmakort_Man-in-bakery-pays-scans-receipt.svg" alt="Firmakort Man in bakery" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Firmakort: Man in bakery pays</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- People & Office -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">People & Office</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="People talking by coffeemachine in office" data-tags="people coffee machine office team collaboration casual">
+          <img src="illustrations/People talking by coffeemachine in office.svg" alt="People talking by coffee machine" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">People talking by coffee machine</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="People raising their hands" data-tags="people hands celebration success team achievement">
+          <img src="illustrations/People raising their hands.svg" alt="People raising their hands" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">People raising their hands</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="people, togetherness" data-tags="people togetherness team group collaboration community">
+          <img src="illustrations/people, togetherness.svg" alt="people togetherness" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">people, togetherness</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="happy support people" data-tags="support happy team help customer service">
+          <img src="illustrations/happy support people.svg" alt="happy support people" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">happy support people</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="support man light monitor" data-tags="support man monitor help desk technical assistance">
+          <img src="illustrations/support man light monitor.svg" alt="support man light monitor" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">support man light monitor</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="sprint of wow, man, woman, laptop, lightbulb, working" data-tags="sprint wow man woman laptop lightbulb innovation brainstorm idea">
+          <img src="illustrations/sprint of wow, man, woman, laptop, lightbulb, working.svg" alt="sprint of wow" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">sprint of wow: working together</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="woman working on a laptop" data-tags="woman laptop working productivity">
+          <img src="illustrations/woman working on a laptop.svg" alt="woman working on a laptop" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">woman working on a laptop</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="man pointing to a laptop" data-tags="man laptop pointing demo feature introduction onboarding">
+          <img src="illustrations/man pointing to a laptop.svg" alt="man pointing to a laptop" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">man pointing to a laptop</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man pointing at statistics" data-tags="man statistics charts analytics reports data insights">
+          <img src="illustrations/Man pointing at statistics.svg" alt="Man pointing at statistics" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man pointing at statistics</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="live course presentation" data-tags="live course presentation webinar training event">
+          <img src="illustrations/live course presentation.svg" alt="live course presentation" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">live course presentation</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="woman apps market addons extensions" data-tags="woman apps market addons extensions integrations plugins store">
+          <img src="illustrations/woman apps market addons extensions.svg" alt="woman apps market" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">woman browsing apps/extensions</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Trustpilot ratings" data-tags="trustpilot ratings reviews stars social proof">
+          <img src="illustrations/Trustpilot ratings.svg" alt="Trustpilot ratings" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Trustpilot ratings</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Time & Scheduling -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Time & Scheduling</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="clock, list" data-tags="clock list time tracking scheduling tasks deadlines">
+          <img src="illustrations/clock, list.svg" alt="clock, list" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">clock, list</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="clock-list" data-tags="clock list time tracking scheduling alternative">
+          <img src="illustrations/clock-list.svg" alt="clock-list" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">clock-list</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Moving & Migration -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Moving & Migration</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Movers moving boxes" data-tags="movers boxes migration moving switching systems">
+          <img src="illustrations/Movers moving boxes.svg" alt="Movers moving boxes" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Movers moving boxes</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Movers, moving boxes into car" data-tags="movers car export migration moving">
+          <img src="illustrations/Movers, moving boxes into car.svg" alt="Movers moving boxes into car" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Movers, moving boxes into car</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Movers, moving boxes into car-inbox" data-tags="movers car inbox import migration bulk">
+          <img src="illustrations/Movers, moving boxes into car-inbox.svg" alt="Movers moving boxes into car inbox" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Movers, boxes into car (inbox)</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man carrying box of documents in the rain" data-tags="man box documents rain migration difficult pain">
+          <img src="illustrations/Man carrying box of documents in the rain.svg" alt="Man carrying box in rain" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man carrying box in the rain</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man carrying box with documents 1" data-tags="man box documents carrying moving archiving">
+          <img src="illustrations/Man carrying box with documents 1.svg" alt="Man carrying box with documents" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man carrying box with documents</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man loosing flying documents from driving car" data-tags="man documents flying car losing data loss backup">
+          <img src="illustrations/Man loosing flying documents from driving car.svg" alt="Man losing documents from car" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man losing documents from car</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man fighting with dog over box of documents" data-tags="man dog documents fighting chaos humorous error">
+          <img src="illustrations/Man fighting with dog over box of documnets.svg" alt="Man fighting with dog over documents" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man fighting dog over documents</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Man delivering destroyed box of documents to bookkeeper" data-tags="man destroyed box documents bookkeeper messy disorganized">
+          <img src="illustrations/Man delivering destroyed box of documents to bookkeeper.svg" alt="Man delivering destroyed box" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Man delivering destroyed box to bookkeeper</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Inventory & Warehouse -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Inventory & Warehouse</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="man with a box in a warehouse" data-tags="man box warehouse inventory stock products">
+          <img src="illustrations/man with a box in a warehause.svg" alt="man with a box in a warehouse" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">man with a box in a warehouse</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="People scanning a barcode on a box" data-tags="people scanning barcode box inventory tracking">
+          <img src="illustrations/People scanning a barcode on a box.svg" alt="People scanning barcode" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">People scanning barcode on box</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Onboarding & Welcome -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Onboarding & Welcome</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="velkommen welcome user panel" data-tags="velkommen welcome onboarding first-time new account">
+          <img src="illustrations/velkommen welcome user panel.svg" alt="velkommen welcome" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">velkommen / welcome</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="farvel fairwell user panel" data-tags="farvel farewell goodbye offboarding cancel delete">
+          <img src="illustrations/farvel fairwell user panel.svg" alt="farvel farewell" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">farvel / farewell</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AI & Automation -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">AI & Automation</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="Robot writing on laptop" data-tags="robot ai automation smart auto-generated laptop">
+          <img src="illustrations/Robot writing on laptop.svg" alt="Robot writing on laptop" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">Robot writing on laptop</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seasonal -->
+    <section class="bg-white border border-[#DDDDDD] rounded-[4px] p-6 mb-6">
+      <h2 class="text-xs font-bold text-[#595959] uppercase tracking-wide mb-5">Seasonal & Special</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="christmas wreath" data-tags="christmas wreath holiday seasonal december">
+          <img src="illustrations/christmas wreath.svg" alt="christmas wreath" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">christmas wreath</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="corona covid 19 multiple" data-tags="corona covid pandemic health">
+          <img src="illustrations/corona covid 19 multiple.svg" alt="corona covid 19" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">corona covid 19</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="laptop with corona-1" data-tags="laptop corona remote work pandemic">
+          <img src="illustrations/laptop with corona-1.svg" alt="laptop with corona" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">laptop with corona</span>
+        </div>
+
+        <div class="illust-card flex flex-col items-center gap-3 p-4 rounded-[4px] hover:bg-[#F6F6F6] cursor-pointer" data-name="man pointing at laptop with corona-1" data-tags="man laptop corona remote guidance">
+          <img src="illustrations/man pointing at laptop with corona-1.svg" alt="man pointing at laptop with corona" class="h-32 w-auto" />
+          <span class="text-xs text-[#595959] text-center leading-tight">man pointing at laptop (corona)</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Search functionality
+    const searchInput = document.getElementById('illust-search');
+    const allCards = document.querySelectorAll('.illust-card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+      allCards.forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const match = !query || name.includes(query) || tags.includes(query);
+        card.style.display = match ? '' : 'none';
+      });
+
+      // Hide empty sections
+      document.querySelectorAll('section').forEach(sec => {
+        const visibleCards = sec.querySelectorAll('.illust-card:not([style*="display: none"])');
+        sec.style.display = visibleCards.length === 0 ? 'none' : '';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1380,7 +1380,7 @@
         "logoText": {
           "type": "string",
           "default": "e",
-          "description": "Logo text or symbol. Prefer using the logo image: <img src=\"https://webapp.e-conomic.com/img/e-conomic-logo-white.svg\" alt=\"e-conomic\" style=\"height:28px;width:28px;object-fit:contain;\" /> — always 28×28px on the dark #29283E bar."
+          "description": "Logo. ALWAYS use this exact img tag: <img src=\"https://raw.githubusercontent.com/cristinaiftode/workshop-component-library/main/showcase/logos/orange-logo.svg\" alt=\"e-conomic\" style=\"height:28px;width:28px;object-fit:contain;\"> — 28×28px on the dark #29283E bar."
         },
         "primaryItems": {
           "type": "array",

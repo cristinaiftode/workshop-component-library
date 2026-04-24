@@ -101,6 +101,40 @@
           "hoverBg": "#EBEBEB"
         }
       },
+      "styling": {
+        "dimensions": {
+          "height": "32px",
+          "minWidth": "auto",
+          "paddingX": "12px",
+          "paddingY": "6px",
+          "gap": "4px"
+        },
+        "border": {
+          "width": "0px",
+          "ghostWidth": "1px",
+          "style": "solid",
+          "color": "transparent (default) / #4573D2 (ghost) / #2B57B4 (ghost hover)"
+        },
+        "radius": "4px",
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "whiteSpace": "nowrap"
+        },
+        "shadow": "none (no drop shadow on buttons)",
+        "focusRing": {
+          "offset": "-1px inset outline",
+          "width": "2px",
+          "color": "#4573D2",
+          "radius": "5px"
+        },
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed, pointer-events: none",
+          "fluid": "width: 100% when fluid prop set"
+        }
+      },
       "usage": "<Button appearance=\"primary\">Save</Button>"
     },
     "IconButton": {
@@ -178,6 +212,31 @@
           "hoverBg": "#EBEBEB"
         }
       },
+      "styling": {
+        "dimensions": {
+          "width": "32px",
+          "height": "32px",
+          "padding": "6px",
+          "iconSize": "20px"
+        },
+        "border": {
+          "width": "0px",
+          "ghostWidth": "1px",
+          "style": "solid",
+          "color": "transparent (default) / #4573D2 (ghost)"
+        },
+        "radius": "4px (default) / 9999px (when rounded=true)",
+        "shadow": "none",
+        "focusRing": {
+          "offset": "-1px inset outline",
+          "width": "2px",
+          "color": "#4573D2",
+          "radius": "5px (square) / 9999px (rounded)"
+        },
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed, pointer-events: none"
+        }
+      },
       "usage": "<IconButton icon=\"edit-simple\" aria-label=\"Edit\" />"
     },
     "Field": {
@@ -215,6 +274,59 @@
           "type": "function"
         }
       },
+      "styling": {
+        "layout": "flex flex-col items-stretch (label, input, helperText stacked)",
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "paddingY": "4px"
+        },
+        "input": {
+          "dimensions": {
+            "height": "32px",
+            "width": "100%",
+            "paddingX": "8px",
+            "paddingY": "6px"
+          },
+          "typography": {
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "placeholderColor": "#ACACAC"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid",
+            "color": "#DDDDDD",
+            "hoverColor": "#ACACAC",
+            "focusColor": "#4573D2",
+            "errorColor": "#CE3F42"
+          },
+          "radius": "4px",
+          "focusShadow": "0 0 0 1px #4573D2 (or #CE3F42 for error)",
+          "backgrounds": {
+            "default": "#FFFFFF",
+            "highlighted": "#FFF1C3",
+            "readOnly": "#F5F5F5"
+          }
+        },
+        "helperText": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "defaultColor": "#595959",
+          "errorColor": "#CE3F42"
+        },
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed, label becomes font-weight 400",
+          "readOnly": "bg #F5F5F5, cursor default"
+        }
+      },
       "usage": "<Field label=\"Company name\" placeholder=\"Enter name\" />"
     },
     "Textarea": {
@@ -243,6 +355,58 @@
             "read-only"
           ],
           "default": "default"
+        }
+      },
+      "styling": {
+        "layout": "flex flex-col items-stretch (label, textarea, helperText stacked)",
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "paddingY": "4px"
+        },
+        "textarea": {
+          "dimensions": {
+            "width": "100%",
+            "paddingX": "8px",
+            "paddingY": "6px",
+            "rows": "3 (default), vertical resize allowed"
+          },
+          "typography": {
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "placeholderColor": "#ACACAC"
+          },
+          "border": {
+            "width": "1px",
+            "color": "#DDDDDD",
+            "hoverColor": "#ACACAC",
+            "focusColor": "#4573D2",
+            "errorColor": "#CE3F42"
+          },
+          "radius": "4px",
+          "focusShadow": "0 0 0 1px #4573D2 (or #CE3F42 for error)",
+          "backgrounds": {
+            "default": "#FFFFFF",
+            "highlighted": "#FFF1C3",
+            "readOnly": "#F5F5F5"
+          }
+        },
+        "helperText": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "defaultColor": "#595959",
+          "errorColor": "#CE3F42"
+        },
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed",
+          "readOnly": "bg #F5F5F5, cursor default"
         }
       },
       "usage": "<Textarea label=\"Notes\" rows={4} />"
@@ -298,17 +462,87 @@
         }
       },
       "styling": {
-        "anatomy": [
-          "Field container (32px, border #DDD, rounded-[4px])",
-          "Value input (flex-1, px-[8px] py-[6px])",
-          "Field button (32×32, bg #EBEBEB, list-search icon, 1px left divider)",
-          "Listbox dropdown (elevation shadow, rounded-[4px])"
-        ],
+        "container": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "4px",
+          "background": "transparent"
+        },
+        "label": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "paddingY": "4px"
+        },
+        "field": {
+          "display": "flex",
+          "alignItems": "center",
+          "height": "32px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "hoverBorderColor": "#ACACAC",
+          "focusBorderColor": "#4573D2",
+          "errorBorderColor": "#CE3F42",
+          "highlightedBorderColor": "#4573D2",
+          "radius": "4px",
+          "focusShadow": "0 0 0 1px #4573D2",
+          "errorShadow": "0 0 0 1px #CE3F42",
+          "readOnlyBackground": "#F5F5F5",
+          "highlightedBackground": "#FFF1C3",
+          "disabledOpacity": 0.5
+        },
+        "input": {
+          "flex": 1,
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "placeholderColor": "#ACACAC",
+          "border": "none",
+          "background": "transparent",
+          "outline": "none"
+        },
+        "fieldButton": {
+          "width": "32px",
+          "height": "32px",
+          "background": "#EBEBEB",
+          "hoverBackground": "#DDDDDD",
+          "borderLeft": "1px solid #DDDDDD",
+          "radius": "0 4px 4px 0",
+          "iconSize": "20×20px",
+          "iconColor": "#1C1C1C"
+        },
         "listbox": {
+          "marginTop": "4px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
           "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
-          "itemHover": "bg-[rgba(0,99,255,0.1)]",
-          "itemPadding": "px-[8px] py-[6px]",
-          "itemRadius": "rounded-[4px]"
+          "paddingY": "4px",
+          "maxHeight": "240px",
+          "overflowY": "auto"
+        },
+        "listItem": {
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "background": "transparent",
+          "hoverBackground": "rgba(0,99,255,0.1)",
+          "activeBackground": "rgba(0,99,255,0.16)",
+          "radius": "4px",
+          "cursor": "pointer"
+        },
+        "helperText": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "errorColor": "#CE3F42",
+          "paddingTop": "4px"
         }
       },
       "usage": "<Combobox label=\"Country\" options={countries} value={val} onChange={setVal} />"
@@ -330,6 +564,41 @@
         },
         "onChange": {
           "type": "function"
+        }
+      },
+      "styling": {
+        "track": {
+          "width": "36px",
+          "height": "20px",
+          "radius": "9999px (fully rounded)",
+          "bgUnchecked": "#ACACAC",
+          "bgChecked": "#4573D2",
+          "transition": "background-color 200ms"
+        },
+        "thumb": {
+          "width": "14px",
+          "height": "14px",
+          "radius": "9999px",
+          "bg": "#FFFFFF",
+          "translateUnchecked": "3px from left",
+          "translateChecked": "18px from left",
+          "transition": "transform 200ms"
+        },
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "gap": "8px (between switch and label)"
+        },
+        "focusRing": {
+          "width": "2px",
+          "color": "#4573D2",
+          "offset": "1px"
+        },
+        "shadow": "none",
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed"
         }
       },
       "usage": "<Switch label=\"Enable notifications\" checked={true} />"
@@ -368,12 +637,36 @@
         }
       },
       "styling": {
+        "container": {
+          "layout": "flex flex-col (vertical) / flex flex-row flex-wrap (horizontal)",
+          "gap": "0 (vertical) / 16px (horizontal)",
+          "background": "transparent",
+          "border": "none"
+        },
+        "radioItem": {
+          "paddingY": "6px",
+          "gap": "8px",
+          "alignment": "items-start",
+          "cursor": "pointer"
+        },
         "radioCircle": {
           "size": "16×16px",
-          "unchecked": "border 2px #ACACAC",
-          "checked": "border 4px #4573D2 (thick border creates filled look)"
+          "radius": "9999px",
+          "bg": "#FFFFFF",
+          "uncheckedBorder": "2px solid #ACACAC",
+          "hoverBorder": "2px solid #595959",
+          "checkedBorder": "4px solid #4573D2 (thick ring creates filled look)",
+          "disabledOpacity": "0.5",
+          "focusRing": "2px solid #4573D2 offset 2px"
         },
-        "radioItem": "py-[6px] gap-[8px] items-start"
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C"
+        },
+        "shadow": "none"
       },
       "usage": "<RadioGroup name=\"plan\" options={[{value:'free',label:'Free'},{value:'pro',label:'Pro'}]} />"
     },
@@ -447,6 +740,40 @@
           "text": "#1C1C1C"
         }
       },
+      "styling": {
+        "dimensions": {
+          "height": "24px (approx)",
+          "paddingY": "2px",
+          "paddingLeft": "8px (no icon) / 4px (with icon)",
+          "paddingRight": "8px (no close) / 0 (with close button)",
+          "gap": "4px (between icon/text/close)"
+        },
+        "border": {
+          "width": "0px",
+          "style": "none"
+        },
+        "radius": "4px",
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "whiteSpace": "nowrap"
+        },
+        "shadow": "none",
+        "icon": {
+          "size": "20×20px",
+          "color": "inherits tag text color"
+        },
+        "closeButton": {
+          "width": "20px",
+          "height": "20px",
+          "padding": "2px",
+          "iconSize": "16×16px stroke=1.5",
+          "radius": "0 4px 4px 0 (right-side rounded only)",
+          "hover": "opacity: 0.7"
+        }
+      },
       "usage": "<Tag color=\"green\">Active</Tag>"
     },
     "Tooltip": {
@@ -509,6 +836,41 @@
           "type": "function"
         }
       },
+      "styling": {
+        "dimensions": {
+          "paddingX": "12px",
+          "paddingY": "8px",
+          "width": "100% (of list container)"
+        },
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C"
+        },
+        "border": {
+          "bottomWidth": "1px",
+          "bottomColor": "#EBEBEB",
+          "note": "last item in group has border-bottom: none"
+        },
+        "radius": "0 (inherited from ListGroup corners)",
+        "backgrounds": {
+          "default": "#FFFFFF",
+          "selected": "#DEEBFF",
+          "hover": "#F5F5F5 (when clickable)",
+          "selectedHover": "#DEEBFF (stays highlighted)"
+        },
+        "focusRing": {
+          "width": "2px",
+          "color": "#4573D2",
+          "offset": "inset"
+        },
+        "states": {
+          "disabled": "opacity: 0.5, cursor: not-allowed",
+          "clickable": "cursor: pointer, hover bg"
+        }
+      },
       "usage": "<ListItem>Invoice #1234</ListItem>"
     },
     "ListGroup": {
@@ -523,6 +885,28 @@
           "type": "ReactNode",
           "description": "ListItem children"
         }
+      },
+      "styling": {
+        "container": {
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
+          "overflow": "hidden (so items inherit rounded corners)"
+        },
+        "header": {
+          "paddingX": "12px",
+          "paddingY": "8px",
+          "bg": "#F5F5F5",
+          "borderBottom": "1px solid #DDDDDD",
+          "typography": {
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 700,
+            "color": "#1C1C1C"
+          }
+        },
+        "list": "ul with list-none, m-0, p-0",
+        "shadow": "none"
       },
       "usage": "<ListGroup title=\"Recent\"><ListItem>Item 1</ListItem></ListGroup>"
     },
@@ -821,6 +1205,16 @@
         "Textarea",
         "Checkbox"
       ],
+      "styling": {
+        "layout": "flex flex-col, gap 16px between direct children",
+        "fontFamily": "Helvetica, Arial, sans-serif",
+        "background": "transparent (inherits from parent)",
+        "border": "none",
+        "radius": "0",
+        "shadow": "none",
+        "padding": "0 (add container padding at parent level if needed)",
+        "submitBehavior": "preventDefault() called automatically — use onSubmit prop"
+      },
       "usage": "<Form><Field label=\"Name\" /><Button appearance=\"primary\">Save</Button></Form>"
     },
     "FormGrid": {
@@ -861,6 +1255,23 @@
           "description": "Field components arranged horizontally"
         }
       },
+      "styling": {
+        "container": {
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "flex-start",
+          "width": "100%",
+          "gap": "16px",
+          "background": "transparent",
+          "border": "none",
+          "radius": "0",
+          "padding": "0",
+          "shadow": "none"
+        },
+        "children": "each field defaults to flex: 1 so they split row width equally",
+        "defaultWidth": "336px (2 × 160px fields + 16px gap) in Figma — stretches to fill parent",
+        "verticalAlign": "top-aligned so labels of equal height stay flush"
+      },
       "usage": "<FormRow><Field label=\"First name\" /><Field label=\"Last name\" /></FormRow>"
     },
     "ModeSwitch": {
@@ -891,16 +1302,43 @@
         }
       },
       "styling": {
-        "container": "inline-flex items-center gap-2, text-sm leading-5 text-[#1C1C1C]",
-        "track": "relative inline-flex items-center w-9 (36px) h-5 (20px) rounded-full cursor-pointer",
-        "trackOn": "bg-[#4573D2] (blue when checked/on)",
-        "trackOff": "bg-[#ACACAC] (grey when unchecked/off)",
-        "thumb": "absolute w-3.5 h-3.5 (14px) rounded-full bg-white",
-        "thumbOn": "translate-x-[18px] (right position)",
-        "thumbOff": "translate-x-[3px] (left position)",
-        "activeLabel": "font-bold text-[#1C1C1C]",
-        "inactiveLabel": "text-[#595959] (grey, not bold)",
-        "disabled": "opacity-50 on container, cursor-not-allowed on track"
+        "container": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": "8px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C"
+        },
+        "track": {
+          "width": "36px",
+          "height": "20px",
+          "radius": "9999px",
+          "border": "none",
+          "shadow": "none",
+          "cursor": "pointer",
+          "transition": "background-color 150ms ease",
+          "backgroundOn": "#4573D2",
+          "backgroundOff": "#ACACAC"
+        },
+        "thumb": {
+          "width": "14px",
+          "height": "14px",
+          "radius": "9999px",
+          "background": "#FFFFFF",
+          "border": "none",
+          "shadow": "0px 1px 2px rgba(0,0,0,0.15)",
+          "translateOn": "18px",
+          "translateOff": "3px",
+          "transition": "transform 150ms ease"
+        },
+        "labels": {
+          "active": { "fontWeight": 700, "color": "#1C1C1C" },
+          "inactive": { "fontWeight": 400, "color": "#595959" }
+        },
+        "disabled": { "opacity": 0.5, "cursor": "not-allowed" },
+        "focus": { "outline": "2px solid #4573D2", "outlineOffset": "2px", "radius": "9999px" }
       },
       "usage": "<ModeSwitch labelOff=\"List\" labelOn=\"Grid\" checked={isGrid} onChange={setIsGrid} />"
     },
@@ -942,16 +1380,79 @@
         }
       },
       "styling": {
-        "anatomy": [
-          "Field container (32px, border #DDD, rounded-[4px])",
-          "Value display (px-[8px] py-[6px])",
-          "Chevron icon (32×32 area, rotates when open)",
-          "Listbox dropdown (elevation shadow)"
-        ],
+        "container": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "4px"
+        },
+        "label": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "paddingY": "4px"
+        },
+        "field": {
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "height": "32px",
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "hoverBorderColor": "#ACACAC",
+          "focusBorderColor": "#4573D2",
+          "errorBorderColor": "#CE3F42",
+          "radius": "4px",
+          "focusShadow": "0 0 0 1px #4573D2",
+          "readOnlyBackground": "#F5F5F5",
+          "highlightedBackground": "#FFF1C3",
+          "disabledOpacity": 0.5,
+          "cursor": "pointer"
+        },
+        "value": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "placeholderColor": "#ACACAC"
+        },
+        "chevron": {
+          "size": "20×20px",
+          "color": "#1C1C1C",
+          "rotation": "0deg (closed) / 180deg (open)",
+          "transition": "transform 150ms ease",
+          "marginLeft": "8px"
+        },
         "listbox": {
+          "marginTop": "4px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
+          "paddingY": "4px",
           "shadow": "0px 1px 2px rgba(0,0,0,0.3), 0px 2px 6px rgba(0,0,0,0.15)",
-          "itemHover": "bg-[rgba(0,99,255,0.1)]",
-          "selectedItem": "bg-[rgba(0,99,255,0.1)]"
+          "maxHeight": "240px",
+          "overflowY": "auto"
+        },
+        "listItem": {
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "hoverBackground": "rgba(0,99,255,0.1)",
+          "selectedBackground": "rgba(0,99,255,0.1)",
+          "selectedFontWeight": 700,
+          "radius": "4px",
+          "cursor": "pointer"
+        },
+        "helperText": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "errorColor": "#CE3F42",
+          "paddingTop": "4px"
         }
       },
       "usage": "<Select label=\"Country\" options={countries} value={val} onChange={setVal} />"
@@ -994,11 +1495,67 @@
         }
       },
       "styling": {
-        "anatomy": [
-          "Field container (32px, border #DDD, rounded-[4px])",
-          "Value input (flex-1, px-[8px] py-[6px])",
-          "Search icon button (32×32, no background, magnifying glass SVG)"
-        ]
+        "container": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "4px"
+        },
+        "label": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "paddingY": "4px"
+        },
+        "field": {
+          "display": "flex",
+          "alignItems": "center",
+          "height": "32px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "hoverBorderColor": "#ACACAC",
+          "focusBorderColor": "#4573D2",
+          "errorBorderColor": "#CE3F42",
+          "radius": "4px",
+          "focusShadow": "0 0 0 1px #4573D2",
+          "readOnlyBackground": "#F5F5F5",
+          "highlightedBackground": "#FFF1C3",
+          "disabledOpacity": 0.5
+        },
+        "input": {
+          "flex": 1,
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C",
+          "placeholderColor": "#ACACAC",
+          "border": "none",
+          "background": "transparent",
+          "outline": "none"
+        },
+        "searchButton": {
+          "width": "32px",
+          "height": "32px",
+          "display": "inline-flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "background": "transparent",
+          "hoverBackground": "#EBEBEB",
+          "border": "none",
+          "radius": "0 4px 4px 0",
+          "iconSize": "20×20px",
+          "iconColor": "#1C1C1C",
+          "cursor": "pointer"
+        },
+        "helperText": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "errorColor": "#CE3F42",
+          "paddingTop": "4px"
+        }
       },
       "usage": "<SearchInput placeholder=\"Search…\" value={query} onChange={setQuery} onSearch={handleSearch} />"
     },
@@ -1034,14 +1591,51 @@
         }
       },
       "styling": {
-        "box": {
-          "size": "20×20px",
-          "radius": "rounded-[4px]",
-          "unchecked": "bg white, border 1px #595959",
-          "checked": "bg #4573D2, white checkmark SVG",
-          "indeterminate": "bg #4573D2, white horizontal dash SVG"
+        "container": {
+          "display": "inline-flex",
+          "alignItems": "flex-start",
+          "gap": "8px",
+          "paddingY": "6px",
+          "cursor": "pointer",
+          "background": "transparent"
         },
-        "layout": "inline-flex items-start gap-[8px] py-[6px]"
+        "box": {
+          "width": "20px",
+          "height": "20px",
+          "radius": "4px",
+          "border": "1px solid #595959",
+          "borderChecked": "1px solid #4573D2",
+          "borderError": "1px solid #CE3F42",
+          "borderDisabled": "1px solid #DDDDDD",
+          "background": "#FFFFFF",
+          "backgroundChecked": "#4573D2",
+          "backgroundIndeterminate": "#4573D2",
+          "backgroundDisabled": "#F5F5F5",
+          "shadow": "none",
+          "focusRing": "0 0 0 2px #4573D2 outline offset 2px"
+        },
+        "tick": {
+          "color": "#FFFFFF",
+          "strokeWidth": "2px",
+          "size": "14×14px (inside box)",
+          "shownWhen": "checked"
+        },
+        "indeterminateDash": {
+          "color": "#FFFFFF",
+          "width": "10px",
+          "height": "2px",
+          "radius": "1px",
+          "shownWhen": "indeterminate"
+        },
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C",
+          "disabledColor": "#ACACAC"
+        },
+        "disabled": { "opacity": 0.6, "cursor": "not-allowed" }
       },
       "usage": "<Checkbox label=\"I agree\" checked={agreed} onChange={setAgreed} />"
     },
@@ -1222,13 +1816,80 @@
         }
       },
       "styling": {
-        "container": "w-[256px], bg #29283E",
-        "search": "bg rgba(255,255,255,0.16), hover rgba(255,255,255,0.24), rounded-[4px]",
-        "agreementItem": "bg rgba(255,255,255,0.08), hover rgba(255,255,255,0.16), rounded-[4px]",
-        "avatar": "36×36 rounded-full",
-        "adminBadge": "bg #4573D2, rounded-[10px], px-[4px], bold 12px white",
-        "actionButton": "bg rgba(255,255,255,0.08), hover rgba(255,255,255,0.16)",
-        "divider": "bg #4B4F64, h-px"
+        "container": {
+          "width": "256px",
+          "padding": "8px",
+          "background": "#29283E",
+          "radius": "8px",
+          "border": "none",
+          "shadow": "0px 2px 4px rgba(0,0,0,0.15), 0px 1px 2px rgba(0,0,0,0.3)",
+          "color": "#FFFFFF"
+        },
+        "search": {
+          "height": "32px",
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "background": "rgba(255,255,255,0.16)",
+          "hoverBackground": "rgba(255,255,255,0.24)",
+          "focusBackground": "rgba(255,255,255,0.24)",
+          "border": "none",
+          "radius": "4px",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#FFFFFF",
+          "placeholderColor": "rgba(255,255,255,0.6)"
+        },
+        "agreementItem": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "8px",
+          "padding": "8px",
+          "background": "rgba(255,255,255,0.08)",
+          "hoverBackground": "rgba(255,255,255,0.16)",
+          "activeBackground": "rgba(255,255,255,0.24)",
+          "border": "none",
+          "radius": "4px",
+          "color": "#FFFFFF"
+        },
+        "avatar": {
+          "width": "36px",
+          "height": "36px",
+          "radius": "9999px",
+          "background": "rgba(255,255,255,0.16)",
+          "border": "none"
+        },
+        "companyName": { "fontSize": "14px", "lineHeight": "20px", "fontWeight": 700, "color": "#FFFFFF" },
+        "agreementNumber": { "fontSize": "12px", "lineHeight": "16px", "fontWeight": 400, "color": "rgba(255,255,255,0.7)" },
+        "adminBadge": {
+          "paddingX": "4px",
+          "paddingY": "1px",
+          "background": "#4573D2",
+          "color": "#FFFFFF",
+          "fontSize": "12px",
+          "lineHeight": "14px",
+          "fontWeight": 700,
+          "radius": "10px"
+        },
+        "actionButton": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "8px",
+          "height": "32px",
+          "paddingX": "8px",
+          "background": "rgba(255,255,255,0.08)",
+          "hoverBackground": "rgba(255,255,255,0.16)",
+          "color": "#FFFFFF",
+          "border": "none",
+          "radius": "4px",
+          "fontSize": "14px",
+          "lineHeight": "20px"
+        },
+        "divider": {
+          "height": "1px",
+          "background": "#4B4F64",
+          "marginY": "8px",
+          "border": "none"
+        }
       },
       "usage": "<AgreementSelector groups={[{agreements:[{id:'1',companyName:'Acme',agreementNumber:'123'}]}]} />"
     },
@@ -1414,17 +2075,105 @@
         }
       },
       "styling": {
-        "container": "bg #29283E, h-[64px], full width",
-        "primaryItem": "px-[12px] py-[8px], white 14px, hover bg rgba(255,255,255,0.08), rounded-[4px]",
-        "secondaryItem": "p-[6px], rounded-full (32px), 24×24 icon, colored bg optional",
-        "iconColors": {
-          "chat": "#08AE87",
-          "e-copedia": "#08AE87",
-          "settings": "#E89C2E"
+        "container": {
+          "display": "flex",
+          "alignItems": "center",
+          "width": "100%",
+          "height": "64px",
+          "paddingX": "16px",
+          "gap": "8px",
+          "background": "#29283E",
+          "border": "none",
+          "radius": "0",
+          "shadow": "0px 1px 2px rgba(0,0,0,0.3)",
+          "color": "#FFFFFF"
         },
-        "divider": "w-px h-[36px] bg rgba(255,255,255,0.3)",
-        "agreement": "avatar 36×36, white text, chevron-down, hover bg rgba(255,255,255,0.1)",
-        "adminBadge": "bg #4573D2, rounded-[10px], px-[4px], bold 12px white"
+        "logo": {
+          "width": "28px",
+          "height": "28px",
+          "objectFit": "contain",
+          "marginRight": "16px"
+        },
+        "primaryItem": {
+          "height": "32px",
+          "paddingX": "12px",
+          "paddingY": "8px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#FFFFFF",
+          "background": "transparent",
+          "hoverBackground": "rgba(255,255,255,0.08)",
+          "activeBackground": "rgba(255,255,255,0.16)",
+          "border": "none",
+          "radius": "4px",
+          "chevronIconSize": "16×16px"
+        },
+        "secondaryItem": {
+          "width": "32px",
+          "height": "32px",
+          "padding": "6px",
+          "background": "transparent",
+          "hoverBackground": "rgba(255,255,255,0.08)",
+          "border": "none",
+          "radius": "9999px",
+          "iconSize": "20×20px",
+          "iconColor": "#FFFFFF"
+        },
+        "iconColorVariants": {
+          "none": "transparent",
+          "orange": "#E89C2E",
+          "green": "#08AE87",
+          "blue": "#4573D2",
+          "mapping": { "chat": "#08AE87", "e-copedia": "#08AE87", "settings": "#E89C2E" }
+        },
+        "divider": {
+          "width": "1px",
+          "height": "36px",
+          "background": "rgba(255,255,255,0.3)",
+          "marginX": "8px"
+        },
+        "agreement": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "8px",
+          "height": "40px",
+          "paddingX": "8px",
+          "background": "transparent",
+          "hoverBackground": "rgba(255,255,255,0.1)",
+          "border": "none",
+          "radius": "4px"
+        },
+        "avatar": {
+          "width": "36px",
+          "height": "36px",
+          "radius": "9999px",
+          "background": "rgba(255,255,255,0.16)",
+          "border": "none"
+        },
+        "companyName": {
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 700,
+          "color": "#FFFFFF"
+        },
+        "agreementNumber": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "color": "rgba(255,255,255,0.7)"
+        },
+        "adminBadge": {
+          "paddingX": "4px",
+          "paddingY": "1px",
+          "background": "#4573D2",
+          "color": "#FFFFFF",
+          "fontSize": "12px",
+          "lineHeight": "14px",
+          "fontWeight": 700,
+          "radius": "10px"
+        }
       },
       "usage": "<TopNavigation primaryItems={[{id:'home',label:'Hjem'}]} companyName=\"Acme\" agreementNumber=\"1234567\" />"
     },
@@ -1526,11 +2275,52 @@
         }
       },
       "styling": {
-        "item": "border-b border-[#EBEBEB]",
-        "title": "text-[20px] leading-[28px] font-bold p-[8px] py-[12px]",
-        "body": "text-[14px] leading-[20px] text-[#595959] px-[8px] pb-[16px]",
-        "chevron": "24×24, rotates 180° when open, transition 200ms",
-        "focusRing": "focus-visible:border-2 border-[#2B57B4] rounded-[4px]"
+        "container": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "background": "transparent",
+          "border": "none"
+        },
+        "item": {
+          "borderBottom": "1px solid #EBEBEB (no border on last item)",
+          "radius": "0",
+          "shadow": "none"
+        },
+        "titleButton": {
+          "dimensions": {
+            "width": "100%",
+            "padding": "12px 8px"
+          },
+          "layout": "flex items-center justify-between",
+          "bg": "transparent",
+          "typography": {
+            "fontSize": "20px",
+            "lineHeight": "28px",
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left"
+          },
+          "cursor": "pointer",
+          "hoverBg": "transparent (no bg change on hover)"
+        },
+        "body": {
+          "paddingX": "8px",
+          "paddingBottom": "16px",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#595959"
+        },
+        "chevron": {
+          "size": "24×24px",
+          "strokeWidth": "1.5px",
+          "color": "#1C1C1C",
+          "rotateOpen": "180deg",
+          "transition": "transform 200ms"
+        },
+        "focusRing": {
+          "width": "2px",
+          "color": "#2B57B4",
+          "radius": "4px"
+        }
       },
       "usage": "<Accordion items={[{id:'1',title:'Section',content:'Body text'}]} />"
     },
@@ -1617,8 +2407,30 @@
         }
       },
       "styling": {
-        "separated": "flex flex-col gap-[8px], each child rounded-[10px]",
-        "grouped": "flex flex-col, shared borders with -mt-px overlap, first-child rounded-t-[8px], last-child rounded-b-[8px]"
+        "separated": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "8px",
+          "background": "transparent",
+          "childRadius": "10px",
+          "childBorder": "1px solid #DDDDDD",
+          "childBackground": "#FFFFFF",
+          "childShadow": "none"
+        },
+        "grouped": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "0",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "8px",
+          "overflow": "hidden",
+          "childBorder": "0 (shared border handled by parent)",
+          "childSeparator": "1px solid #EBEBEB between items",
+          "firstChildRadius": "8px 8px 0 0",
+          "lastChildRadius": "0 0 8px 8px",
+          "shadow": "none"
+        }
       },
       "usage": "<CardList variant=\"separated\">{items}</CardList>"
     },
@@ -1718,7 +2530,32 @@
         }
       },
       "styling": {
-        "container": "40×40px, rounded-[4px], border border-[rgba(0,0,0,0.08)], overflow-hidden"
+        "container": {
+          "width": "40px",
+          "height": "40px",
+          "display": "inline-flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "radius": "4px",
+          "border": "1px solid rgba(0,0,0,0.08)",
+          "overflow": "hidden",
+          "shadow": "none"
+        },
+        "backgroundByColor": {
+          "grey": "rgba(28,28,28,0.08)",
+          "blue": "#DEEBFF",
+          "green": "#CDF0E7",
+          "yellow": "#FFF1C3",
+          "red": "#FFDAD2",
+          "pink": "#FFE3F7",
+          "purple": "#EEE5FF",
+          "brown": "#EEE0DA",
+          "orange": "#FFE3BB"
+        },
+        "icon": {
+          "size": "24×24px",
+          "color": "#1C1C1C"
+        }
       },
       "usage": "<ListIcon color=\"blue\" icon={<MyIcon />} />"
     },
@@ -1742,6 +2579,28 @@
         "children": {
           "type": "ReactNode",
           "required": true
+        }
+      },
+      "styling": {
+        "display": "inline-flex items-center justify-center",
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 700,
+          "whiteSpace": "nowrap"
+        },
+        "background": "transparent (no background — text color only)",
+        "border": "none",
+        "radius": "0",
+        "shadow": "none",
+        "padding": "0",
+        "colorMapping": {
+          "green": { "text": "#028465" },
+          "yellow": { "text": "#E89C2E" },
+          "red": { "text": "#CE3F42" },
+          "blue": { "text": "#4573D2" },
+          "grey": { "text": "#ACACAC" }
         }
       },
       "usage": "<Status color=\"green\">(Active)</Status>"
@@ -1786,9 +2645,53 @@
         }
       },
       "styling": {
-        "container": "w-[268px] h-[168px] rounded-[12px] border border-[#DDDDDD] bg-white p-4",
-        "title": "text-[12px] text-[#595959] font-bold uppercase",
-        "value": "text-[24px] font-bold text-[#1C1C1C]"
+        "container": {
+          "width": "268px",
+          "height": "168px",
+          "padding": "16px",
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "8px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "shadow": "none (flat card by default)",
+          "hoverShadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)",
+          "cursor": "pointer"
+        },
+        "title": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#595959",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.02em"
+        },
+        "value": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "fontWeight": 700,
+          "color": "#1C1C1C"
+        },
+        "trend": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": "4px",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "upColor": "#028465",
+          "downColor": "#CE3F42",
+          "neutralColor": "#595959",
+          "iconSize": "16×16px"
+        },
+        "chartArea": {
+          "flex": 1,
+          "minHeight": "60px",
+          "marginTop": "8px"
+        }
       },
       "usage": "<DashboardCard title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
     },
@@ -1815,7 +2718,53 @@
         }
       },
       "styling": {
-        "container": "w-[552px] h-[270px] rounded-[12px] bg-white shadow-lg"
+        "container": {
+          "width": "552px",
+          "height": "270px",
+          "padding": "16px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "shadow": "0px 4px 8px rgba(47,51,68,0.1), 0px 2px 4px rgba(47,51,68,0.1)",
+          "elevationLevel": "elevated (higher than normal DashboardCard)"
+        },
+        "header": {
+          "display": "flex",
+          "alignItems": "flex-start",
+          "justifyContent": "space-between",
+          "gap": "8px",
+          "marginBottom": "12px"
+        },
+        "title": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "color": "#595959"
+        },
+        "value": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "20px",
+          "lineHeight": "24px",
+          "fontWeight": 700,
+          "color": "#1C1C1C"
+        },
+        "moreMenuButton": {
+          "width": "24px",
+          "height": "24px",
+          "background": "transparent",
+          "hoverBackground": "rgba(0,0,0,0.08)",
+          "radius": "4px",
+          "iconSize": "20×20px"
+        },
+        "chartArea": { "flex": 1, "minHeight": "180px" },
+        "variants": {
+          "normal": "header + chart",
+          "more-menu": "header + chart + DashboardMoreMenuLegends dropdown above-right",
+          "legends": "header + chart + LegendBar at bottom",
+          "hover": "header + chart with hover indicator",
+          "hover-infobox": "header + chart with CardInfoBox tooltip on data point"
+        }
       },
       "usage": "<DashboardHoverCard title=\"Revenue\" value=\"234.351\" variant=\"normal\" />"
     },
@@ -1826,6 +2775,36 @@
         "items": {
           "type": "array",
           "description": "Array of { label, color, checked } legend items"
+        }
+      },
+      "styling": {
+        "container": {
+          "bg": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
+          "padding": "8px 0",
+          "shadow": "0px 2px 4px rgba(0,0,0,0.15), 0px 1px 2px rgba(0,0,0,0.3)",
+          "minWidth": "200px"
+        },
+        "item": {
+          "height": "32px",
+          "paddingX": "12px",
+          "paddingY": "6px",
+          "gap": "8px",
+          "hoverBg": "#F5F5F5",
+          "fontSize": "14px",
+          "lineHeight": "20px"
+        },
+        "colorDot": {
+          "width": "12px",
+          "height": "12px",
+          "radius": "2px"
+        },
+        "checkbox": {
+          "width": "16px",
+          "height": "16px",
+          "radius": "2px",
+          "checkedUsesItemColor": true
         }
       },
       "usage": "<DashboardMoreMenuLegends items={[{label: 'Revenue', color: '#75A0F5', checked: true}]} />"
@@ -1844,7 +2823,39 @@
         }
       },
       "styling": {
-        "container": "bg-white border border-[#DDDDDD] rounded-[4px] p-2 shadow-sm text-[11px]"
+        "container": {
+          "display": "inline-flex",
+          "flexDirection": "column",
+          "gap": "2px",
+          "padding": "8px 10px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
+          "shadow": "0px 1px 2px rgba(0,0,0,0.15), 0px 2px 6px rgba(0,0,0,0.15)",
+          "minWidth": "72px",
+          "pointerEvents": "none"
+        },
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "11px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "color": "#595959"
+        },
+        "value": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C"
+        },
+        "arrow": {
+          "size": "6×6px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "rotation": "45deg",
+          "position": "bottom center by default"
+        }
       },
       "usage": "<CardInfoBox label=\"Mar\" value=\"45.200\" />"
     },
@@ -1885,7 +2896,22 @@
         }
       },
       "styling": {
-        "hatching": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)"
+        "dimensions": { "widthSmall": "16px", "widthLarge": "24px", "heightMin": "2px", "heightMax": "dynamic from value" },
+        "background": "color prop (chart palette hex)",
+        "border": "none",
+        "radius": {
+          "single": "2px",
+          "top": "2px 2px 0 0",
+          "middle": "0",
+          "bottom": "0 0 2px 2px"
+        },
+        "hatching": {
+          "applied": "when hatched=true",
+          "pattern": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)",
+          "overlayColor": "rgba(255,255,255,0.5)"
+        },
+        "shadow": "none",
+        "transition": "height 300ms ease"
       },
       "usage": "<BarSegment position=\"single\" color=\"#75A0F5\" height={80} />"
     },
@@ -1900,6 +2926,26 @@
         "label": {
           "type": "string",
           "description": "X-axis label below the bar"
+        }
+      },
+      "styling": {
+        "barWidth": "16px or 24px (follows BarSegment width)",
+        "segmentGap": "0 (segments touch)",
+        "background": "transparent (no fill on bar container)",
+        "border": "none",
+        "radius": {
+          "topSegment": "2px 2px 0 0",
+          "middleSegment": "0",
+          "bottomSegment": "0 0 2px 2px",
+          "single": "2px on all corners"
+        },
+        "shadow": "none",
+        "label": {
+          "fontSize": "11px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "paddingTop": "8px",
+          "textAlign": "center"
         }
       },
       "usage": "<Bar segments={[{color: '#75A0F5', height: 60}, {color: '#52C7AB', height: 40}]} label=\"Jan\" />"
@@ -1923,8 +2969,30 @@
         }
       },
       "styling": {
-        "swatch": "w-[8px] h-[8px] rounded-[1px]",
-        "label": "text-[11px] text-[#595959]"
+        "container": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": "4px",
+          "background": "transparent",
+          "border": "none",
+          "padding": "0"
+        },
+        "swatch": {
+          "width": "8px",
+          "height": "8px",
+          "radius": "1px",
+          "background": "color prop",
+          "border": "none",
+          "hatched": "overlay pattern same as BarSegment when hatched=true"
+        },
+        "label": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "11px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "fontWeight": 400
+        },
+        "shadow": "none"
       },
       "usage": "<ChartLegend color=\"#75A0F5\" label=\"Revenue\" />"
     },
@@ -1954,6 +3022,37 @@
           "default": false
         }
       },
+      "styling": {
+        "layout": "flex items-start justify-between w-full",
+        "padding": "0 (inherits from card padding)",
+        "title": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "color": "#595959",
+          "fontWeight": 400
+        },
+        "value": {
+          "fontSize": "20px",
+          "lineHeight": "24px",
+          "color": "#1C1C1C",
+          "fontWeight": 700
+        },
+        "trend": {
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "upColor": "#028465",
+          "downColor": "#CE3F42",
+          "neutralColor": "#595959",
+          "iconSize": "16×16px"
+        },
+        "menuButton": {
+          "size": "24×24px",
+          "bg": "transparent",
+          "hoverBg": "rgba(0,0,0,0.08)",
+          "radius": "4px",
+          "iconSize": "20×20px (ellipsis-horizontal)"
+        }
+      },
       "usage": "<ChartHeader title=\"Revenue\" value=\"234.351\" trend=\"up\" trendValue=\"12%\" />"
     },
     "AxisLabels": {
@@ -1975,13 +3074,50 @@
         }
       },
       "styling": {
-        "text": "text-[11px] text-[#595959]"
+        "container": {
+          "display": "flex",
+          "background": "transparent",
+          "border": "none",
+          "padding": "0"
+        },
+        "text": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "11px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "color": "#595959"
+        },
+        "axis": {
+          "y": {
+            "flexDirection": "column-reverse",
+            "alignItems": "flex-end",
+            "justifyContent": "space-between",
+            "textAlign": "right",
+            "paddingRight": "4px",
+            "width": "auto (min 32px)"
+          },
+          "x": {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingTop": "8px",
+            "textAlign": "center"
+          }
+        },
+        "shadow": "none"
       },
       "usage": "<AxisLabels axis=\"y\" labels={['0', '100K', '200K', '300K', '400K', '500K']} />"
     },
     "LegendBar": {
       "description": "Horizontal row of ChartLegend items displayed below a chart. Used as the standard legend placement for bar and line charts.",
       "category": "dashboard",
+      "styling": {
+        "layout": "flex flex-row items-center flex-wrap gap-[16px]",
+        "padding": "8px 0",
+        "item": "uses ChartLegend component (8×8px swatch + 11px label #595959)",
+        "background": "transparent",
+        "border": "none",
+        "shadow": "none"
+      },
       "usage": "<LegendBar items={[{color: '#75A0F5', label: 'Revenue'}, {color: '#52C7AB', label: 'Costs'}]} />"
     },
     "DonutChart": {
@@ -2003,8 +3139,33 @@
         }
       },
       "styling": {
-        "strokeWidth": "32px",
-        "centerText": "text-[20px] font-bold"
+        "svg": {
+          "viewBox": "0 0 160 160 (matches size prop)",
+          "defaultSize": "160×160px"
+        },
+        "ring": {
+          "strokeWidth": "32px",
+          "radius": "64px",
+          "fill": "none",
+          "linecap": "butt"
+        },
+        "trackBackground": "#EBEBEB (empty portion when segments don't fill 100%)",
+        "gap": "0 or 2px (white stroke) between segments",
+        "centerText": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "20px",
+          "lineHeight": "24px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "textAlign": "center"
+        },
+        "container": {
+          "background": "transparent",
+          "border": "none",
+          "shadow": "none",
+          "padding": "0"
+        },
+        "rotation": "starts at -90deg (12 o'clock)"
       },
       "usage": "<DonutChart segments={[{value: 40, color: '#75A0F5'}, {value: 30, color: '#52C7AB'}]} total=\"234.351\" />"
     },
@@ -2021,6 +3182,17 @@
           "default": false
         }
       },
+      "styling": {
+        "layout": "flex flex-col gap-[4px]",
+        "item": {
+          "layout": "flex items-center gap-[8px]",
+          "paddingY": "2px",
+          "swatch": { "width": "8px", "height": "8px", "radius": "1px" },
+          "label": { "fontSize": "11px", "color": "#595959" },
+          "value": { "fontSize": "11px", "color": "#1C1C1C", "fontWeight": 700 },
+          "percentage": { "fontSize": "11px", "color": "#595959", "marginLeft": "auto" }
+        }
+      },
       "usage": "<DonutChartLegend items={[{color: '#75A0F5', label: 'Category A', value: '120.000', percentage: '51%'}]} />"
     },
     "CheckboxColorGrid": {
@@ -2033,8 +3205,41 @@
         }
       },
       "styling": {
-        "checkbox": "w-4 h-4 rounded-[2px] border border-[#DDDDDD]",
-        "checkedColors": "blue=#75A0F5, green=#52C7AB, yellow=#FFD665, red=#E66568, purple=#CBBCFE, pink=#F98EDB, brown=#C4AB9E, orange=#FAB64D, grey=#DDDDDD"
+        "grid": {
+          "display": "grid",
+          "gridTemplateColumns": "repeat(5, auto)",
+          "gap": "8px 12px",
+          "padding": "4px 0"
+        },
+        "checkbox": {
+          "width": "16px",
+          "height": "16px",
+          "radius": "2px",
+          "border": "1px solid #DDDDDD",
+          "background": "#FFFFFF (unchecked) / item color (checked)",
+          "tickColor": "#FFFFFF",
+          "tickSize": "10×10px",
+          "shadow": "none"
+        },
+        "item": {
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "6px",
+          "fontSize": "11px",
+          "lineHeight": "16px",
+          "color": "#595959"
+        },
+        "checkedColors": {
+          "blue": "#75A0F5",
+          "green": "#52C7AB",
+          "yellow": "#FFD665",
+          "red": "#E66568",
+          "purple": "#CBBCFE",
+          "pink": "#F98EDB",
+          "brown": "#C4AB9E",
+          "orange": "#FAB64D",
+          "grey": "#DDDDDD"
+        }
       },
       "usage": "<CheckboxColorGrid items={[{color: '#75A0F5', label: 'Series 1', checked: true}]} />"
     },
@@ -2054,6 +3259,27 @@
           "type": "string"
         }
       },
+      "styling": {
+        "checkbox": {
+          "width": "16px",
+          "height": "16px",
+          "radius": "2px",
+          "border": "1px solid #DDDDDD (unchecked) / 1px solid item color (checked)",
+          "bgUnchecked": "#FFFFFF",
+          "bgChecked": "item color (e.g. #75A0F5)",
+          "tick": {
+            "color": "#FFFFFF",
+            "strokeWidth": "2px",
+            "size": "10×10px inside the box"
+          }
+        },
+        "layout": "flex items-center gap-[8px]",
+        "label": {
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#1C1C1C"
+        }
+      },
       "usage": "<CheckboxWithWhiteTick color=\"#75A0F5\" checked label=\"Revenue\" />"
     },
     "BarChartVerticalSingle": {
@@ -2071,8 +3297,21 @@
         }
       },
       "styling": {
-        "container": "w-[552px] h-[270px] rounded-[12px]",
-        "barWidth": "24px"
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "barWidth": "24px",
+        "barColor": "color prop (default #75A0F5)",
+        "barRadius": "2px on top",
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959", "paddingTop": "8px" },
+        "gridLines": { "stroke": "#DDDDDD", "strokeWidth": "1px", "axis": "horizontal only" }
       },
       "usage": "<BarChartVerticalSingle data={[{label: 'Jan', value: 350}, {label: 'Feb', value: 420}]} />"
     },
@@ -2089,6 +3328,27 @@
           "description": "Array of { color, label } for the legend"
         }
       },
+      "styling": {
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "barWidth": "24px",
+        "barGap": "even distribution across horizontal axis",
+        "segmentRadius": {
+          "topSegment": "2px 2px 0 0",
+          "middleSegment": "0",
+          "bottomSegment": "0 0 2px 2px"
+        },
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959", "paddingTop": "8px" },
+        "gridLines": "stroke: #DDDDDD, stroke-width: 1px, horizontal only"
+      },
       "usage": "<BarChartVerticalStacked data={[{label: 'Jan', segments: [{value: 200, color: '#75A0F5'}, {value: 150, color: '#52C7AB'}]}]} />"
     },
     "BarChartVerticalGroup": {
@@ -2104,6 +3364,23 @@
           "description": "Array of { color, label } for the legend"
         }
       },
+      "styling": {
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "barWidth": "16px (tighter than single-series)",
+        "barGroupGap": "4px between bars in a group",
+        "categoryGap": "24px between category groups",
+        "radius": "2px on top of each individual bar",
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" }
+      },
       "usage": "<BarChartVerticalGroup data={[{label: 'Jan', values: [{value: 300, color: '#75A0F5'}, {value: 200, color: '#52C7AB'}]}]} />"
     },
     "BarChartVerticalMultiColor": {
@@ -2114,6 +3391,21 @@
           "type": "array",
           "description": "Array of { label, value, color } data points, each bar a different color"
         }
+      },
+      "styling": {
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "barWidth": "24px",
+        "radius": "2px on top",
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" }
       },
       "usage": "<BarChartVerticalMultiColor data={[{label: 'Q1', value: 350, color: '#75A0F5'}, {label: 'Q2', value: 420, color: '#52C7AB'}]} />"
     },
@@ -2131,7 +3423,26 @@
         }
       },
       "styling": {
-        "hatching": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)"
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "barWidth": "16px per bar in the pair",
+        "pairGap": "2px between solid and hatched",
+        "categoryGap": "24px between category pairs",
+        "barRadius": "2px on top",
+        "hatching": {
+          "applied": "to second bar in each pair",
+          "pattern": "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 4px)"
+        },
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "gridLines": { "stroke": "#DDDDDD", "strokeWidth": "1px" }
       },
       "usage": "<BarChartVerticalDoubleHatching data={[{label: 'Jan', solid: {value: 250, color: '#52C7AB'}, hatched: {value: 200, color: '#52C7AB'}}]} />"
     },
@@ -2149,8 +3460,37 @@
         }
       },
       "styling": {
-        "line": "stroke-width: 2px, fill: none",
-        "container": "w-[552px] h-[270px]"
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "line": {
+          "stroke": "color prop (default #75A0F5)",
+          "strokeWidth": "2px",
+          "fill": "none",
+          "linecap": "round",
+          "linejoin": "round"
+        },
+        "areaFill": {
+          "optional": true,
+          "fill": "color at 20% opacity",
+          "gradient": "linear from 0% -> 20% alpha to 100% -> 0% alpha"
+        },
+        "dataPoints": {
+          "radius": "3px",
+          "fill": "#FFFFFF",
+          "stroke": "line color",
+          "strokeWidth": "2px",
+          "shownOnHover": true
+        },
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "gridLines": { "stroke": "#DDDDDD", "strokeWidth": "1px", "axis": "horizontal" }
       },
       "usage": "<LineChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
     },
@@ -2162,6 +3502,22 @@
           "type": "array",
           "description": "Array of { color, label, data: [{label, value}] } series"
         }
+      },
+      "styling": {
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "line": { "strokeWidth": "2px", "fill": "none", "strokeLinecap": "round" },
+        "dataPoints": { "radius": "4px", "fill": "line color", "stroke": "#FFFFFF", "strokeWidth": "2px" },
+        "gridLines": "stroke: #DDDDDD, stroke-width: 1px, horizontal only",
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" }
       },
       "usage": "<LineChartMultiple series={[{color: '#75A0F5', label: 'Revenue', data: [{label: 'Jan', value: 200}]}]} />"
     },
@@ -2179,8 +3535,29 @@
         }
       },
       "styling": {
-        "fill": "opacity 0.2 of the line color",
-        "line": "stroke-width: 2px"
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "areaFill": {
+          "color": "color prop at 20% opacity",
+          "gradient": "linear-gradient(to bottom, rgba(color, 0.2) 0%, rgba(color, 0) 100%)"
+        },
+        "line": {
+          "stroke": "color prop (default #75A0F5)",
+          "strokeWidth": "2px",
+          "fill": "none",
+          "linecap": "round",
+          "linejoin": "round"
+        },
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "gridLines": { "stroke": "#DDDDDD", "strokeWidth": "1px", "axis": "horizontal" }
       },
       "usage": "<AreaChartSingle data={[{label: 'Jan', value: 200}, {label: 'Feb', value: 350}]} />"
     },
@@ -2192,6 +3569,21 @@
           "type": "array",
           "description": "Array of 2 series: { color, label, data: [{label, value}] }"
         }
+      },
+      "styling": {
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "areaFillOpacity": "0.2 (each series uses its color at 20% opacity)",
+        "line": { "strokeWidth": "2px" },
+        "overlap": "series render with mix-blend-mode: multiply so overlapping areas darken naturally",
+        "gridLines": "stroke: #DDDDDD, stroke-width: 1px"
       },
       "usage": "<AreaChartTwoSeries series={[{color: '#75A0F5', label: 'Income', data: [...]}, {color: '#52C7AB', label: 'Costs', data: [...]}]} />"
     },
@@ -2205,9 +3597,35 @@
         }
       },
       "styling": {
-        "positiveColor": "#52C7AB",
-        "negativeColor": "#E66568",
-        "zeroLine": "stroke: #1C1C1C, stroke-width: 1px"
+        "container": {
+          "width": "552px (default)",
+          "height": "270px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "padding": "16px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "positiveFill": {
+          "color": "#52C7AB",
+          "opacity": 0.2,
+          "lineStroke": "#52C7AB",
+          "lineStrokeWidth": "2px"
+        },
+        "negativeFill": {
+          "color": "#E66568",
+          "opacity": 0.2,
+          "lineStroke": "#E66568",
+          "lineStrokeWidth": "2px"
+        },
+        "zeroLine": {
+          "stroke": "#1C1C1C",
+          "strokeWidth": "1px",
+          "strokeDasharray": "0 (solid)"
+        },
+        "yAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "xAxisLabels": { "fontSize": "11px", "color": "#595959" },
+        "gridLines": { "stroke": "#DDDDDD", "strokeWidth": "1px", "axis": "horizontal" }
       },
       "usage": "<AreaChartPositiveNegative data={[{label: 'Jan', value: 30}, {label: 'Mar', value: -20}]} />"
     },
@@ -2223,6 +3641,19 @@
           "type": "string"
         }
       },
+      "styling": {
+        "container": {
+          "layout": "flex flex-col items-center gap-[16px]",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "24px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "donut": { "size": "160px", "strokeWidth": "32px" },
+        "centerText": { "fontSize": "20px", "fontWeight": 700, "color": "#1C1C1C" },
+        "legend": "LegendBar-style row below donut, gap 16px"
+      },
       "usage": "<DonutChartWithBottomLegend segments={[{value: 40, color: '#75A0F5', label: 'Category A'}]} total=\"234.351\" />"
     },
     "DonutChartWithRightLegends": {
@@ -2236,6 +3667,19 @@
         "total": {
           "type": "string"
         }
+      },
+      "styling": {
+        "container": {
+          "layout": "flex flex-row items-center gap-[24px]",
+          "bg": "#FFFFFF",
+          "radius": "12px",
+          "border": "1px solid #DDDDDD",
+          "padding": "24px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1), 0px 1px 3px rgba(47,51,68,0.1)"
+        },
+        "donut": { "size": "160px", "strokeWidth": "32px" },
+        "centerText": { "fontSize": "20px", "fontWeight": 700, "color": "#1C1C1C" },
+        "legendList": "uses DonutChartLegend (label + value + % per row, gap 8px)"
       },
       "usage": "<DonutChartWithRightLegends segments={[{value: 40, color: '#75A0F5', label: 'Category A', percentage: '40%'}]} total=\"234.351\" />"
     },
@@ -2253,9 +3697,40 @@
         }
       },
       "styling": {
-        "header": "text-[12px] font-bold text-[#1C1C1C] border-b border-[#DDDDDD]",
-        "cell": "text-[12px] text-[#595959] py-2",
-        "typeIndicator": "w-[12px] h-[12px] rounded-[2px]"
+        "table": {
+          "width": "100%",
+          "background": "transparent",
+          "border": "none",
+          "borderCollapse": "separate",
+          "borderSpacing": "0"
+        },
+        "header": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#1C1C1C",
+          "textAlign": "left",
+          "paddingY": "8px",
+          "paddingX": "0",
+          "borderBottom": "1px solid #DDDDDD",
+          "background": "transparent"
+        },
+        "cell": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 400,
+          "color": "#595959",
+          "paddingY": "8px",
+          "paddingX": "0",
+          "borderBottom": "1px solid #EBEBEB",
+          "background": "transparent"
+        },
+        "typeIndicator": { "width": "12px", "height": "12px", "radius": "2px", "marginRight": "8px" },
+        "amountCell": { "textAlign": "right", "fontWeight": 500, "color": "#1C1C1C" },
+        "rowHover": "transparent (non-interactive in dashboard context)",
+        "shadow": "none"
       },
       "usage": "<DashboardTable columns={['Type', 'Date', 'Amount']} rows={[{type: 'Journal entry', typeColor: '#75A0F5', date: '21.04.22', amount: '12.400'}]} />"
     },
@@ -2270,8 +3745,35 @@
         }
       },
       "styling": {
-        "illustration": "w-[200px] h-[160px] bg-[#F5F5F5] rounded-[4px] mx-auto",
-        "message": "text-[14px] text-[#595959] text-center mt-4"
+        "container": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "padding": "24px 16px",
+          "gap": "16px",
+          "background": "transparent",
+          "border": "none",
+          "radius": "0",
+          "shadow": "none"
+        },
+        "illustration": {
+          "width": "200px",
+          "height": "160px",
+          "background": "#F5F5F5 (placeholder) — replace with SVG from /showcase/illustrations/",
+          "radius": "4px",
+          "border": "none"
+        },
+        "message": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#595959",
+          "textAlign": "center",
+          "marginTop": "16px",
+          "maxWidth": "320px"
+        }
       },
       "usage": "<EmptyState message=\"You don't have any registrations yet.\" />"
     },
@@ -2290,9 +3792,45 @@
         }
       },
       "styling": {
-        "container": "rounded-[12px] border border-[#DDDDDD] bg-white p-6 text-center",
-        "avatar": "w-[60px] h-[60px] rounded-full bg-[#EBEBEB] mx-auto",
-        "button": "border border-[#DDDDDD] rounded-[4px] px-4 py-1.5 text-[14px]"
+        "container": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "gap": "16px",
+          "padding": "24px",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "12px",
+          "shadow": "0px 1px 2px rgba(47,51,68,0.1)",
+          "textAlign": "center"
+        },
+        "avatar": {
+          "width": "60px",
+          "height": "60px",
+          "radius": "9999px",
+          "background": "#EBEBEB",
+          "border": "none"
+        },
+        "message": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C"
+        },
+        "button": {
+          "height": "32px",
+          "paddingX": "12px",
+          "paddingY": "6px",
+          "border": "1px solid #DDDDDD",
+          "radius": "4px",
+          "background": "#FFFFFF",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C",
+          "hoverBackground": "#EBEBEB"
+        }
       },
       "usage": "<HomepageCard message=\"Chat with us all weekdays\" buttonLabel=\"Start chat\" />"
     },
@@ -2331,15 +3869,63 @@
         }
       },
       "styling": {
-        "listItem": "flex items-center px-[8px] py-[6px] w-[160px] text-[14px] leading-[20px] text-[#1C1C1C]",
-        "listItemHover": "bg-[#EBEBEB] rounded-[4px]",
-        "iconLeft": "gap-[4px]",
-        "iconRight": "justify-between",
-        "withShortcut": "justify-between",
-        "shortcutText": "text-[14px] leading-[20px] text-[#595959] pl-[8px]",
-        "header": "flex items-center px-[8px] py-[6px] text-[12px] leading-[16px] text-[#595959]",
-        "divider": "flex items-center px-[8px] py-[4px] rounded-[4px]",
-        "dividerLine": "flex-1 h-px bg-[#DDDDDD]"
+        "listItem": {
+          "display": "flex",
+          "alignItems": "center",
+          "minWidth": "160px",
+          "height": "32px",
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "gap": "4px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C",
+          "background": "transparent",
+          "border": "none",
+          "radius": "4px",
+          "cursor": "pointer"
+        },
+        "listItemHover": { "background": "#EBEBEB", "radius": "4px" },
+        "listItemFocus": { "outline": "2px solid #4573D2", "outlineOffset": "-1px", "radius": "4px" },
+        "listItemDisabled": { "color": "#ACACAC", "cursor": "not-allowed" },
+        "iconLeft": { "order": "icon first, text after", "gap": "4px", "iconSize": "20×20px" },
+        "iconRight": { "order": "text first, icon last", "justifyContent": "space-between", "iconSize": "20×20px" },
+        "withShortcut": { "justifyContent": "space-between" },
+        "shortcutText": {
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#595959",
+          "paddingLeft": "8px"
+        },
+        "header": {
+          "display": "flex",
+          "alignItems": "center",
+          "paddingX": "8px",
+          "paddingY": "6px",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "fontWeight": 700,
+          "color": "#595959",
+          "textTransform": "uppercase",
+          "background": "transparent",
+          "border": "none"
+        },
+        "divider": {
+          "display": "flex",
+          "alignItems": "center",
+          "paddingX": "8px",
+          "paddingY": "4px",
+          "height": "1px"
+        },
+        "dividerLine": {
+          "flex": 1,
+          "height": "1px",
+          "background": "#DDDDDD",
+          "border": "none"
+        },
+        "shadow": "none"
       },
       "usage": "<Menu.Item>Text</Menu.Item>"
     },
@@ -2354,7 +3940,14 @@
         }
       },
       "styling": {
-        "container": "flex flex-col items-start"
+        "layout": "flex flex-col items-start",
+        "padding": "0 (Menu wrapper adds py-4)",
+        "gap": "0 (items stack tight)",
+        "background": "inherits from Menu wrapper (#FFFFFF)",
+        "border": "none",
+        "radius": "0 (inherits from Menu wrapper)",
+        "shadow": "none (Menu wrapper carries elevation)",
+        "autoSize": "width grows to fit widest item"
       },
       "usage": "<Menu.Content><Menu.Item>Option 1</Menu.Item><Menu.Item>Option 2</Menu.Item></Menu.Content>"
     },
@@ -2375,9 +3968,35 @@
         }
       },
       "styling": {
-        "container": "inline-flex flex-col items-start bg-white rounded-[8px] py-[4px]",
-        "shadow": "shadow-[0px_2px_4px_rgba(0,0,0,0.15),0px_1px_2px_rgba(0,0,0,0.3)]",
-        "wide": "min-w-[340px]"
+        "container": {
+          "display": "inline-flex",
+          "flexDirection": "column",
+          "alignItems": "flex-start",
+          "background": "#FFFFFF",
+          "border": "1px solid #DDDDDD",
+          "radius": "8px",
+          "paddingY": "4px",
+          "paddingX": "0",
+          "minWidth": "160px",
+          "shadow": "0px 2px 4px rgba(0,0,0,0.15), 0px 1px 2px rgba(0,0,0,0.3)"
+        },
+        "wide": {
+          "minWidth": "340px"
+        },
+        "divider": {
+          "height": "1px",
+          "background": "#DDDDDD",
+          "marginY": "4px",
+          "marginX": "8px"
+        },
+        "positioning": {
+          "offsetFromTrigger": "4px",
+          "zIndex": 1000
+        },
+        "animation": {
+          "enter": "opacity 150ms ease, translateY 4px -> 0",
+          "exit": "opacity 100ms ease"
+        }
       },
       "subComponents": [
         "MenuContent",
@@ -2667,9 +4286,13 @@
         }
       },
       "styling": {
-        "size": "w-6 h-6 (24×24px)",
-        "color": "fill-[#1C1C1C] or text-[#1C1C1C] with currentColor",
-        "whiteOnDark": "fill-white or text-white (when on dark backgrounds like top navigation)"
+        "dimensions": { "default": "24×24px", "alternate": ["16×16px", "20×20px"] },
+        "svg": { "viewBox": "0 0 24 24", "fill": "currentColor" },
+        "color": { "default": "#1C1C1C", "onDark": "#FFFFFF", "disabled": "#ACACAC" },
+        "border": "none",
+        "radius": "0px",
+        "background": "transparent",
+        "shadow": "none"
       },
       "categories": {
         "navigation-primary": [
@@ -3089,8 +4712,40 @@
         }
       },
       "styling": {
-        "default": "py-[2px] px-[8px] text-xs font-bold rounded-full inline-flex items-center",
-        "small": "py-[1px] px-[6px] text-[10px] font-bold rounded-full inline-flex items-center"
+        "display": "inline-flex items-center justify-center",
+        "dimensions": {
+          "default": {
+            "paddingX": "8px",
+            "paddingY": "2px",
+            "height": "20px (approx)"
+          },
+          "small": {
+            "paddingX": "6px",
+            "paddingY": "1px",
+            "height": "14px (approx)"
+          }
+        },
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "default": { "fontSize": "12px", "lineHeight": "16px", "fontWeight": 700 },
+          "small": { "fontSize": "10px", "lineHeight": "14px", "fontWeight": 700 },
+          "whiteSpace": "nowrap"
+        },
+        "border": {
+          "strong": "none",
+          "subtle": "none",
+          "outline": "1px solid (color matches theme strong bg)"
+        },
+        "radius": "9999px (fully rounded pill)",
+        "shadow": "none",
+        "statusDot": {
+          "shownWhen": "variant == 'dot'",
+          "width": "6px",
+          "height": "6px",
+          "radius": "9999px",
+          "bg": "contrast color on the badge (e.g., white on strong fill)",
+          "marginRight": "4px"
+        }
       },
       "usage": "<Badge color=\"blue\" variant=\"strong\">Active</Badge>"
     },
@@ -3128,7 +4783,14 @@
         "brown": "#73503B",
         "orange": "#F99702"
       },
-      "styling": "w-2 h-2 rounded-full inline-block",
+      "styling": {
+        "dimensions": { "width": "8px", "height": "8px" },
+        "display": "inline-block",
+        "radius": "9999px (circle)",
+        "border": "none",
+        "shadow": "none",
+        "background": "color from colorMapping"
+      },
       "usage": "<BadgeDot color=\"green\" />"
     },
     "BadgeIcon": {
@@ -3179,6 +4841,26 @@
         "error": "#CE3F42",
         "neutral": "#595959"
       },
+      "styling": {
+        "dimensions": {
+          "20": { "width": "20px", "height": "20px", "iconSize": "12px" },
+          "16": { "width": "16px", "height": "16px", "iconSize": "10px" }
+        },
+        "border": {
+          "default": "none",
+          "subtle": "1.5px solid (color matches type)"
+        },
+        "radius": "9999px (fully circular)",
+        "backgrounds": {
+          "default": "type color filled (e.g. #028465 for success)",
+          "subtle": "#FFFFFF fill with colored ring"
+        },
+        "iconColor": {
+          "default": "#FFFFFF",
+          "subtle": "type color"
+        },
+        "shadow": "none"
+      },
       "usage": "<BadgeIcon type=\"success\" size=\"20\" />"
     },
     "LinkText": {
@@ -3214,12 +4896,29 @@
         }
       },
       "styling": {
+        "display": "inline",
+        "fontFamily": "Helvetica, Arial, sans-serif",
         "color": "#4573D2",
         "hoverColor": "#2B57B4",
+        "activeColor": "#2B57B4",
+        "visitedColor": "#4573D2 (no distinct visited color)",
         "textDecoration": "underline",
-        "small": "text-xs leading-4",
-        "medium": "text-sm leading-5",
-        "large": "text-base leading-6"
+        "textUnderlineOffset": "2px",
+        "sizes": {
+          "small": { "fontSize": "12px", "lineHeight": "16px" },
+          "medium": { "fontSize": "14px", "lineHeight": "20px" },
+          "large": { "fontSize": "16px", "lineHeight": "24px" }
+        },
+        "weights": {
+          "regular": 400,
+          "bold": 700
+        },
+        "background": "transparent",
+        "border": "none",
+        "radius": "0",
+        "padding": "0",
+        "shadow": "none",
+        "focus": "outline: 2px solid #4573D2, outline-offset: 2px, border-radius: 2px"
       },
       "usage": "<LinkText href=\"/invoices\" size=\"medium\">View invoices</LinkText>"
     },
@@ -3244,14 +4943,33 @@
         }
       },
       "styling": {
-        "color": "#4573D2",
+        "dimensions": {
+          "12": { "width": "12px", "height": "12px" },
+          "20": { "width": "20px", "height": "20px" },
+          "24": { "width": "24px", "height": "24px" },
+          "40": { "width": "40px", "height": "40px" }
+        },
+        "color": "#4573D2 (primary) — inherits from currentColor when placed on button",
+        "trackColor": "rgba(69,115,210,0.2) (same hue at 20% opacity)",
         "animation": "spin 1s linear infinite",
         "strokeWidths": {
           "12": "1.5px",
           "20": "2px",
           "24": "2.5px",
           "40": "3px"
-        }
+        },
+        "label": {
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "#595959",
+          "paddingTop": "8px",
+          "textAlign": "center",
+          "shownWhen": "size == 40"
+        },
+        "background": "transparent",
+        "border": "none",
+        "radius": "9999px (full circle via SVG)",
+        "shadow": "none"
       },
       "usage": "<Spinner size=\"24\" />"
     },
@@ -3271,15 +4989,22 @@
         }
       },
       "styling": {
-        "colors": {
+        "backgrounds": {
           "base": "#EBEBEB",
-          "highlight": "#F5F5F5"
+          "highlight": "#F5F5F5",
+          "gradient": "linear-gradient(90deg, #EBEBEB 0%, #F5F5F5 50%, #EBEBEB 100%)"
         },
-        "animation": "shimmer 1.5s ease-in-out infinite (linear-gradient moving left to right)",
-        "borderRadius": "4px",
-        "textHeight": "12px",
-        "secondaryTextHeight": "10px",
-        "avatarHeight": "40px"
+        "animation": "shimmer 1.5s ease-in-out infinite (moving left to right)",
+        "radius": "4px",
+        "border": "none",
+        "shadow": "none",
+        "dimensions": {
+          "text": { "height": "12px", "width": "100% (varies by line)", "gapBetweenLines": "8px" },
+          "secondaryText": { "height": "10px" },
+          "avatar": { "width": "40px", "height": "40px", "radius": "9999px" },
+          "card": { "height": "120px", "width": "100%", "padding": "12px" },
+          "table-row": { "height": "48px", "width": "100%" }
+        }
       },
       "usage": "<SkeletonLoader variant=\"text\" />"
     },
@@ -3364,13 +5089,6 @@
           "description": "If provided, shows a close (x) button"
         }
       },
-      "styling": {
-        "container": "flex gap-[8px] items-start p-[12px] rounded-[8px] w-full",
-        "iconBadge": "w-[20px] h-[20px] rounded-full shrink-0 with centered SVG icon",
-        "text": "text-[14px] leading-[20px]",
-        "titleFont": "font-bold",
-        "closeButton": "bg-transparent border-none cursor-pointer p-0"
-      },
       "colorMapping": {
         "info": {
           "bg": "#DEEBFF",
@@ -3416,7 +5134,45 @@
         "error": "circle-warning",
         "neutral": "info"
       },
-      "styling": "w-full p-[12px] rounded-[8px] flex items-start gap-2",
+      "styling": {
+        "container": {
+          "display": "flex",
+          "alignItems": "flex-start",
+          "gap": "8px",
+          "width": "100%",
+          "padding": "12px",
+          "border": "none",
+          "radius": "8px",
+          "background": "per colorMapping.bg",
+          "shadow": "none"
+        },
+        "iconBadge": {
+          "width": "20px",
+          "height": "20px",
+          "radius": "9999px",
+          "background": "per colorMapping.iconBg",
+          "iconColor": "per colorMapping.iconColor",
+          "iconSize": "12px",
+          "shrink": 0
+        },
+        "typography": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "color": "per colorMapping.text",
+          "titleWeight": 700,
+          "bodyWeight": 400
+        },
+        "closeButton": {
+          "width": "20px",
+          "height": "20px",
+          "background": "transparent",
+          "border": "none",
+          "padding": "0",
+          "color": "per colorMapping.text",
+          "iconSize": "16px"
+        }
+      },
       "usage": "<Alert type=\"info\" title=\"Your trial ends in 14 days\" />"
     },
     "Banner": {
@@ -3452,12 +5208,52 @@
         "warning":     { "iconBg": "#FFBD3B", "iconColor": "white" }
       },
       "styling": {
-        "container": "flex items-center bg-white pl-[16px] pr-[8px] py-[8px]",
-        "shadow": "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)",
-        "content": "flex flex-1 items-start gap-[8px] py-[6px]",
-        "iconBadge": "w-[20px] h-[20px] rounded-full shrink-0",
-        "text": "text-[14px] leading-[20px] text-[#1C1C1C]",
-        "closeButton": "p-[6px] bg-transparent rounded-[4px] text-[#595959] hover:bg-[rgba(0,0,0,0.08)]"
+        "container": {
+          "display": "flex",
+          "alignItems": "center",
+          "width": "100%",
+          "paddingLeft": "16px",
+          "paddingRight": "8px",
+          "paddingY": "8px",
+          "background": "#FFFFFF",
+          "border": "none",
+          "radius": "0 (sits edge-to-edge)",
+          "shadow": "0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -4px rgba(0,0,0,0.1)"
+        },
+        "content": {
+          "display": "flex",
+          "flex": 1,
+          "alignItems": "flex-start",
+          "gap": "8px",
+          "paddingY": "6px"
+        },
+        "iconBadge": {
+          "width": "20px",
+          "height": "20px",
+          "radius": "9999px",
+          "iconSize": "12px",
+          "iconColor": "per colorMapping.iconColor",
+          "background": "per colorMapping.iconBg",
+          "shrink": 0
+        },
+        "text": {
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C"
+        },
+        "closeButton": {
+          "width": "32px",
+          "height": "32px",
+          "padding": "6px",
+          "background": "transparent",
+          "hoverBackground": "rgba(0,0,0,0.08)",
+          "border": "none",
+          "radius": "4px",
+          "iconSize": "20×20px",
+          "iconColor": "#595959"
+        }
       },
       "usage": "<Banner type=\"success\">Invoice sent successfully.</Banner>"
     },
@@ -3501,15 +5297,63 @@
       },
       "styling": {
         "compact": {
-          "container": "bg-[#4573D2] rounded-[4px] px-[8px] py-[4px]",
-          "text": "text-white text-[12px] leading-[16px] font-normal whitespace-nowrap"
+          "container": {
+            "display": "inline-block",
+            "background": "#4573D2",
+            "border": "none",
+            "radius": "4px",
+            "paddingX": "8px",
+            "paddingY": "4px",
+            "shadow": "0px 1px 2px rgba(0,0,0,0.15)"
+          },
+          "text": {
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "color": "#FFFFFF",
+            "whiteSpace": "nowrap"
+          }
         },
         "withDescription": {
-          "container": "w-[224px] bg-[#4573D2] rounded-[4px] px-[8px] py-[6px]",
-          "title": "text-white text-[12px] leading-[16px] font-bold block",
-          "description": "text-white text-[12px] leading-[16px] font-normal block mt-[2px] opacity-90"
+          "container": {
+            "width": "224px",
+            "background": "#4573D2",
+            "border": "none",
+            "radius": "4px",
+            "paddingX": "8px",
+            "paddingY": "6px",
+            "shadow": "0px 1px 2px rgba(0,0,0,0.15), 0px 2px 6px rgba(0,0,0,0.15)"
+          },
+          "title": {
+            "display": "block",
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 700,
+            "color": "#FFFFFF"
+          },
+          "description": {
+            "display": "block",
+            "fontFamily": "Helvetica, Arial, sans-serif",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "color": "#FFFFFF",
+            "opacity": 0.9,
+            "marginTop": "2px"
+          }
         },
-        "arrow": "6px CSS triangle using border trick, colored #4573D2"
+        "arrow": {
+          "size": "6×6px",
+          "technique": "CSS triangle via border trick",
+          "color": "#4573D2",
+          "offset": "-6px from the edge the arrow points from"
+        },
+        "positioning": {
+          "zIndex": 1100,
+          "offsetFromAnchor": "8px"
+        }
       },
       "usage": "<Callout title=\"New feature\" arrowPosition=\"bottom\" />"
     },
@@ -3628,12 +5472,56 @@
         "checkbox": "tick"
       },
       "styling": {
-        "height": "40px",
-        "hoverBg": "rgba(0,99,255,0.05)",
-        "selectedBg": "rgba(0,99,255,0.1)",
-        "divider": "shadow-[inset_0_-1px_0_0_#DDDDDD]",
-        "checkboxSize": "16px",
-        "chevronButtonSize": "32px"
+        "row": {
+          "height": "40px",
+          "background": "#FFFFFF",
+          "hoverBackground": "rgba(0,99,255,0.05)",
+          "selectedBackground": "rgba(0,99,255,0.1)",
+          "divider": "inset 0 -1px 0 0 #DDDDDD",
+          "border": "none (uses inset shadow for bottom border)",
+          "cursor": "pointer"
+        },
+        "cell": {
+          "paddingX": "12px",
+          "paddingY": "10px",
+          "fontFamily": "Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "fontWeight": 400,
+          "color": "#1C1C1C",
+          "verticalAlign": "middle",
+          "textAlign": "left (right for numeric)"
+        },
+        "checkbox": {
+          "size": "16×16px",
+          "radius": "2px",
+          "border": "1px solid #595959",
+          "checkedBackground": "#4573D2",
+          "checkedBorder": "1px solid #4573D2",
+          "tickColor": "#FFFFFF"
+        },
+        "chevronButton": {
+          "width": "32px",
+          "height": "32px",
+          "background": "transparent",
+          "hoverBackground": "#EBEBEB",
+          "border": "none",
+          "radius": "4px",
+          "iconSize": "24×24px",
+          "iconColor": "#1C1C1C",
+          "icons": { "collapsed": "chevron-right", "expanded": "chevron-down" }
+        },
+        "expandedContent": {
+          "background": "#F5F5F5",
+          "padding": "12px",
+          "borderTop": "1px solid #DDDDDD"
+        },
+        "rowActions": {
+          "visibility": "visible on row hover",
+          "buttonSize": "32×32px",
+          "iconSize": "24×24px",
+          "gap": "4px"
+        }
       },
       "usage": "<TableRow selectable expandable>...</TableRow>"
     }
